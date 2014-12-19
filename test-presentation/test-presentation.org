@@ -1,0 +1,42 @@
+#+OPTIONS: toc:nil num:nil
+#+TITLE: Test presentation
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: chris.howejones@gmail.com
+#+DATE: 19 December 2014
+#+REVEAL_THEME: night
+#+REVEAL_TRANS: concave
+
+
+* Simple Slides
+** This is a simple slide
+   
+  I've put together a simple slide to prove I can.
+  This slide is generated using org mode in emacs,
+  exported to reveal.js.
+
+** Includes code
+
+  I wanted to include a 'Hello World' code snippet for Clojure.
+
+  #+BEGIN_SRC clojure
+    (defn hello-world [name]
+      (println "Hello," name))
+  #+END_SRC
+
+** Slide with link
+
+  This slide has a link to my
+  [[http://github.com/chrishowejones][Github Account]]
+
+** Slide including an image
+
+  This slide has an image of Spock.
+
+  [[./img/Spock.jpg]]
+  
+
+
+
+
+
+  

@@ -1,0 +1,4 @@
+* Chris Howe-Jones' Presentations
+
+  This is a repo of my presentations written in org-mode and published
+  using org-reveal and reveal.js .
