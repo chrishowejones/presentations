@@ -13,9 +13,9 @@
 * Projects kill /Agile/ -Development
 
 *** OR
-#+ATTR_REVEAL: :frag t
+
     * Why Feature Teams SUCK!
-#+ATTR_REVEAL: :frag t
+
 [[./ItSucks.jpg]]
 #+ATTR_REVEAL: :frag t
      /sometimes/
