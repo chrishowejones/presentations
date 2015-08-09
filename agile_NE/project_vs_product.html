@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Projects kill Agile Development</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+
+<link rel="stylesheet" href="file:///Users/chrishowe-jones/reveal.js-master/css/reveal.css"/>
+<link rel="stylesheet" href="file:///Users/chrishowe-jones/reveal.js-master/css/theme/moon.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///Users/chrishowe-jones/reveal.js-master/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Projects kill Agile Development</h1>
+<h2>Chris Howe-Jones</h2>
+<h2><a href="mailto:@agile_geek">@agile_geek</a></h2>
+<h2>11th August</h2>
+</section>
+
+<section>
+<section id="slide-sec-1">
+<h2 id="sec-1">Projects kill <i>Agile</i> -Development</h2>
+<div class="outline-text-2" id="text-1">
+</div></section>
+<section id="slide-sec-1-0-1">
+<h4 id="sec-1-0-1">OR</h4>
+<ul class="fragment">
+<li>Why Feature Teams SUCK!</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./ItSucks.jpg" alt="ItSucks.jpg" class="fragment" />
+</p>
+</div>
+<span class="fragment"><p>
+<i>sometimes</i>
+</p></span>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-2">
+<h2 id="sec-2">Why?</h2>
+<div class="outline-text-2" id="text-2">
+</div></section>
+</section>
+<section>
+<section id="slide-sec-2-1">
+<h3 id="sec-2-1">Constraints</h3>
+<ul class="fragment">
+<li>Limited budget - especially fixed price</li>
+<li>Limited resources</li>
+<li>Limited timescales</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-sec-3">
+<h2 id="sec-3">What?</h2>
+<div class="outline-text-2" id="text-3">
+</div></section>
+</section>
+<section>
+<section id="slide-sec-3-1">
+<h3 id="sec-3-1">Behaviour</h3>
+<p>
+Focus on:
+</p>
+<ul>
+<li class="fragment roll-in">functionality</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">teams formed for life of project</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./clones.jpg" alt="clones.jpg" class="fragment (roll-in)" />
+</p>
+</div>
+<ul>
+<li class="fragment roll-in">team members fungible</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">architecture/design 'third class' citizen</li>
+
+</ul>
+<aside class="notes">
+<ul class="org-ul">
+<li>focus on delivering functionality takes precedence over impact
+on code base
+</li>
+<li>teams are formed, disolved and reformed (especially in fixed
+price outsourcing) - leads to lack of ownership
+</li>
+<li>team members are treated as resources and treated as
+interchangable - no collective code ownership
+</li>
+<li>projects don't want to pay for the 'prep' work for the next
+project
+</li>
+</ul>
+
+</aside>
+
+</section>
+<section>
+<ul>
+<li class="fragment roll-in">"I don't have to live with it"</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Everyone is responsible, no one is accountable</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./monolith.jpeg" alt="monolith.jpeg" class="fragment (roll-in)" />
+</p>
+</div>
+<ul>
+<li class="fragment roll-in">monoliths rule</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Cost over value - what's the <i>depreciation</i></li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Multiple teams - one code base</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>'project managers' only care about short term project they have
+to deliver right now.
+</li>
+<li>jam functionality into one monolithic module as it takes less
+thought
+</li>
+<li>if you're going to work on another project in 2-3 months you
+don't care what you're code looks like now.
+</li>
+<li>No one has to pay if the code base doesn't support extension and
+change.
+</li>
+<li>No measurement of the impact of change on the ROI of later
+'projects' - i.e. concept of depreciation
+</li>
+<li>Everyone 'touching' same code at same time.
+</li>
+</ul>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-sec-4">
+<h2 id="sec-4">Product Teams</h2>
+<div class="outline-text-2" id="text-4">
+</div></section>
+</section>
+<section>
+<section id="slide-sec-4-1">
+<h3 id="sec-4-1">Align to product/platform/component</h3>
+<p>
+Promotes:
+</p>
+<ul>
+<li class="fragment roll-in">Code ownership</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Non functional requirements</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Architecture_Venn.jpg" alt="Architecture_Venn.jpg" class="fragment (roll-in)" />
+</p>
+</div>
+<ul>
+<li class="fragment roll-in">Architecture matters</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">"Live with it"</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>If it's your product you care about the code being maintainable and readable
+</li>
+<li>You care about whether the product is going to generate NF 'bugs' that you have to fix.
+</li>
+<li>How the product accomplishes tasks is importnat.
+</li>
+<li>You have to deal with the fall out in the next project or in live.
+</li>
+</ul>
+
+</aside>
+
+</section>
+<section>
+<ul>
+<li class="fragment roll-in">Interfaces to other products</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./tech_debt.jpg" alt="tech_debt.jpg" class="fragment (roll-in)" />
+</p>
+</div>
+<ul>
+<li class="fragment roll-in">Burn down tech debt</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>Other product teams will blame and shame you.
+</li>
+<li>It's important that you make the product easier to change.
+</li>
+</ul>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-sec-4-2">
+<h3 id="sec-4-2">How to avoid&#x2026;</h3>
+
+<div class="figure">
+<p><img src="./throw_over_wall.jpeg" alt="throw_over_wall.jpeg" class="fragment (roll-in)" />
+</p>
+</div>
+<ul>
+<li class="fragment roll-in">"Throw it over the wall" syndrome</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Isolationism</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">1 Dimensional teams</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">"Over gilding"</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-sec-5">
+<h2 id="sec-5">Product Delivery</h2>
+<ul>
+<li class="fragment roll-in">Product Owner</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Separate backlog</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Build in feedback</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./feature-funnel.jpg" alt="feature-funnel.jpg" class="fragment (roll-in)" />
+</p>
+</div>
+<ul>
+<li class="fragment roll-in">Feed 'projects' into 'feature funnel'</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>Owner ensures focus is not on product for products sake.
+</li>
+<li>Each product has its focus.
+</li>
+<li>Some of the teams 'velocity' should be expended in measuring what impact of change is.
+</li>
+<li>Each 'project' should feed stories/epics into the product.
+</li>
+</ul>
+
+</aside>
+
+
+</section>
+<section>
+<ul>
+<li class="fragment roll-in">Services (even in same team)</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./shared_vision.jpg" alt="shared_vision.jpg" class="fragment (roll-in)" />
+</p>
+</div>
+<ul>
+<li class="fragment roll-in">Shared vision across products</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Treat channels as customers</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Treat other teams as customers</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">'T shaped people (not 'resources')</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Set percentage of 'technical payback' (or one week in 7)</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>Think of how to divide responsibilies into services.
+</li>
+<li>Vision needs to be shared across product/services family to ensure they pull together.
+</li>
+<li>Channels like web, mobile, etc. should be treated as virtual customers with needs.
+</li>
+<li>Other service/platform teams should be reated as customers again feeding into team funnel
+</li>
+<li>Have team members with rounded experiences and multiple technical skills.
+</li>
+<li>Set a percentage of the teams 'velocity' for tech debt.
+</li>
+</ul>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+
+<script src="file:///Users/chrishowe-jones/reveal.js-master/lib/js/head.min.js"></script>
+<script src="file:///Users/chrishowe-jones/reveal.js-master/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///Users/chrishowe-jones/reveal.js-master/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///Users/chrishowe-jones/reveal.js-master/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///Users/chrishowe-jones/reveal.js-master/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///Users/chrishowe-jones/reveal.js-master/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
+</body>
+</html>

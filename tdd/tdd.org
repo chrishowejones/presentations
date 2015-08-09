@@ -1,0 +1,78 @@
+#+OPTIONS: toc:nil num:nil
+#+TITLE: Test Driven Development
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: chris.howejones@gmail.com
+#+DATE: 6th January 2015
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: default
+#+REVEAL_HLEVEL: 2
+#+REVEAL_ROOT: reveal.js-2.6.2/
+#+REVEAL_PLUGINS: (highlight markdown notes)
+
+
+* Test Driven Development
+
+  What is Test Driven Development?
+
+** What?
+
+#+ATTR_REVEAL: :frag roll-in
+   1. Write a (failing) test.
+   2. Run a (failing) test.
+   3. Write the (simplest) implementation to get the test to pass.
+   4. Run test (if pass do next step else do 3)
+   5. Refactor implementation (and/or test) to remove duplication.
+   6. Repeat from step 1.
+
+** Why?
+
+#+ATTR_REVEAL: :frag roll-in
+   * Tests code (automated and run in build).
+   * Evolves design constantly checking against tests for 'completeness'.
+   * Provides automated 'safety net' to catch 'breaking changes'.
+   * Enables rapid and radical design changes in future.
+   * Avoids 'big ball of mud'
+
+** When?
+
+#+ATTR_REVEAL: :frag grow highlight-red
+   ALL THE TIME
+
+** TDD?
+
+   Test Driven *Design*
+
+* Acceptance Test Driven Development
+
+#+ATTR_REVEAL: :frag highlight-green
+   Subset of which is 'Behaviour Driven Development'.
+
+** What?
+
+#+ATTR_REVEAL: :frag roll-in
+   1. Write test scenario's to describe 'users story' from user's
+       perspective. [automated]
+   2. Run (failing) test.
+   3. Use TDD to implement 'units' required to satisfy test
+      scenario's.
+   4. Run test scenario's repeating step 3 until pass.
+   5. Repeat from step 1.
+
+** Why?
+
+#+ATTR_REVEAL: :frag roll-in
+   * Acceptance tests from user perspective.
+   * Evolves requirements constantly checking against tests for 'user acceptance'.
+   * Documents the requirements in the form of an 'executable specification'.
+   * Higher level verification of the code's fitness for purpose.
+
+** When?
+
+#+ATTR_REVEAL: :frag grow
+   * Developed at start of Sprint
+   * Run throughout Sprint
+   * Verifies story at end as part of 'Definition of Done'
+
+** A-TDD
+
+   *Executable Specification*

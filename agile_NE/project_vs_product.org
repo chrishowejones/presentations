@@ -1,0 +1,177 @@
+#+OPTIONS: toc:nil num:nil
+#+TITLE: Projects kill Agile Development
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  11th August
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: default
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_PLUGINS: (highlight markdown notes)
+
+* Projects kill /Agile/ -Development
+
+*** OR
+#+ATTR_REVEAL: :frag t
+    * Why Feature Teams SUCK!
+#+ATTR_REVEAL: :frag t
+[[./ItSucks.jpg]]
+#+ATTR_REVEAL: :frag t
+     /sometimes/
+
+* Why?
+** Constraints
+#+ATTR_REVEAL: :frag t
+    * Limited budget - especially fixed price
+    * Limited resources
+    * Limited timescales
+* What?
+** Behaviour
+
+Focus on:
+#+ATTR_REVEAL: :frag (roll-in)
+    * functionality
+#+ATTR_REVEAL: :frag (roll-in)
+    * teams formed for life of project
+#+ATTR_REVEAL: :frag (roll-in)
+    [[./clones.jpg]]
+#+ATTR_REVEAL: :frag (roll-in)
+    * team members fungible
+#+ATTR_REVEAL: :frag (roll-in)
+    * architecture/design 'third class' citizen
+#+BEGIN_NOTES
+    * focus on delivering functionality takes precedence over impact
+      on code base
+    * teams are formed, disolved and reformed (especially in fixed
+      price outsourcing) - leads to lack of ownership
+    * team members are treated as resources and treated as
+      interchangable - no collective code ownership
+    * projects don't want to pay for the 'prep' work for the next
+      project
+#+END_NOTES
+
+#+REVEAL: split
+#+ATTR_REVEAL: :frag (roll-in)
+    * "I don't have to live with it"
+#+ATTR_REVEAL: :frag (roll-in)
+    * Everyone is responsible, no one is accountable
+#+ATTR_REVEAL: :frag (roll-in)
+    [[./monolith.jpeg]]
+#+ATTR_REVEAL: :frag (roll-in)
+    * monoliths rule
+#+ATTR_REVEAL: :frag (roll-in)
+    * Cost over value - what's the /depreciation/
+#+ATTR_REVEAL: :frag (roll-in)
+    * Multiple teams - one code base
+
+#+BEGIN_NOTES
+    * 'project managers' only care about short term project they have
+      to deliver right now.
+    * jam functionality into one monolithic module as it takes less
+      thought
+    * if you're going to work on another project in 2-3 months you
+      don't care what you're code looks like now.
+    * No one has to pay if the code base doesn't support extension and
+      change.
+    * No measurement of the impact of change on the ROI of later
+      'projects' - i.e. concept of depreciation
+    * Everyone 'touching' same code at same time.
+#+END_NOTES
+
+
+* Product Teams
+** Align to product/platform/component
+
+Promotes:
+#+ATTR_REVEAL: :frag (roll-in)
+    * Code ownership
+#+ATTR_REVEAL: :frag (roll-in)
+    * Non functional requirements
+#+ATTR_REVEAL: :frag (roll-in)
+[[./Architecture_Venn.jpg]]
+#+ATTR_REVEAL: :frag (roll-in)
+    * Architecture matters
+#+ATTR_REVEAL: :frag (roll-in)
+    * "Live with it"
+
+#+BEGIN_NOTES
+   * If it's your product you care about the code being maintainable and readable
+   * You care about whether the product is going to generate NF 'bugs' that you have to fix.
+   * How the product accomplishes tasks is importnat.
+   * You have to deal with the fall out in the next project or in live.
+#+END_NOTES
+
+#+REVEAL: split
+#+ATTR_REVEAL: :frag (roll-in)
+    * Interfaces to other products
+#+ATTR_REVEAL: :frag (roll-in)
+[[./tech_debt.jpg]]
+#+ATTR_REVEAL: :frag (roll-in)
+    * Burn down tech debt
+
+#+BEGIN_NOTES
+   * Other product teams will blame and shame you.
+   * It's important that you make the product easier to change.
+#+END_NOTES
+
+
+** How to avoid...
+
+#+ATTR_REVEAL: :frag (roll-in)
+ [[./throw_over_wall.jpeg]]
+#+ATTR_REVEAL: :frag (roll-in)
+    * "Throw it over the wall" syndrome
+#+ATTR_REVEAL: :frag (roll-in)
+    * Isolationism
+#+ATTR_REVEAL: :frag (roll-in)
+    * 1 Dimensional teams
+#+ATTR_REVEAL: :frag (roll-in)
+    * "Over gilding"
+
+
+* Product Delivery
+
+#+ATTR_REVEAL: :frag (roll-in)
+    * Product Owner
+#+ATTR_REVEAL: :frag (roll-in)
+    * Separate backlog
+#+ATTR_REVEAL: :frag (roll-in)
+    * Build in feedback
+#+ATTR_REVEAL: :frag (roll-in)
+ [[./feature-funnel.jpg]]
+#+ATTR_REVEAL: :frag (roll-in)
+    * Feed 'projects' into 'feature funnel'
+
+#+BEGIN_NOTES
+   * Owner ensures focus is not on product for products sake.
+   * Each product has its focus.
+   * Some of the teams 'velocity' should be expended in measuring what impact of change is.
+   * Each 'project' should feed stories/epics into the product.
+#+END_NOTES
+
+
+#+REVEAL: split
+#+ATTR_REVEAL: :frag (roll-in)
+    * Services (even in same team)
+#+ATTR_REVEAL: :frag (roll-in)
+[[./shared_vision.jpg]]
+#+ATTR_REVEAL: :frag (roll-in)
+    * Shared vision across products
+#+ATTR_REVEAL: :frag (roll-in)
+    * Treat channels as customers
+#+ATTR_REVEAL: :frag (roll-in)
+    * Treat other teams as customers
+#+ATTR_REVEAL: :frag (roll-in)
+    * 'T shaped people (not 'resources')
+#+ATTR_REVEAL: :frag (roll-in)
+    * Set percentage of 'technical payback' (or one week in 7)
+
+#+BEGIN_NOTES
+   * Think of how to divide responsibilies into services.
+   * Vision needs to be shared across product/services family to ensure they pull together.
+   * Channels like web, mobile, etc. should be treated as virtual customers with needs.
+   * Other service/platform teams should be reated as customers again feeding into team funnel
+   * Have team members with rounded experiences and multiple technical skills.
+   * Set a percentage of the teams 'velocity' for tech debt.
+#+END_NOTES

@@ -5,11 +5,12 @@
 #+DATE: 19 December 2014
 #+REVEAL_THEME: night
 #+REVEAL_TRANS: concave
-
+#+REVEAL_ROOT: reveal.js-2.6.2/
+#+REVEAL_PLUGINS: (highlight markdown notes)
 
 * Simple Slides
 ** This is a simple slide
-   
+
   I've put together a simple slide to prove I can.
   This slide is generated using org mode in emacs,
   exported to reveal.js.
@@ -33,7 +34,12 @@
   This slide has an image of Spock.
 
   [[./img/Spock.jpg]]
-  
+
+  #+BEGIN_NOTES
+    I've added some speaker notes to this slide.
+    More notes.
+  #+END_NOTES
+
 * Thank you
 
   Chris Howe-Jones
@@ -43,9 +49,3 @@
   Twitter: =@agile_geek=
 
   Github: https://www.github.com/chrishowejones
-
-
-
-
-
-  
