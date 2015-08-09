@@ -175,3 +175,15 @@ Promotes:
    * Have team members with rounded experiences and multiple technical skills.
    * Set a percentage of the teams 'velocity' for tech debt.
 #+END_NOTES
+
+* Credits
+
+  Email: =chris.howejones@gmail.com=
+
+  Twitter: =@agile_geek=
+
+  Github: =github.com/chrishowejones=
+
+  Presentation: =github.com/chrishowejones/presentations=
+
+  Blog: =chrishowejones.wordpress.com=
