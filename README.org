@@ -2,3 +2,8 @@
 
   This is a repo of my presentations written in org-mode and published
   using org-reveal and reveal.js .
+
+** Usage
+
+  Clone the presentation repo and then open the appropriate
+  directories .html file.
