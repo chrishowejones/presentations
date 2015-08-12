@@ -4,10 +4,11 @@
 #+EMAIL: @agile_geek
 #+DATE:  11th August
 #+REVEAL_SLIDE_NUMBER: false
-#+REVEAL_THEME: moon
+#+REVEAL_THEME: league
 #+REVEAL_TRANS: default
 #+REVEAL_HLEVEL: 2
 #+REVEAL_CENTER: true
+#+REVEAL_ROOT: reveal.js
 #+REVEAL_PLUGINS: (highlight markdown notes)
 
 * Projects kill /Agile/ -Development
