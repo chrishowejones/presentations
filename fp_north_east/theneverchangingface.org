@@ -1,0 +1,36 @@
+#+OPTIONS: toc:nil num:nil
+#+TITLE: The Never Changing Face of Immutability
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  15th December 2015
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_THEME: league
+#+REVEAL_TRANS: default
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: reveal.js
+#+REVEAL_PLUGINS: (highlight markdown notes)
+
+
+#+BEGIN_NOTES
+    * History
+      - book keeping - double entry. Didn't change in place.
+      - 50's, 60's memory expensive resource (dates? picture of large old machine)
+      - Swapping instructions in and out of memory - tape -> disk
+      - 70's, 80's and 90's secondary storage expensive - rise of RDBMS
+      - memory still reasonably expensive
+      - In place computing as resources scarce
+      - 00's and 2010's disk cheaper, memory very cheap.
+      - in parallel the rise of OOP - objects with data and behaviour
+    * Why immutability?
+      - What does mutation bring (picture of three eyed fish from Simpsons _ other pop culture references)
+      - Can't stand in same river twice (where is origin of quote?)
+      - Complecting the concepts of identity and value particularly OO and RDBMS in trad. use.
+      - Issues of concurrency. Complex values are changed underneath you.
+      - Optimisations - (dig out graph of Om compared with React.js)
+    * What does it look like?
+      - Examples in:
+        + Clojurescript - UI state as a value
+        + Clojure - server state as value and a chain of functions
+        + Datomic - database as a value - local cache, peer to peer
+#+END_NOTES

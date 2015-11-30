@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Test presentation</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+
+<link rel="stylesheet" href="reveal.js-2.6.2/css/reveal.css"/>
+<link rel="stylesheet" href="reveal.js-2.6.2/css/theme/night.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js-2.6.2/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Test presentation</h1>
+<h2>Chris Howe-Jones</h2>
+<h2><a href="mailto:chris.howejones@gmail.com">chris.howejones@gmail.com</a></h2>
+<h2>19 December 2014</h2>
+</section>
+
+<section>
+<section id="slide-sec-1">
+<h2 id="sec-1">Simple Slides</h2>
+<div class="outline-text-2" id="text-1">
+</div></section>
+<section id="slide-sec-1-1">
+<h3 id="sec-1-1">This is a simple slide</h3>
+<p>
+I've put together a simple slide to prove I can.
+This slide is generated using org mode in emacs,
+exported to reveal.js.
+</p>
+
+</section>
+<section id="slide-sec-1-2">
+<h3 id="sec-1-2">Includes code</h3>
+<p>
+I wanted to include a 'Hello World' code snippet for Clojure.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-clojure"><span style="color: #8b0000;">(</span><span style="color: #FBDE2D;">defn</span> <span style="color: #ff1493;">hello-world</span> <span style="color: #006400;">[</span>name<span style="color: #006400;">]</span>
+  <span style="color: #006400;">(</span>println <span style="color: #61CE3C;">"Hello,"</span> name<span style="color: #006400;">)</span><span style="color: #8b0000;">)</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-sec-1-3">
+<h3 id="sec-1-3">Slide with link</h3>
+<p>
+This slide has a link to my
+<a href="http://github.com/chrishowejones">Github Account</a>
+</p>
+
+</section>
+<section id="slide-sec-1-4">
+<h3 id="sec-1-4">Slide including an image</h3>
+<p>
+This slide has an image of Spock.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/Spock.jpg" alt="Spock.jpg" />
+</p>
+</div>
+
+<aside class="notes">
+<p>
+I've added some speaker notes to this slide.
+More notes.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-2">
+<h2 id="sec-2">Thank you</h2>
+<p>
+Chris Howe-Jones
+</p>
+
+<p>
+Email: <code>chris.howejones@gmail.com</code>
+</p>
+
+<p>
+Twitter: <code>@agile_geek</code>
+</p>
+
+<p>
+Github: <a href="https://www.github.com/chrishowejones">https://www.github.com/chrishowejones</a>
+</p>
+</section>
+</section>
+</div>
+</div>
+
+<script src="reveal.js-2.6.2/lib/js/head.min.js"></script>
+<script src="reveal.js-2.6.2/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'reveal.js-2.6.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'reveal.js-2.6.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js-2.6.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js-2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
+</body>
+</html>
