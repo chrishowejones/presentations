@@ -11,8 +11,137 @@
 #+REVEAL_ROOT: reveal.js
 #+REVEAL_PLUGINS: (highlight markdown notes)
 
+* The Never Changing Face of Immutability
+
+   [[./immutable-defined.png]]
 
 #+BEGIN_NOTES
+  * 1st law of Clojure talks
+  * Any talk with Clojure in it must have some entomology
+#+END_NOTES
+*** Who am I?
+
+   Name:      =Chris Howe-Jones=
+
+   Job Title: =Technical Navigator=
+
+   Twitter:   =@agile_geek=
+
+   Github:    =github.com/chrishowejones=
+
+   Blog:      =chrishowejones.wordpress.com=
+
+*** Credentials
+
+   * 28 years of pushing data around
+   * Procedural/OOP/FP
+   * Architecture & Design
+   * RAD/Agile/Lean
+   * CTO
+
+** History Lesson
+
+   [[./John-McCarthy.jpg]]
+
+#+BEGIN_NOTES
+  * Who is this?
+  * John McCarthy
+     - developed Lisp
+     - influenced design of ALGOL
+     - invented GC
+     - created term AI
+     - first to suggest publicly the idea of utility computing
+     - credited with developing an early form of time-sharing
+#+END_NOTES
+
+** Once upon a time..
+
+   [[./book-keepers.jpg]]
+
+   Book Keeping
+#+ATTR_REVEAL: :frag (roll-in)
+   * List of entries in a ledger
+#+ATTR_REVEAL: :frag (roll-in)
+   * No 'crossing out'!
+
+*** Dawn of Computing
+
+   [[./EDSAC.jpg]]
+
+   * Math
+   * Transient storage
+
+#+BEGIN_NOTES
+   * EDSAC - Electronic Delay Storage Automatic Calculator
+   * Cambridge 1949 - early general purpose electronic programmable computer (ENIAC 1946 was 1st)
+   * Storage - mecury delay lines, derated vacuum tubes for logic
+   * n 1950, M. V. Wilkes and Wheeler used EDSAC to solve a differential equation relating to gene frequencies in a paper by Ronald Fisher. This represents the first use of a computer for a problem in the field of biology.
+   * In 1951, Miller and Wheeler used the machine to discover a 79-digit prime – the largest known at the time.
+   * In 1952, Sandy Douglas developed OXO, a version of noughts and crosses (tic-tac-toe) for the EDSAC, with graphical output to a VCR97 6" cathode ray tube. This may well have been the world's first video game.
+#+END_NOTES
+
+*** 60's-90's
+
+    [[./1960s-computer.jpg]]
+
+  * Spot the expense?
+#+ATTR_REVEAL: :frag (roll-in)
+  * Memory
+#+ATTR_REVEAL: :frag (roll-in)
+  * Tape
+#+ATTR_REVEAL: :frag (roll-in)
+  * Disk
+
+
+*** 21st Century
+
+   [[./pair-programming.png]]
+
+   Spot the expense?
+#+ATTR_REVEAL: :frag (roll-in)
+  * Developers
+#+ATTR_REVEAL: :frag (roll-in)
+  Cheap resources: SSD/Disk, Memory, CPU
+
+
+** And..
+
+   [[./fry-so.jpg]]
+
+*** In place computing
+
+   [[./core_memory.jpg]]
+
+#+ATTR_REVEAL: :frag (roll-in)
+  * Update data in place
+#+ATTR_REVEAL: :frag (roll-in)
+  * Reuse expensive real estate
+
+#+BEGIN_NOTES
+  * Magnetic core memory 1955-75
+  * Core uses tiny magnetic toroids (rings), the cores, through which wires are threaded to write and read information.
+  * Each core represents one bit of information.
+  * Magnetized in 2 directions (clockwise/counterclockwise) to represent 1 or 0
+#+END_NOTES
+
+*** RDBMS
+
+   [[./disk-pack.jpg]]
+
+#+ATTR_REVEAL: :frag (roll-in)
+   * Data updated
+#+ATTR_REVEAL: :frag (roll-in)
+   * Values overwritten
+#+ATTR_REVEAL: :frag (roll-in)
+   * Reuse memory and disk
+
+#+BEGIN_NOTES
+   * Disk pack - invented 1965
+   * IBM Engineers - Thomas G. Leary and R. E. Pattison
+   * Probably about 50MB on this one.
+#+END_NOTES
+
+#+Begin_NOTES
     * History
       - book keeping - double entry. Didn't change in place.
       - 50's, 60's memory expensive resource (dates? picture of large old machine)
@@ -34,3 +163,5 @@
         + Clojure - server state as value and a chain of functions
         + Datomic - database as a value - local cache, peer to peer
 #+END_NOTES
+
+***

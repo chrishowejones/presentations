@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>The Never Changing Face of Immutability</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+<link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme"/>
+<link rel="stylesheet" href=""/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>The Never Changing Face of Immutability</h1>
+<h2>Chris Howe-Jones</h2>
+<h2><a href="mailto:@agile_geek">@agile_geek</a></h2>
+<h2>15th December 2015</h2>
+</section>
+
+<section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">The Never Changing Face of Immutability</h2>
+
+<div class="figure">
+<p><img src="./immutable-defined.png" alt="immutable-defined.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>1st law of Clojure talks</li>
+<li>Any talk with Clojure in it must have some entomology</li>
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgheadline1">
+<h4 id="orgheadline1">Who am I?</h4>
+<p>
+Name:      <code>Chris Howe-Jones</code>
+</p>
+
+<p>
+Job Title: <code>Technical Navigator</code>
+</p>
+
+<p>
+Twitter:   <code>@agile_geek</code>
+</p>
+
+<p>
+Github:    <code>github.com/chrishowejones</code>
+</p>
+
+<p>
+Blog:      <code>chrishowejones.wordpress.com</code>
+</p>
+
+</section>
+<section id="slide-orgheadline2">
+<h4 id="orgheadline2">Credentials</h4>
+<ul>
+<li>28 years of pushing data around</li>
+<li>Procedural/OOP/FP</li>
+<li>Architecture &amp; Design</li>
+<li>RAD/Agile/Lean</li>
+<li>CTO</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">History Lesson</h3>
+
+<div class="figure">
+<p><img src="./John-McCarthy.jpg" alt="John-McCarthy.jpg" />
+</p>
+</div>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>Who is this?</li>
+<li>John McCarthy
+<ul class="org-ul">
+<li>developed Lisp</li>
+<li>influenced design of ALGOL</li>
+<li>invented GC</li>
+<li>created term AI</li>
+<li>first to suggest publicly the idea of utility computing</li>
+<li>credited with developing an early form of time-sharing</li>
+</ul></li>
+</ul>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Once upon a time..</h3>
+
+<div class="figure">
+<p><img src="./book-keepers.jpg" alt="book-keepers.jpg" />
+</p>
+</div>
+
+<p>
+Book Keeping
+</p>
+<ul>
+<li class="fragment roll-in">List of entries in a ledger</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">No 'crossing out'!</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline4">
+<h4 id="orgheadline4">Dawn of Computing</h4>
+
+<div class="figure">
+<p><img src="./EDSAC.jpg" alt="EDSAC.jpg" />
+</p>
+</div>
+
+<ul>
+<li>Math</li>
+<li>Transient storage</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>EDSAC - Electronic Delay Storage Automatic Calculator</li>
+<li>Cambridge 1949 - early general purpose electronic programmable computer (ENIAC 1946 was 1st)</li>
+<li>Storage - mecury delay lines, derated vacuum tubes for logic</li>
+<li>n 1950, M. V. Wilkes and Wheeler used EDSAC to solve a differential equation relating to gene frequencies in a paper by Ronald Fisher. This represents the first use of a computer for a problem in the field of biology.</li>
+<li>In 1951, Miller and Wheeler used the machine to discover a 79-digit prime – the largest known at the time.</li>
+<li>In 1952, Sandy Douglas developed OXO, a version of noughts and crosses (tic-tac-toe) for the EDSAC, with graphical output to a VCR97 6" cathode ray tube. This may well have been the world's first video game.</li>
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline5">
+<h4 id="orgheadline5">60's-90's</h4>
+
+<div class="figure">
+<p><img src="./1960s-computer.jpg" alt="1960s-computer.jpg" />
+</p>
+</div>
+
+<ul>
+<li>Spot the expense?</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Memory</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Tape</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Disk</li>
+
+</ul>
+
+
+</section>
+<section id="slide-orgheadline6">
+<h4 id="orgheadline6">21st Century</h4>
+
+<div class="figure">
+<p><img src="./pair-programming.png" alt="pair-programming.png" />
+</p>
+</div>
+
+<p>
+Spot the expense?
+</p>
+<ul>
+<li class="fragment roll-in">Developers</li>
+
+</ul>
+<p class="fragment (roll-in)">
+Cheap resources: SSD/Disk, Memory, CPU
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">And..</h3>
+
+<div class="figure">
+<p><img src="./fry-so.jpg" alt="fry-so.jpg" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline8">
+<h4 id="orgheadline8">In place computing</h4>
+
+<div class="figure">
+<p><img src="./core_memory.jpg" alt="core_memory.jpg" />
+</p>
+</div>
+
+<ul>
+<li class="fragment roll-in">Update data in place</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Reuse expensive real estate</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>Magnetic core memory 1955-75</li>
+<li>Core uses tiny magnetic toroids (rings), the cores, through which wires are threaded to write and read information.</li>
+<li>Each core represents one bit of information.</li>
+<li>Magnetized in 2 directions (clockwise/counterclockwise) to represent 1 or 0</li>
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline9">
+<h4 id="orgheadline9">RDBMS</h4>
+
+<div class="figure">
+<p><img src="./disk-pack.jpg" alt="disk-pack.jpg" />
+</p>
+</div>
+
+<ul>
+<li class="fragment roll-in">Data updated</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Values overwritten</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Reuse memory and disk</li>
+
+</ul>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>Disk pack - invented 1965</li>
+<li>IBM Engineers - Thomas G. Leary and R. E. Pattison</li>
+<li>Probably about 50MB on this one.</li>
+</ul>
+
+</aside>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>History
+<ul class="org-ul">
+<li>book keeping - double entry. Didn't change in place.</li>
+<li>50's, 60's memory expensive resource (dates? picture of large old machine)</li>
+<li>Swapping instructions in and out of memory - tape -&gt; disk</li>
+<li>70's, 80's and 90's secondary storage expensive - rise of RDBMS</li>
+<li>memory still reasonably expensive</li>
+<li>In place computing as resources scarce</li>
+<li>00's and 2010's disk cheaper, memory very cheap.</li>
+<li>in parallel the rise of OOP - objects with data and behaviour</li>
+</ul></li>
+<li>Why immutability?
+<ul class="org-ul">
+<li>What does mutation bring (picture of three eyed fish from Simpsons _ other pop culture references)</li>
+<li>Can't stand in same river twice (where is origin of quote?)</li>
+<li>Complecting the concepts of identity and value particularly OO and RDBMS in trad. use.</li>
+<li>Issues of concurrency. Complex values are changed underneath you.</li>
+<li>Optimisations - (dig out graph of Om compared with React.js)</li>
+</ul></li>
+<li>What does it look like?
+<ul class="org-ul">
+<li>Examples in:
+<ul class="org-ul">
+<li>Clojurescript - UI state as a value</li>
+<li>Clojure - server state as value and a chain of functions</li>
+<li>Datomic - database as a value - local cache, peer to peer</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</aside>
+
+<p>
+<b>*</b>
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
