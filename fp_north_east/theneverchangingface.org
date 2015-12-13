@@ -11,7 +11,7 @@
 #+REVEAL_MAX_SCALE: 2.5
 #+OPTIONS: reveal_center:nil
 #+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
-#+REVEAL_THEME: moon
+#+REVEAL_THEME: league
 #+REVEAL_TRANS: convex
 #+REVEAL_HLEVEL: 2
 #+REVEAL_CENTER: true
@@ -161,7 +161,7 @@ In place computing relies on...
 
 *** Mutation
 
-   [[./mutation.jpg]]
+    [[./mutation.jpg]]
 
 *** Which leads to..
 
@@ -180,7 +180,7 @@ In place computing relies on...
 
 ** Immutability (and values) to the rescue!
 
-   [[./lambda_man.jpg]]
+   [[./lambda-man.jpg]]
 
 *** Structural Sharing
 
@@ -272,7 +272,6 @@ In place computing relies on...
                 :format          (ajax/json-request-format)
                 :response-format (ajax/json-response-format)}))
 #+END_SRC
-
 
 *** Efficiency
 
@@ -398,6 +397,15 @@ In place computing relies on...
     }
   ...
 #+END_SRC
+
+** Conclusion?
+   [[./you-cant-step.jpg]]
+   * Immutability simplifies
+   * State as function call stack
+   * Mostly pure functions
+      - Easier to test & reason about
+   * Time as first class concept
+   * Easier to distribute
 
 #+BEGIN_NOTES
     * History

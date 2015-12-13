@@ -5,7 +5,7 @@
 <title>The Never Changing Face of Immutability</title>
 <meta name="author" content="(Chris Howe-Jones)"/>
 <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
-<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme"/>
 <link rel="stylesheet" href=""/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -48,8 +48,8 @@ There will be History!
 </section>
 </section>
 <section>
-<section id="slide-orgheadline26">
-<h2 id="orgheadline26">The Never Changing Face of Immutability</h2>
+<section id="slide-orgheadline27">
+<h2 id="orgheadline27">The Never Changing Face of Immutability</h2>
 
 <div class="figure">
 <p><img src="./immutable-defined.png" alt="immutable-defined.png" />
@@ -342,7 +342,7 @@ In place computing relies on&#x2026;
 <h3 id="orgheadline17">Immutability (and values) to the rescue!</h3>
 
 <div class="figure">
-<p><img src="./lambda_man.jpg" alt="lambda_man.jpg" />
+<p><img src="./lambda-man.jpg" alt="lambda-man.jpg" />
 </p>
 </div>
 
@@ -461,7 +461,6 @@ In place computing relies on&#x2026;
               <span style="color: #3aff83;">:response-format</span> <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">ajax</span><span style="color: #bebebe; background-color: #000000;">/</span>json-response-format<span style="color: #acfb5a;">)</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 </pre>
 </div>
-
 
 </section>
 <section id="slide-orgheadline19">
@@ -612,7 +611,7 @@ In place computing relies on&#x2026;
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-clojure"><span style="color: #bebebe;">[</span><span style="color: #3aff83;">:find</span> ?e <span style="color: #3aff83;">:where</span> <span style="color: #5af2ee;">[</span>?e <span style="color: #3aff83;">:likes</span> &#8220;pizza&#8221;<span style="color: #5af2ee;">]</span><span style="color: #bebebe;">]</span>
+<pre  class="src src-clojure"><span style="color: #bebebe;">[</span><span style="color: #3aff83;">:find</span> ?e <span style="color: #3aff83;">:where</span> <span style="color: #5af2ee;">[</span>?e <span style="color: #3aff83;">:likes</span> &#8220;<span style="color: #b2baf6;">Clojure</span>&#8221;<span style="color: #5af2ee;">]</span><span style="color: #bebebe;">]</span>
 </pre>
 </div>
 
@@ -678,6 +677,29 @@ In place computing relies on&#x2026;
 ...
 </pre>
 </div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline26">
+<h3 id="orgheadline26">Conclusion?</h3>
+
+<div class="figure">
+<p><img src="./you-cant-step.jpg" alt="you-cant-step.jpg" />
+</p>
+</div>
+<ul>
+<li>Immutability simplifies</li>
+<li>State as function call stack</li>
+<li>Mostly pure functions
+<ul>
+<li>Easier to test &amp; reason about</li>
+
+</ul></li>
+<li>Time as first class concept</li>
+<li>Easier to distribute</li>
+
+</ul>
 
 <aside class="notes">
 <ul class="org-ul">
