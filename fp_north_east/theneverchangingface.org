@@ -1,24 +1,38 @@
 #+OPTIONS: toc:nil num:nil
+#+OPTIONS: reveal_width:1200
+#+OPTIONS: reveal_height:800
 #+TITLE: The Never Changing Face of Immutability
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  15th December 2015
 #+REVEAL_SLIDE_NUMBER: false
-#+REVEAL_THEME: league
-#+REVEAL_TRANS: default
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.4
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:nil
+#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: convex
 #+REVEAL_HLEVEL: 2
 #+REVEAL_CENTER: true
 #+REVEAL_ROOT: reveal.js
-#+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_PLUGINS: (markdown notes)
+
+* Warning!!
+
+   There will be a Lisp!
+   There will be Entomology!
+   There will be History!
+#+BEGIN_NOTES
+  * 1st law of Clojure talks
+  * Any talk with Clojure in it must have some entomology
+#+END_NOTES
+
 
 * The Never Changing Face of Immutability
 
    [[./immutable-defined.png]]
 
-#+BEGIN_NOTES
-  * 1st law of Clojure talks
-  * Any talk with Clojure in it must have some entomology
-#+END_NOTES
 *** Who am I?
 
    Name:      =Chris Howe-Jones=
@@ -141,7 +155,173 @@
    * Probably about 50MB on this one.
 #+END_NOTES
 
-#+Begin_NOTES
+** Result?
+
+In place computing relies on...
+
+*** Mutation
+
+   [[./mutation.jpg]]
+
+*** Which leads to..
+
+   [[./complect.png]]
+
+*** Complect
+
+   [[./plaiting.jpg]]
+
+#+ATTR_REVEAL: :frag (roll-in)
+   * Complecting Identity & Value
+#+ATTR_REVEAL: :frag (roll-in)
+   * Especially RDBMS, OOP
+#+ATTR_REVEAL: :frag (roll-in)
+   * Pessimistic concurrency strategies
+
+** Immutability (and values) to the rescue!
+
+   [[./lambda_man.jpg]]
+
+*** Structural Sharing
+
+   [[./Purely_functional_tree_after.svg]]
+
+   * More efficient memory management
+
+** What does it look like?
+
+   * Immutable by default
+   * Explicit state change
+
+*** ClojureScript on the client
+
+#+BEGIN_SRC clojure
+    (defonce state
+      (atom
+       {:event {:name "event"
+                :description ""
+                :location {:street-address ""
+                           :postcode ""}
+                :date ""
+                :start-time ""
+                :end-time ""
+                :speaker ""} :saved? false}))
+#+END_SRC
+#+REVEAL: split
+
+#+BEGIN_SRC clojure
+  (defn new-event-form
+    "Render a form to enter a new event."
+    []
+    (let [event-state (atom {:name ""
+                             :description ""
+                             :location {:street-address "" :postcode ""}
+                             :date ""
+                             :start-time ""
+                             :end-time ""
+                             :speaker ""})]
+      (fn []
+        [:div
+         {:style {:display :flex
+                  :margin "20px"
+                  :flex-direction :column
+                  :align-items :center}}
+         [text-input :name event-state "Event name" [:name]]
+         [text-area :description event-state]
+         [location-input :location event-state]
+         [text-input :date event-state]
+         [text-input :start-time event-state]
+         [text-input :end-time event-state]
+         [text-input :speaker event-state]
+         [:div
+          {:style {:display :flex
+                   :margin "20px"
+                   :flex-direction :column
+                   :align-items :center}}
+          [:button.btn.btn-success
+           {:on-click
+            (fn [_]
+              (go (>! event-channel @event-state)))}
+           "Create"]]])))
+#+END_SRC
+
+#+REVEAL: split
+
+#+BEGIN_SRC clojure
+  (defonce save-event
+    (go-loop []
+      (let [event (<! event-channel)]
+        (swap! state assoc :event event)
+        (post-event event)
+        (recur))))
+#+END_SRC
+#+BEGIN_SRC clojure
+  (defn post-event
+    "Post a new event to the server."
+    [event]
+    (ajax/POST "/q"
+               {:params          {:type  :create-event
+                                  :event event}
+                :handler         (fn [response]
+                                   (set! (.-hash (.-location js/window))
+                                     (str "/event/" (response "id"))))
+                :error-hander    (fn [& args] (println "NOT OK" args))
+                :format          (ajax/json-request-format)
+                :response-format (ajax/json-response-format)}))
+#+END_SRC
+
+
+*** Efficiency
+
+   [[./todomvc-perf-comparison.png]]
+
+** Clojure on the server
+
+#+BEGIN_SRC clojure
+  (defn- handle-query
+    [db-conn]
+    (fn [{req-body :body-params}]
+      {:body (case (:type req-body)
+               :get-events (data/get-events db-conn)
+               :create-event (data/create-entity db-conn (:txn-data req-body)))
+       :create-user  (data/create-entity db-conn (:txn-data req-body))}))
+
+  (defn app [dbconn]
+    (-> (routes
+         (GET "/" [] home-page)
+         (POST "/q" []
+               (handle-query dbconn))
+         (resources "/"))
+        (wrap-restful-format :formats [:edn :transit-json])
+        (rmd/wrap-defaults (-> rmd/site-defaults
+                               (assoc-in [:security :anti-forgery] false)))))
+#+END_SRC
+
+*** Persistence
+
+#+BEGIN_SRC clojure
+  (defn create-entity
+    "Takes transaction data and returns the resolved tempid"
+    [con tx-data]
+    (let [had-id (contains? tx-data ":db/id")
+          data-with-id (if had-id
+                         tx-data
+                         (assoc tx-data :db/id #db/id[:db.part/user -1000001]))
+          tx @(d/transact con [data-with-id])]
+      (if had-id (tx-data ":db/id")
+          (d/resolve-tempid (d/db con) (:tempids tx)
+                            (d/tempid :db.part/user -1000001)))))
+#+END_SRC
+
+** Datomic for Data
+
+   * Database as a value.
+
+*** Database as a value
+
+
+
+#+BEGIN_NOTES
     * History
       - book keeping - double entry. Didn't change in place.
       - 50's, 60's memory expensive resource (dates? picture of large old machine)
@@ -163,5 +343,3 @@
         + Clojure - server state as value and a chain of functions
         + Datomic - database as a value - local cache, peer to peer
 #+END_NOTES
-
-***
