@@ -184,9 +184,12 @@ In place computing relies on...
 
 *** Structural Sharing
 
-   [[./Purely_functional_tree_after.svg]]
+   [[./clojure-persistent-data-structures-sharing.png]]
 
    * More efficient memory management
+   * persistent bit-partitioned vector trie
+   * 32 node tries
+   * Wide shallow trees
 
 ** What does it look like?
 
@@ -315,11 +318,86 @@ In place computing relies on...
 
 ** Datomic for Data
 
-   * Database as a value.
+   [[./datomic-architecture.png]]
+
+   * App get's its own query, comms, memory- Each App is a peer
+
+#+BEGIN_NOTES
+   * Apps are peers
+   * Transactor broadcasts txns to peers
+   * Peers cache data locally
+#+END_NOTES
 
 *** Database as a value
 
+    | Entity | Attribute | Value   | Time       |
+    |--------+-----------+---------+------------|
+    | Fiona  | likes     | Ruby    | 01/06/2015 |
+    | Dave   | likes     | Haskell | 25/09/2015 |
+    | Fiona  | likes     | Clojure | 15/12/2015 |
+    |        |           |         |            |
+    |--------+-----------+---------+------------|
+    |        |           |         |            |
 
+   * Effectively DB is local
+   * Datalog query language
+#+BEGIN_SRC clojure
+[:find ?e :where [?e :likes “Clojure”]]
+#+END_SRC
+
+#+BEGIN_NOTES
+   * Ask connection for database - it returns a value representing the db
+   * This is because datoms are immutable - new versions thru time
+   * Can invoke your own code from query engine as data is just normal data structures (lists, maps, etc.)
+#+END_NOTES
+
+*** Schema
+
+#+BEGIN_SRC clojure
+   ;;event
+   {
+    :db/id                 #db/id[:db.part/db]
+    :db/ident              :event/name
+    :db/cardinality        :db.cardinality/one
+    :db/valueType          :db.type/string
+    :db/unique             :db.unique/identity
+    :db.install/_attribute :db.part/db
+    }
+   {
+    :db/id                 #db/id[:db.part/db]
+    :db/ident              :event/description
+    :db/cardinality        :db.cardinality/one
+    :db/valueType          :db.type/string
+    :db.install/_attribute :db.part/db
+    }
+   {
+    :db/id                 #db/id[:db.part/db]
+    :db/ident              :event/location
+    :db/cardinality        :db.cardinality/one
+    :db/valueType          :db.type/ref
+    :db.install/_attribute :db.part/db
+    }
+  ...
+#+END_SRC
+#+REVEAL: split
+#+BEGIN_SRC clojure
+  ;;location
+   {
+    :db/id                 #db/id[:db.part/db]
+    :db/ident              :location/postCode
+    :db/cardinality        :db.cardinality/one
+    :db/valueType          :db.type/string
+    :db.install/_attribute :db.part/db
+    }
+   {
+    :db/id                 #db/id[:db.part/db]
+    :db/ident              :location/description
+    :db/cardinality        :db.cardinality/one
+    :db/valueType          :db.type/string
+    :db.install/_attribute :db.part/db
+    }
+  ...
+#+END_SRC
 
 #+BEGIN_NOTES
     * History
