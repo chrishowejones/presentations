@@ -48,8 +48,8 @@ There will be History!
 </section>
 </section>
 <section>
-<section id="slide-orgheadline27">
-<h2 id="orgheadline27">The Never Changing Face of Immutability</h2>
+<section id="slide-orgheadline28">
+<h2 id="orgheadline28">The Never Changing Face of Immutability</h2>
 
 <div class="figure">
 <p><img src="./immutable-defined.png" alt="immutable-defined.png" />
@@ -289,10 +289,10 @@ Cheap resources: SSD/Disk, Memory, CPU
 </section>
 </section>
 <section>
-<section id="slide-orgheadline15">
-<h3 id="orgheadline15">Result?</h3>
+<section id="slide-orgheadline16">
+<h3 id="orgheadline16">Result?</h3>
 <p>
-In place computing relies on&#x2026;
+In place oriented programming (PLOP) relies on&#x2026;
 </p>
 
 </section>
@@ -336,10 +336,24 @@ In place computing relies on&#x2026;
 </ul>
 
 </section>
+<section id="slide-orgheadline15">
+<h4 id="orgheadline15">What's changed?</h4>
+
+<div class="figure">
+<p><img src="./ExponentialGrowthofComputationalPower_0.png" alt="ExponentialGrowthofComputationalPower_0.png" />
+</p>
+</div>
+
+<ul>
+<li>Computing capacity has increased by a million fold!</li>
+
+</ul>
+
+</section>
 </section>
 <section>
-<section id="slide-orgheadline17">
-<h3 id="orgheadline17">Immutability (and values) to the rescue!</h3>
+<section id="slide-orgheadline18">
+<h3 id="orgheadline18">Immutability (and values) to the rescue!</h3>
 
 <div class="figure">
 <p><img src="./lambda-man.jpg" alt="lambda-man.jpg" />
@@ -347,8 +361,8 @@ In place computing relies on&#x2026;
 </div>
 
 </section>
-<section id="slide-orgheadline16">
-<h4 id="orgheadline16">Structural Sharing</h4>
+<section id="slide-orgheadline17">
+<h4 id="orgheadline17">Structural Sharing</h4>
 
 <div class="figure">
 <p><img src="./clojure-persistent-data-structures-sharing.png" alt="clojure-persistent-data-structures-sharing.png" />
@@ -366,17 +380,18 @@ In place computing relies on&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgheadline20">
-<h3 id="orgheadline20">What does it look like?</h3>
+<section id="slide-orgheadline21">
+<h3 id="orgheadline21">What does it look like?</h3>
 <ul>
 <li>Immutable by default</li>
 <li>Explicit state change</li>
+<li>Database as a value</li>
 
 </ul>
 
 </section>
-<section id="slide-orgheadline18">
-<h4 id="orgheadline18">ClojureScript on the client</h4>
+<section id="slide-orgheadline19">
+<h4 id="orgheadline19">ClojureScript on the client</h4>
 <div class="org-src-container">
 
 <pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defonce</span> <span style="color: #f6df92;">state</span>
@@ -399,7 +414,7 @@ In place computing relies on&#x2026;
 <pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">new-event-form</span>
   <span style="color: #c350ff;">"Render a form to enter a new event."</span>
   <span style="color: #5af2ee;">[]</span>
-  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>event-state <span style="color: #acfb5a;">(</span>atom <span style="color: #b2baf6;">{</span><span style="color: #3aff83;">:name</span> <span style="color: #ff5f87;">""</span>
+  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>event-state <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">atom</span> <span style="color: #b2baf6;">{</span><span style="color: #3aff83;">:name</span> <span style="color: #ff5f87;">""</span>
                            <span style="color: #3aff83;">:description</span> <span style="color: #ff5f87;">""</span>
                            <span style="color: #3aff83;">:location</span> <span style="color: #bebebe;">{</span><span style="color: #3aff83;">:street-address</span> <span style="color: #ff5f87;">""</span> <span style="color: #3aff83;">:postcode</span> <span style="color: #ff5f87;">""</span><span style="color: #bebebe;">}</span>
                            <span style="color: #3aff83;">:date</span> <span style="color: #ff5f87;">""</span>
@@ -412,7 +427,7 @@ In place computing relies on&#x2026;
                 <span style="color: #3aff83;">:margin</span> <span style="color: #ff5f87;">"20px"</span>
                 <span style="color: #3aff83;">:flex-direction</span> <span style="color: #3aff83;">:column</span>
                 <span style="color: #3aff83;">:align-items</span> <span style="color: #3aff83;">:center</span><span style="color: #bebebe;">}</span><span style="color: #b2baf6;">}</span>
-       <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:name</span> event-state <span style="color: #ff5f87;">"Event name"</span> <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:name</span><span style="color: #bebebe;">]</span><span style="color: #b2baf6;">]</span>
+       <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:name</span> event-state <span style="color: #ff5f87;">"Event </span><span style="color: #ff5f87;">name</span><span style="color: #ff5f87;">"</span> <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:name</span><span style="color: #bebebe;">]</span><span style="color: #b2baf6;">]</span>
        <span style="color: #b2baf6;">[</span>text-area <span style="color: #3aff83;">:description</span> event-state<span style="color: #b2baf6;">]</span>
        <span style="color: #b2baf6;">[</span>location-input <span style="color: #3aff83;">:location</span> event-state<span style="color: #b2baf6;">]</span>
        <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:date</span> event-state<span style="color: #b2baf6;">]</span>
@@ -440,7 +455,7 @@ In place computing relies on&#x2026;
 <pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defonce</span> <span style="color: #f6df92;">save-event</span>
   <span style="color: #5af2ee;">(</span>go-loop <span style="color: #f6df92;">[]</span>
     <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #acfb5a;">[</span>event <span style="color: #b2baf6;">(</span>&lt;! event-channel<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">]</span>
-      <span style="color: #acfb5a;">(</span>swap! state assoc <span style="color: #3aff83;">:event</span> event<span style="color: #acfb5a;">)</span>
+      <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">swap!</span> state <span style="color: #f09fff;">assoc</span> <span style="color: #3aff83;">:event</span> event<span style="color: #acfb5a;">)</span>
       <span style="color: #acfb5a;">(</span>post-event event<span style="color: #acfb5a;">)</span>
       <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">recur</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 </pre>
@@ -455,16 +470,16 @@ In place computing relies on&#x2026;
                                 <span style="color: #3aff83;">:event</span> event<span style="color: #acfb5a;">}</span>
               <span style="color: #3aff83;">:handler</span>         <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #b2baf6;">[</span>response<span style="color: #b2baf6;">]</span>
                                  <span style="color: #b2baf6;">(</span><span style="color: #5af2ee;">set!</span> <span style="color: #bebebe;">(</span><span style="color: #d020a7;">.-hash</span> <span style="color: #5af2ee;">(</span><span style="color: #d020a7;">.-location</span> <span style="color: #b2baf6;">js</span><span style="color: #bebebe; background-color: #000000;">/</span>window<span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
-                                   <span style="color: #bebebe;">(</span>str <span style="color: #ff5f87;">"/event/"</span> <span style="color: #5af2ee;">(</span>response <span style="color: #ff5f87;">"id"</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
-              <span style="color: #3aff83;">:error-hander</span>    <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #b2baf6;">[</span>&amp; args<span style="color: #b2baf6;">]</span> <span style="color: #b2baf6;">(</span>println <span style="color: #ff5f87;">"NOT OK"</span> args<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
+                                   <span style="color: #bebebe;">(</span><span style="color: #f09fff;">str</span> <span style="color: #ff5f87;">"/event/"</span> <span style="color: #5af2ee;">(</span>response <span style="color: #ff5f87;">"id"</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
+              <span style="color: #3aff83;">:error-hander</span>    <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #b2baf6;">[</span>&amp; args<span style="color: #b2baf6;">]</span> <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">println</span> <span style="color: #ff5f87;">"NOT OK"</span> args<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
               <span style="color: #3aff83;">:format</span>          <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">ajax</span><span style="color: #bebebe; background-color: #000000;">/</span>json-request-format<span style="color: #acfb5a;">)</span>
               <span style="color: #3aff83;">:response-format</span> <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">ajax</span><span style="color: #bebebe; background-color: #000000;">/</span>json-response-format<span style="color: #acfb5a;">)</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 </pre>
 </div>
 
 </section>
-<section id="slide-orgheadline19">
-<h4 id="orgheadline19">Efficiency</h4>
+<section id="slide-orgheadline20">
+<h4 id="orgheadline20">Efficiency</h4>
 
 <div class="figure">
 <p><img src="./todomvc-perf-comparison.png" alt="todomvc-perf-comparison.png" />
@@ -474,8 +489,8 @@ In place computing relies on&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgheadline22">
-<h3 id="orgheadline22">Clojure on the server</h3>
+<section id="slide-orgheadline23">
+<h3 id="orgheadline23">Clojure on the server</h3>
 <div class="org-src-container">
 
 <pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn-</span> <span style="color: #f09fff;">handle-query</span>
@@ -488,28 +503,28 @@ In place computing relies on&#x2026;
 
 <span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">app</span> <span style="color: #5af2ee;">[</span>dbconn<span style="color: #5af2ee;">]</span>
   <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">-&gt;</span> <span style="color: #f6df92;">(</span>routes
-       <span style="color: #acfb5a;">(</span><span style="color: #3aff83;">GET</span> <span style="color: #ff5f87;">"/"</span> <span style="color: #b2baf6;">[]</span> home-page<span style="color: #acfb5a;">)</span>
+       <span style="color: #acfb5a;">(</span><span style="color: #3aff83;">GET</span> <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">/</span><span style="color: #ff5f87;">"</span> <span style="color: #b2baf6;">[]</span> home-page<span style="color: #acfb5a;">)</span>
        <span style="color: #acfb5a;">(</span><span style="color: #3aff83;">POST</span> <span style="color: #ff5f87;">"/q"</span> <span style="color: #b2baf6;">[]</span>
              <span style="color: #b2baf6;">(</span>handle-query dbconn<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
-       <span style="color: #acfb5a;">(</span>resources <span style="color: #ff5f87;">"/"</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span>
+       <span style="color: #acfb5a;">(</span>resources <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">/</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span>
       <span style="color: #f6df92;">(</span>wrap-restful-format <span style="color: #3aff83;">:formats</span> <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:edn</span> <span style="color: #3aff83;">:transit-json</span><span style="color: #acfb5a;">]</span><span style="color: #f6df92;">)</span>
       <span style="color: #f6df92;">(</span><span style="color: #b2baf6;">rmd</span><span style="color: #bebebe; background-color: #000000;">/</span>wrap-defaults <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">-&gt;</span> <span style="color: #b2baf6;">rmd</span><span style="color: #bebebe; background-color: #000000;">/</span>site-defaults
-                             <span style="color: #b2baf6;">(</span>assoc-in <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:security</span> <span style="color: #3aff83;">:anti-forgery</span><span style="color: #bebebe;">]</span> <span style="color: #3aff83;">false</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+                             <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">assoc-in</span> <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:security</span> <span style="color: #3aff83;">:anti-forgery</span><span style="color: #bebebe;">]</span> <span style="color: #3aff83;">false</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 </pre>
 </div>
 
 </section>
-<section id="slide-orgheadline21">
-<h4 id="orgheadline21">Persistence</h4>
+<section id="slide-orgheadline22">
+<h4 id="orgheadline22">Persistence</h4>
 <div class="org-src-container">
 
 <pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">create-entity</span>
   <span style="color: #c350ff;">"Takes transaction data and returns the resolved tempid"</span>
   <span style="color: #5af2ee;">[</span>con tx-data<span style="color: #5af2ee;">]</span>
-  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>had-id <span style="color: #acfb5a;">(</span>contains? tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
+  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>had-id <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">contains?</span> tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
         data-with-id <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">if</span> had-id
                        tx-data
-                       <span style="color: #b2baf6;">(</span>assoc tx-data <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">id</span> #<span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span>id<span style="color: #bebebe;">[</span><span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #bebebe;">]</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
+                       <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">assoc</span> tx-data <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">id</span> #<span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span>id<span style="color: #bebebe;">[</span><span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #bebebe;">]</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
         tx @<span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>transact con <span style="color: #b2baf6;">[</span>data-with-id<span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">]</span>
     <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">if</span> had-id <span style="color: #acfb5a;">(</span>tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
         <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>resolve-tempid <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>db con<span style="color: #b2baf6;">)</span> <span style="color: #b2baf6;">(</span><span style="color: #3aff83;">:tempids</span> tx<span style="color: #b2baf6;">)</span>
@@ -520,8 +535,8 @@ In place computing relies on&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgheadline25">
-<h3 id="orgheadline25">Datomic for Data</h3>
+<section id="slide-orgheadline26">
+<h3 id="orgheadline26">Datomic for Data</h3>
 
 <div class="figure">
 <p><img src="./datomic-architecture.png" alt="datomic-architecture.png" />
@@ -543,8 +558,8 @@ In place computing relies on&#x2026;
 </aside>
 
 </section>
-<section id="slide-orgheadline23">
-<h4 id="orgheadline23">Database as a value</h4>
+<section id="slide-orgheadline24">
+<h4 id="orgheadline24">Database as a value</h4>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -625,8 +640,8 @@ In place computing relies on&#x2026;
 </aside>
 
 </section>
-<section id="slide-orgheadline24">
-<h4 id="orgheadline24">Schema</h4>
+<section id="slide-orgheadline25">
+<h4 id="orgheadline25">Schema</h4>
 <div class="org-src-container">
 
 <pre  class="src src-clojure"> <span style="color: #f6df92;">;;</span><span style="color: #efc334;">event</span>
@@ -681,8 +696,8 @@ In place computing relies on&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgheadline26">
-<h3 id="orgheadline26">Conclusion?</h3>
+<section id="slide-orgheadline27">
+<h3 id="orgheadline27">Conclusion?</h3>
 
 <div class="figure">
 <p><img src="./you-cant-step.jpg" alt="you-cant-step.jpg" />
@@ -698,6 +713,30 @@ In place computing relies on&#x2026;
 </ul></li>
 <li>Time as first class concept</li>
 <li>Easier to distribute</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline29">
+<h2 id="orgheadline29">Resources</h2>
+<ul>
+<li>Rich Hickey talk -
+<ul>
+<li>'The Value of Values'</li>
+<li>'The Language of the System'</li>
+<li>'Simple Made Easy'</li>
+<li>'Clojure, Made Simple'</li>
+<li>'The Database as a Value'</li>
+<li>'The Language of Systems'</li>
+
+</ul></li>
+<li>Kris Jenkins
+<ul>
+<li>'ClojureScript - Architecting for Scale' (Clojure eXchange 2015)</li>
+
+</ul></li>
 
 </ul>
 

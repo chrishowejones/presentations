@@ -157,7 +157,7 @@
 
 ** Result?
 
-In place computing relies on...
+In place oriented programming (PLOP) relies on...
 
 *** Mutation
 
@@ -178,23 +178,30 @@ In place computing relies on...
 #+ATTR_REVEAL: :frag (roll-in)
    * Pessimistic concurrency strategies
 
+*** What's changed?
+   [[./historical_cost_graph5.gif]]
+
+   * Computing capacity has increased by a million fold!
+
 ** Immutability (and values) to the rescue!
 
    [[./lambda-man.jpg]]
 
-*** Structural Sharing
+*** Isn't copying values inefficient?
 
    [[./clojure-persistent-data-structures-sharing.png]]
 
-   * More efficient memory management
-   * persistent bit-partitioned vector trie
-   * 32 node tries
-   * Wide shallow trees
+   * Structural sharing
+   * For example in Clojure:
+     - persistent bit-partitioned vector trie
+     - 32 node tries
+     - Wide shallow trees
 
 ** What does it look like?
 
    * Immutable by default
    * Explicit state change
+   * Database as a value
 
 *** ClojureScript on the client
 
@@ -406,6 +413,18 @@ In place computing relies on...
       - Easier to test & reason about
    * Time as first class concept
    * Easier to distribute
+
+* Resources
+
+  * Rich Hickey talk -
+    - 'The Value of Values'
+    - 'The Language of the System'
+    - 'Simple Made Easy'
+    - 'Clojure, Made Simple'
+    - 'The Database as a Value'
+    - 'The Language of Systems'
+  * Kris Jenkins
+    - 'ClojureScript - Architecting for Scale' (Clojure eXchange 2015)
 
 #+BEGIN_NOTES
     * History
