@@ -31,11 +31,12 @@
 <section>
 <section id="slide-orgheadline1">
 <h2 id="orgheadline1">Warning!!</h2>
-<p>
-There will be a Lisp!
-There will be Entomology!
-There will be History!
-</p>
+<ul>
+<li>There will be a Lisp!</li>
+<li>There will be Entomology!</li>
+<li>There will be History!</li>
+
+</ul>
 <aside class="notes">
 <ul class="org-ul">
 <li>1st law of Clojure talks</li>
@@ -48,8 +49,8 @@ There will be History!
 </section>
 </section>
 <section>
-<section id="slide-orgheadline28">
-<h2 id="orgheadline28">The Never Changing Face of Immutability</h2>
+<section id="slide-orgheadline29">
+<h2 id="orgheadline29">The Never Changing Face of Immutability</h2>
 
 <div class="figure">
 <p><img src="./immutable-defined.png" alt="immutable-defined.png" />
@@ -340,7 +341,7 @@ In place oriented programming (PLOP) relies on&#x2026;
 <h4 id="orgheadline15">What's changed?</h4>
 
 <div class="figure">
-<p><img src="./ExponentialGrowthofComputationalPower_0.png" alt="ExponentialGrowthofComputationalPower_0.png" />
+<p><img src="./historical_cost_graph5.gif" alt="historical_cost_graph5.gif" />
 </p>
 </div>
 
@@ -352,8 +353,8 @@ In place oriented programming (PLOP) relies on&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgheadline18">
-<h3 id="orgheadline18">Immutability (and values) to the rescue!</h3>
+<section id="slide-orgheadline19">
+<h3 id="orgheadline19">Immutability (and values) to the rescue!</h3>
 
 <div class="figure">
 <p><img src="./lambda-man.jpg" alt="lambda-man.jpg" />
@@ -362,7 +363,24 @@ In place oriented programming (PLOP) relies on&#x2026;
 
 </section>
 <section id="slide-orgheadline17">
-<h4 id="orgheadline17">Structural Sharing</h4>
+<h4 id="orgheadline17">Values</h4>
+
+<div class="figure">
+<p><img src="./values.jpeg" alt="values.jpeg" />
+</p>
+</div>
+<ul>
+<li>Values are generic</li>
+<li>Values are easy to fabricate</li>
+<li>Drives reuse</li>
+<li>Values aggregate to values</li>
+<li>Distributable</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline18">
+<h4 id="orgheadline18">Isn't copying values inefficient?</h4>
 
 <div class="figure">
 <p><img src="./clojure-persistent-data-structures-sharing.png" alt="clojure-persistent-data-structures-sharing.png" />
@@ -370,18 +388,22 @@ In place oriented programming (PLOP) relies on&#x2026;
 </div>
 
 <ul>
-<li>More efficient memory management</li>
+<li>Structural sharing</li>
+<li>For example in Clojure:
+<ul>
 <li>persistent bit-partitioned vector trie</li>
 <li>32 node tries</li>
 <li>Wide shallow trees</li>
+
+</ul></li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline21">
-<h3 id="orgheadline21">What does it look like?</h3>
+<section id="slide-orgheadline22">
+<h3 id="orgheadline22">What does it look like?</h3>
 <ul>
 <li>Immutable by default</li>
 <li>Explicit state change</li>
@@ -390,96 +412,77 @@ In place oriented programming (PLOP) relies on&#x2026;
 </ul>
 
 </section>
-<section id="slide-orgheadline19">
-<h4 id="orgheadline19">ClojureScript on the client</h4>
-<div class="org-src-container">
-
-<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defonce</span> <span style="color: #f6df92;">state</span>
-  <span style="color: #5af2ee;">(</span>atom
-   <span style="color: #f6df92;">{</span><span style="color: #3aff83;">:event</span> <span style="color: #acfb5a;">{</span><span style="color: #3aff83;">:name</span> <span style="color: #ff5f87;">"event"</span>
-            <span style="color: #3aff83;">:description</span> <span style="color: #ff5f87;">""</span>
-            <span style="color: #3aff83;">:location</span> <span style="color: #b2baf6;">{</span><span style="color: #3aff83;">:street-address</span> <span style="color: #ff5f87;">""</span>
-                       <span style="color: #3aff83;">:postcode</span> <span style="color: #ff5f87;">""</span><span style="color: #b2baf6;">}</span>
-            <span style="color: #3aff83;">:date</span> <span style="color: #ff5f87;">""</span>
-            <span style="color: #3aff83;">:start-time</span> <span style="color: #ff5f87;">""</span>
-            <span style="color: #3aff83;">:end-time</span> <span style="color: #ff5f87;">""</span>
-            <span style="color: #3aff83;">:speaker</span> <span style="color: #ff5f87;">""</span><span style="color: #acfb5a;">}</span> <span style="color: #3aff83;">:saved?</span> <span style="color: #3aff83;">false</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
-</pre>
-</div>
-</section>
-<section>
-
-<div class="org-src-container">
-
-<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">new-event-form</span>
-  <span style="color: #c350ff;">"Render a form to enter a new event."</span>
-  <span style="color: #5af2ee;">[]</span>
-  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>event-state <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">atom</span> <span style="color: #b2baf6;">{</span><span style="color: #3aff83;">:name</span> <span style="color: #ff5f87;">""</span>
-                           <span style="color: #3aff83;">:description</span> <span style="color: #ff5f87;">""</span>
-                           <span style="color: #3aff83;">:location</span> <span style="color: #bebebe;">{</span><span style="color: #3aff83;">:street-address</span> <span style="color: #ff5f87;">""</span> <span style="color: #3aff83;">:postcode</span> <span style="color: #ff5f87;">""</span><span style="color: #bebebe;">}</span>
-                           <span style="color: #3aff83;">:date</span> <span style="color: #ff5f87;">""</span>
-                           <span style="color: #3aff83;">:start-time</span> <span style="color: #ff5f87;">""</span>
-                           <span style="color: #3aff83;">:end-time</span> <span style="color: #ff5f87;">""</span>
-                           <span style="color: #3aff83;">:speaker</span> <span style="color: #ff5f87;">""</span><span style="color: #b2baf6;">}</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">]</span>
-    <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #acfb5a;">[]</span>
-      <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:div</span>
-       <span style="color: #b2baf6;">{</span><span style="color: #3aff83;">:style</span> <span style="color: #bebebe;">{</span><span style="color: #3aff83;">:display</span> <span style="color: #3aff83;">:flex</span>
-                <span style="color: #3aff83;">:margin</span> <span style="color: #ff5f87;">"20px"</span>
-                <span style="color: #3aff83;">:flex-direction</span> <span style="color: #3aff83;">:column</span>
-                <span style="color: #3aff83;">:align-items</span> <span style="color: #3aff83;">:center</span><span style="color: #bebebe;">}</span><span style="color: #b2baf6;">}</span>
-       <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:name</span> event-state <span style="color: #ff5f87;">"Event </span><span style="color: #ff5f87;">name</span><span style="color: #ff5f87;">"</span> <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:name</span><span style="color: #bebebe;">]</span><span style="color: #b2baf6;">]</span>
-       <span style="color: #b2baf6;">[</span>text-area <span style="color: #3aff83;">:description</span> event-state<span style="color: #b2baf6;">]</span>
-       <span style="color: #b2baf6;">[</span>location-input <span style="color: #3aff83;">:location</span> event-state<span style="color: #b2baf6;">]</span>
-       <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:date</span> event-state<span style="color: #b2baf6;">]</span>
-       <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:start-time</span> event-state<span style="color: #b2baf6;">]</span>
-       <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:end-time</span> event-state<span style="color: #b2baf6;">]</span>
-       <span style="color: #b2baf6;">[</span>text-input <span style="color: #3aff83;">:speaker</span> event-state<span style="color: #b2baf6;">]</span>
-       <span style="color: #b2baf6;">[</span><span style="color: #3aff83;">:div</span>
-        <span style="color: #bebebe;">{</span><span style="color: #3aff83;">:style</span> <span style="color: #5af2ee;">{</span><span style="color: #3aff83;">:display</span> <span style="color: #3aff83;">:flex</span>
-                 <span style="color: #3aff83;">:margin</span> <span style="color: #ff5f87;">"20px"</span>
-                 <span style="color: #3aff83;">:flex-direction</span> <span style="color: #3aff83;">:column</span>
-                 <span style="color: #3aff83;">:align-items</span> <span style="color: #3aff83;">:center</span><span style="color: #5af2ee;">}</span><span style="color: #bebebe;">}</span>
-        <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:button.btn.btn-success</span>
-         <span style="color: #5af2ee;">{</span><span style="color: #3aff83;">:on-click</span>
-          <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #acfb5a;">[</span>_<span style="color: #acfb5a;">]</span>
-            <span style="color: #acfb5a;">(</span>go <span style="color: #bebebe;">(</span>&gt;! event-channel @event-state<span style="color: #bebebe;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">}</span>
-         <span style="color: #ff5f87;">"Create"</span><span style="color: #bebebe;">]</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">]</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
-</pre>
-</div>
-
-</section>
-<section>
-
-<div class="org-src-container">
-
-<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defonce</span> <span style="color: #f6df92;">save-event</span>
-  <span style="color: #5af2ee;">(</span>go-loop <span style="color: #f6df92;">[]</span>
-    <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #acfb5a;">[</span>event <span style="color: #b2baf6;">(</span>&lt;! event-channel<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">]</span>
-      <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">swap!</span> state <span style="color: #f09fff;">assoc</span> <span style="color: #3aff83;">:event</span> event<span style="color: #acfb5a;">)</span>
-      <span style="color: #acfb5a;">(</span>post-event event<span style="color: #acfb5a;">)</span>
-      <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">recur</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
-</pre>
-</div>
-<div class="org-src-container">
-
-<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">post-event</span>
-  <span style="color: #c350ff;">"Post a new event to the server."</span>
-  <span style="color: #5af2ee;">[</span>event<span style="color: #5af2ee;">]</span>
-  <span style="color: #5af2ee;">(</span><span style="color: #b2baf6;">ajax</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">POST</span> <span style="color: #ff5f87;">"/q"</span>
-             <span style="color: #f6df92;">{</span><span style="color: #3aff83;">:params</span>          <span style="color: #acfb5a;">{</span><span style="color: #3aff83;">:type</span>  <span style="color: #3aff83;">:create-event</span>
-                                <span style="color: #3aff83;">:event</span> event<span style="color: #acfb5a;">}</span>
-              <span style="color: #3aff83;">:handler</span>         <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #b2baf6;">[</span>response<span style="color: #b2baf6;">]</span>
-                                 <span style="color: #b2baf6;">(</span><span style="color: #5af2ee;">set!</span> <span style="color: #bebebe;">(</span><span style="color: #d020a7;">.-hash</span> <span style="color: #5af2ee;">(</span><span style="color: #d020a7;">.-location</span> <span style="color: #b2baf6;">js</span><span style="color: #bebebe; background-color: #000000;">/</span>window<span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
-                                   <span style="color: #bebebe;">(</span><span style="color: #f09fff;">str</span> <span style="color: #ff5f87;">"/event/"</span> <span style="color: #5af2ee;">(</span>response <span style="color: #ff5f87;">"id"</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
-              <span style="color: #3aff83;">:error-hander</span>    <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #b2baf6;">[</span>&amp; args<span style="color: #b2baf6;">]</span> <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">println</span> <span style="color: #ff5f87;">"NOT OK"</span> args<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
-              <span style="color: #3aff83;">:format</span>          <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">ajax</span><span style="color: #bebebe; background-color: #000000;">/</span>json-request-format<span style="color: #acfb5a;">)</span>
-              <span style="color: #3aff83;">:response-format</span> <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">ajax</span><span style="color: #bebebe; background-color: #000000;">/</span>json-response-format<span style="color: #acfb5a;">)</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
-</pre>
-</div>
-
-</section>
 <section id="slide-orgheadline20">
-<h4 id="orgheadline20">Efficiency</h4>
+<h4 id="orgheadline20">ClojureScript on the client</h4>
+<div class="org-src-container">
+
+<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">def</span> <span style="color: #f6df92;">initial-state</span>
+  <span style="color: #5af2ee;">{</span><span style="color: #3aff83;">:event</span> <span style="color: #f6df92;">{</span><span style="color: #3aff83;">:</span><span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">name</span> <span style="color: #ff5f87;">""</span> <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">speaker</span> <span style="color: #ff5f87;">""</span><span style="color: #f6df92;">}</span> <span style="color: #3aff83;">:server-state</span> <span style="color: #3aff83;">nil</span><span style="color: #5af2ee;">}</span><span style="color: #bebebe;">)</span>
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn-</span> <span style="color: #f09fff;">event-form</span>
+  <span style="color: #5af2ee;">[</span>ui-channel <span style="color: #f6df92;">{</span><span style="color: #3aff83;">:keys</span> <span style="color: #acfb5a;">[</span><span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span>name <span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span>speaker<span style="color: #acfb5a;">]</span> <span style="color: #3aff83;">:as</span> event<span style="color: #f6df92;">}</span><span style="color: #5af2ee;">]</span>
+  <span style="color: #5af2ee;">[</span><span style="color: #3aff83;">:table.table</span>
+   <span style="color: #f6df92;">[</span><span style="color: #3aff83;">:tr</span>
+    <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:td</span> <span style="color: #b2baf6;">[</span><span style="color: #3aff83;">:label</span> <span style="color: #ff5f87;">"Event name:"</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">]</span>
+    <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:td</span> <span style="color: #b2baf6;">[</span><span style="color: #3aff83;">:input</span> <span style="color: #bebebe;">{</span><span style="color: #3aff83;">:type</span> <span style="color: #3aff83;">:text</span>
+                  <span style="color: #3aff83;">:placeholder</span> <span style="color: #ff5f87;">"Event name..."</span>
+                  <span style="color: #3aff83;">:defaultValue</span> <span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span>name
+                  <span style="color: #3aff83;">:on-change</span> <span style="color: #5af2ee;">(</span>send-value! ui-channel <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span>-&gt;ChangeEventName<span style="color: #5af2ee;">)</span><span style="color: #bebebe;">}</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">]</span><span style="color: #f6df92;">]</span>
+   <span style="color: #f6df92;">[</span><span style="color: #3aff83;">:tr</span>
+    <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:td</span> <span style="color: #b2baf6;">[</span><span style="color: #3aff83;">:label</span> <span style="color: #ff5f87;">"Speaker:"</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">]</span>
+    <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:td</span> <span style="color: #b2baf6;">[</span><span style="color: #3aff83;">:input</span> <span style="color: #bebebe;">{</span><span style="color: #3aff83;">:type</span> <span style="color: #3aff83;">:text</span>
+                  <span style="color: #3aff83;">:placeholder</span> <span style="color: #ff5f87;">"Speaker..."</span>
+                  <span style="color: #3aff83;">:defaultValue</span> <span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span>speaker
+                  <span style="color: #3aff83;">:on-change</span> <span style="color: #5af2ee;">(</span>send-value! ui-channel <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span>-&gt;ChangeEventSpeaker<span style="color: #5af2ee;">)</span><span style="color: #bebebe;">}</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">]</span><span style="color: #f6df92;">]</span>
+   <span style="color: #f6df92;">[</span><span style="color: #3aff83;">:tr</span>
+    <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:td</span>
+     <span style="color: #b2baf6;">[</span><span style="color: #3aff83;">:button.btn.btn-success</span>
+      <span style="color: #bebebe;">{</span><span style="color: #3aff83;">:on-click</span> <span style="color: #5af2ee;">(</span>send! ui-channel <span style="color: #f6df92;">(</span><span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span>-&gt;CreateEvent<span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">}</span>
+      <span style="color: #ff5f87;">"Go"</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">]</span><span style="color: #f6df92;">]</span><span style="color: #5af2ee;">]</span><span style="color: #bebebe;">)</span>
+</pre>
+</div>
+
+</section>
+<section>
+
+<div class="org-src-container">
+
+<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defrecord</span> <span style="color: #b2baf6;">ChangeEventName</span> <span style="color: #5af2ee;">[</span>name<span style="color: #5af2ee;">]</span><span style="color: #bebebe;">)</span>
+
+<span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defrecord</span> <span style="color: #b2baf6;">ChangeEventSpeaker</span> <span style="color: #5af2ee;">[</span>speaker<span style="color: #5af2ee;">]</span><span style="color: #bebebe;">)</span>
+
+<span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defrecord</span> <span style="color: #b2baf6;">CreateEvent</span> <span style="color: #5af2ee;">[</span>event<span style="color: #5af2ee;">]</span><span style="color: #bebebe;">)</span>
+
+<span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defrecord</span> <span style="color: #b2baf6;">CreateEventResults</span> <span style="color: #5af2ee;">[</span>body<span style="color: #5af2ee;">]</span><span style="color: #bebebe;">)</span>
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">extend-protocol</span> <span style="color: #b2baf6;">Message</span>
+  <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #b2baf6;">ChangeEventName</span>
+  <span style="color: #5af2ee;">(</span>process-message <span style="color: #f6df92;">[</span><span style="color: #acfb5a;">{</span><span style="color: #3aff83;">:keys</span> <span style="color: #b2baf6;">[</span><span style="color: #f09fff;">name</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">}</span> app<span style="color: #f6df92;">]</span>
+    <span style="color: #f6df92;">(</span><span style="color: #f09fff;">assoc-in</span> app <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:event</span> <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">name</span><span style="color: #acfb5a;">]</span> <span style="color: #f09fff;">name</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+<span style="color: #f6df92;">;; </span><span style="color: #efc334;">redacted for clarity ...</span>
+
+<span style="color: #bebebe;">(</span><span style="color: #5af2ee;">extend-protocol</span> <span style="color: #b2baf6;">EventSource</span>
+  <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #b2baf6;">CreateEvent</span>
+  <span style="color: #5af2ee;">(</span>watch-channels <span style="color: #f6df92;">[</span>_ <span style="color: #acfb5a;">{</span><span style="color: #3aff83;">:keys</span> <span style="color: #b2baf6;">[</span>event<span style="color: #b2baf6;">]</span>
+                      <span style="color: #3aff83;">:as</span> app<span style="color: #acfb5a;">}</span><span style="color: #f6df92;">]</span>
+    #<span style="color: #f6df92;">{</span><span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">rest</span><span style="color: #bebebe; background-color: #000000;">/</span>create-event event<span style="color: #acfb5a;">)</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+
+<span style="color: #bebebe;">(</span><span style="color: #5af2ee;">extend-protocol</span> <span style="color: #b2baf6;">Message</span>
+  <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #b2baf6;">CreateEventResults</span>
+  <span style="color: #5af2ee;">(</span>process-message <span style="color: #f6df92;">[</span>response app<span style="color: #f6df92;">]</span>
+    <span style="color: #f6df92;">(</span><span style="color: #f09fff;">assoc</span> app <span style="color: #3aff83;">:server-state</span> <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">-&gt;</span> response <span style="color: #3aff83;">:body</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgheadline21">
+<h4 id="orgheadline21">Efficiency</h4>
 
 <div class="figure">
 <p><img src="./todomvc-perf-comparison.png" alt="todomvc-perf-comparison.png" />
@@ -498,8 +501,8 @@ In place oriented programming (PLOP) relies on&#x2026;
   <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">fn</span> <span style="color: #f6df92;">[</span><span style="color: #acfb5a;">{</span>req-body <span style="color: #3aff83;">:body-params</span><span style="color: #acfb5a;">}</span><span style="color: #f6df92;">]</span>
     <span style="color: #f6df92;">{</span><span style="color: #3aff83;">:body</span> <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">case</span> <span style="color: #b2baf6;">(</span><span style="color: #3aff83;">:type</span> req-body<span style="color: #b2baf6;">)</span>
              <span style="color: #3aff83;">:get-events</span> <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">data</span><span style="color: #bebebe; background-color: #000000;">/</span>get-events db-conn<span style="color: #b2baf6;">)</span>
-             <span style="color: #3aff83;">:create-event</span> <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">data</span><span style="color: #bebebe; background-color: #000000;">/</span>create-entity db-conn <span style="color: #bebebe;">(</span><span style="color: #3aff83;">:txn-data</span> req-body<span style="color: #bebebe;">)</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
-     <span style="color: #3aff83;">:create-user</span>  <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">data</span><span style="color: #bebebe; background-color: #000000;">/</span>create-entity db-conn <span style="color: #b2baf6;">(</span><span style="color: #3aff83;">:txn-data</span> req-body<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+             <span style="color: #3aff83;">:create-event</span> <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">data</span><span style="color: #bebebe; background-color: #000000;">/</span>create-entity db-conn <span style="color: #bebebe;">(</span><span style="color: #3aff83;">:txn-data</span> req-body<span style="color: #bebebe;">)</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+
 
 <span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">app</span> <span style="color: #5af2ee;">[</span>dbconn<span style="color: #5af2ee;">]</span>
   <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">-&gt;</span> <span style="color: #f6df92;">(</span>routes
@@ -514,29 +517,10 @@ In place oriented programming (PLOP) relies on&#x2026;
 </div>
 
 </section>
-<section id="slide-orgheadline22">
-<h4 id="orgheadline22">Persistence</h4>
-<div class="org-src-container">
-
-<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">create-entity</span>
-  <span style="color: #c350ff;">"Takes transaction data and returns the resolved tempid"</span>
-  <span style="color: #5af2ee;">[</span>con tx-data<span style="color: #5af2ee;">]</span>
-  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>had-id <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">contains?</span> tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
-        data-with-id <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">if</span> had-id
-                       tx-data
-                       <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">assoc</span> tx-data <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">id</span> #<span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span>id<span style="color: #bebebe;">[</span><span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #bebebe;">]</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
-        tx @<span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>transact con <span style="color: #b2baf6;">[</span>data-with-id<span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">]</span>
-    <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">if</span> had-id <span style="color: #acfb5a;">(</span>tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
-        <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>resolve-tempid <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>db con<span style="color: #b2baf6;">)</span> <span style="color: #b2baf6;">(</span><span style="color: #3aff83;">:tempids</span> tx<span style="color: #b2baf6;">)</span>
-                          <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>tempid <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
-</pre>
-</div>
-
-</section>
 </section>
 <section>
-<section id="slide-orgheadline26">
-<h3 id="orgheadline26">Datomic for Data</h3>
+<section id="slide-orgheadline27">
+<h3 id="orgheadline27">Datomic for Data</h3>
 
 <div class="figure">
 <p><img src="./datomic-architecture.png" alt="datomic-architecture.png" />
@@ -692,12 +676,31 @@ In place oriented programming (PLOP) relies on&#x2026;
 ...
 </pre>
 </div>
+</section>
+<section id="slide-orgheadline26">
+<h4 id="orgheadline26">Persistence</h4>
+<div class="org-src-container">
+
+<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">create-entity</span>
+  <span style="color: #c350ff;">"Takes transaction data and returns the resolved tempid"</span>
+  <span style="color: #5af2ee;">[</span>conn tx-data<span style="color: #5af2ee;">]</span>
+  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>had-id <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">contains?</span> tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
+        data-with-id <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">if</span> had-id
+                       tx-data
+                       <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">assoc</span> tx-data <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">id</span> #<span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span>id<span style="color: #bebebe;">[</span><span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #bebebe;">]</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
+        tx @<span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>transact conn <span style="color: #b2baf6;">[</span>data-with-id<span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">]</span>
+    <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">if</span> had-id <span style="color: #acfb5a;">(</span>tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
+        <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>resolve-tempid <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>db conn<span style="color: #b2baf6;">)</span> <span style="color: #b2baf6;">(</span><span style="color: #3aff83;">:tempids</span> tx<span style="color: #b2baf6;">)</span>
+                          <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>tempid <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+</pre>
+</div>
+
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline27">
-<h3 id="orgheadline27">Conclusion?</h3>
+<section id="slide-orgheadline28">
+<h3 id="orgheadline28">Conclusion?</h3>
 
 <div class="figure">
 <p><img src="./you-cant-step.jpg" alt="you-cant-step.jpg" />
@@ -719,8 +722,8 @@ In place oriented programming (PLOP) relies on&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgheadline29">
-<h2 id="orgheadline29">Resources</h2>
+<section id="slide-orgheadline30">
+<h2 id="orgheadline30">Resources</h2>
 <ul>
 <li>Rich Hickey talk -
 <ul>
