@@ -411,6 +411,22 @@ In place oriented programming (PLOP) relies on&#x2026;
 
 </ul>
 
+<aside class="notes">
+<ul class="org-ul">
+<li>Make state change obvious</li>
+<li>Pass a snapshot of the database as a value
+<ul class="org-ul">
+<li>always remote</li>
+</ul></li>
+<li>Lack of Basis from database
+<ul class="org-ul">
+<li>consistency across long term conversations</li>
+<li>what does update mean?</li>
+</ul></li>
+</ul>
+
+</aside>
+
 </section>
 <section id="slide-orgheadline20">
 <h4 id="orgheadline20">ClojureScript on the client</h4>
@@ -461,22 +477,22 @@ In place oriented programming (PLOP) relies on&#x2026;
 </div>
 <div class="org-src-container">
 
-<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">extend-protocol</span> <span style="color: #b2baf6;">Message</span>
+<pre  class="src src-clojure"><span style="color: #bebebe;">(</span>extend-protocol <span style="color: #b2baf6;">Message</span>
   <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #b2baf6;">ChangeEventName</span>
-  <span style="color: #5af2ee;">(</span>process-message <span style="color: #f6df92;">[</span><span style="color: #acfb5a;">{</span><span style="color: #3aff83;">:keys</span> <span style="color: #b2baf6;">[</span><span style="color: #f09fff;">name</span><span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">}</span> app<span style="color: #f6df92;">]</span>
-    <span style="color: #f6df92;">(</span><span style="color: #f09fff;">assoc-in</span> app <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:event</span> <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">name</span><span style="color: #acfb5a;">]</span> <span style="color: #f09fff;">name</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+  <span style="color: #5af2ee;">(</span>process-message <span style="color: #f6df92;">[</span><span style="color: #acfb5a;">{</span><span style="color: #3aff83;">:keys</span> <span style="color: #b2baf6;">[</span>name<span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">}</span> app<span style="color: #f6df92;">]</span>
+    <span style="color: #f6df92;">(</span>assoc-in app <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:event</span> <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">name</span><span style="color: #acfb5a;">]</span> name<span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 <span style="color: #f6df92;">;; </span><span style="color: #efc334;">redacted for clarity ...</span>
 
-<span style="color: #bebebe;">(</span><span style="color: #5af2ee;">extend-protocol</span> <span style="color: #b2baf6;">EventSource</span>
+<span style="color: #bebebe;">(</span>extend-protocol <span style="color: #b2baf6;">EventSource</span>
   <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #b2baf6;">CreateEvent</span>
   <span style="color: #5af2ee;">(</span>watch-channels <span style="color: #f6df92;">[</span>_ <span style="color: #acfb5a;">{</span><span style="color: #3aff83;">:keys</span> <span style="color: #b2baf6;">[</span>event<span style="color: #b2baf6;">]</span>
                       <span style="color: #3aff83;">:as</span> app<span style="color: #acfb5a;">}</span><span style="color: #f6df92;">]</span>
     #<span style="color: #f6df92;">{</span><span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">rest</span><span style="color: #bebebe; background-color: #000000;">/</span>create-event event<span style="color: #acfb5a;">)</span><span style="color: #f6df92;">}</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 
-<span style="color: #bebebe;">(</span><span style="color: #5af2ee;">extend-protocol</span> <span style="color: #b2baf6;">Message</span>
+<span style="color: #bebebe;">(</span>extend-protocol <span style="color: #b2baf6;">Message</span>
   <span style="color: #b2baf6;">m</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #b2baf6;">CreateEventResults</span>
   <span style="color: #5af2ee;">(</span>process-message <span style="color: #f6df92;">[</span>response app<span style="color: #f6df92;">]</span>
-    <span style="color: #f6df92;">(</span><span style="color: #f09fff;">assoc</span> app <span style="color: #3aff83;">:server-state</span> <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">-&gt;</span> response <span style="color: #3aff83;">:body</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+    <span style="color: #f6df92;">(</span>assoc app <span style="color: #3aff83;">:server-state</span> <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">-&gt;</span> response <span style="color: #3aff83;">:body</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 </pre>
 </div>
 
@@ -506,13 +522,13 @@ In place oriented programming (PLOP) relies on&#x2026;
 
 <span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">app</span> <span style="color: #5af2ee;">[</span>dbconn<span style="color: #5af2ee;">]</span>
   <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">-&gt;</span> <span style="color: #f6df92;">(</span>routes
-       <span style="color: #acfb5a;">(</span><span style="color: #3aff83;">GET</span> <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">/</span><span style="color: #ff5f87;">"</span> <span style="color: #b2baf6;">[]</span> home-page<span style="color: #acfb5a;">)</span>
+       <span style="color: #acfb5a;">(</span><span style="color: #3aff83;">GET</span> <span style="color: #ff5f87;">"/"</span> <span style="color: #b2baf6;">[]</span> home-page<span style="color: #acfb5a;">)</span>
        <span style="color: #acfb5a;">(</span><span style="color: #3aff83;">POST</span> <span style="color: #ff5f87;">"/q"</span> <span style="color: #b2baf6;">[]</span>
              <span style="color: #b2baf6;">(</span>handle-query dbconn<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
-       <span style="color: #acfb5a;">(</span>resources <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">/</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span>
+       <span style="color: #acfb5a;">(</span>resources <span style="color: #ff5f87;">"/"</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span>
       <span style="color: #f6df92;">(</span>wrap-restful-format <span style="color: #3aff83;">:formats</span> <span style="color: #acfb5a;">[</span><span style="color: #3aff83;">:edn</span> <span style="color: #3aff83;">:transit-json</span><span style="color: #acfb5a;">]</span><span style="color: #f6df92;">)</span>
       <span style="color: #f6df92;">(</span><span style="color: #b2baf6;">rmd</span><span style="color: #bebebe; background-color: #000000;">/</span>wrap-defaults <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">-&gt;</span> <span style="color: #b2baf6;">rmd</span><span style="color: #bebebe; background-color: #000000;">/</span>site-defaults
-                             <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">assoc-in</span> <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:security</span> <span style="color: #3aff83;">:anti-forgery</span><span style="color: #bebebe;">]</span> <span style="color: #3aff83;">false</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+                             <span style="color: #b2baf6;">(</span>assoc-in <span style="color: #bebebe;">[</span><span style="color: #3aff83;">:security</span> <span style="color: #3aff83;">:anti-forgery</span><span style="color: #bebebe;">]</span> <span style="color: #3aff83;">false</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 </pre>
 </div>
 
@@ -619,6 +635,7 @@ In place oriented programming (PLOP) relies on&#x2026;
 <li>Ask connection for database - it returns a value representing the db</li>
 <li>This is because datoms are immutable - new versions thru time</li>
 <li>Can invoke your own code from query engine as data is just normal data structures (lists, maps, etc.)</li>
+<li>Assertions and retractions of facts (Datoms)</li>
 </ul>
 
 </aside>
@@ -684,17 +701,26 @@ In place oriented programming (PLOP) relies on&#x2026;
 <pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">create-entity</span>
   <span style="color: #c350ff;">"Takes transaction data and returns the resolved tempid"</span>
   <span style="color: #5af2ee;">[</span>conn tx-data<span style="color: #5af2ee;">]</span>
-  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>had-id <span style="color: #acfb5a;">(</span><span style="color: #f09fff;">contains?</span> tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
+  <span style="color: #5af2ee;">(</span><span style="color: #5af2ee;">let</span> <span style="color: #f6df92;">[</span>had-id <span style="color: #acfb5a;">(</span>contains? tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
         data-with-id <span style="color: #acfb5a;">(</span><span style="color: #5af2ee;">if</span> had-id
                        tx-data
-                       <span style="color: #b2baf6;">(</span><span style="color: #f09fff;">assoc</span> tx-data <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">id</span> #<span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span>id<span style="color: #bebebe;">[</span><span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #bebebe;">]</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
+                       <span style="color: #b2baf6;">(</span>assoc tx-data <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">id</span> #<span style="color: #b2baf6;">db</span><span style="color: #bebebe; background-color: #000000;">/</span>id<span style="color: #bebebe;">[</span><span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #bebebe;">]</span><span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span>
         tx @<span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>transact conn <span style="color: #b2baf6;">[</span>data-with-id<span style="color: #b2baf6;">]</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">]</span>
     <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">if</span> had-id <span style="color: #acfb5a;">(</span>tx-data <span style="color: #ff5f87;">"</span><span style="color: #ff5f87;">:db/id</span><span style="color: #ff5f87;">"</span><span style="color: #acfb5a;">)</span>
         <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>resolve-tempid <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>db conn<span style="color: #b2baf6;">)</span> <span style="color: #b2baf6;">(</span><span style="color: #3aff83;">:tempids</span> tx<span style="color: #b2baf6;">)</span>
                           <span style="color: #b2baf6;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>tempid <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">db.part</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">user</span> -1000001<span style="color: #b2baf6;">)</span><span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
 </pre>
 </div>
+<div class="org-src-container">
 
+<pre  class="src src-clojure"><span style="color: #bebebe;">(</span><span style="color: #5af2ee;">defn</span> <span style="color: #f09fff;">get-events</span> <span style="color: #5af2ee;">[</span>db<span style="color: #5af2ee;">]</span>
+  <span style="color: #5af2ee;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>pull-many db <span style="color: #f6df92;">[</span><span style="color: #3aff83;">:*</span><span style="color: #f6df92;">]</span>
+               <span style="color: #f6df92;">(</span><span style="color: #5af2ee;">-&gt;&gt;</span> <span style="color: #acfb5a;">(</span><span style="color: #b2baf6;">d</span><span style="color: #bebebe; background-color: #000000;">/</span>q '<span style="color: #b2baf6;">{</span><span style="color: #3aff83;">:find</span> <span style="color: #bebebe;">[</span>?event-id<span style="color: #bebebe;">]</span>
+                           <span style="color: #3aff83;">:where</span> <span style="color: #bebebe;">[</span><span style="color: #5af2ee;">[</span>?event-id <span style="color: #3aff83;">:</span><span style="color: #b2baf6;">event</span><span style="color: #bebebe; background-color: #000000;">/</span><span style="color: #3aff83;">name</span><span style="color: #5af2ee;">]</span><span style="color: #bebebe;">]</span><span style="color: #b2baf6;">}</span>
+                         db<span style="color: #acfb5a;">)</span>
+                    <span style="color: #acfb5a;">(</span>map first<span style="color: #acfb5a;">)</span><span style="color: #f6df92;">)</span><span style="color: #5af2ee;">)</span><span style="color: #bebebe;">)</span>
+</pre>
+</div>
 
 </section>
 </section>
@@ -725,7 +751,7 @@ In place oriented programming (PLOP) relies on&#x2026;
 <section id="slide-orgheadline30">
 <h2 id="orgheadline30">Resources</h2>
 <ul>
-<li>Rich Hickey talk -
+<li>Rich Hickey talks -
 <ul>
 <li>'The Value of Values'</li>
 <li>'The Language of the System'</li>
@@ -735,6 +761,7 @@ In place oriented programming (PLOP) relies on&#x2026;
 <li>'The Language of Systems'</li>
 
 </ul></li>
+<li>Moseley and Marks - Out of the Tar Pit</li>
 <li>Kris Jenkins
 <ul>
 <li>'ClojureScript - Architecting for Scale' (Clojure eXchange 2015)</li>

@@ -212,6 +212,15 @@ In place oriented programming (PLOP) relies on...
    * Explicit state change
    * Database as a value
 
+#+BEGIN_NOTES
+   * Make state change obvious
+   * Pass a snapshot of the database as a value
+      - always remote
+   * Lack of Basis from database
+      - consistency across long term conversations
+      - what does update mean?
+#+END_NOTES
+
 *** ClojureScript on the client
 
 #+BEGIN_SRC clojure
@@ -330,6 +339,7 @@ In place oriented programming (PLOP) relies on...
    * Ask connection for database - it returns a value representing the db
    * This is because datoms are immutable - new versions thru time
    * Can invoke your own code from query engine as data is just normal data structures (lists, maps, etc.)
+   * Assertions and retractions of facts (Datoms)
 #+END_NOTES
 
 *** Schema
@@ -394,7 +404,14 @@ In place oriented programming (PLOP) relies on...
           (d/resolve-tempid (d/db conn) (:tempids tx)
                             (d/tempid :db.part/user -1000001)))))
 #+END_SRC
-
+#+BEGIN_SRC clojure
+  (defn get-events [db]
+    (d/pull-many db [:*]
+                 (->> (d/q '{:find [?event-id]
+                             :where [[?event-id :event/name]]}
+                           db)
+                      (map first))))
+#+END_SRC
 
 ** Conclusion?
    [[./you-cant-step.jpg]]
@@ -414,6 +431,7 @@ In place oriented programming (PLOP) relies on...
     - 'Clojure, Made Simple'
     - 'The Database as a Value'
     - 'The Language of Systems'
+  * Moseley and Marks - Out of the Tar Pit
   * Kris Jenkins
     - 'ClojureScript - Architecting for Scale' (Clojure eXchange 2015)
 
