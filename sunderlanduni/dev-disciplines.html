@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Developer Disciplines</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+<link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="reveal.js/css/theme/blood.css" id="theme"/>
+<link rel="stylesheet" href=""/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Developer Disciplines</h1>
+<h2>Chris Howe-Jones</h2>
+<h2><a href="mailto:@agile_geek">@agile_geek</a></h2>
+<h2>14th March 2016</h2>
+</section>
+
+<section>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10">Developer Disciplines</h2>
+<p class="fragment (roll-in)">
+Who wants to be a Developer?
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Developer</h3>
+<ul>
+<li class="fragment roll-in">What makes a 'Developer'?</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Why it matters?</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">Why am I qualified to talk to you?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Who am I?</h3>
+<p>
+Name:      <code>Chris Howe-Jones</code>
+</p>
+
+<p>
+Job Title: <code>Technical Navigator</code>
+</p>
+
+<p>
+Twitter:   <code>@agile_geek</code>
+</p>
+
+<p>
+Github:    <code>github.com/chrishowejones</code>
+</p>
+
+<p>
+Blog:      <code>chrishowejones.wordpress.com</code>
+</p>
+
+</section>
+<section id="slide-orgheadline2">
+<h4 id="orgheadline2">Worked for?</h4>
+
+<div class="figure">
+<p><img src="./employers.png" alt="employers.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline3">
+<h4 id="orgheadline3">Jobs?</h4>
+
+<div class="figure">
+<p><img src="./jobs.png" alt="jobs.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline4">
+<h4 id="orgheadline4">Languages?</h4>
+
+<div class="figure">
+<p><img src="./languages.png" alt="languages.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline5">
+<h4 id="orgheadline5">Technologies and Disciplines?</h4>
+
+<div class="figure">
+<p><img src="./technologies.png" alt="technologies.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">What Disciplines?</h3>
+<p>
+Don't I just need to program?
+</p>
+
+<p>
+What else do I need?
+</p>
+
+</section>
+<section id="slide-orgheadline7">
+<h4 id="orgheadline7">Multi-Disciplined Teams</h4>
+<ul>
+<li>Developers/Programmers</li>
+<li>Testers/QA</li>
+<li>Business Analysts</li>
+<li>Scrum Masters</li>
+<li>Product Owners</li>
+<li>Project Managers</li>
+<li>Tech Leads</li>
+<li>Team Leaders</li>
+<li>Product Managers</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline8">
+<h4 id="orgheadline8">Complex Environment</h4>
+<ul>
+<li>Polyglot Programming
+<ul>
+<li>multiple languages</li>
+
+</ul></li>
+<li>Polyglot Persistence
+<ul>
+<li>multiple persistence technologies</li>
+
+</ul></li>
+<li>Cloud Deployment
+<ul>
+<li>elastic virtualised environments</li>
+<li>servers on demand</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.10,
+minScale: 0.40,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+#+OPTIONS: toc:nil num:nil
+#+OPTIONS: reveal_width:1200
+#+OPTIONS: reveal_height:800
+#+TITLE: Developer Disciplines
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  14th March 2016
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.4
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:t
+#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
+#+REVEAL_THEME: blood
+#+REVEAL_TRANS: convex
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: reveal.js
+#+REVEAL_PLUGINS: (markdown notes)
+
+* Developer Disciplines
+
+#+ATTR_REVEAL: :frag (roll-in)
+  Who wants to be a Developer?
+
+** Developer
+
+#+ATTR_REVEAL: :frag (roll-in)
+  * What makes a 'Developer'?
+#+ATTR_REVEAL: :frag (roll-in)
+  * Why it matters?
+#+ATTR_REVEAL: :frag (roll-in)
+  * Why am I qualified to talk to you?
+
+** Who am I?
+
+   Name:      =Chris Howe-Jones=
+
+   Job Title: =Technical Navigator=
+
+   Twitter:   =@agile_geek=
+
+   Github:    =github.com/chrishowejones=
+
+   Blog:      =chrishowejones.wordpress.com=
+
+*** Worked for?
+
+[[./employers.png]]
+
+*** Jobs?
+
+[[./jobs.png]]
+
+*** Languages?
+
+[[./languages.png]]
+
+*** Technologies and Disciplines?
+
+[[./technologies.png]]
+
+** What Disciplines?
+
+   Don't I just need to program?
+
+   What else do I need?
+
+*** Multi-Disciplined Teams
+
+   * Developers/Programmers
+   * Testers/QA
+   * Business Analysts
+   * Scrum Masters
+   * Product Owners
+   * Project Managers
+   * Tech Leads
+   * Team Leaders
+   * Product Managers
+
+*** Complex Environment
+
+   * Polyglot Programming
+     - multiple languages
+   * Polyglot Persistence
+     - multiple persistence technologies
+   * Cloud Deployment
+     - elastic virtualised environments
+     - servers on demand
