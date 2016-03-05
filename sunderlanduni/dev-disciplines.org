@@ -60,11 +60,21 @@
 
 [[./technologies.png]]
 
+*** So?
+
+   Why do I care?
+#+ATTR_REVEAL: :frag (roll-in)
+   Because I'm the person who will employ you!
+#+ATTR_REVEAL: :frag (roll-in)
+   =Or someone just like me=
+
 ** What Disciplines?
 
    Don't I just need to program?
 
    What else do I need?
+
+** Software Development is a Complex World
 
 *** Multi-Disciplined Teams
 
@@ -87,3 +97,28 @@
    * Cloud Deployment
      - elastic virtualised environments
      - servers on demand
+** Disciplines
+
+  * TDD
+  * BDD
+  * Test Pyramid - Unit, System, Integration, Performance, Stress,
+  * Failure, Load, Functional
+  * SDLC - 'Waterfall', Scrum, DSDM, Kanban
+  * Version Control- frequent, small, incremental
+  * Continuous Integration
+  * Continuous Deployment
+  * Automated
+
+** More...
+  * Static code analysis
+  * Peer review
+  * Functional review
+  * Refactoring - SOLID principles
+    - Single Responsibility Principle - a class should have only a single responsibility
+    - Open for Extension, Closed for Modification
+    - Liskov Substitution Principle - "objects in a program should be
+      replaceable with instances of their subtypes without altering
+      the correctness of that program."
+    - Interface Segregation Principle - “many client-specific
+      interfaces are better than one general-purpose interface.”
+    - Dependency Inversion Principle - one should “Depend upon Abstractions. Do not depend upon concretions.”
