@@ -29,10 +29,10 @@
 </section>
 
 <section>
-<section id="slide-orgheadline12">
-<h2 id="orgheadline12">Developer Disciplines</h2>
+<section id="slide-orgheadline39">
+<h2 id="orgheadline39">Developer Disciplines</h2>
 <p class="fragment (roll-in)">
-Who wants to be a Developer?
+<b><b><b>Who wants to be a Developer?</b></b></b>
 </p>
 
 </section>
@@ -40,10 +40,9 @@ Who wants to be a Developer?
 <section>
 <section id="slide-orgheadline1">
 <h3 id="orgheadline1">Developer</h3>
-<ul>
-<li class="fragment roll-in">What makes a 'Developer'?</li>
-
-</ul>
+<p class="fragment (roll-in)">
+<b><b>What makes a 'Developer'?</b></b>
+</p>
 <ul>
 <li class="fragment roll-in">Why it matters?</li>
 
@@ -118,14 +117,16 @@ Blog:      <code>chrishowejones.wordpress.com</code>
 <section id="slide-orgheadline6">
 <h4 id="orgheadline6">So?</h4>
 <p>
-Why do I care?
+Why do you care?
 </p>
+<blockquote nil>
 <p class="fragment (roll-in)">
 Because I'm the person who will employ you!
 </p>
 <p class="fragment (roll-in)">
 <code>Or someone just like me</code>
 </p>
+</blockquote>
 
 </section>
 </section>
@@ -187,31 +188,65 @@ What else do I need?
 </section>
 </section>
 <section>
-<section id="slide-orgheadline14">
-<h2 id="orgheadline14">Disciplines</h2>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Disciplines</h3>
 <ul>
 <li>TDD</li>
 <li>BDD</li>
-<li>Test Pyramid - Unit, System, Integration, Performance, Stress,</li>
-<li>Failure, Load, Functional</li>
-<li>SDLC - 'Waterfall', Scrum, DSDM, Kanban</li>
-<li>Version Control- frequent, small, incremental</li>
-<li>Continuous Integration</li>
-<li>Continuous Deployment</li>
-<li>Automated</li>
+<li>Test Pyramid
+<ul>
+<li>Unit,</li>
+<li>System,</li>
+<li>Integration,</li>
+<li>Performance,</li>
+<li>Stress,</li>
+<li>Failure,</li>
+<li>Load,</li>
+<li>Functional</li>
+
+</ul></li>
 
 </ul>
-
-</section>
 </section>
 <section>
-<section id="slide-orgheadline13">
-<h3 id="orgheadline13">More&#x2026;</h3>
 <ul>
+<li>SDLC
+<ul>
+<li>'Waterfall',</li>
+<li>Scrum,</li>
+<li>DSDM,</li>
+<li>Kanban</li>
+
+</ul></li>
+<li>Version Control
+<ul>
+<li>frequent,</li>
+<li>small,</li>
+<li>incremental</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Continuous Integration</li>
+<li>Continuous Deployment</li>
+<li>Automated testing</li>
+<li>Automated build</li>
 <li>Static code analysis</li>
 <li>Peer review</li>
 <li>Functional review</li>
-<li>Refactoring - SOLID principles
+<li>Refactoring</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>SOLID principles</li>
+
+</ul>
+<blockquote nil>
 <ul>
 <li>Single Responsibility Principle - a class should have only a single responsibility</li>
 <li>Open for Extension, Closed for Modification</li>
@@ -222,9 +257,427 @@ the correctness of that program."</li>
 interfaces are better than one general-purpose interface.”</li>
 <li>Dependency Inversion Principle - one should “Depend upon Abstractions. Do not depend upon concretions.”</li>
 
-</ul></li>
+</ul>
+</blockquote>
+</section>
+<section>
+<ul>
+<li>Referential transparency</li>
+<li>Immutability</li>
+<li>Reduced side effects</li>
 
 </ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">What's most important?</h3>
+<p>
+I had a manager who asked?
+</p>
+<blockquote  class="fragment (roll-in)">
+<p>
+How do you know when you've finished?
+</p>
+</blockquote>
+<ul>
+<li class="fragment roll-in">You decide what success is</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">You write tests to prove it</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">You implement your code</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">You run your tests</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">They pass</li>
+
+</ul>
+<p class="fragment (roll-in)">
+<b><b>YOU'RE DONE!</b></b>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline17">
+<h3 id="orgheadline17">Test, test, test again&#x2026;</h3>
+
+<div class="figure">
+<p><img src="./automatedtestingpyramid.png" alt="automatedtestingpyramid.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline14">
+<h4 id="orgheadline14">Types of testing?</h4>
+<p>
+Only really two types of test&#x2026;
+</p>
+<blockquote nil>
+<ul>
+<li>Developer Tests</li>
+<li>User Tests</li>
+
+</ul>
+</blockquote>
+
+</section>
+<section id="slide-orgheadline15">
+<h4 id="orgheadline15">Developer Tests</h4>
+<ul>
+<li>Unit</li>
+<li>Integration</li>
+<li>System</li>
+<li><p>
+Non functional
+</p>
+<ul>
+<li>Performance</li>
+<li>Security</li>
+<li>Stress</li>
+<li>Resilience</li>
+
+</ul>
+<p>
+&#x2026;etc
+</p></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline16">
+<h4 id="orgheadline16">User Tests</h4>
+<p>
+Functional
+</p>
+<ul>
+<li>Smoke tests</li>
+<li>Sanity testing</li>
+<li>Explorative testing</li>
+<li>Regression testing</li>
+<li>Usability testing</li>
+<li>Accessibility testing</li>
+<li>Acceptance testing</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline25">
+<h3 id="orgheadline25">Tests to discover design</h3>
+<blockquote nil>
+<p>
+Test Driven Development
+</p>
+</blockquote>
+
+</section>
+<section id="slide-orgheadline18">
+<h4 id="orgheadline18">Test Driven Development</h4>
+<p>
+What is Test Driven Development?
+</p>
+
+</section>
+<section id="slide-orgheadline19">
+<h4 id="orgheadline19">What?</h4>
+<blockquote nil>
+<p>
+Incremental process to build low level design through the feedback
+mechanism of tests, written tests first.
+</p>
+</blockquote>
+
+</section>
+<section id="slide-orgheadline20">
+<h4 id="orgheadline20">Why?</h4>
+<ul class="fragment roll-in">
+<li>Tests code (automated and run in build).</li>
+<li>Evolves design constantly checking against tests for 'completeness'.</li>
+<li>Provides automated 'safety net' to catch 'breaking changes'.</li>
+<li>Enables rapid and radical design changes in future.</li>
+<li>Avoids 'big ball of mud'</li>
+
+</ul>
+</section>
+<section>
+<blockquote nil>
+<p>
+Good design is testable,
+And design that isn’t testable is bad.
+</p>
+</blockquote>
+<blockquote nil>
+<p>
+“I haven’t got time to test that…”
+If it's worth building, it's worth testing.
+</p>
+</blockquote>
+<blockquote nil>
+<p>
+If it's not worth testing, why are you wasting your time working on it?
+</p>
+</blockquote>
+<blockquote nil>
+<p>
+Tests are your first users.
+</p>
+</blockquote>
+</section>
+<section>
+<blockquote nil>
+<p>
+Tests can be your documentation
+</p>
+</blockquote>
+<blockquote nil>
+<p>
+If TDD hurts..you're doing it wrong.
+</p>
+</blockquote>
+<blockquote nil>
+<p>
+“The story of the unforeseen requirement.”
+</p>
+</blockquote>
+</section>
+<section id="slide-orgheadline21">
+<h4 id="orgheadline21">How?</h4>
+<ol class="fragment roll-in">
+<li>Write a (failing) test.</li>
+<li>Run a (failing) test.</li>
+<li>Write the (simplest) implementation to get the test to pass.</li>
+<li>Run test (if pass do next step else do 3)</li>
+<li>Refactor implementation (and/or test) to remove duplication.</li>
+<li>Repeat from step 1.</li>
+
+</ol>
+
+</section>
+<section id="slide-orgheadline22">
+<h4 id="orgheadline22">How?</h4>
+
+<div class="figure">
+<p><img src="./TDD Activity Diagram.png" alt="TDD Activity Diagram.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline23">
+<h4 id="orgheadline23">When?</h4>
+<p class="fragment grow highlight-red">
+ALL THE TIME
+</p>
+
+</section>
+<section id="slide-orgheadline24">
+<h4 id="orgheadline24">TDD?</h4>
+<p>
+Test
+Driven
+</p>
+<p class="fragment grow highlight-red">
+Design
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline30">
+<h3 id="orgheadline30">Version Control</h3>
+<div class="outline-text-3" id="text-orgheadline30">
+</div></section>
+<section id="slide-orgheadline26">
+<h4 id="orgheadline26">What it's <b>not</b></h4>
+<ul>
+<li>Backup</li>
+<li>Centralised code sharing</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline27" data-background="./the_time_machine_large_01.jpg">
+<h4 id="orgheadline27">What it is</h4>
+<p>
+<b><b>It's a Time Machine</b></b>
+</p>
+
+<p class="fragment (roll-in)">
+Small, incremental changes
+</p>
+<p class="fragment (roll-in)">
+Record of events
+</p>
+<p class="fragment (roll-in)">
+Who
+</p>
+<p class="fragment (roll-in)">
+What
+</p>
+<p class="fragment (roll-in)">
+When
+</p>
+<p class="fragment (roll-in)">
+Why
+</p>
+
+</section>
+<section id="slide-orgheadline28">
+<h4 id="orgheadline28">What can you do with it?</h4>
+<p class="fragment (roll-in)">
+<b><b>Rewind time</b></b>
+</p>
+<p class="fragment (roll-in)">
+<b><b>Try out a change safely</b></b>
+</p>
+<p class="fragment (roll-in)">
+<b><b>Integrate code across team</b></b>
+</p>
+
+</section>
+<section id="slide-orgheadline29">
+<h4 id="orgheadline29">Why is it important?</h4>
+<p class="fragment (roll-in)">
+It tells a story.
+</p>
+<p class="fragment (roll-in)">
+It protects you from mistakes.
+</p>
+<p class="fragment (roll-in)">
+It enables review.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline37">
+<h3 id="orgheadline37">Other Important Disciplines?</h3>
+<div class="outline-text-3" id="text-orgheadline37">
+</div></section>
+<section id="slide-orgheadline31">
+<h4 id="orgheadline31">Continuous Integration</h4>
+<blockquote nil>
+<p>
+Continually integrating (ansd testing) code across a team.
+</p>
+</blockquote>
+<ul>
+<li>Merging code regularly.</li>
+<li>Regression testing.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline32">
+<h4 id="orgheadline32">Continous Build</h4>
+<blockquote nil>
+<p>
+Continually build (ansd testing) code across a team.
+</p>
+</blockquote>
+<ul>
+<li>Automated builds.</li>
+<li>Build on merges.</li>
+<li>Tests run on build.</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline33">
+<h4 id="orgheadline33">Continous Deployment</h4>
+<blockquote nil>
+<p>
+Continually deploy (verified) code to 'live'.
+</p>
+</blockquote>
+<ul>
+<li>Automated deployment.</li>
+<li>'Push Button' deployment.</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline34">
+<h4 id="orgheadline34">Static Code Analysis Tools</h4>
+<blockquote nil>
+<p>
+Analyse code for style and common 'bugs'.
+</p>
+</blockquote>
+</section>
+<section id="slide-orgheadline35">
+<h4 id="orgheadline35">Automated Formatter</h4>
+<blockquote nil>
+<p>
+Automatically format code to 'team' or 'organisational' standards.
+</p>
+</blockquote>
+</section>
+<section id="slide-orgheadline36">
+<h4 id="orgheadline36">Property or Generative Testing</h4>
+<blockquote nil>
+<p>
+   In computer science, a property testing algorithm for a decision
+problem is an algorithm whose query complexity to its input is much
+smaller than the instance size of the problem. Typically property
+testing algorithms are used to decide if some mathematical object
+(such as a graph or a boolean function) has a "global" property,
+or is "far" from having this property, using only a small number
+of "local" queries to the object.
+</p>
+</blockquote>
+</section>
+<section>
+<p>
+<b>WHAT?</b>
+</p>
+</section>
+<section>
+<blockquote nil>
+<p>
+A high level approach to testing in the form of abstract
+invariants [that] functions should satisfy universally.
+</p>
+</blockquote>
+</section>
+<section>
+<p>
+<b>WHAT?</b>
+</p>
+</section>
+<section>
+<blockquote nil>
+<p>
+Property-based tests make statements about the output of your code
+based on the input, and these statements are verified for many different possible inputs.
+</p>
+</blockquote>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline38">
+<h3 id="orgheadline38">What others say?</h3>
+<blockquote nil>
+<p>
+"Continous Learning."
+</p>
+</blockquote>
+<p>
+Bruce Durling, CTO Mastodon C
+</p>
+
+<p>
+Co-founder London Clojurians, Co-organiser Clojure eXchange,
+EuroClojure, Speaker: Data Science, Clojure, Functional Programming.
+</p>
 </section>
 </section>
 </div>
@@ -245,14 +698,14 @@ slideNumber: true,
 rollingLinks: true,
 keyboard: true,
 overview: true,
-width: 1200,
-height: 800,
+width: 1080,
+height: 768,
 margin: 0.10,
 minScale: 0.40,
 maxScale: 2.50,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
 transitionSpeed: 'default',
 multiplex: {
     secret: '', // null if client
@@ -262,6 +715,7 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
+ { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
  { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]

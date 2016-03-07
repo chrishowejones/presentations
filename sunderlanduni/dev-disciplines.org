@@ -1,6 +1,6 @@
 #+OPTIONS: toc:nil num:nil
-#+OPTIONS: reveal_width:1200
-#+OPTIONS: reveal_height:800
+#+OPTIONS: reveal_width:1080
+#+OPTIONS: reveal_height:768
 #+TITLE: Developer Disciplines
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
@@ -12,21 +12,21 @@
 #+OPTIONS: reveal_center:t
 #+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
 #+REVEAL_THEME: blood
-#+REVEAL_TRANS: convex
+#+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
 #+REVEAL_CENTER: true
 #+REVEAL_ROOT: reveal.js
-#+REVEAL_PLUGINS: (markdown notes)
+#+REVEAL_PLUGINS: (highlight markdown notes)
 
 * Developer Disciplines
 
 #+ATTR_REVEAL: :frag (roll-in)
-  Who wants to be a Developer?
+  ***Who wants to be a Developer?***
 
 ** Developer
 
 #+ATTR_REVEAL: :frag (roll-in)
-  * What makes a 'Developer'?
+  **What makes a 'Developer'?**
 #+ATTR_REVEAL: :frag (roll-in)
   * Why it matters?
 #+ATTR_REVEAL: :frag (roll-in)
@@ -62,11 +62,13 @@
 
 *** So?
 
-   Why do I care?
+   Why do you care?
+#+BEGIN_QUOTE
 #+ATTR_REVEAL: :frag (roll-in)
    Because I'm the person who will employ you!
 #+ATTR_REVEAL: :frag (roll-in)
    =Or someone just like me=
+#+END_QUOTE
 
 ** What Disciplines?
 
@@ -101,19 +103,37 @@
 
   * TDD
   * BDD
-  * Test Pyramid - Unit, System, Integration, Performance, Stress,
-  * Failure, Load, Functional
-  * SDLC - 'Waterfall', Scrum, DSDM, Kanban
-  * Version Control- frequent, small, incremental
+  * Test Pyramid
+    - Unit,
+    - System,
+    - Integration,
+    - Performance,
+    - Stress,
+    - Failure,
+    - Load,
+    - Functional
+#+REVEAL: split
+  * SDLC
+    - 'Waterfall',
+    - Scrum,
+    - DSDM,
+    - Kanban
+  * Version Control
+    - frequent,
+    - small,
+    - incremental
+#+REVEAL: split
   * Continuous Integration
   * Continuous Deployment
-  * Automated
-
-** More...
+  * Automated testing
+  * Automated build
   * Static code analysis
   * Peer review
   * Functional review
-  * Refactoring - SOLID principles
+  * Refactoring
+#+REVEAL: split
+  * SOLID principles
+#+BEGIN_QUOTE
     - Single Responsibility Principle - a class should have only a single responsibility
     - Open for Extension, Closed for Modification
     - Liskov Substitution Principle - "objects in a program should be
@@ -122,3 +142,254 @@
     - Interface Segregation Principle - “many client-specific
       interfaces are better than one general-purpose interface.”
     - Dependency Inversion Principle - one should “Depend upon Abstractions. Do not depend upon concretions.”
+#+END_QUOTE
+#+REVEAL: split
+   * Referential transparency
+   * Immutability
+   * Reduced side effects
+
+** What's most important?
+
+   I had a manager who asked?
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+  How do you know when you've finished?
+#+END_QUOTE
+#+ATTR_REVEAL: :frag (roll-in)
+    - You decide what success is
+#+ATTR_REVEAL: :frag (roll-in)
+    - You write tests to prove it
+#+ATTR_REVEAL: :frag (roll-in)
+    - You implement your code
+#+ATTR_REVEAL: :frag (roll-in)
+    - You run your tests
+#+ATTR_REVEAL: :frag (roll-in)
+    - They pass
+#+ATTR_REVEAL: :frag (roll-in)
+    **YOU'RE DONE!**
+
+** Test, test, test again...
+
+ [[./automatedtestingpyramid.png]]
+
+*** Types of testing?
+  Only really two types of test...
+#+BEGIN_QUOTE
+  - Developer Tests
+  - User Tests
+#+END_QUOTE
+
+*** Developer Tests
+
+  * Unit
+  * Integration
+  * System
+  * Non functional
+    - Performance
+    - Security
+    - Stress
+    - Resilience
+    ...etc
+
+*** User Tests
+
+  Functional
+    - Smoke tests
+    - Sanity testing
+    - Explorative testing
+    - Regression testing
+    - Usability testing
+    - Accessibility testing
+    - Acceptance testing
+
+** Tests to discover design
+
+#+BEGIN_QUOTE
+   Test Driven Development
+#+END_QUOTE
+
+*** Test Driven Development
+  What is Test Driven Development?
+
+*** What?
+
+#+BEGIN_QUOTE
+  Incremental process to build low level design through the feedback
+  mechanism of tests, written tests first.
+#+END_QUOTE
+
+*** Why?
+
+#+ATTR_REVEAL: :frag roll-in
+   - Tests code (automated and run in build).
+   - Evolves design constantly checking against tests for 'completeness'.
+   - Provides automated 'safety net' to catch 'breaking changes'.
+   - Enables rapid and radical design changes in future.
+   - Avoids 'big ball of mud'
+#+REVEAL: split
+#+BEGIN_QUOTE
+Good design is testable,
+And design that isn’t testable is bad.
+#+END_QUOTE
+#+BEGIN_QUOTE
+“I haven’t got time to test that…”
+If it's worth building, it's worth testing.
+#+END_QUOTE
+#+BEGIN_QUOTE
+If it's not worth testing, why are you wasting your time working on it?
+#+END_QUOTE
+#+BEGIN_QUOTE
+Tests are your first users.
+#+END_QUOTE
+#+REVEAL: split
+#+BEGIN_QUOTE
+Tests can be your documentation
+#+END_QUOTE
+#+BEGIN_QUOTE
+If TDD hurts..you're doing it wrong.
+#+END_QUOTE
+#+BEGIN_QUOTE
+“The story of the unforeseen requirement.”
+#+END_QUOTE
+*** How?
+
+#+ATTR_REVEAL: :frag roll-in
+   1. Write a (failing) test.
+   2. Run a (failing) test.
+   3. Write the (simplest) implementation to get the test to pass.
+   4. Run test (if pass do next step else do 3)
+   5. Refactor implementation (and/or test) to remove duplication.
+   6. Repeat from step 1.
+
+*** How?
+
+[[./TDD Activity Diagram.png]]
+
+*** When?
+
+#+ATTR_REVEAL: :frag grow highlight-red
+   ALL THE TIME
+
+*** TDD?
+
+   Test
+   Driven
+#+ATTR_REVEAL: :frag grow highlight-red
+   Design
+
+** Version Control
+
+*** What it's *not*
+
+   * Backup
+   * Centralised code sharing
+
+*** What it is
+:PROPERTIES:
+:reveal_background: ./the_time_machine_large_01.jpg
+:END:
+
+   **It's a Time Machine**
+
+#+ATTR_REVEAL: :frag (roll-in)
+  Small, incremental changes
+#+ATTR_REVEAL: :frag (roll-in)
+  Record of events
+#+ATTR_REVEAL: :frag (roll-in)
+  Who
+#+ATTR_REVEAL: :frag (roll-in)
+  What
+#+ATTR_REVEAL: :frag (roll-in)
+  When
+#+ATTR_REVEAL: :frag (roll-in)
+  Why
+
+*** What can you do with it?
+
+#+ATTR_REVEAL: :frag (roll-in)
+  **Rewind time**
+#+ATTR_REVEAL: :frag (roll-in)
+  **Try out a change safely**
+#+ATTR_REVEAL: :frag (roll-in)
+  **Integrate code across team**
+
+*** Why is it important?
+#+ATTR_REVEAL: :frag (roll-in)
+  It tells a story.
+#+ATTR_REVEAL: :frag (roll-in)
+  It protects you from mistakes.
+#+ATTR_REVEAL: :frag (roll-in)
+  It enables review.
+
+** Other Important Disciplines?
+*** Continuous Integration
+#+BEGIN_QUOTE
+    Continually integrating (ansd testing) code across a team.
+#+END_QUOTE
+  * Merging code regularly.
+  * Regression testing.
+
+*** Continous Build
+#+BEGIN_QUOTE
+    Continually build (ansd testing) code across a team.
+#+END_QUOTE
+  * Automated builds.
+  * Build on merges.
+  * Tests run on build.
+*** Continous Deployment
+#+BEGIN_QUOTE
+    Continually deploy (verified) code to 'live'.
+#+END_QUOTE
+  * Automated deployment.
+  * 'Push Button' deployment.
+*** Static Code Analysis Tools
+#+BEGIN_QUOTE
+    Analyse code for style and common 'bugs'.
+#+END_QUOTE
+*** Automated Formatter
+#+BEGIN_QUOTE
+    Automatically format code to 'team' or 'organisational' standards.
+#+END_QUOTE
+*** Property or Generative Testing
+#+BEGIN_QUOTE
+    In computer science, a property testing algorithm for a decision
+ problem is an algorithm whose query complexity to its input is much
+ smaller than the instance size of the problem. Typically property
+ testing algorithms are used to decide if some mathematical object
+ (such as a graph or a boolean function) has a "global" property,
+ or is "far" from having this property, using only a small number
+ of "local" queries to the object.
+#+END_QUOTE
+#+REVEAL: split
+   *WHAT?*
+#+REVEAL: split
+#+BEGIN_QUOTE
+    A high level approach to testing in the form of abstract
+    invariants [that] functions should satisfy universally.
+#+END_QUOTE
+#+REVEAL: split
+   *WHAT?*
+#+REVEAL: split
+#+BEGIN_QUOTE
+    Property-based tests make statements about the output of your code
+    based on the input, and these statements are verified for many different possible inputs.
+#+END_QUOTE
+** What others say?
+#+REVEAL: split
+#+BEGIN_QUOTE
+    "...SCM, tests, simplifying, static analysis, reviews to share knowledge."
+#+END_QUOTE
+Bruce Durling, CTO Mastodon C
+
+Co-founder London Clojurians, Co-organiser Clojure eXchange,
+EuroClojure.
+#+REVEAL: split
+#+BEGIN_QUOTE
+    "Continous Learning."
+#+END_QUOTE
+Bruce Durling, CTO Mastodon C
+
+Co-founder London Clojurians, Co-organiser Clojure eXchange,
+EuroClojure.
+
+Speaker: Data Science, Clojure, Functional Programming.
