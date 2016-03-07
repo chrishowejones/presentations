@@ -44,6 +44,10 @@
 
    Blog:      =chrishowejones.wordpress.com=
 
+   Organiser: =London Clojurians, Clojure eXchange, Functional
+   Programming eXchange=
+
+   Speaker:   =FP North East, Agile North East, London Clojurians=
 *** Worked for?
 
 [[./employers.png]]
@@ -374,15 +378,40 @@ If TDD hurts..you're doing it wrong.
     Property-based tests make statements about the output of your code
     based on the input, and these statements are verified for many different possible inputs.
 #+END_QUOTE
-** What others say?
+** What others say are important disciplines?
+
 #+REVEAL: split
 #+BEGIN_QUOTE
-    "...SCM, tests, simplifying, static analysis, reviews to share knowledge."
+ "Take baby steps and always look for stepping stones,
+ be obsessed with feedback, keep it simple, communicate as much as you can"
 #+END_QUOTE
-Bruce Durling, CTO Mastodon C
+Giuseppe Capizzi, Developer Pivotal Labs
 
-Co-founder London Clojurians, Co-organiser Clojure eXchange,
-EuroClojure.
+Co-organiser: CodeLovers
+
+Speaker: Bergamo Linux User Group, CodeLovers, Milano XP User Group, ClojureBridge
+
+#+REVEAL: split
+#+BEGIN_QUOTE
+    "...SCM, tests, simplifying, static analysis, reviews to share
+knowledge."
+    "...thinking, talking, sharing..."
+#+END_QUOTE
+Glen Mailer, Freelance Software Developer
+
+Organiser Sheffield Geeks
+
+Speaker: Sheffield Geeks, Clojure eXchange 2015
+
+#+REVEAL: split
+#+BEGIN_QUOTE
+    "deliberate practice using fast feedback."
+#+END_QUOTE
+Philip Potter, Tech lead on registers at @gdsteam
+
+Speaker: London Clojurians, EuroClojure, Clojure eXchange, CodeMesh
+
+
 #+REVEAL: split
 #+BEGIN_QUOTE
     "Continous Learning."
