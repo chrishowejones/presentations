@@ -14,8 +14,7 @@
 #+REVEAL_THEME: blood
 #+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
-#+REVEAL_CENTER: true
-#+REVEAL_ROOT: reveal.js
+#+REVEAL_CENTER: tru#_ROOT: reveal.js
 #+REVEAL_PLUGINS: (highlight markdown notes)
 
 * Developer Disciplines
@@ -40,9 +39,11 @@
 
    Twitter:   =@agile_geek=
 
-   Github:    =github.com/chrishowejones=
+   Github:    =http://github.com/chrishowejones=
 
-   Blog:      =chrishowejones.wordpress.com=
+   Blog:      =http://chrishowejones.wordpress.com=
+
+   LinkedIn:  =https://uk.linkedin.com/in/chrishowejones=
 
    Organiser: =London Clojurians, Clojure eXchange, Functional
    Programming eXchange=
@@ -411,14 +412,37 @@ Philip Potter, Tech lead on registers at @gdsteam
 
 Speaker: London Clojurians, EuroClojure, Clojure eXchange, CodeMesh
 
+#+REVEAL: split
+#+BEGIN_QUOTE
+    "code as if you are going to support your own code...because you
+    might have to."
+#+END_QUOTE
+Mazhar Iqbal, Tech lead LLoyds Bank
+
+#+REVEAL: split
+#+BEGIN_QUOTE
+    "frequent commits to source control."
+#+END_QUOTE
+Chris Ford, Functional Composer at Thoughtworks
+
+Speaker: London Clojurians, EuroClojure, Clojure eXchange, Strange
+Loop - St Louis, GOTO Berlin
+
+#+REVEAL: split
+#+BEGIN_QUOTE
+    "Simplifying code, document processes,
+    range based estimates, low coupling, code formatters,
+     lint, automation, few side effects."
+#+END_QUOTE
+Michael Langford, Founder and iOS Development Director Rowdy Labs, Atlanta GA
 
 #+REVEAL: split
 #+BEGIN_QUOTE
     "Continous Learning."
 #+END_QUOTE
-Bruce Durling, CTO Mastodon C
+Bruce Durling, Co-founder & CTO Mastodon C, London
 
 Co-founder London Clojurians, Co-organiser Clojure eXchange,
-EuroClojure.
+EuroClojure board, Co-organiser Functional Programming Exchange.
 
 Speaker: Data Science, Clojure, Functional Programming.
