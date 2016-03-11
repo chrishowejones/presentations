@@ -48,7 +48,8 @@
    Organiser: =London Clojurians, Clojure eXchange, Functional
    Programming eXchange=
 
-   Speaker:   =FP North East, Agile North East, London Clojurians=
+   Speaker:   =FP North East, Agile North East, London Clojurians,
+   Dynamo Conference=
 *** Worked for?
 
 [[./employers.png]]
