@@ -29,8 +29,8 @@
 </section>
 
 <section>
-<section id="slide-orgheadline39">
-<h2 id="orgheadline39">Developer Disciplines</h2>
+<section id="slide-orgheadline40">
+<h2 id="orgheadline40">Developer Disciplines</h2>
 <p class="fragment (roll-in)">
 <b><b><b>Who wants to be a Developer?</b></b></b>
 </p>
@@ -40,6 +40,12 @@
 <section>
 <section id="slide-orgheadline1">
 <h3 id="orgheadline1">Developer</h3>
+
+<div class="figure">
+<p><img src="./dontwanttobe.jpg" alt="dontwanttobe.jpg" />
+</p>
+</div>
+
 <p class="fragment (roll-in)">
 <b><b>What makes a 'Developer'?</b></b>
 </p>
@@ -159,8 +165,13 @@ What else do I need?
 <section>
 <section id="slide-orgheadline11">
 <h3 id="orgheadline11">Software Development is a Complex World</h3>
-<div class="outline-text-3" id="text-orgheadline11">
-</div></section>
+
+<div class="figure">
+<p><img src="./art-or-science.png" alt="art-or-science.png" />
+</p>
+</div>
+
+</section>
 <section id="slide-orgheadline9">
 <h4 id="orgheadline9">Multi-Disciplined Teams</h4>
 <ul>
@@ -251,6 +262,7 @@ What else do I need?
 <li>Peer review</li>
 <li>Functional review</li>
 <li>Refactoring</li>
+<li>Debugging</li>
 
 </ul>
 </section>
@@ -464,6 +476,15 @@ If TDD hurts..you're doing it wrong.
 </p>
 </blockquote>
 </section>
+<section>
+
+
+<div class="figure">
+<p><img src="./debug.gif" alt="debug.gif" />
+</p>
+</div>
+
+</section>
 <section id="slide-orgheadline21">
 <h4 id="orgheadline21">How?</h4>
 <ol class="fragment roll-in">
@@ -573,15 +594,15 @@ It enables review.
 </section>
 </section>
 <section>
-<section id="slide-orgheadline37">
-<h3 id="orgheadline37">Other Important Disciplines?</h3>
-<div class="outline-text-3" id="text-orgheadline37">
+<section id="slide-orgheadline38">
+<h3 id="orgheadline38">Other Important Disciplines?</h3>
+<div class="outline-text-3" id="text-orgheadline38">
 </div></section>
 <section id="slide-orgheadline31">
 <h4 id="orgheadline31">Continuous Integration</h4>
 <blockquote nil>
 <p>
-Continually integrating (ansd testing) code across a team.
+"Continually integrating (and testing) code across a team."
 </p>
 </blockquote>
 <ul>
@@ -593,23 +614,44 @@ Continually integrating (ansd testing) code across a team.
 </section>
 <section id="slide-orgheadline32">
 <h4 id="orgheadline32">Continous Build</h4>
+
+<div class="figure">
+<p><img src="./jenkins.png" alt="jenkins.png" />
+</p>
+</div>
+
 <blockquote nil>
 <p>
-Continually build (ansd testing) code across a team.
+"Continually build (and testing) code across a team."
 </p>
 </blockquote>
 <ul>
 <li>Automated builds.</li>
-<li>Build on merges.</li>
-<li>Tests run on build.</li>
 
 </ul>
+
+</section>
+<section>
+
+
+<div class="figure">
+<p><img src="./jenkins-build.png" alt="jenkins-build.png" />
+</p>
+</div>
+
+<ul>
+<li>Build on merges.</li>
+<li>Tests run on build.</li>
+<li>E.g. Jenkins, TeamCity, etc.</li>
+
+</ul>
+
 </section>
 <section id="slide-orgheadline33">
 <h4 id="orgheadline33">Continous Deployment</h4>
 <blockquote nil>
 <p>
-Continually deploy (verified) code to 'live'.
+"Continually deploy (verified) code to 'live'."
 </p>
 </blockquote>
 <ul>
@@ -617,20 +659,43 @@ Continually deploy (verified) code to 'live'.
 <li>'Push Button' deployment.</li>
 
 </ul>
+
 </section>
 <section id="slide-orgheadline34">
 <h4 id="orgheadline34">Static Code Analysis Tools</h4>
+
+<div class="figure">
+<p><img src="./sonar-dashboard.png" alt="sonar-dashboard.png" />
+</p>
+</div>
+
 <blockquote nil>
 <p>
-Analyse code for style and common 'bugs'.
+"Analyse code for style and common 'bugs'."
 </p>
 </blockquote>
+
+</section>
+<section>
+
+
+<div class="figure">
+<p><img src="./sonar-dashboard2.png" alt="sonar-dashboard2.png" />
+</p>
+</div>
+
+<ul>
+<li>C# - Resharper, FxCop, StyleCop&#x2026;</li>
+<li>Java - Sonar, CheckStyle, FindBugs&#x2026;</li>
+
+</ul>
+
 </section>
 <section id="slide-orgheadline35">
 <h4 id="orgheadline35">Automated Formatter</h4>
 <blockquote nil>
 <p>
-Automatically format code to 'team' or 'organisational' standards.
+"Automatically format code to 'team' or 'organisational' standards."
 </p>
 </blockquote>
 </section>
@@ -638,13 +703,13 @@ Automatically format code to 'team' or 'organisational' standards.
 <h4 id="orgheadline36">Property or Generative Testing</h4>
 <blockquote nil>
 <p>
-   In computer science, a property testing algorithm for a decision
+   "In computer science, a property testing algorithm for a decision
 problem is an algorithm whose query complexity to its input is much
 smaller than the instance size of the problem. Typically property
 testing algorithms are used to decide if some mathematical object
 (such as a graph or a boolean function) has a "global" property,
-or is "far" from having this property, using only a small number
-of "local" queries to the object.
+or is 'far' from having this property, using only a small number
+of 'local' queries to the object."
 </p>
 </blockquote>
 </section>
@@ -656,8 +721,8 @@ of "local" queries to the object.
 <section>
 <blockquote nil>
 <p>
-A high level approach to testing in the form of abstract
-invariants [that] functions should satisfy universally.
+"A high level approach to testing in the form of abstract
+invariants [that] functions should satisfy universally."
 </p>
 </blockquote>
 </section>
@@ -669,17 +734,34 @@ invariants [that] functions should satisfy universally.
 <section>
 <blockquote nil>
 <p>
-Property-based tests make statements about the output of your code
-based on the input, and these statements are verified for many different possible inputs.
+"Property-based tests make statements about the output of your code
+based on the input, and these statements are verified for many different possible inputs."
 </p>
 </blockquote>
+
+</section>
+<section id="slide-orgheadline37">
+<h4 id="orgheadline37">Command Line is your Friend</h4>
+<blockquote nil>
+<p>
+"Don't be afraid of the command line."
+</p>
+</blockquote>
+
 </section>
 </section>
 <section>
-<section id="slide-orgheadline38">
-<h3 id="orgheadline38">What others say are important disciplines?</h3>
+<section id="slide-orgheadline39">
+<h3 id="orgheadline39">What others say are important disciplines?</h3>
 </section>
 <section>
+
+
+<div class="figure">
+<p><img src="./giuseppe.jpeg" alt="giuseppe.jpeg" />
+</p>
+</div>
+
 <blockquote nil>
 <p>
 "Take baby steps and always look for stepping stones,
@@ -700,6 +782,13 @@ Speaker: Bergamo Linux User Group, CodeLovers, Milano XP User Group, ClojureBrid
 
 </section>
 <section>
+
+
+<div class="figure">
+<p><img src="./Glen.jpeg" alt="Glen.jpeg" />
+</p>
+</div>
+
 <blockquote nil>
 <p>
     "&#x2026;SCM, tests, simplifying, static analysis, reviews to share
@@ -707,6 +796,7 @@ knowledge."
     "&#x2026;thinking, talking, sharing&#x2026;"
 </p>
 </blockquote>
+
 <p>
 Glen Mailer, Freelance Software Developer
 </p>
@@ -721,6 +811,13 @@ Speaker: Sheffield Geeks, Clojure eXchange 2015
 
 </section>
 <section>
+
+
+<div class="figure">
+<p><img src="./Phil.jpg" alt="Phil.jpg" />
+</p>
+</div>
+
 <blockquote nil>
 <p>
 "deliberate practice using fast feedback."
@@ -748,6 +845,31 @@ Mazhar Iqbal, Tech lead LLoyds Bank
 
 </section>
 <section>
+
+
+<div class="figure">
+<p><img src="./Steve.jpeg" alt="Steve.jpeg" />
+</p>
+</div>
+
+<blockquote nil>
+<p>
+"learn your short-cut keys."
+</p>
+</blockquote>
+<p>
+Stephen Hobbs, Software Developer at Orchid Software
+</p>
+
+</section>
+<section>
+
+
+<div class="figure">
+<p><img src="./Chris.png" alt="Chris.png" />
+</p>
+</div>
+
 <blockquote nil>
 <p>
 "frequent commits to source control."
@@ -764,6 +886,13 @@ Loop - St Louis, GOTO Berlin
 
 </section>
 <section>
+
+
+<div class="figure">
+<p><img src="./Michael.jpeg" alt="Michael.jpeg" />
+</p>
+</div>
+
 <blockquote nil>
 <p>
 "Simplifying code, document processes,
@@ -777,11 +906,12 @@ Michael Langford, Founder and iOS Development Director Rowdy Labs, Atlanta GA
 
 </section>
 <section>
-<blockquote nil>
-<p>
-"Continous Learning."
+
+<div class="figure">
+<p><img src="./BruceContinuousLearning.png" alt="BruceContinuousLearning.png" />
 </p>
-</blockquote>
+</div>
+
 <p>
 Bruce Durling, Co-founder &amp; CTO Mastodon C, London
 </p>

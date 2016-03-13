@@ -24,6 +24,8 @@
 
 ** Developer
 
+[[./dontwanttobe.jpg]]
+
 #+ATTR_REVEAL: :frag (roll-in)
   **What makes a 'Developer'?**
 #+ATTR_REVEAL: :frag (roll-in)
@@ -84,6 +86,8 @@
 
 ** Software Development is a Complex World
 
+   [[./art-or-science.png]]
+
 *** Multi-Disciplined Teams
 
    * Developers/Programmers
@@ -137,6 +141,7 @@
   * Peer review
   * Functional review
   * Refactoring
+  * Debugging
 #+REVEAL: split
   * SOLID principles
 #+BEGIN_QUOTE
@@ -257,6 +262,10 @@ If TDD hurts..you're doing it wrong.
 #+BEGIN_QUOTE
 “The story of the unforeseen requirement.”
 #+END_QUOTE
+#+REVEAL: split
+
+[[./debug.gif]]
+
 *** How?
 
 #+ATTR_REVEAL: :frag roll-in
@@ -330,59 +339,90 @@ If TDD hurts..you're doing it wrong.
 ** Other Important Disciplines?
 *** Continuous Integration
 #+BEGIN_QUOTE
-    Continually integrating (ansd testing) code across a team.
+    "Continually integrating (and testing) code across a team."
 #+END_QUOTE
   * Merging code regularly.
   * Regression testing.
 
 *** Continous Build
+
+[[./jenkins.png]]
+
 #+BEGIN_QUOTE
-    Continually build (ansd testing) code across a team.
+    "Continually build (and testing) code across a team."
 #+END_QUOTE
   * Automated builds.
+
+#+REVEAL: split
+
+[[./jenkins-build.png]]
+
   * Build on merges.
   * Tests run on build.
+  * E.g. Jenkins, TeamCity, etc.
+
 *** Continous Deployment
 #+BEGIN_QUOTE
-    Continually deploy (verified) code to 'live'.
+    "Continually deploy (verified) code to 'live'."
 #+END_QUOTE
   * Automated deployment.
   * 'Push Button' deployment.
+
 *** Static Code Analysis Tools
+
+[[./sonar-dashboard.png]]
+
 #+BEGIN_QUOTE
-    Analyse code for style and common 'bugs'.
+    "Analyse code for style and common 'bugs'."
 #+END_QUOTE
+
+#+REVEAL: split
+
+[[./sonar-dashboard2.png]]
+
+  * C# - Resharper, FxCop, StyleCop...
+  * Java - Sonar, CheckStyle, FindBugs...
+
 *** Automated Formatter
 #+BEGIN_QUOTE
-    Automatically format code to 'team' or 'organisational' standards.
+    "Automatically format code to 'team' or 'organisational' standards."
 #+END_QUOTE
 *** Property or Generative Testing
 #+BEGIN_QUOTE
-    In computer science, a property testing algorithm for a decision
+    "In computer science, a property testing algorithm for a decision
  problem is an algorithm whose query complexity to its input is much
  smaller than the instance size of the problem. Typically property
  testing algorithms are used to decide if some mathematical object
  (such as a graph or a boolean function) has a "global" property,
- or is "far" from having this property, using only a small number
- of "local" queries to the object.
+ or is 'far' from having this property, using only a small number
+ of 'local' queries to the object."
 #+END_QUOTE
 #+REVEAL: split
    *WHAT?*
 #+REVEAL: split
 #+BEGIN_QUOTE
-    A high level approach to testing in the form of abstract
-    invariants [that] functions should satisfy universally.
+    "A high level approach to testing in the form of abstract
+    invariants [that] functions should satisfy universally."
 #+END_QUOTE
 #+REVEAL: split
    *WHAT?*
 #+REVEAL: split
 #+BEGIN_QUOTE
-    Property-based tests make statements about the output of your code
-    based on the input, and these statements are verified for many different possible inputs.
+    "Property-based tests make statements about the output of your code
+    based on the input, and these statements are verified for many different possible inputs."
 #+END_QUOTE
+
+*** Command Line is your Friend
+#+BEGIN_QUOTE
+    "Don't be afraid of the command line."
+#+END_QUOTE
+
 ** What others say are important disciplines?
 
 #+REVEAL: split
+
+[[./giuseppe.jpeg]]
+
 #+BEGIN_QUOTE
  "Take baby steps and always look for stepping stones,
  be obsessed with feedback, keep it simple, communicate as much as you can"
@@ -394,11 +434,15 @@ Co-organiser: CodeLovers
 Speaker: Bergamo Linux User Group, CodeLovers, Milano XP User Group, ClojureBridge
 
 #+REVEAL: split
+
+[[./Glen.jpeg]]
+
 #+BEGIN_QUOTE
     "...SCM, tests, simplifying, static analysis, reviews to share
 knowledge."
     "...thinking, talking, sharing..."
 #+END_QUOTE
+
 Glen Mailer, Freelance Software Developer
 
 Organiser Sheffield Geeks
@@ -406,6 +450,9 @@ Organiser Sheffield Geeks
 Speaker: Sheffield Geeks, Clojure eXchange 2015
 
 #+REVEAL: split
+
+[[./Phil.jpg]]
+
 #+BEGIN_QUOTE
     "deliberate practice using fast feedback."
 #+END_QUOTE
@@ -421,6 +468,18 @@ Speaker: London Clojurians, EuroClojure, Clojure eXchange, CodeMesh
 Mazhar Iqbal, Tech lead LLoyds Bank
 
 #+REVEAL: split
+
+[[./Steve.jpeg]]
+
+#+BEGIN_QUOTE
+    "learn your short-cut keys."
+#+END_QUOTE
+Stephen Hobbs, Software Developer at Orchid Software
+
+#+REVEAL: split
+
+[[./Chris.png]]
+
 #+BEGIN_QUOTE
     "frequent commits to source control."
 #+END_QUOTE
@@ -430,6 +489,9 @@ Speaker: London Clojurians, EuroClojure, Clojure eXchange, Strange
 Loop - St Louis, GOTO Berlin
 
 #+REVEAL: split
+
+[[./Michael.jpeg]]
+
 #+BEGIN_QUOTE
     "Simplifying code, document processes,
     range based estimates, low coupling, code formatters,
@@ -438,9 +500,8 @@ Loop - St Louis, GOTO Berlin
 Michael Langford, Founder and iOS Development Director Rowdy Labs, Atlanta GA
 
 #+REVEAL: split
-#+BEGIN_QUOTE
-    "Continous Learning."
-#+END_QUOTE
+[[./BruceContinuousLearning.png]]
+
 Bruce Durling, Co-founder & CTO Mastodon C, London
 
 Co-founder London Clojurians, Co-organiser Clojure eXchange,
