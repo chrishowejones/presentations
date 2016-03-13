@@ -292,7 +292,9 @@ If TDD hurts..you're doing it wrong.
 #+ATTR_REVEAL: :frag grow highlight-red
    Design
 
-** Version Control
+** Version Control - SCM
+
+   Git, Subversion, CVS, VSS, Mercurial, PVCS
 
 *** What it's *not*
 
@@ -383,7 +385,7 @@ If TDD hurts..you're doing it wrong.
   * C# - Resharper, FxCop, StyleCop...
   * Java - Sonar, CheckStyle, FindBugs...
 
-*** Automated Formatter
+*** Automated Code Formatter
 #+BEGIN_QUOTE
     "Automatically format code to 'team' or 'organisational' standards."
 #+END_QUOTE
