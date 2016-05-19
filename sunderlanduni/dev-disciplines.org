@@ -14,7 +14,8 @@
 #+REVEAL_THEME: blood
 #+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
-#+REVEAL_CENTER: tru#_ROOT: reveal.js
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: reveal.js
 #+REVEAL_PLUGINS: (highlight markdown notes)
 
 * Developer Disciplines
