@@ -1,0 +1,124 @@
+#+OPTIONS: toc:nil num:nil
+#+OPTIONS: reveal_width:1080
+#+OPTIONS: reveal_height:768
+#+TITLE: Git 101
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  19th May 2016
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.4
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:t
+#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
+#+REVEAL_THEME: blood
+#+REVEAL_TRANS: concave
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: reveal.js
+#+REVEAL_PLUGINS: (highlight markdown notes)
+
+* Git 101
+** Git?
+
+  What is Git?
+
+  #+BEGIN_QUOTE
+  Git is a distributed revision control system with an emphasis on
+  speed, data integrity, and support for distributed, non-linear
+  workflows.
+  #+END_QUOTE
+
+*** What it's not
+
+    * Git is *not* a way to backup files
+    * Git is *not* Centralised code sharing
+
+    #+ATTR_REVEAL: :frag (roll-in)
+    * Although it can do those too!
+
+*** What it is
+:PROPERTIES:
+:reveal_background: ./the_time_machine_large_01.jpg
+:END:
+
+   **It's a Time Machine**
+
+#+ATTR_REVEAL: :frag (roll-in)
+  Small, incremental changes
+#+ATTR_REVEAL: :frag (roll-in)
+  Record of events
+#+ATTR_REVEAL: :frag (roll-in)
+  Who
+#+ATTR_REVEAL: :frag (roll-in)
+  What
+#+ATTR_REVEAL: :frag (roll-in)
+  When
+#+ATTR_REVEAL: :frag (roll-in)
+  Why
+
+*** What can you do with it?
+
+#+ATTR_REVEAL: :frag (roll-in)
+  **Rewind time**
+#+ATTR_REVEAL: :frag (roll-in)
+  **Try out a change safely**
+#+ATTR_REVEAL: :frag (roll-in)
+  **Integrate code across team**
+
+*** Why is it important?
+#+ATTR_REVEAL: :frag (roll-in)
+  It tells a story.
+#+ATTR_REVEAL: :frag (roll-in)
+  It protects you from mistakes.
+#+ATTR_REVEAL: :frag (roll-in)
+  It enables review.
+
+** Git is distributed?
+
+   Git is a distributed version control system?
+
+   What does that mean?
+#+ATTR_REVEAL: :frag (roll-in)
+   Everything can be done locally & independently.
+
+*** Central Version Control
+
+[[./central-version-control.png]]
+
+#+BEGIN_NOTES
+  * Need to be online
+  * Can't check in if not
+  * Usually branching is more 'expensive'
+#+END_NOTES
+
+*** Distributed Verson Control
+
+[[./distributed.png]]
+
+#+BEGIN_NOTES
+  * All actions can be carried out locally and independently
+#+END_NOTES
+
+*** Git History
+
+[[./merge.png]]
+
+*** Rebase
+
+[[./rebase.png]]
+
+*** Internals
+
+[[./internals.png]]
+*** Demo
+
+#+BEGIN_NOTES
+  * Command to show graph history - git log --graph --oneline (--decorate)
+  * .git/objects dir has commits
+  * git cat-file commit e71d1422 - will show content of commit in objects
+  * git ls-tree 5920813 - show tree
+  * git cat-file blob e6a7fbf
+  * refs dir holds tags and heads (branches) in heads there's a file per branch holding commit ids
+  *
+#+END_NOTES

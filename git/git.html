@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Git 101</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+<link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="reveal.js/css/theme/blood.css" id="theme"/>
+<link rel="stylesheet" href=""/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Git 101</h1>
+<h2>Chris Howe-Jones</h2>
+<h2><a href="mailto:@agile_geek">@agile_geek</a></h2>
+<h2>19th May 2016</h2>
+</section>
+
+<section>
+<section id="slide-orgheadline13">
+<h2 id="orgheadline13">Git 101</h2>
+<div class="outline-text-2" id="text-orgheadline13">
+</div></section>
+</section>
+<section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Git?</h3>
+<p>
+What is Git?
+</p>
+
+<blockquote nil>
+<p>
+Git is a distributed revision control system with an emphasis on
+speed, data integrity, and support for distributed, non-linear
+workflows.
+</p>
+</blockquote>
+
+</section>
+<section id="slide-orgheadline1">
+<h4 id="orgheadline1">What it's not</h4>
+<ul>
+<li>Git is <b>not</b> a way to backup files</li>
+<li>Git is <b>not</b> Centralised code sharing</li>
+
+</ul>
+
+<ul>
+<li class="fragment roll-in">Although it can do those too!</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline2" data-background="./the_time_machine_large_01.jpg">
+<h4 id="orgheadline2">What it is</h4>
+<p>
+<b><b>It's a Time Machine</b></b>
+</p>
+
+<p class="fragment (roll-in)">
+Small, incremental changes
+</p>
+<p class="fragment (roll-in)">
+Record of events
+</p>
+<p class="fragment (roll-in)">
+Who
+</p>
+<p class="fragment (roll-in)">
+What
+</p>
+<p class="fragment (roll-in)">
+When
+</p>
+<p class="fragment (roll-in)">
+Why
+</p>
+
+</section>
+<section id="slide-orgheadline3">
+<h4 id="orgheadline3">What can you do with it?</h4>
+<p class="fragment (roll-in)">
+<b><b>Rewind time</b></b>
+</p>
+<p class="fragment (roll-in)">
+<b><b>Try out a change safely</b></b>
+</p>
+<p class="fragment (roll-in)">
+<b><b>Integrate code across team</b></b>
+</p>
+
+</section>
+<section id="slide-orgheadline4">
+<h4 id="orgheadline4">Why is it important?</h4>
+<p class="fragment (roll-in)">
+It tells a story.
+</p>
+<p class="fragment (roll-in)">
+It protects you from mistakes.
+</p>
+<p class="fragment (roll-in)">
+It enables review.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Git is distributed?</h3>
+<p>
+Git is a distributed version control system?
+</p>
+
+<p>
+What does that mean?
+</p>
+<p class="fragment (roll-in)">
+Everything can be done locally &amp; independently.
+</p>
+
+</section>
+<section id="slide-orgheadline6">
+<h4 id="orgheadline6">Central Version Control</h4>
+
+<div class="figure">
+<p><img src="./central-version-control.png" alt="central-version-control.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>Need to be online</li>
+<li>Can't check in if not</li>
+<li>Usually branching is more 'expensive'</li>
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline7">
+<h4 id="orgheadline7">Distributed Verson Control</h4>
+
+<div class="figure">
+<p><img src="./distributed.png" alt="distributed.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul class="org-ul">
+<li>All actions can be carried out locally and independently</li>
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline8">
+<h4 id="orgheadline8">Git History</h4>
+
+<div class="figure">
+<p><img src="./merge.png" alt="merge.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline9">
+<h4 id="orgheadline9">Rebase</h4>
+
+<div class="figure">
+<p><img src="./rebase.png" alt="rebase.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgheadline10">
+<h4 id="orgheadline10">Internals</h4>
+
+<div class="figure">
+<p><img src="./internals.png" alt="internals.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline11">
+<h4 id="orgheadline11">Demo</h4>
+<aside class="notes">
+<ul class="org-ul">
+<li>Command to show graph history - git log &#x2013;graph &#x2013;oneline (&#x2013;decorate)</li>
+<li>.git/objects dir has commits</li>
+<li>git cat-file commit e71d1422 - will show content of commit in objects</li>
+<li>git ls-tree 5920813 - show tree</li>
+<li>git cat-file blob e6a7fbf</li>
+<li>refs dir holds tags and heads (branches) in heads there's a file per branch holding commit ids</li>
+<li></li>
+</ul>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1080,
+height: 768,
+margin: 0.10,
+minScale: 0.40,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
