@@ -110,7 +110,12 @@
 
 *** Internals
 
-[[./internals.png]]
+[[./internals2.png]]
+
+*** DAG
+
+[[./dag2.png]]
+
 *** Demo
 
 #+BEGIN_NOTES
