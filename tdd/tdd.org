@@ -73,6 +73,14 @@
    * Run throughout Sprint
    * Verifies story at end as part of 'Definition of Done'
 
-** A-TDD
+** Exercise in TDD
 
-   *Executable Specification*
+   Implement a RomanNumerals convertor that will take an integer
+   number and return a roman numeral representing the decimal integer
+   as a String. Your implementation should be able to take and integer
+   from 1 to 3999
+
+   Implement this rigorously using TDD.
+
+   If time allows implement the opposite conversion from roman numeral
+   to integer.

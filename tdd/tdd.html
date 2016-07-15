@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <title>Test Driven Development</title>
 <meta name="author" content="(Chris Howe-Jones)"/>
-
-<link rel="stylesheet" href="reveal.js-2.6.2/css/reveal.min.css"/>
+<link rel="stylesheet" href="reveal.js-2.6.2/css/reveal.css"/>
 <link rel="stylesheet" href="reveal.js-2.6.2/css/theme/moon.css" id="theme"/>
-
+<link rel="stylesheet" href=""/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
     if( window.location.search.match( /print-pdf/gi ) ) {
@@ -23,156 +21,144 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section>
+<section id="sec-title-slide">
 <h1>Test Driven Development</h1>
 <h2>Chris Howe-Jones</h2>
 <h2><a href="mailto:chris.howejones@gmail.com">chris.howejones@gmail.com</a></h2>
-<h2>6th January 2015</h2></section>
+<h2>6th January 2015</h2>
+</section>
 
 
-<section id="sec-1" >
-
-<h2>Test Driven Development</h2>
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">Test Driven Development</h2>
 <p>
 What is Test Driven Development?
 </p>
 
 </section>
+</section>
 <section>
-<section id="sec-1-1" >
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">What?</h3>
+<ol class="fragment roll-in">
+<li>Write a (failing) test.</li>
+<li>Run a (failing) test.</li>
+<li>Write the (simplest) implementation to get the test to pass.</li>
+<li>Run test (if pass do next step else do 3)</li>
+<li>Refactor implementation (and/or test) to remove duplication.</li>
+<li>Repeat from step 1.</li>
 
-<h3>What?</h3>
-<ol class="org-ol">
-<li class="fragment roll-in">Write a (failing) test.
-</li>
-<li class="fragment roll-in">Run a (failing) test.
-</li>
-<li class="fragment roll-in">Write the (simplest) implementation to get the test to pass.
-</li>
-<li class="fragment roll-in">Run test (if pass do next step else do 3)
-</li>
-<li class="fragment roll-in">Refactor implementation (and/or test) to remove duplication.
-</li>
-<li class="fragment roll-in">Repeat from step 1.
-</li>
 </ol>
-</section>
 
+</section>
 </section>
 <section>
-<section id="sec-1-2" >
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Why?</h3>
+<ul class="fragment roll-in">
+<li>Tests code (automated and run in build).</li>
+<li>Evolves design constantly checking against tests for 'completeness'.</li>
+<li>Provides automated 'safety net' to catch 'breaking changes'.</li>
+<li>Enables rapid and radical design changes in future.</li>
+<li>Avoids 'big ball of mud'</li>
 
-<h3>Why?</h3>
-<ul class="org-ul">
-<li class="fragment roll-in">Tests code (automated and run in build).
-</li>
-<li class="fragment roll-in">Evolves design constantly checking against tests for 'completeness'.
-</li>
-<li class="fragment roll-in">Provides automated 'safety net' to catch 'breaking changes'.
-</li>
-<li class="fragment roll-in">Enables rapid and radical design changes in future.
-</li>
-<li class="fragment roll-in">Avoids 'big ball of mud'
-</li>
 </ul>
-</section>
 
+</section>
 </section>
 <section>
-<section id="sec-1-3" >
-
-<h3>When?</h3>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">When?</h3>
 <p class="fragment grow highlight-red">
 ALL THE TIME
 </p>
-</section>
 
+</section>
 </section>
 <section>
-<section id="sec-1-4" >
-
-<h3>TDD?</h3>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">TDD?</h3>
 <p>
 Test Driven <b>Design</b>
 </p>
-</section>
 
 </section>
-<section id="sec-2" >
-
-<h2>Acceptance Test Driven Development</h2>
+</section>
+<section>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10">Acceptance Test Driven Development</h2>
 <p class="fragment highlight-green">
 Subset of which is 'Behaviour Driven Development'.
 </p>
 
 </section>
+</section>
 <section>
-<section id="sec-2-1" >
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">What?</h3>
+<ol class="fragment roll-in">
+<li>Write test scenario's to describe 'users story' from user's
+perspective. [automated]</li>
+<li>Run (failing) test.</li>
+<li>Use TDD to implement 'units' required to satisfy test
+scenario's.</li>
+<li>Run test scenario's repeating step 3 until pass.</li>
+<li>Repeat from step 1.</li>
 
-<h3>What?</h3>
-<ol class="org-ol">
-<li class="fragment roll-in">Write test scenario's to describe 'users story' from user's
-perspective. [automated]
-</li>
-<li class="fragment roll-in">Run (failing) test.
-</li>
-<li class="fragment roll-in">Use TDD to implement 'units' required to satisfy test
-scenario's.
-</li>
-<li class="fragment roll-in">Run test scenario's repeating step 3 until pass.
-</li>
-<li class="fragment roll-in">Repeat from step 1.
-</li>
 </ol>
-</section>
 
+</section>
 </section>
 <section>
-<section id="sec-2-2" >
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Why?</h3>
+<ul class="fragment roll-in">
+<li>Acceptance tests from user perspective.</li>
+<li>Evolves requirements constantly checking against tests for 'user acceptance'.</li>
+<li>Documents the requirements in the form of an 'executable specification'.</li>
+<li>Higher level verification of the code's fitness for purpose.</li>
 
-<h3>Why?</h3>
-<ul class="org-ul">
-<li class="fragment roll-in">Acceptance tests from user perspective.
-</li>
-<li class="fragment roll-in">Evolves requirements constantly checking against tests for 'user acceptance'.
-</li>
-<li class="fragment roll-in">Documents the requirements in the form of an 'executable specification'.
-</li>
-<li class="fragment roll-in">Higher level verification of the code's fitness for purpose.
-</li>
 </ul>
-</section>
 
+</section>
 </section>
 <section>
-<section id="sec-2-3" >
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">When?</h3>
+<ul class="fragment grow">
+<li>Developed at start of Sprint</li>
+<li>Run throughout Sprint</li>
+<li>Verifies story at end as part of 'Definition of Done'</li>
 
-<h3>When?</h3>
-<ul class="org-ul">
-<li class="fragment grow">Developed at start of Sprint
-</li>
-<li class="fragment grow">Run throughout Sprint
-</li>
-<li class="fragment grow">Verifies story at end as part of 'Definition of Done'
-</li>
 </ul>
-</section>
 
+</section>
 </section>
 <section>
-<section id="sec-2-4" >
-
-<h3>A-TDD</h3>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Exercise in TDD</h3>
 <p>
-<b>Executable Specification</b>
+Implement a RomanNumerals convertor that will take an integer
+number and return a roman numeral representing the decimal integer
+as a String. Your implementation should be able to take and integer
+from 1 to 3999
+</p>
+
+<p>
+Implement this rigorously using TDD.
+</p>
+
+<p>
+If time allows implement the opposite conversion from roman numeral
+to integer.
 </p>
 </section>
 </section>
 </div>
 </div>
-
 <script src="reveal.js-2.6.2/lib/js/head.min.js"></script>
-<script src="reveal.js-2.6.2/js/reveal.min.js"></script>
+<script src="reveal.js-2.6.2/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
@@ -191,14 +177,18 @@ overview: true,
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
  { src: 'reveal.js-2.6.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
  { src: 'reveal.js-2.6.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: 'reveal.js-2.6.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'reveal.js-2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-]
+ { src: 'reveal.js-2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
 </script>
 </body>
