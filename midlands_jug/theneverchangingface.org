@@ -125,7 +125,12 @@
 #+ATTR_REVEAL: :frag (roll-in)
   * Disk
 
-
+#+BEGIN_NOTES
+      - 60's Swapping instructions in and out of memory - tape -> disk
+      - 70's, 80's and 90's secondary storage expensive - rise of RDBMS
+      - memory still reasonably expensive
+      - In place computing as resources scarce
+#+END_NOTES
 
 ** And..
 
@@ -162,11 +167,17 @@
    * Disk pack - invented 1965
    * IBM Engineers - Thomas G. Leary and R. E. Pattison
    * Probably about 50MB on this one.
+   * memory still reasonably expensive
+   * disk - especially removable - v. expensive
 #+END_NOTES
 
 ** Result?
 
 In place oriented programming (PLOP) relies on...
+
+#+BEGIN_NOTES
+   * In place computing as resources scarce
+#+END_NOTES
 
 *** Mutation
 
@@ -187,6 +198,10 @@ In place oriented programming (PLOP) relies on...
 #+ATTR_REVEAL: :frag (roll-in)
    * Pessimistic concurrency strategies
 
+#+BEGIN_NOTES
+   * in parallel the rise of OOP - objects with data and behaviour
+#+END_NOTES
+
 ** 21st Century
 
    [[./pair-programming.png]]
@@ -202,9 +217,18 @@ In place oriented programming (PLOP) relies on...
 
    * Computing capacity has increased by a million fold!
 
+#+BEGIN_NOTES
+   * 00's and 2010's disk cheaper, memory very cheap
+   * Rise of utility computing - AWS (2006 - S3 and EC2)
+#+END_NOTES
+
 ** Immutability (and values) to the rescue!
 
    [[./lambda-man.jpg]]
+
+#+BEGIN_NOTES
+    * Why immutability?
+#+END_NOTES
 
 *** Values
 
@@ -476,26 +500,3 @@ blue ;; => [0 1 2 3 4 "beef" 6 7 8]
   * Moseley and Marks - Out of the Tar Pit
   * Kris Jenkins
     - 'ClojureScript - Architecting for Scale' (Clojure eXchange 2015)
-
-#+BEGIN_NOTES
-    * History
-      - book keeping - double entry. Didn't change in place.
-      - 50's, 60's memory expensive resource (dates? picture of large old machine)
-      - Swapping instructions in and out of memory - tape -> disk
-      - 70's, 80's and 90's secondary storage expensive - rise of RDBMS
-      - memory still reasonably expensive
-      - In place computing as resources scarce
-      - 00's and 2010's disk cheaper, memory very cheap.
-      - in parallel the rise of OOP - objects with data and behaviour
-    * Why immutability?
-      - What does mutation bring (picture of three eyed fish from Simpsons _ other pop culture references)
-      - Can't stand in same river twice (where is origin of quote?)
-      - Complecting the concepts of identity and value particularly OO and RDBMS in trad. use.
-      - Issues of concurrency. Complex values are changed underneath you.
-      - Optimisations - (dig out graph of Om compared with React.js)
-    * What does it look like?
-      - Examples in:
-        + Clojurescript - UI state as a value
-        + Clojure - server state as value and a chain of functions
-        + Datomic - database as a value - local cache, peer to peer
-#+END_NOTES
