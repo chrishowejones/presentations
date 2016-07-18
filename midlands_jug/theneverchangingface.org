@@ -46,9 +46,14 @@
 
 * Warning!!
 
+#+ATTR_REVEAL: :frag (roll-in)
    * There will be a Lisp!
+#+ATTR_REVEAL: :frag (roll-in)
    * There will be Entomology!
+#+ATTR_REVEAL: :frag (roll-in)
    * There will be History!
+#+ATTR_REVEAL: :frag (roll-in)
+   * There will be Philosophy!
 #+BEGIN_NOTES
   * 1st law of Clojure talks
   * Any talk with Clojure in it must have some entomology
@@ -215,16 +220,26 @@ In place oriented programming (PLOP) relies on...
    * Structural sharing
    * For example in Clojure:
      - persistent bit-partitioned vector trie
-     - 32 node tries
-     - Wide shallow trees
+     - 32 node
+     - Wide shallow
 
-**** Immutable Lists
+*** Persistent Immutable Vectors
 
-**** Immutable Vectors
+     [[./persistent-vector.png]]
 
-**** Immutable Vectors (update)
+*** Persistent Immutable Vectors (update)
 
-**** Immutable Vectors (insert)
+#+BEGIN_SRC clojure
+(def brown [0 1 2 3 4 5 6 7 8])
+(def blue (assoc brown 5 "beef"))
+brown ;; => [0 1 2 3 4 5 6 7 8]
+
+blue ;; => [0 1 2 3 4 "beef" 6 7 8]
+#+END_SRC
+
+     [[./update-persistent-vector.png]]
+
+   * Persistent - Share data
 
 ** What does it look like?
 
@@ -241,11 +256,14 @@ In place oriented programming (PLOP) relies on...
       - what does update mean?
 #+END_NOTES
 
-*** ClojureScript on the client
+** ClojureScript on the client
 
 #+BEGIN_SRC clojure
   (def initial-state
     {:event {:event/name "" :event/speaker ""} :server-state nil})
+
+  (defonce !app
+    (reagent/atom initial-state))
 #+END_SRC
 #+BEGIN_SRC clojure
   (defn- event-form
@@ -432,6 +450,10 @@ In place oriented programming (PLOP) relies on...
                            db)
                       (map first))))
 #+END_SRC
+
+** Demo
+
+   /Assuming the Demo Gods are kind/
 
 ** Conclusion?
    [[./you-cant-step.jpg]]

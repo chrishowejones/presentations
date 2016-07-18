@@ -107,9 +107,19 @@ Like to relate to my audience so:
 <section id="slide-orgheadline6">
 <h2 id="orgheadline6">Warning!!</h2>
 <ul>
-<li>There will be a Lisp!</li>
-<li>There will be Entomology!</li>
-<li>There will be History!</li>
+<li class="fragment roll-in">There will be a Lisp!</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">There will be Entomology!</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">There will be History!</li>
+
+</ul>
+<ul>
+<li class="fragment roll-in">There will be Philosophy!</li>
 
 </ul>
 <aside class="notes">
@@ -124,8 +134,8 @@ Like to relate to my audience so:
 </section>
 </section>
 <section>
-<section id="slide-orgheadline36">
-<h2 id="orgheadline36">The Never Changing Face of Immutability</h2>
+<section id="slide-orgheadline35">
+<h2 id="orgheadline35">The Never Changing Face of Immutability</h2>
 
 <div class="figure">
 <p><img src="./immutable-defined.png" alt="immutable-defined.png" />
@@ -416,8 +426,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </section>
 </section>
 <section>
-<section id="slide-orgheadline26">
-<h3 id="orgheadline26">Immutability (and values) to the rescue!</h3>
+<section id="slide-orgheadline24">
+<h3 id="orgheadline24">Immutability (and values) to the rescue!</h3>
 
 <div class="figure">
 <p><img src="./lambda-man.jpg" alt="lambda-man.jpg" />
@@ -442,33 +452,58 @@ Cheap resources: SSD/Disk, Memory, CPU
 </ul>
 
 </section>
-<section id="slide-orgheadline25">
-<h4 id="orgheadline25">Isn't copying values inefficient?</h4>
+<section id="slide-orgheadline21">
+<h4 id="orgheadline21">Isn't copying values inefficient?</h4>
 <ul>
 <li>Structural sharing</li>
 <li>For example in Clojure:
 <ul>
 <li>persistent bit-partitioned vector trie</li>
-<li>32 node tries</li>
-<li>Wide shallow trees</li>
+<li>32 node</li>
+<li>Wide shallow</li>
 
 </ul></li>
 
 </ul>
 
-<ul class="org-ul"><li><a id="orgheadline21"></a>Immutable Lists<br  /></li>
+</section>
+<section id="slide-orgheadline22">
+<h4 id="orgheadline22">Persistent Immutable Vectors</h4>
 
-<li><a id="orgheadline22"></a>Immutable Vectors<br  /></li>
+<div class="figure">
+<p><img src="./persistent-vector.png" alt="persistent-vector.png" />
+</p>
+</div>
 
-<li><a id="orgheadline23"></a>Immutable Vectors (update)<br  /></li>
+</section>
+<section id="slide-orgheadline23">
+<h4 id="orgheadline23">Persistent Immutable Vectors (update)</h4>
+<div class="org-src-container">
 
-<li><a id="orgheadline24"></a>Immutable Vectors (insert)<br  /></li></ul>
+<pre><code class="clojure">(def brown [0 1 2 3 4 5 6 7 8])
+(def blue (assoc brown 5 "beef"))
+brown ;; => [0 1 2 3 4 5 6 7 8]
+
+blue ;; => [0 1 2 3 4 "beef" 6 7 8]
+</code></pre>
+</div>
+
+
+<div class="figure">
+<p><img src="./update-persistent-vector.png" alt="update-persistent-vector.png" />
+</p>
+</div>
+
+<ul>
+<li>Persistent - Share data</li>
+
+</ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline29">
-<h3 id="orgheadline29">What does it look like?</h3>
+<section id="slide-orgheadline25">
+<h3 id="orgheadline25">What does it look like?</h3>
 <ul>
 <li>Immutable by default</li>
 <li>Explicit state change</li>
@@ -496,12 +531,17 @@ Cheap resources: SSD/Disk, Memory, CPU
 </aside>
 
 </section>
+</section>
+<section>
 <section id="slide-orgheadline27">
-<h4 id="orgheadline27">ClojureScript on the client</h4>
+<h3 id="orgheadline27">ClojureScript on the client</h3>
 <div class="org-src-container">
 
 <pre><code class="clojure">(def initial-state
   {:event {:event/name "" :event/speaker ""} :server-state nil})
+
+(defonce !app
+  (reagent/atom initial-state))
 </code></pre>
 </div>
 <div class="org-src-container">
@@ -565,8 +605,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </div>
 
 </section>
-<section id="slide-orgheadline28">
-<h4 id="orgheadline28">Efficiency</h4>
+<section id="slide-orgheadline26">
+<h4 id="orgheadline26">Efficiency</h4>
 
 <div class="figure">
 <p><img src="./todomvc-perf-comparison.png" alt="todomvc-perf-comparison.png" />
@@ -576,8 +616,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </section>
 </section>
 <section>
-<section id="slide-orgheadline30">
-<h3 id="orgheadline30">Clojure on the server</h3>
+<section id="slide-orgheadline28">
+<h3 id="orgheadline28">Clojure on the server</h3>
 <div class="org-src-container">
 
 <pre><code class="clojure">(defn- handle-query
@@ -603,8 +643,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </section>
 </section>
 <section>
-<section id="slide-orgheadline34">
-<h3 id="orgheadline34">Datomic for Data</h3>
+<section id="slide-orgheadline32">
+<h3 id="orgheadline32">Datomic for Data</h3>
 
 <div class="figure">
 <p><img src="./datomic-architecture.png" alt="datomic-architecture.png" />
@@ -627,8 +667,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </aside>
 
 </section>
-<section id="slide-orgheadline31">
-<h4 id="orgheadline31">Database as a value</h4>
+<section id="slide-orgheadline29">
+<h4 id="orgheadline29">Database as a value</h4>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -711,8 +751,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </aside>
 
 </section>
-<section id="slide-orgheadline32">
-<h4 id="orgheadline32">Schema</h4>
+<section id="slide-orgheadline30">
+<h4 id="orgheadline30">Schema</h4>
 <div class="org-src-container">
 
 <pre><code class="clojure"> ;;event
@@ -764,8 +804,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </code></pre>
 </div>
 </section>
-<section id="slide-orgheadline33">
-<h4 id="orgheadline33">Persistence</h4>
+<section id="slide-orgheadline31">
+<h4 id="orgheadline31">Persistence</h4>
 <div class="org-src-container">
 
 <pre><code class="clojure">(defn create-entity
@@ -795,8 +835,17 @@ Cheap resources: SSD/Disk, Memory, CPU
 </section>
 </section>
 <section>
-<section id="slide-orgheadline35">
-<h3 id="orgheadline35">Conclusion?</h3>
+<section id="slide-orgheadline33">
+<h3 id="orgheadline33">Demo</h3>
+<p>
+<i>Assuming the Demo Gods are kind</i>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline34">
+<h3 id="orgheadline34">Conclusion?</h3>
 
 <div class="figure">
 <p><img src="./you-cant-step.jpg" alt="you-cant-step.jpg" />
@@ -818,8 +867,8 @@ Cheap resources: SSD/Disk, Memory, CPU
 </section>
 </section>
 <section>
-<section id="slide-orgheadline37">
-<h2 id="orgheadline37">Resources</h2>
+<section id="slide-orgheadline36">
+<h2 id="orgheadline36">Resources</h2>
 <ul>
 <li>Rich Hickey talks -
 <ul>
@@ -896,8 +945,8 @@ history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: true,
+keyboard: true,
 overview: true,
-keyboard: {40:'next',38:'prev'},
 width: 1200,
 height: 800,
 margin: 0.10,
