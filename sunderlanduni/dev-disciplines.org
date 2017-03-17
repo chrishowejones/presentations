@@ -1,17 +1,17 @@
-#+OPTIONS: toc:nil num:nil
+#+OPTIONS: toc:nil num:nil timestamp:nil
 #+OPTIONS: reveal_width:1080
 #+OPTIONS: reveal_height:768
 #+TITLE: Developer Disciplines
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
-#+DATE:  14th March 2016
+#+DATE:  20th March 2017
 #+REVEAL_SLIDE_NUMBER: false
 #+REVEAL_MARGIN: 0.1
 #+REVEAL_MIN_SCALE: 0.4
 #+REVEAL_MAX_SCALE: 2.5
 #+OPTIONS: reveal_center:t
 #+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
-#+REVEAL_THEME: blood
+#+REVEAL_THEME: league
 #+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
 #+REVEAL_CENTER: true
@@ -36,9 +36,7 @@
 
 ** Who am I?
 
-   Name:      =Chris Howe-Jones=
-
-   Job Title: =Technical Navigator=
+   Name:      =Chris Howe-Jones= *[Technical Navigator]*
 
    Twitter:   =@agile_geek=
 
@@ -48,11 +46,9 @@
 
    LinkedIn:  =https://uk.linkedin.com/in/chrishowejones=
 
-   Organiser: =London Clojurians, Clojure eXchange, Functional
-   Programming eXchange=
+   Organiser: =London Clojurians, Clojure eXchange, ClojureBridge=
 
-   Speaker:   =FP North East, Agile North East, London Clojurians,
-   Dynamo Conference=
+   Speaker:   =FP North East, Agile North East, London Clojurians, Dynamo Conference, West Midlands JUG, DefShef=
 *** Worked for?
 
 [[./employers.png]]
@@ -448,7 +444,7 @@ knowledge."
 
 Glen Mailer, Freelance Software Developer
 
-Organiser Sheffield Geeks
+Organiser Sheffield Geeks, DefShef
 
 Speaker: Sheffield Geeks, Clojure eXchange 2015
 
@@ -468,7 +464,7 @@ Speaker: London Clojurians, EuroClojure, Clojure eXchange, CodeMesh
     "code as if you are going to support your own code...because you
     might have to."
 #+END_QUOTE
-Mazhar Iqbal, Tech lead LLoyds Bank
+Mazhar Iqbal, Tech lead UBS Bank
 
 #+REVEAL: split
 
@@ -477,7 +473,7 @@ Mazhar Iqbal, Tech lead LLoyds Bank
 #+BEGIN_QUOTE
     "learn your short-cut keys."
 #+END_QUOTE
-Stephen Hobbs, Software Developer at Orchid Software
+Stephen Hobbs, Development Consultant at Opencast Software
 
 #+REVEAL: split
 
