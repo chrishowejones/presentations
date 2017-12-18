@@ -10,7 +10,8 @@
 #+REVEAL_MIN_SCALE: 0.4
 #+REVEAL_MAX_SCALE: 2.5
 #+OPTIONS: reveal_center:t
-#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
+#+OPTIONS: reveal_rolling_links:t reveal_overview:t
+#+REVEAL_KEYBOARD:t
 #+REVEAL_THEME: league
 #+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
@@ -440,6 +441,8 @@ Speaker: Bergamo Linux User Group, CodeLovers, Milano XP User Group, ClojureBrid
     "...SCM, tests, simplifying, static analysis, reviews to share
 knowledge."
     "...thinking, talking, sharing..."
+    "Things you never learn at Uni: Shipping code to production &
+maintaining someone else's code."
 #+END_QUOTE
 
 Glen Mailer, Freelance Software Developer
@@ -497,6 +500,21 @@ Loop - St Louis, GOTO Berlin
      lint, automation, few side effects."
 #+END_QUOTE
 Michael Langford, Founder and iOS Development Director Rowdy Labs, Atlanta GA
+
+#+REVEAL: split
+
+#+BEGIN_QUOTE
+    "Never let anyone tell you that streamlining your workflow
+    by customising your editor of choice is yak-shaving and pointless."
+#+END_QUOTE
+Gavin-John Noonan - Founder- AJ Web Development
+
+#+REVEAL: split
+
+#+BEGIN_QUOTE
+    ""Write your failing test _before_ the code that is meant to pass it"
+#+END_QUOTE
+Andrew Jackson - yogidevbear
 
 #+REVEAL: split
 [[./BruceContinuousLearning.png]]
