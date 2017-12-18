@@ -1,0 +1,61 @@
+#+OPTIONS: toc:nil num:nil timestamp:nil
+#+OPTIONS: reveal_width:1080
+#+OPTIONS: reveal_height:768
+#+TITLE: Clojure (& Clojurescript) 101
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  20th Dec 2017
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.4
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:t
+#+OPTIONS: reveal_rolling_links:t reveal_overview:t
+#+REVEAL_KEYBOARD:t
+#+REVEAL_THEME: league
+#+REVEAL_TRANS: concave
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_PLUGINS: (highlight markdown notes)
+* Clojure 101
+
+  ... and Clojurescript
+
+* Who am I?
+
+  Name:      =Chris Howe-Jones= *[Technical Navigator]*
+
+  Twitter:   =@agile_geek=
+
+  Github:    =http://github.com/chrishowejones=
+
+  LinkedIn:  =https://uk.linkedin.com/in/chrishowejones=
+
+  Organiser: =London Clojurians, Clojure eXchange, ClojureBridge=
+
+  Speaker:   =FP North East, Agile North East, London Clojurians,
+  Dynamo Conference, West Midlands JUG, DefShef, Sunderland Uni=
+
+* What is Clojure?
+
+  It's a 'Lisp' that's hosted on various platforms.
+
+  - JVM
+  - Javascript (transpiled with full source map)
+  - CLR
+
+* Simple Syntax
+
+  Everything in (parens) is a list...
+
+  #+ATTR_REVEAL: :frag (roll-in)
+  The first item in a list is a /function/.
+  #+ATTR_REVEAL: :frag (roll-in)
+  The first /item/ in a list is a function.
+  #+ATTR_REVEAL: :frag (roll-in)
+  The /first/ item in a list is a function.
+
+* Demo time...
+
+  =Show me the code=

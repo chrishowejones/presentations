@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Clojure (&amp; Clojurescript) 101</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js/css/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/chris/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Clojure (&amp; Clojurescript) 101</h1><h2 class="author">Chris Howe-Jones</h2><h2 class="date">20th Dec 2017</h2>
+</section>
+<section>
+<section id="slide-orgb7d3097">
+<h2 id="orgb7d3097">Clojure 101</h2>
+<p>
+&#x2026; and Clojurescript
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org237b0b7">
+<h2 id="org237b0b7">Who am I?</h2>
+<p>
+Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
+</p>
+
+<p>
+Twitter:   <code>@agile_geek</code>
+</p>
+
+<p>
+Github:    <code>http://github.com/chrishowejones</code>
+</p>
+
+<p>
+LinkedIn:  <code>https://uk.linkedin.com/in/chrishowejones</code>
+</p>
+
+<p>
+Organiser: <code>London Clojurians, Clojure eXchange, ClojureBridge</code>
+</p>
+
+<p>
+Speaker:   <code>FP North East, Agile North East, London Clojurians,
+  Dynamo Conference, West Midlands JUG, DefShef, Sunderland Uni</code>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org341cafc">
+<h2 id="org341cafc">What is Clojure?</h2>
+<p>
+It's a 'Lisp' that's hosted on various platforms.
+</p>
+
+<ul>
+<li>JVM</li>
+<li>Javascript (transpiled with full source map)</li>
+<li>CLR</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org47e06b5">
+<h2 id="org47e06b5">Simple Syntax</h2>
+<p>
+Everything in (parens) is a list&#x2026;
+</p>
+
+<p class="fragment (roll-in)">
+The first item in a list is a <i>function</i>.
+</p>
+<p class="fragment (roll-in)">
+The first <i>item</i> in a list is a function.
+</p>
+<p class="fragment (roll-in)">
+The <i>first</i> item in a list is a function.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc869311">
+<h2 id="orgc869311">Demo time&#x2026;</h2>
+<p>
+<code>Show me the code</code>
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/chris/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///home/chris/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1080,
+height: 768,
+margin: 0.10,
+minScale: 0.40,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/chris/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///home/chris/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
