@@ -1,4 +1,3 @@
-% Created 2016-01-05 Tue 07:51
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -22,11 +21,12 @@
  pdftitle={The Never Changing Face of Immutability},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 24.5.1 (Org mode 8.3.2)},
+ pdfcreator={Emacs 25.1.1 (Org mode 8.3.6)},
  pdflang={English}}
 \begin{document}
 
 \maketitle
+
 
 \section*{Warning!!}
 \label{sec:orgheadline1}
@@ -36,6 +36,12 @@
 \item There will be Entomology!
 \item There will be History!
 \end{itemize}
+\begin{NOTES}
+\begin{itemize}
+\item 1st law of Clojure talks
+\item Any talk with Clojure in it must have some entomology
+\end{itemize}
+\end{NOTES}
 
 
 \section*{The Never Changing Face of Immutability}
@@ -72,6 +78,21 @@ Blog:      \texttt{chrishowejones.wordpress.com}
 
 \includegraphics[width=.9\linewidth]{./John-McCarthy.jpg}
 
+\begin{NOTES}
+\begin{itemize}
+\item Who is this?
+\item John McCarthy
+\begin{itemize}
+\item developed Lisp
+\item influenced design of ALGOL
+\item invented GC
+\item created term AI
+\item first to suggest publicly the idea of utility computing
+\item credited with developing an early form of time-sharing
+\end{itemize}
+\end{itemize}
+\end{NOTES}
+
 \subsection*{Once upon a time..}
 \label{sec:orgheadline8}
 
@@ -94,6 +115,17 @@ Book Keeping
 \item Math
 \item Transient storage
 \end{itemize}
+
+\begin{NOTES}
+\begin{itemize}
+\item EDSAC - Electronic Delay Storage Automatic Calculator
+\item Cambridge 1949 - early general purpose electronic programmable computer (ENIAC 1946 was 1st)
+\item Storage - mecury delay lines, derated vacuum tubes for logic
+\item n 1950, M. V. Wilkes and Wheeler used EDSAC to solve a differential equation relating to gene frequencies in a paper by Ronald Fisher. This represents the first use of a computer for a problem in the field of biology.
+\item In 1951, Miller and Wheeler used the machine to discover a 79-digit prime – the largest known at the time.
+\item In 1952, Sandy Douglas developed OXO, a version of noughts and crosses (tic-tac-toe) for the EDSAC, with graphical output to a VCR97 6" cathode ray tube. This may well have been the world's first video game.
+\end{itemize}
+\end{NOTES}
 
 \subsubsection*{60's-90's}
 \label{sec:orgheadline6}
@@ -143,6 +175,15 @@ Cheap resources: SSD/Disk, Memory, CPU
 \item Reuse expensive real estate
 \end{itemize}
 
+\begin{NOTES}
+\begin{itemize}
+\item Magnetic core memory 1955-75
+\item Core uses tiny magnetic toroids (rings), the cores, through which wires are threaded to write and read information.
+\item Each core represents one bit of information.
+\item Magnetized in 2 directions (clockwise/counterclockwise) to represent 1 or 0
+\end{itemize}
+\end{NOTES}
+
 \subsubsection*{RDBMS}
 \label{sec:orgheadline10}
 
@@ -157,6 +198,14 @@ Cheap resources: SSD/Disk, Memory, CPU
 \begin{itemize}
 \item Reuse memory and disk
 \end{itemize}
+
+\begin{NOTES}
+\begin{itemize}
+\item Disk pack - invented 1965
+\item IBM Engineers - Thomas G. Leary and R. E. Pattison
+\item Probably about 50MB on this one.
+\end{itemize}
+\end{NOTES}
 
 \subsection*{Result?}
 \label{sec:orgheadline16}
@@ -236,6 +285,21 @@ In place oriented programming (PLOP) relies on\ldots{}
 \item Explicit state change
 \item Database as a value
 \end{itemize}
+
+\begin{NOTES}
+\begin{itemize}
+\item Make state change obvious
+\item Pass a snapshot of the database as a value
+\begin{itemize}
+\item always remote
+\end{itemize}
+\item Lack of Basis from database
+\begin{itemize}
+\item consistency across long term conversations
+\item what does update mean?
+\end{itemize}
+\end{itemize}
+\end{NOTES}
 
 \subsubsection*{ClojureScript on the client}
 \label{sec:orgheadline20}
@@ -332,6 +396,14 @@ In place oriented programming (PLOP) relies on\ldots{}
 \item App get's its own query, comms, memory- Each App is a peer
 \end{itemize}
 
+\begin{NOTES}
+\begin{itemize}
+\item Apps are peers
+\item Transactor broadcasts txns to peers
+\item Peers cache data locally
+\end{itemize}
+\end{NOTES}
+
 \subsubsection*{Database as a value}
 \label{sec:orgheadline24}
 
@@ -355,6 +427,15 @@ Fiona & likes & Clojure & 15/12/2015\\
 \begin{verbatim}
 [:find ?e :where [?e :likes “Clojure”]]
 \end{verbatim}
+
+\begin{NOTES}
+\begin{itemize}
+\item Ask connection for database - it returns a value representing the db
+\item This is because datoms are immutable - new versions thru time
+\item Can invoke your own code from query engine as data is just normal data structures (lists, maps, etc.)
+\item Assertions and retractions of facts (Datoms)
+\end{itemize}
+\end{NOTES}
 
 \subsubsection*{Schema}
 \label{sec:orgheadline25}
@@ -461,4 +542,37 @@ Fiona & likes & Clojure & 15/12/2015\\
 \item 'ClojureScript - Architecting for Scale' (Clojure eXchange 2015)
 \end{itemize}
 \end{itemize}
+
+\begin{NOTES}
+\begin{itemize}
+\item History
+\begin{itemize}
+\item book keeping - double entry. Didn't change in place.
+\item 50's, 60's memory expensive resource (dates? picture of large old machine)
+\item Swapping instructions in and out of memory - tape -> disk
+\item 70's, 80's and 90's secondary storage expensive - rise of RDBMS
+\item memory still reasonably expensive
+\item In place computing as resources scarce
+\item 00's and 2010's disk cheaper, memory very cheap.
+\item in parallel the rise of OOP - objects with data and behaviour
+\end{itemize}
+\item Why immutability?
+\begin{itemize}
+\item What does mutation bring (picture of three eyed fish from Simpsons \_ other pop culture references)
+\item Can't stand in same river twice (where is origin of quote?)
+\item Complecting the concepts of identity and value particularly OO and RDBMS in trad. use.
+\item Issues of concurrency. Complex values are changed underneath you.
+\item Optimisations - (dig out graph of Om compared with React.js)
+\end{itemize}
+\item What does it look like?
+\begin{itemize}
+\item Examples in:
+\begin{itemize}
+\item Clojurescript - UI state as a value
+\item Clojure - server state as value and a chain of functions
+\item Datomic - database as a value - local cache, peer to peer
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{NOTES}
 \end{document}
