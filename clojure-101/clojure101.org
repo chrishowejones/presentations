@@ -50,11 +50,16 @@
   Everything in (parens) is a list...
 
   #+ATTR_REVEAL: :frag (roll-in)
-  The first item in a list is a /function/.
+  - The first item in a list is a /function/.
   #+ATTR_REVEAL: :frag (roll-in)
-  The first /item/ in a list is a function.
+  - The first /item/ in a list is a function.
   #+ATTR_REVEAL: :frag (roll-in)
-  The /first/ item in a list is a function.
+  - The /first/ item in a list is a function.
+
+* More syntax...
+
+  #+ATTR_REVEAL: :frag (roll-in)
+  - And we are done!
 
 * Demo time...
 
