@@ -1,0 +1,354 @@
+% Created 2019-03-24 Sun 09:35
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Chris}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Chris},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.2 (Org mode 9.1.14)},
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Evolving Architecture (What can Nature teach us)\hfill{}\textsc{Home}}
+\label{sec:org7cd6d50}
+
+\subsection{Plot of talk}
+\label{sec:org8e3642d}
+
+\begin{itemize}
+\item Only constant is change
+\begin{itemize}
+\item I've been designing software systems for over 25 years
+\item Started in monolithic homogeneous environment - mainframes
+\item Automating basic processes in a large government org that changed rules every couple of years with change of the minister but within parameters mainly controlled by the speed with which the org could respond.
+\item Environment was constrained and could only change at a fairly slow rate
+\item In the 90's/00's software centred companies competed with new features as their selling point so speed of change became a competitive advantage.
+\item Now we work in markets driven by customers that interact directly rather than indirectly.
+\item Companies are built up around providing services that don't exist before the company introduces it.
+\begin{itemize}
+\item Facebook (although arguably MySpace was also in that field)
+\end{itemize}
+\item Companies even more frequently provide solutions to problems that already have solutions but they add some additional novelty, usually in the form of features that provide a different form of
+interaction with the customer that didn't exist before the software was written.
+\begin{itemize}
+\item Apple does this but often in the form of physical design combined with software e.g. the iPod wheel as the hook and iTunes which provided an interface that other MP3 download sites didn't have.
+\item Slack does what IRC has done for 30 years but provided a UI that was more tactile and visual (introducing previews for images, emoji) but also, the killer feature, was a persistent history
+making the communication more async as you don't need to be online at the same time. Also providing a fermium model and removing the hosting barriers of some competitors. Having the message
+limits meant you can be away from the convo for a while but not too long introducing a compulsion to check regularly. Also focusing on teams rather than threaded comments, initially they
+implemented everything as a continuous stream which encouraged constant checking which is encourages compulsive behaviour.
+\end{itemize}
+\item We see companies starting with one vision of their offering but changing direction, sometimes quite radically.
+\begin{itemize}
+\item Stuart Butterfield has done this a few times:
+\begin{itemize}
+\item Ludicorp founded 2002 to build a game (called Game Neverending)
+\item 2004 - game failed to gain traction but embedded photo-uploading was popular.
+\item 2005 - game crumbled but Flickr rose from ashes
+\item 2006 - Flickr sold to Yahoo
+\item 2008 - Stuart left Yahoo to found Tiny Spec creating a game called Glitch.
+\item 2010 - raised Series A funding, no detail about game but it was described as web-based massively-multiplayer game (Massively Mulitplayer Online Role-Playing Game MMORPG) epected launch 2010.
+\item 2011 - raised more funding. Invite-based Beta. Launch but returned to Beta to make it easier for new players
+\item 2012 - became obvious Glitch could not attract audience large enough to sustain itself. Glitch dead- Tiny Spec was not.
+\item 2013 - internal comms tool used to share ideas between the US and Canadian offices of Glitch recognised as valuable
+\item 2014 - Slack was announced.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item Seeking different analogies - engineering is not a great one are there other perspectives?
+\begin{itemize}
+\item Civil Engineering - Building the Tyne Bridge. No one widens the Tyne by 300 miles and relocates it to the South Pole mid project.
+\item Engineering in Aerospace - flying a plane or guiding a spacecraft is defined by simple Newtonian physics. Lots of variables but simple equations.
+\item What about biology?
+\end{itemize}
+\item How would software design map to biological systems?
+\item How do classes/functions map to cells?
+\item Message passing like neurochemical transmission
+\begin{itemize}
+\item different types:
+\begin{itemize}
+\item neurotransmitters - message calling between methods/functions?
+\item blood - async message based systems, stream processing
+\item nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
+\end{itemize}
+\end{itemize}
+
+\item Changes to architecture like evolutionary adaptation or acclimatization
+\begin{itemize}
+\item adaptation - changes that are inherited.
+\begin{itemize}
+\item larger changes involve adaptations across many generations (versions). Some are successful, some die. Takes generations to adapt.
+\item smaller simpler organisms with shorter lifecycles can change faster than larger more complex organisms but they can do less.
+\end{itemize}
+\item acclimatization
+\begin{itemize}
+\item smaller changes involve acclimatization - individual organism changed. Similar to stress hormones changing behaviour, or small physiological change. Still inherited.
+\end{itemize}
+\end{itemize}
+\item Ecosystem is the runtime environment in the analogy
+\begin{itemize}
+\item One of the issues is what state is the Ecosystem in?
+\item This is not obvious, how do we measure or detect what the Ecosystem is doing as a whole while it's active?
+\item How are parts of the ecosystem reacting in coordination to others?
+\end{itemize}
+\item Changes to the Ecosystem are changes to features, requirements, etc. Large changes are changes in climate, different ecosystem, etc.
+\item Moving a specialised organism to a completely different ecosystem means it will struggle to survive or may simply die immediately.
+\item Evolution is the organism changing over time to better exploit its ecosystem - the mechanism of evolution is the development team.
+\end{itemize}
+
+\subsubsection{DDD Bounded Contexts}
+\label{sec:org3a4a02b}
+
+Are DDD bounded contexts the equivalent of separate organisms? They evolve at there own rates. They may be affected by the same stimuli but they don't share internal structures.
+
+\begin{enumerate}
+\item Monoliths
+\label{sec:org8a726a0}
+
+Monoliths are like a single organism and the 'bounded context' are the organs (packages or namespaces). Organs can share nutrients, communication mechanisms (ganglia, neurotransmitters).
+If we analogise big ball of mud to uncontrolled growth this becomes cancer that spreads thru the organs (packages in contexts).
+
+\item Services
+\label{sec:orgd0f4e10}
+Services are individual organisms the boundaries of which are the 'bounded context'. Each service is separate. They evolve at their own rates. They may be affected by the same stimuli but they don't share internal structures.
+
+\item Microservices
+\label{sec:orgd09aa1c}
+Microservices are like a \href{https://en.wikipedia.org/wiki/Siphonophorae}{Siphonophorae}, like a \href{https://en.wikipedia.org/wiki/Portuguese\_man\_o\%2527\_war}{Portuguese man o' war}. A bounded context is a colonial organism made up of small organisms that cooperate to get a task done. There are different types of organism with specialised functions zooids or polyps
+
+\item Architectural faults \(\equiv\) Negative Environmental Factors
+\label{sec:org9714fed}
+Poor architecture in:
+\begin{itemize}
+\item Monoliths - cancer(uncontrolled growth), disease (breakdown of shared classes, namespaces, etc).
+\item Services - environmental changes - polution, poisonous environmental factors, extremes of heat and cold. Each individual service is subject to disease, cancer, etc.
+\item Microservices - less impacted by disease, cancer as they're smaller/simpler organisms less to go wrong. Environmental changes in the colony effect the whole colony. We can lose an individual in the organism type in the colony and continue.
+\end{itemize}
+\end{enumerate}
+
+
+\subsubsection{Evolutionary Mechanism (Development Team)}
+\label{sec:org538bfab}
+
+\textbf{**}
+\subsection{General thoughts}
+\label{sec:org4061a8c}
+\begin{itemize}
+\item Event storming? [Can't remember where I was going with this)
+\item feedback thru metrics larger topic of feedback (technical in macro/micro/social)
+\item \href{https://medium.com/featured-insights/understanding-how-design-thinking-lean-and-agile-work-together-88b123a2bc6a}{Design thinking}
+\item metrics matter
+\item Ants cooperate by feedback
+\item Evolution didn't start off with specialised organisms
+\item Need to have mutations that die
+\item Develop sensors to feel the environment
+\item S/w environments adapt and change rapidly - over specialised
+'organisms' will die.
+\item Abstractions impose constraints
+\begin{itemize}
+\item the abstraction becomes the
+environment your software 'grows' in
+\item imposing the wrong abstraction or even the right abstraction
+too early carries a cost for the future generations (it's the
+software equivalent of climate change)
+\end{itemize}
+\item Neurons - electrical to chemical synapsis like bulkheads and
+circuit breakers
+\item Cancer cells - big ball of mud, too many projects/dev's changing
+too much code.
+\item DNA knots caused by stress hormones mean that the RNA polymerase can't unzip the DNA fully and either can't transcribe the DNA to replicate or can only partially transcribe. Again Big Ball of Mud.
+\end{itemize}
+
+\subsection{Positive feedback and alternative stable states in inbreeding, cooperation, sex roles and other evolutionary processes}
+\label{sec:orge2be8fe}
+
+\begin{itemize}
+\item Negative feedback - population regulation (analogy to
+distributed systems?)
+\item Frequency-dependent selection - (polymorphisms in Biology not CS!)
+\item Negative feedback - stabilizing factor
+\item Positive feedback - self-reinforcing, de-stabilizing
+\item Disruptive selection - alternative stable states or protected polymorphisms
+\item Explore balance of negative and positive feedback.
+\begin{itemize}
+\item Positive feedback - exploring new phenotype - some may die
+\item Negative feedback - damping effect, stabilising but resistant
+to change.
+\end{itemize}
+\item Negative feedback loops (operational and micro to damp down effects)
+\begin{itemize}
+\item Alerts triggered on thresholds
+\item Self monitoring - adjusting
+\item Thresholds and boundaries
+\begin{itemize}
+\item Bulkheads
+\item Circuit Breakers
+\end{itemize}
+\end{itemize}
+\item Positive feedback loops (development and macro- to facilitate change)
+\begin{itemize}
+\item Setting alert thresholds
+\item Deciding on metrics
+\item Designing self adjusting / monitoring thresholds
+\end{itemize}
+\item Positive feedback loops (people - process)
+\item Negative feedback loops (code - tests - design)
+\end{itemize}
+\subsection{\url{https://theconversation.com/listening-to-nature-how-sound-can-help-us-understand-environmental-change-105794}}
+\label{sec:org59ccd2a}
+\begin{itemize}
+\item Changes in environment change the sonic signature.
+\begin{itemize}
+\item Loss of damping materials (leaves, etc) increases
+reverberation.
+\item Predators struggle to identify prey direction due to echoes.
+\end{itemize}
+\end{itemize}
+
+\subsection{\url{http://www.octopus.furg.br/fisicomp/disciplinas/adaptacao/acclimatization.pdf}}
+\label{sec:org6d1082c}
+
+\subsection{Feedback loops in biology}
+\label{sec:orgc74b74f}
+
+\subsubsection{Negative feedback loops}
+\label{sec:org3c8d20c}
+\begin{itemize}
+\item Damp down the effect of a stimulous - bulkheads, circuit breakers
+\item Need some examples of negative feedback loops in nature.
+\end{itemize}
+\subsubsection{Positive feedback loops}
+\label{sec:orgca4a57b}
+\begin{itemize}
+\item Amplifies the effect of a stimulous - we want positive feedback loops to either have a paired negative feedback loop to damp it down when it amplifies too much. Positive feedback loops in architecture (excepting AI) are implemented
+by the development team.
+\item Need some examples of positive feedback loops in nature.
+\end{itemize}
+\subsubsection{Example:}
+\label{sec:org6c1c573}
+\begin{enumerate}
+\item Homeostatic control
+\label{sec:orge11dad6}
+\begin{enumerate}
+\item Stimulus– produces a change to a variable (the factor being regulated).
+\item Receptor– detects the change. The receptor monitors the environment and responds to change (stimuli).
+\item Input– information travels along the (afferent) pathway to the control center. The control center determines the appropriate response and course of action.
+\item Output– information sent from the control center travels down the (efferent) pathway to the effector.
+\item Response– a response from the effector balances out the original stimulus to maintain homeostasis.
+\end{enumerate}
+
+\begin{enumerate}
+\item Negative feedback mechanism
+\label{sec:orgf60401b}
+The control of blood sugar (glucose) by insulin is another good example of a negative feedback mechanism. When blood sugar rises, receptors in the body sense a change . In turn, the control center (pancreas) secretes insulin into
+the blood effectively lowering blood sugar levels. Once blood sugar levels reach homeostasis, the pancreas stops releasing insulin.
+
+\item Positive feedback mechanism
+\label{sec:orgbe3877d}
+During labor, a hormone called oxytocin is released that intensifies and speeds up contractions. The increase in contractions causes more oxytocin to be released and the cycle goes on until the baby is born. The birth ends the release
+of oxytocin and ends the positive feedback mechanism.
+\end{enumerate}
+
+
+\item Homeostasis in neurotransmitters
+\label{sec:org601e87e}
+Once neutrons fire, they do need a short refractory period that allows them to be able to fire again - called resting potential. \url{http://www.dummies.com/how-to/content/understanding-the-transmission-of-nerve-impulses.html} image source
+here
+
+\url{https://poweronpoweroff.com/blogs/longform/a-guide-to-neurotransmitter-balance}
+
+\begin{enumerate}
+\item Neurotransmitter balance
+\label{sec:org44c3a9e}
+The brain is constantly striving to keep your different neurochemical systems in balance in response to your ongoing internal and external needs - something that it does through constant neurobiological and synaptic shifts which
+alter the levels of different neurotransmitters. For example during the night when you need to sleep, the inhibitory neurotransmitter GABA blocks the activity of other neurotransmitter systems, shifting the balance in it’s favor. In
+contrast, during the day when you need to think and react, the brain rebalances itself so that these other neurotransmitter systems stop being under sleep-based inhibitory control and are more free to send messages through their
+respective neural systems.
+
+\begin{enumerate}
+\item WHAT MECHANISMS DOES THE BRAIN PUT IN PLACE TO MAINTAIN ITS BALANCE OF NEUROTRANSMITTERS?
+\label{sec:org55bb77e}
+\begin{enumerate}
+\item THE BLOOD BRAIN BARRIER
+\label{sec:org2f55be4}
+The brain's blood brain barrier is a gateway into the brain and is very strict about which chemicals it will allow in - something that is controlled by the array of transporter proteins and chemical gates located within it, which
+all operate within specific parameters. [Bulkheads, Validation]
+
+\item TRANSPORTER REUPTAKE PROTEINS
+\label{sec:org90d88e4}
+Within the synaptic space there are transporter proteins which are there to mop up any excess neurotransmitters, or to quickly remove the neurotransmitter once it is no longer required. [Circuit Breaker, Timeouts, Health endpoints
+in combination with monitoring, schedulers, etc e.g. K8s, Swarm, etc.]
+
+\item SUPPORTING GLIAL CELLS
+\label{sec:org1141179}
+Although much of the focus is on the neurons which carry the signals around the brain, the supporting cells which help them to do this - the glia - play an important role in ensuring that neurotransmitter balance is maintained
+within the brain. [timeouts, circuit breakers, validation]
+
+\item RELEASE MECHANISMS
+\label{sec:org957369e}
+Neurotransmitter release from the sending neurons is a tightly controlled process to make sure not too much neurotransmitter is released into the synapse at any one time. [version control, release mechanisms, API versioning, API accretion]
+
+\item RATE LIMITING ENZYMES
+\label{sec:org6252764}
+The enzymes which synthesize and degrade the neurotransmitters are rate limiting in their mode of action which means that the speed at which neurotransmitters are generated and broken down can be tightly controlled. [rate limiting]
+
+\item INTER-DEPENDENT PRECURSORS
+\label{sec:org4a37621}
+The synthesis of neurotransmitters is part of a carefully constructed cycle, where the precursors and the end products are interdependent. For example, inhibitory GABA is synthesized from excitatory Glutamate. This means that each
+neurotransmitter isn’t synthesized in isolation but as part of a wider process of balancing the brain's overall neurochemistry. [k8s, swarm, service coordination and choreography]
+\end{enumerate}
+
+\item WHAT ENVIRONMENTAL FACTORS INFLUENCE YOUR BRAIN’S NEUROTRANSMITTER BALANCE?
+\label{sec:orgb16d2b8}
+
+\begin{enumerate}
+\item Diet
+\label{sec:org0a36b31}
+Ammino acids, energy supplies (carbs and fats), vitamins, minerals. [Equivalent to tooling, languages, development process and practices]
+
+\item Medication and Drugs
+\label{sec:org051d653}
+Can mimic effects of neurotransmitters (e.g amphetamine acting on catecholamine receptors). to enhance their effects of the neurotransmitter (e.g. benzodiazepines potentiate the action of GABA receptors) or to prevent their
+reuptake (as is the case with cocaine and catecholamines or Prozac and serotonin). Other drugs work to block (antagonize) receptors, for example the action of the beta-blocker propranolol on noradrenergic and adrenergic receptors.
+[poor development disciplines, uncontrolled change]
+
+\item Chronic Stress
+\label{sec:orgc0ad4e3}
+Being chronically stressed causes more glutamate than normal to be released at synapses in the brain’s prefrontal regions - involved in higher-order thinking - and hippocampus - a region involved in memory.
+\end{enumerate}
+
+\item HOW DO WE CORRECT NEUROTRANSMITTER IMBALANCES?
+\label{sec:org5ec7f8b}
+
+\begin{enumerate}
+\item TARGETED AMINO ACID THERAPIES
+\label{sec:orgb17bde6}
+Targeted amino acid therapies work by substantially altering the relative balance of amino acids ingested within your diet. [architectural restructuring]
+
+\item EXERCISE
+\label{sec:org7e4fcd9}
+Doing high-intensity exercise increases the availability of brain tryptophan and promotes the synthesis of serotonin which, in combination with changes in the other monoamine neurotransmitter systems, mediates the behavioural
+sensations of fatigue and subsequent positive changes in mood. [Good developer disciplines - version control, TDD, pairing, automated testing, linting, retrospectives, refactoring]
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{document}
