@@ -1,0 +1,88 @@
+#+OPTIONS: toc:nil num:nil timestamp:nil
+#+OPTIONS: reveal_width:1080
+#+OPTIONS: reveal_height:768
+#+TITLE: Consumer Driven-Contracts with GraphQL
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  1st May 2018
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.4
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:t
+#+OPTIONS: reveal_rolling_links:t reveal_overview:t
+#+REVEAL_KEYBOARD:t
+#+REVEAL_THEME: league
+#+REVEAL_TRANS: concave
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_PLUGINS: (highlight markdown notes)
+* Consumer Driven-Contracts with Graphql
+
+* Who am I?
+
+  Name:      =Chris Howe-Jones= *[Technical Navigator]*
+
+  Twitter:   =@agile_geek=
+
+  Github:    =http://github.com/chrishowejones=
+
+  LinkedIn:  =https://uk.linkedin.com/in/chrishowejones=
+
+  Organiser: =London Clojurians, Clojure eXchange, ClojureBridge=
+
+  Speaker:   =FP North East, Agile North East, London Clojurians,
+  Dynamo Conference, West Midlands JUG, DefShef, Sunderland Uni=
+
+* Consumer Contract?
+
+  Each client has it's own requirements
+    + Want the fields they want
+    + Want to change the state they need to change
+    + Want to change requirements independently
+
+* What's wrong with REST?
+
+  How to get different data?
+    + Fields listed in GET query string?
+    + Fields listed in GET body?
+    + Fields listed in POST body?
+
+  The answer is different resources
+
+* What's wrong with REST?
+
+  If I want data from different resources or a graph of 'objects' I
+  need multiple calls.
+
+* Postel's Law
+
+  /"Be conservative in what you do, be liberal in what you accept from
+  others."/
+
+* Tolerant Reader
+
+  Pattern to tolerate provider changing contract.
+
+    + Does adding fields break consumer?
+    + Does not sending non mandatory fields break things?
+
+* Issues with parsers?
+
+  Often parsers in statically typed OOP languages assume rigid
+  compliance to schema regardless of consumers needs.
+
+* How does graphql help?
+
+  - Self describing (schema).
+  - Queries to fetch only what's required.
+  - Can fetch object graph in one call.
+  - Can have more than one query per call.
+  - 'Mutate' only what's required.
+
+* What's it look like?
+
+  DEMO CAKE!
+
+  [[./demo-cake.jpg]]

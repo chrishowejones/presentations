@@ -1,0 +1,86 @@
+#+OPTIONS: toc:nil num:nil timestamp:nil
+#+OPTIONS: reveal_width:1080
+#+OPTIONS: reveal_height:768
+#+TITLE:  Evolutionary Architecture: What can we learn from Nature?
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  4th April 2019
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.4
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:t
+#+OPTIONS: reveal_rolling_links:t reveal_overview:t
+#+REVEAL_KEYBOARD:t
+#+REVEAL_THEME: league
+#+REVEAL_TRANS: concave
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_PLUGINS: (highlight markdown notes)
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+* Who am I?
+
+  Name:      =Chris Howe-Jones= *[Technical Navigator]*
+
+  Twitter:   =@agile_geek=
+
+  Github:    =http://github.com/chrishowejones=
+
+  [[./DevCycleWhiteLogo.png]]
+* {{{color(red,Change is a constant)}}}
+:PROPERTIES:
+:reveal_background: ./change.jpg
+:END:
+
+#+BEGIN_NOTES
+     + Companies are built up around providing services that don't exist before the company introduces it.
+       * Facebook (although arguably MySpace was also in that field)
+     + Companies that are build a business model around a uniqueness - Google
+     + Companies even more frequently provide solutions to problems that already have solutions but they add some additional novelty, usually in the form of features that provide a different form of
+       interaction with the customer that didn't exist before the software was written.
+       * Apple does this but often in the form of physical design combined with software e.g. the iPod wheel as the hook and iTunes which provided an interface that other MP3 download sites didn't have.
+       * Slack does what IRC has done for 30 years but provided a UI that was more tactile and visual (introducing previews for images, emoji) but also, the killer feature, was a persistent history
+         making the communication more async as you don't need to be online at the same time. Also providing a fermium model and removing the hosting barriers of some competitors. Having the message
+         limits meant you can be away from the convo for a while but not too long introducing a compulsion to check regularly. Also focusing on teams rather than threaded comments, initially they
+         implemented everything as a continuous stream which encouraged constant checking which is encourages compulsive behaviour.
+     + We see companies starting with one vision of their offering but changing direction, sometimes quite radically.
+       * Stuart Butterfield has done this a few times:
+         - Ludicorp founded 2002 to build a game (called Game Neverending)
+         - 2004 - game failed to gain traction but embedded photo-uploading was popular.
+         - 2005 - game crumbled but Flickr rose from ashes
+         - 2006 - Flickr sold to Yahoo
+         - 2008 - Stuart left Yahoo to found Tiny Spec creating a game called Glitch.
+         - 2010 - raised Series A funding, no detail about game but it was described as web-based massively-multiplayer game (Massively Mulitplayer Online Role-Playing Game MMORPG) epected launch 2010.
+         - 2011 - raised more funding. Invite-based Beta. Launch but returned to Beta to make it easier for new players
+         - 2012 - became obvious Glitch could not attract audience large enough to sustain itself. Glitch dead- Tiny Spec was not.
+         - 2013 - internal comms tool used to share ideas between the US and Canadian offices of Glitch recognised as valuable
+         - 2014 - Slack was announced.
+#+END_NOTES
+
+* Engineering Analogies
+:PROPERTIES:
+:reveal_background: ./tynebridge-antarctic.png
+:END:
+
+#+BEGIN_NOTES
+ - Seeking different analogies - engineering is not a great one are there other perspectives?
+     + Civil Engineering - Building the Tyne Bridge. No one widens the Tyne by 300 miles and relocates it to the South Pole mid project.
+     + Engineering in Aerospace - flying a plane or guiding a spacecraft is defined by simple Newtonian physics. Lots of variables but simple equations.
+     + What about biology?
+
+#+END_NOTES
+
+* Mapping Software to Biology
+
+Cell -> Classes/Functions
+
+#+BEGIN_NOTES
+   - How would software design map to biological systems?
+   - How do classes/functions map to cells?
+   - Message passing like neurochemical transmission
+     + different types:
+       * neurotransmitters - message calling between methods/functions?
+       * blood - async message based systems, stream processing
+       * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
+#+END_NOTES

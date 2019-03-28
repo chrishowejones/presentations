@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Consumer Driven-Contracts with GraphQL</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js/css/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/chris/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Consumer Driven-Contracts with GraphQL</h1><h2 class="author">Chris Howe-Jones</h2><h2 class="date">1st May 2018</h2>
+</section>
+<section>
+<section id="slide-org1485546">
+<h2 id="org1485546">Consumer Driven-Contracts with Graphql</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb00a005">
+<h2 id="orgb00a005">Who am I?</h2>
+<p>
+Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
+</p>
+
+<p>
+Twitter:   <code>@agile_geek</code>
+</p>
+
+<p>
+Github:    <code>http://github.com/chrishowejones</code>
+</p>
+
+<p>
+LinkedIn:  <code>https://uk.linkedin.com/in/chrishowejones</code>
+</p>
+
+<p>
+Organiser: <code>London Clojurians, Clojure eXchange, ClojureBridge</code>
+</p>
+
+<p>
+Speaker:   <code>FP North East, Agile North East, London Clojurians,
+  Dynamo Conference, West Midlands JUG, DefShef, Sunderland Uni</code>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc29e1f6">
+<h2 id="orgc29e1f6">Consumer Contract?</h2>
+<p>
+Each client has it's own requirements
+</p>
+<ul>
+<li>Want the fields they want</li>
+<li>Want to change the state they need to change</li>
+<li>Want to change requirements independently</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orga0370e8">
+<h2 id="orga0370e8">What's wrong with REST?</h2>
+<p>
+How to get different data?
+</p>
+<ul>
+<li>Fields listed in GET query string?</li>
+<li>Fields listed in GET body?</li>
+<li>Fields listed in POST body?</li>
+
+</ul>
+
+<p>
+The answer is different resources
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org3b72da3">
+<h2 id="org3b72da3">What's wrong with REST?</h2>
+<p>
+If I want data from different resources or a graph of 'objects' I
+need multiple calls.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb9750c7">
+<h2 id="orgb9750c7">Postel's Law</h2>
+<p>
+<i>"Be conservative in what you do, be liberal in what you accept from
+others."</i>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org8a46d72">
+<h2 id="org8a46d72">Tolerant Reader</h2>
+<p>
+Pattern to tolerate provider changing contract.
+</p>
+
+<ul>
+<li>Does adding fields break consumer?</li>
+<li>Does not sending non mandatory fields break things?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orga419896">
+<h2 id="orga419896">Issues with parsers?</h2>
+<p>
+Often parsers in statically typed OOP languages assume rigid
+compliance to schema regardless of consumers needs.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org30e3451">
+<h2 id="org30e3451">How does graphql help?</h2>
+<ul>
+<li>Self describing (schema).</li>
+<li>Queries to fetch only what's required.</li>
+<li>Can fetch object graph in one call.</li>
+<li>Can have more than one query per call.</li>
+<li>'Mutate' only what's required.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaf87a28">
+<h2 id="orgaf87a28">What's it look like?</h2>
+<p>
+DEMO CAKE!
+</p>
+
+
+<div class="figure">
+<p><img src="./demo-cake.jpg" alt="demo-cake.jpg" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/chris/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///home/chris/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1080,
+height: 768,
+margin: 0.10,
+minScale: 0.40,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/chris/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///home/chris/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

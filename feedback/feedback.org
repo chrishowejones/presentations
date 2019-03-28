@@ -1,0 +1,143 @@
+#+OPTIONS: toc:nil num:nil timestamp:nil
+#+OPTIONS: reveal_width:1080
+#+OPTIONS: reveal_height:768
+#+TITLE: Feedback Loops
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  ? ? 2018
+#+REVEAL_SLIDE_NUMBER: false
+#+REVEAL_MARGIN: 0.0
+#+REVEAL_MIN_SCALE: 0.0
+#+REVEAL_MAX_SCALE: 0.0
+#+OPTIONS: reveal_center:t
+#+OPTIONS: reveal_rolling_links:t reveal_overview:t
+#+REVEAL_KEYBOARD:t
+#+REVEAL_THEME: league
+#+REVEAL_TRANS: concave
+#+REVEAL_HLEVEL: 2
+#+REVEAL_CENTER: true
+#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_SLIDE_FOOTER: @agile_geek
+#+REVEAL_EXTRA_CSS: footer.css
+
+* Who am I?
+
+  Name:      =Chris Howe-Jones= *[Technical Navigator]*
+
+  Twitter:   =@agile_geek=
+
+  Github:    =http://github.com/chrishowejones=
+
+  LinkedIn:  =https://uk.linkedin.com/in/chrishowejones=
+
+  Organiser: =London Clojurians, Clojure eXchange, ClojureBridge=
+
+  Speaker:   =FP North East, Agile North East, London Clojurians,
+  Dynamo Conference, West Midlands JUG, DefShef, Sunderland Uni=
+
+* Feedback loop in software development
+
+  ... lessons from nature, philosophy and how to apply feedback to
+  software development and architecture.
+
+  Change is the only constant
+
+  Early abstraction is the enemy of change.
+
+  Feedback loops support and guide change.
+
+#+BEGIN_NOTES
+
+
+
+   + Feedback loops in nature
+     - [[https://www.albert.io/blog/positive-negative-feedback-loops-biology/][Positive and negative feedback loops in biology]]
+     - [[http://rstb.royalsocietypublishing.org/content/367/1586/211][Positive feedback and alternative stable states in inbreeding, cooperation, sex roles and other evolutionary processes]]
+       * Disruptive selection not +ve feedback - two stable states
+         from protected polymorphism (analogue in architecture or
+         code?)
+       * Positive feedback on a single trait? Analogue in
+         code/architecture?
+       * Coevolving multiple traits? Analogue?
+   + Systems thinking feedback loops
+     - Dr Deming - [[https://blog.deming.org/2016/04/systems-thinking-feedback-loops/][Systems Thinking: Feedback loops]]
+       * Reinforcement feedback loops - often negative
+         + intertia
+         + avoid negative reinforcement - water over spill in a dam
+           (release slipway - analogue to back pressure?)
+         + trust in organisation -> reduce fear -> more cooperation ->
+                    more trust
+     - Balancing loops
+       + eating -> full -> stop eating -> hungry -> eating (timing
+         is important as feedback signals need time to be recognised)
+       + negative balance - fire fighting new crisis -> direct
+         resource -> reduce crisis
+   + Feedback in code (micro)
+     - REPL
+     - TDD
+     - Pair programming (2 level feedback)
+     - CI build tools
+   + Feedback for architecture
+     - Two audiences (is it more than 2?) so two types of feedback
+       loop
+       + Techies - Developers/Testers/Devops
+         * resiliance - simian army type feedback (networks are not perfect,
+           processes stops happen e.g. GC pauses, thrashing, etc
+         * related but different? - impact on resilience and performance of - TTL, timouts, bulkheads, back
+           pressure.
+         * performance feedback - throughput, latency, etc.
+         * security - scanning, encryption etc. (what is tooling and
+           approach here?)
+         * crossover between security and resilience
+         * more meta feedback - time to deploy/release, time to
+           failure, ???
+       + Users, managers, other business stakeholders
+         * time to release
+         * cycle times of changes - for different stages
+         * lead time - total time to deliver
+         * 'waste' time - time in queues or blocked
+         * Quality measures - bugs in production, bugs found in
+           development (this is a good thing, bugs found early and
+           fixed are less expensive)
+       + Feedback for both audiences - meta feedback on process
+         * issues raised in retros vs issues resolved
+         * lead and cycle times for issues
+         * level of decisions taken (how to measure the teams ability
+           to self determine?)
+     - Architects, agile coaches, product owners, dev managers
+       etc. need to devise feedback loops for the teams to highlight
+       the issues they need to care about.
+       + Response to change - meta feedback concentrating on 'support for change'
+         * release cycle times
+         * impact of technology on delivery lead time and cycle times
+         * bugs identified and where in the delivery flow
+         * predictability of lead/cycle times (std deviations over time)
+       + Architecture
+         * performance targets
+         * consistency guarantees
+         * scalability
+         * availability guarantees
+         * throughput
+         * impact of 'development' disciplines on cycle, lead and
+           waste times.
+       + Functional metrics
+         * dwell time
+         * conversion rates
+         * 'happiness' surveys - likely to recommend
+         * feedback from on going UR - visits to teams after go live
+           of major releases to check if process improvements made or regressed.
+       + Peopleware
+         * stability of team (turnover, etc)
+         * build in turn over to prevent developer fatigue and gain
+           diversity of opinion
+         * satisfaction scores (anonymous)
+         * empowerment scores (whole team)
+         * engagement in team/project/programme/organisational
+           measures (how much influence does team feel they have)
+       + Meta measures
+         * usefulness of metrics used
+         *
+
+
+#+END_NOTES

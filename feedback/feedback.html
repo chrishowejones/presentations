@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Feedback Loops</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js/css/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="footer.css"/>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/chris/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Feedback Loops</h1><h2 class="author">Chris Howe-Jones</h2><h2 class="date">? ? 2018</h2>
+</section>
+
+<section>
+<section id="slide-orgdfe7a1c">
+<h2 id="orgdfe7a1c">Who am I?</h2>
+<p>
+Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
+</p>
+
+<p>
+Twitter:   <code>@agile_geek</code>
+</p>
+
+<p>
+Github:    <code>http://github.com/chrishowejones</code>
+</p>
+
+<p>
+LinkedIn:  <code>https://uk.linkedin.com/in/chrishowejones</code>
+</p>
+
+<p>
+Organiser: <code>London Clojurians, Clojure eXchange, ClojureBridge</code>
+</p>
+
+<p>
+Speaker:   <code>FP North East, Agile North East, London Clojurians,
+  Dynamo Conference, West Midlands JUG, DefShef, Sunderland Uni</code>
+</p>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org1c3d8a0">
+<h2 id="org1c3d8a0">Stuff</h2>
+<p>
+&#x2026; and nonsense.
+</p>
+
+<aside class="notes">
+<p>
+
+</p>
+
+
+
+<ul>
+<li>Feedback loops in nature
+<ul>
+<li><a href="http://rstb.royalsocietypublishing.org/content/367/1586/211">Positive feedback and alternative stable states in inbreeding, cooperation, sex roles and other evolutionary processes</a>
+<ul>
+<li>Disruptive selection not +ve feedback - two stable states
+from protected polymorphism (analogue in architecture or
+code?)</li>
+<li>Positive feedback on a single trait? Analogue in
+code/architecture?</li>
+<li>Coevolving multiple traits? Analogue?</li>
+
+</ul></li>
+
+</ul></li>
+<li>Systems thinking feedback loops
+<ul>
+<li>Dr Deming - <a href="https://blog.deming.org/2016/04/systems-thinking-feedback-loops/">Systems Thinking: Feedback loops</a>
+<ul>
+<li>Reinforcement feedback loops - often negative
+<ul>
+<li>intertia</li>
+<li>avoid negative reinforcement - water over spill in a dam
+(release slipway - analogue to back pressure?)</li>
+<li>trust in organisation -&gt; reduce fear -&gt; more cooperation -&gt;
+more trust</li>
+
+</ul></li>
+
+</ul></li>
+<li>Balancing loops
+<ul>
+<li>eating -&gt; full -&gt; stop eating -&gt; hungry -&gt; eating (timing
+is important as feedback signals need time to be recognised)</li>
+<li>negative balance - fire fighting new crisis -&gt; direct
+resource -&gt; reduce crisis</li>
+
+</ul></li>
+
+</ul></li>
+<li>Feedback in code (micro)
+<ul>
+<li>REPL</li>
+<li>TDD</li>
+<li>Pair programming (2 level feedback)</li>
+<li>CI build tools</li>
+
+</ul></li>
+<li></li>
+
+</ul>
+
+</aside>
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/chris/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///home/chris/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1080,
+height: 768,
+margin: 0.00,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/chris/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///home/chris/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
