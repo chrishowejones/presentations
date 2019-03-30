@@ -70,7 +70,7 @@
      Services are individual organisms the boundaries of which are the 'bounded context'. Each service is separate. They evolve at their own rates. They may be affected by the same stimuli but they don't share internal structures.
 
 **** Microservices
-     Microservices are like a [[https://en.wikipedia.org/wiki/Siphonophorae][Siphonophorae]], like a [[https://en.wikipedia.org/wiki/Portuguese_man_o%2527_war][Portuguese man o' war]]. A bounded context is a colonial organism made up of small organisms that cooperate to get a task done. There are different types of organism with specialised functions zooids or polyps
+      Microservices are like a [[https://en.wikipedia.org/wiki/Siphonophorae][Siphonophorae]], like a [[https://en.wikipedia.org/wiki/Portuguese_man_o%2527_war][Portuguese man o' war]]. A bounded context is a colonial organism made up of small organisms that cooperate to get a task done. There are different types of organism with specialised functions zooids or polyps
 
 **** Architectural faults \equiv Negative Environmental Factors
      Poor architecture in:

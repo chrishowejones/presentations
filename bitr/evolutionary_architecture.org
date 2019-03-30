@@ -84,3 +84,61 @@ Cell -> Classes/Functions
        * blood - async message based systems, stream processing
        * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
 #+END_NOTES
+
+* Messages
+
+
+#+BEGIN_NOTES
+   - Message passing like neurochemical transmission
+     + different types:
+       * neurotransmitters - message calling between methods/functions?
+       * blood - async message based systems, stream processing
+       * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
+#+END_NOTES
+
+* Software Environments -> Ecosystems
+
+#+BEGIN_NOTES
+   - Ecosystem is the runtime environment in the analogy
+     + One of the issues is what state is the Ecosystem in?
+     + This is not obvious, how do we measure or detect what the Ecosystem is doing as a whole while it's active?
+     + How are parts of the ecosystem reacting in coordination to others?
+   - Changes to the Ecosystem are changes to features, requirements, etc. Large changes are changes in climate, different ecosystem, etc.
+   - Moving a specialised organism to a completely different ecosystem means it will struggle to survive or may simply die immediately.
+   - Evolution is the organism changing over time to better exploit its ecosystem - the mechanism of evolution is the development team.
+#+END_NOTES
+
+* DDD Bounded Contexts
+
+#+BEGIN_NOTES
+  Are DDD bounded contexts the equivalent of separate organisms? They evolve at there own rates. They may be affected by the same stimuli but they don't share internal structures.
+  Abstractions within software (interfaces and data structures) are analogous to membranes and sensory mechanisms in organisms.
+
+#+END_NOTES
+
+* Monoliths
+
+
+
+#+BEGIN_NOTES
+     Monoliths are like a single organism and the 'bounded context' are the organs (packages or namespaces). Organs can share nutrients, communication mechanisms (ganglia, neurotransmitters).
+     If we analogise big ball of mud to uncontrolled growth this becomes cancer that spreads thru the organs (packages in contexts).
+#+END_NOTES
+
+* Services
+
+#+BEGIN_NOTES
+     Services are individual organisms the boundaries of which are the
+     'bounded context'. Each service is separate. They evolve at their
+     own rates. They may be affected by the same stimuli but they
+     don't share internal structures.
+#+END_NOTES
+
+* Nicoservices
+
+#+BEGIN_NOTES
+ Microservices are like a [[https://en.wikipedia.org/wiki/Siphonophorae][Siphonophorae]], like a [[https://en.wikipedia.org/wiki/Portuguese_man_o%2527_war][Portuguese man o' war]].
+ A bounded context is a colonial organism made up of small organisms
+ that cooperate to get a task done. There are different types of
+ organism with specialised functions zooids or polyps
+#+END_NOTES
