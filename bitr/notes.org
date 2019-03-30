@@ -342,7 +342,61 @@
 **** Guided Evolution
 
      In order to guide software evolutionary processes the team needs to understand the ecosystem they are designing for. Traditionally, this has been an exercise in gathering and fixing
-     requirements/features/stories
+     requirements/features/stories but this is often flawed as to accurately determine what the Biotope is using static analysis based on peoples interpretation is inherently unconsciously biased.
+
+     In order to determine what the ecosystem is we need to 'sense' the environment we are in.
+
+***** Sensing the microecosytem
+
+      - Traditional monitoring of running software. Memory, CPU, etc.
+      - Monitoring and alerting on network effects like request rates, average/std deviation of request latency, etc.
+
+***** Sensing the Habitat/Biome
+
+      - Dwell time on a site
+      - Conversion rates
+      - Sales rates
+      - Return rates
+      - Usage rates of features
+      - Customer location
+      - Customer segmentation
+      - A/B testing
+      - Scientist type code experiments. Code that performs old and new way, compares results and reports differences while taking the old result as response.
+
+***** Sensing the Biome
+
+      - Surveying current customers and wider customer base
+      - Market research
+      - Industry research
+      - Exploratory features or new apps targeting other markets
+      - P & L
+      - Board level decisions
+
+***** Sensing the Biosphere
+
+      - Major organisational events (mergers, buyouts, bankruptcy proceedings)
+
+***** Feedback from sensors tune evolution
+
+      - Feedback from these sensors are used to tune the evolutionary processes at the appropriate level.
+      - You can move to respond to changes in a wider ecosystem by changing the processes and the sensors to guide evolution to respond to the large change over generations of the software design.
+      - Conversely, detecting changes in a sensors output over time in a narrower ecosystem can suggest that a large change is occurring in a wider ecosystem.
+
+**** Factors that influence software evolution
+
+     - Not designing a sensor/response feedback mechanism
+     - Bad development practices making response to change harder or impossible
+     - Poor code hygene (this is equivalent to knots in DNA that make RNA transcription of that part of the DNA chain impossible)
+     - Constraints on the ecosystems that inhibit the ability to sense or respond to change. Typically, edicts to follow a directive/std with no understanding or explanation of the reasoning behind this.
+     - Over population effects poisoning the ecosystem. Too big a team, too many teams, too much change in the narrower ecosystem.
+
+
+*** Conclusion
+
+    - Identify the factors that matter and pick metrics that measure them
+    - Design your feedback loops (sensor/receptors) and effectors
+    - Identify beneficial constraints vs detrimental constraints (e.g. service boundaries or immutable data vs inability to change biotope due to policy/stds)
+    - People (the team) are your mechanism for evolution - they need to know what constraints are imposed and why and the directions of freedom as well as the results of sensory input.
 
 
 ** General thoughts
