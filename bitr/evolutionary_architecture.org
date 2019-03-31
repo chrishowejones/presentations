@@ -228,8 +228,6 @@ zooids or polyps
 #+BEGIN_NOTES
      Poor architecture in:
        - Monoliths - cancer(uncontrolled growth), disease (breakdown of shared classes, namespaces, etc).
-       - Services - environmental changes - polution, poisonous environmental factors, extremes of heat and cold. Each individual service is subject to disease, cancer, etc.
-       - Microservices - less impacted by disease, cancer as they're smaller/simpler organisms less to go wrong. Environmental changes in the colony effect the whole colony. We can lose an individual in the organism type in the colony and continue.
 #+END_NOTES
 
 * Problems
@@ -238,7 +236,6 @@ zooids or polyps
 
 #+BEGIN_NOTES
      Poor architecture in:
-       - Monoliths - cancer(uncontrolled growth), disease (breakdown of shared classes, namespaces, etc).
        - Services - environmental changes - polution, poisonous environmental factors, extremes of heat and cold. Each individual service is subject to disease, cancer, etc.
        - Microservices - less impacted by disease, cancer as they're smaller/simpler organisms less to go wrong. Environmental changes in the colony effect the whole colony. We can lose an individual in the organism type in the colony and continue.
 #+END_NOTES
@@ -267,13 +264,6 @@ zooids or polyps
 [[./BITR-12.png]]
 
 #+BEGIN_NOTES
-     - Limited communication within the ecosystem. Tend to communicate with users (who are also part of the ecosystem) and maybe one or two other monolithic organisms (like a large database
-       encompassing everything in it's schema that various monoliths require).
-     - Has macro sensory features - message passing (sync and async)
-     - Synchronous messaging - HTTP
-       + Sync messaging sound waves to ear - sound waves from mouth/throat.
-       + Light travels from organism to sensor. Light from pigmentation changes or movement travel back (pigmentation changes in Cuttlefish are thought to have a communication function, Chameleons
-         colour change on changes in their mood.
      - Asynchronous messaging - broker based messaging systems (MQ, ActiveMQ, AMQP - Advanced Message Queuing Protocol)
        + Chemical communication
          * Leaving scent markers (mammals - marking territory, scent trails)
@@ -342,7 +332,7 @@ zooids or polyps
 
 * -ve feedback mechanisms
 
-[[./BITR-17/png]]
+[[./BITR-17.png]]
 
 #+BEGIN_NOTES
       Circuit Breaker on a client.
@@ -493,7 +483,7 @@ Other mechanisms
      inhibit the expression of a gene without actually changing the nucleotide sequence.
 #+END_NOTES
 
-* Changes in Biome
+* Changes in Biome/Biotpoe
 
 [[./BITR-27.png]]
 
@@ -514,7 +504,7 @@ Biological responses
     altering RNA transcription and the adoption of phenotypically plastic traits.
 #+END_NOTES
 
-* Changes in Biome
+* Changes in Biome/Biotope
 
 [[./BITR-28.png]]
 
@@ -542,14 +532,14 @@ Software response
 
 * Feedback loops
 :PROPERTIES:
-:reveal_background: ./bio ecosystem feedback2.png
+:reveal_background: ./bio_ecosystem_feedback2.png
 :reveal_background_size: 540px
 :END:
 
 
 * Feedback loops
 
-[[./BITR-29.png]]
+[[./BITR2-1.png]]
 
 #+BEGIN_NOTES
 Feedback loops in Code
@@ -598,7 +588,7 @@ Feedback loops in Development team and process
   - Monitoring and alerting on network effects like request rates, average/std deviation of request latency, etc.
 #+END_NOTES
 
-* Sensing the Habitat/Biome
+* Sensing the Habitat/Biotope
 :PROPERTIES:
 :reveal_background: ./software_ecosystem_feedback2.png
 :reveal_background_size: 540px
@@ -641,7 +631,9 @@ Feedback loops in Development team and process
   - Major organisational events (mergers, buyouts, bankruptcy proceedings)
 #+END_NOTES
 
-* Feedback from sensors tune evolution
+* Feedback from sensors
+
+  - tune evolution
 
 #+BEGIN_NOTES
   - Feedback from these sensors are used to tune the evolutionary processes at the appropriate level.
@@ -664,5 +656,7 @@ Feedback loops in Development team and process
   - Identify the factors that matter and pick metrics that measure them
   - Design your feedback loops (sensor/receptors) and effectors
   - Identify beneficial constraints vs detrimental constraints
-     - (e.g. service boundaries or immutable data vs inability to change biotope due to policy/stds)
+    - e.g. service boundaries or immutable data vs inability to change biotope due to policy/stds
+    - Ensure Ecosystems are self contained
+    - Constrain & understand changes from upper ecosystem.
   - People (the team) are your mechanism for evolution - they need to know what constraints are imposed and why and the directions of freedom as well as the results of sensory input.
