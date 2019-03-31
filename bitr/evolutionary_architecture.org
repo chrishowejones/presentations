@@ -308,6 +308,8 @@ zooids or polyps
 
 * Microservices
 
+[[./BITR-15.png]]
+
 #+BEGIN_NOTES
      - Even more communication across even smaller more specialised organisms.
      - Lifespans can be very short.
@@ -318,6 +320,8 @@ zooids or polyps
 #+END_NOTES
 
 * -ve feedback mechanisms
+
+[[./BITR-16.png]]
 
 #+BEGIN_NOTES
     - Damp down the effect of a stimulus
@@ -338,6 +342,8 @@ zooids or polyps
 
 * -ve feedback mechanisms
 
+[[./BITR-17/png]]
+
 #+BEGIN_NOTES
       Circuit Breaker on a client.
       1. Clients send requests to many requests for a service to handle.
@@ -347,7 +353,7 @@ zooids or polyps
 
 * +ve feedback mechanisms
 
-
+[[./BITR-18.png]]
 
 #+BEGIN_NOTES
       A positive feedback loop comes into play during childbirth.
@@ -360,7 +366,7 @@ zooids or polyps
 
 * +ve feedback mechanisms
 
-
+[[./BITR-19.png]]
 
 #+BEGIN_NOTES
       Positive feedback in software is driven by external agencies such as customer demand, management demand, changes in organisational focus.
@@ -390,7 +396,7 @@ zooids or polyps
 
 * Micro-ecosystem
 
-
+[[./BITR-20.png]]
 
 #+BEGIN_NOTES
       In biology an example of a microecosystem might be a pond which has a limited amount of variation. It's temperature differences are buffered. Water levels can raise or fall but are usually in
@@ -399,7 +405,7 @@ zooids or polyps
 
 * Micro-ecosystem
 
-
+[[./BITR-21.png]]
 
 #+BEGIN_NOTES
       1. Software executables
@@ -412,6 +418,7 @@ zooids or polyps
 
 * Habitat or Biotope
 
+[[./BITR-20.png]]
 
 #+BEGIN_NOTES
       In biology an example of a habitat might be the garden the pond is in. It has a limited number of species of flora
@@ -420,6 +427,7 @@ zooids or polyps
 
 * Habitat or Biotope
 
+[[./BITR-22.png]]
 
 #+BEGIN_NOTES
       1. Development processes
@@ -430,12 +438,16 @@ zooids or polyps
 
 * Biome
 
+[[./BITR-23.png]]
+
 #+BEGIN_NOTES
       In biology an example of a Biome would be Tropical Rainforest, Tundra, Hot Desert, etc.
 #+END_NOTES
 
-
 * Biome
+
+[[./BITR-24.png]]
+
 #+BEGIN_NOTES
       1. Department or organisation.
       2. Customer base
@@ -445,11 +457,15 @@ zooids or polyps
 
 * Biosphere
 
+[[./BITR-25.png]]
+
 #+BEGIN_NOTES
    In biology a biosphere is planetary scale e.g. Earth.
 #+END_NOTES
 
 * Biosphere
+
+[[./BITR-26.png]]
 
 #+BEGIN_NOTES
    1. All markets
@@ -479,6 +495,8 @@ Other mechanisms
 
 * Changes in Biome
 
+[[./BITR-27.png]]
+
 #+BEGIN_NOTES
 Biological responses
 
@@ -497,6 +515,8 @@ Biological responses
 #+END_NOTES
 
 * Changes in Biome
+
+[[./BITR-28.png]]
 
 #+BEGIN_NOTES
 Software response
@@ -520,7 +540,6 @@ Software response
     cross network traffic and result in hot-spots in the architecture.
 #+END_NOTES
 
-
 * Feedback loops
 :PROPERTIES:
 :reveal_background: ./bio ecosystem feedback2.png
@@ -530,6 +549,7 @@ Software response
 
 * Feedback loops
 
+[[./BITR-29.png]]
 
 #+BEGIN_NOTES
 Feedback loops in Code
