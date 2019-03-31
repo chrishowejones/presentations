@@ -9,8 +9,9 @@
 </style>
 <link rel="stylesheet" href="file:///home/chris/reveal.js/css/reveal.css"/>
 
-<link rel="stylesheet" href="file:///home/chris/reveal.js/css/theme/league.css" id="theme"/>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/css/theme/beige.css" id="theme"/>
 
+<link rel="stylesheet" href="./custom-stylesheet.css"/>
 <link rel="stylesheet" href="file:///home/chris/reveal.js/lib/css/zenburn.css"/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -29,8 +30,8 @@
 <section id="sec-title-slide"><h1 class="title">Evolutionary Architecture: What can we learn from Nature?</h1><h2 class="author">Chris Howe-Jones</h2><h2 class="date">4th April 2019</h2>
 </section>
 <section>
-<section id="slide-org8b37dca">
-<h2 id="org8b37dca">Who am I?</h2>
+<section id="slide-orgbc6793b">
+<h2 id="orgbc6793b">Who am I?</h2>
 <p>
 Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
 </p>
@@ -45,20 +46,75 @@ Github:    <code>http://github.com/chrishowejones</code>
 
 
 <div class="figure">
-<p><img src="./DevCycleWhiteLogo.png" alt="DevCycleWhiteLogo.png" />
+<p><img src="./DevCycle_Logo4.png" alt="DevCycle_Logo4.png" />
 </p>
 </div>
+<div class="slide-footer">@agile_geek</div>
 </section>
 </section>
 <section>
-<section id="slide-orga9a8f0b" data-background="./change.jpg">
-<h2 id="orga9a8f0b"><font color="red">Change is a constant</font></h2>
+<section id="slide-org04da914" data-background="./change.jpg" data-background-size="1080px">
+<h2 id="org04da914"><font color="black">Change is a constant</font></h2>
+<aside class="notes">
+<ul>
+<li>Been programming for over 40 years, professionally for over 30.</li>
+<li>I've been designing software systems for over 25 years</li>
+<li>Started in monolithic homogeneous environment - mainframes</li>
+<li>Automating basic processes in a large government org that changed rules every couple of years with change of the minister but within parameters mainly controlled by the speed with which the org could respond.</li>
+<li>Environment was constrained and could only change at a fairly slow rate</li>
+<li>In the 90's/00's software centred companies competed with new features as their selling point so speed of change became a competitive advantage.</li>
+<li>Now we work in markets driven by customers that interact directly rather than indirectly.</li>
+<li>Companies are built up around providing services that don't exist before the company introduces it.
+<ul>
+<li>Facebook (although arguably MySpace was also in that field)</li>
 
+</ul></li>
+<li>Companies that are build a business model around a uniqueness - Google</li>
+<li>Companies even more frequently provide solutions to problems that already have solutions but they add some additional novelty, usually in the form of features that provide a different form of
+interaction with the customer that didn't exist before the software was written.
+<ul>
+<li>Apple does this but often in the form of physical design combined with software e.g. the iPod wheel as the hook and iTunes which provided an interface that other MP3 download sites didn't have.</li>
+<li>Slack does what IRC has done for 30 years but provided a UI that was more tactile and visual (introducing previews for images, emoji) but also, the killer feature, was a persistent history
+making the communication more async as you don't need to be online at the same time. Also providing a fermium model and removing the hosting barriers of some competitors. Having the message
+limits meant you can be away from the convo for a while but not too long introducing a compulsion to check regularly. Also focusing on teams rather than threaded comments, initially they
+implemented everything as a continuous stream which encouraged constant checking which is encourages compulsive behaviour.</li>
+
+</ul></li>
+<li>We see companies starting with one vision of their offering but changing direction, sometimes quite radically.
+<ul>
+<li>Stuart Butterfield has done this a few times:
+<ul>
+<li>Ludicorp founded 2002 to build a game (called Game Neverending)</li>
+<li>2004 - game failed to gain traction but embedded photo-uploading was popular.</li>
+<li>2005 - game crumbled but Flickr rose from ashes</li>
+<li>2006 - Flickr sold to Yahoo</li>
+<li>2008 - Stuart left Yahoo to found Tiny Spec creating a game called Glitch.</li>
+<li>2010 - raised Series A funding, no detail about game but it was described as web-based massively-multiplayer game (Massively Mulitplayer Online Role-Playing Game MMORPG) epected launch 2010.</li>
+<li>2011 - raised more funding. Invite-based Beta. Launch but returned to Beta to make it easier for new players</li>
+<li>2012 - became obvious Glitch could not attract audience large enough to sustain itself. Glitch dead- Tiny Spec was not.</li>
+<li>2013 - internal comms tool used to share ideas between the US and Canadian offices of Glitch recognised as valuable</li>
+<li>2014 - Slack was announced.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
 </section>
 </section>
 <section>
-<section id="slide-org3756a29" data-background="./tynebridge-antarctic.png">
-<h2 id="org3756a29">Engineering Analogies</h2>
+<section id="slide-org2219f38">
+<h2 id="org2219f38"><font color="black">Engineering Analogies</font></h2>
+
+<div class="figure">
+<p><img src="./tynebridge-antarctic.png" alt="tynebridge-antarctic.png" />
+</p>
+</div>
+
 <aside class="notes">
 <ul>
 <li>Seeking different analogies - engineering is not a great one are there other perspectives?
@@ -72,6 +128,319 @@ Github:    <code>http://github.com/chrishowejones</code>
 </ul>
 
 </aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org8d96508">
+<h2 id="org8d96508">Mapping Software to Biology</h2>
+
+<div class="figure">
+<p><img src="./BITR-1.png" alt="BITR-1.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul>
+<li>How would software design map to biological systems?</li>
+<li>How do classes/functions map to cells?</li>
+<li>Message passing like neurochemical transmission
+<ul>
+<li>different types:
+<ul>
+<li>neurotransmitters - message calling between methods/functions?</li>
+<li>blood - async message based systems, stream processing</li>
+<li>nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org5ccbf2e">
+<h2 id="org5ccbf2e">Mapping Software to Biology</h2>
+
+<div class="figure">
+<p><img src="./BITR-2.png" alt="BITR-2.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul>
+<li>How would software design map to biological systems?</li>
+<li>How do classes/functions map to cells?</li>
+<li>Message passing like neurochemical transmission
+<ul>
+<li>different types:
+<ul>
+<li>neurotransmitters - message calling between methods/functions?</li>
+<li>blood - async message based systems, stream processing</li>
+<li>nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orga828f4d">
+<h2 id="orga828f4d">Messages</h2>
+
+<div class="figure">
+<p><img src="./BITR-3.png" alt="BITR-3.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul>
+<li>Message passing like neurochemical transmission
+<ul>
+<li>different types:
+<ul>
+<li>neurotransmitters - message calling between methods/functions?</li>
+<li>blood - async message based systems, stream processing</li>
+<li>nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgb6e9377">
+<h2 id="orgb6e9377">Messages</h2>
+
+<div class="figure">
+<p><img src="./BITR-4.png" alt="BITR-4.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul>
+<li>Message passing like neurochemical transmission
+<ul>
+<li>different types:
+<ul>
+<li>neurotransmitters - message calling between methods/functions?</li>
+<li>blood - async message based systems, stream processing</li>
+<li>nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org23647ba">
+<h2 id="org23647ba">S/w Environments -&gt; Ecosystems</h2>
+
+<div class="figure">
+<p><img src="./BITR-5.png" alt="BITR-5.png" />
+</p>
+</div>
+
+<aside class="notes">
+<ul>
+<li>Ecosystem is the runtime environment in the analogy
+<ul>
+<li>One of the issues is what state is the Ecosystem in?</li>
+<li>This is not obvious, how do we measure or detect what the Ecosystem is doing as a whole while it's active?</li>
+<li>How are parts of the ecosystem reacting in coordination to others?</li>
+
+</ul></li>
+<li>Changes to the Ecosystem are changes to features, requirements, etc. Large changes are changes in climate, different ecosystem, etc.</li>
+<li>Moving a specialised organism to a completely different ecosystem means it will struggle to survive or may simply die immediately.</li>
+<li>Evolution is the organism changing over time to better exploit its ecosystem - the mechanism of evolution is the development team.</li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgb30c3b5">
+<h2 id="orgb30c3b5">DDD Bounded Contexts</h2>
+<aside class="notes">
+<p>
+Are DDD bounded contexts the equivalent of separate organisms? They evolve at there own rates. They may be affected by the same stimuli but they don't share internal structures.
+Abstractions within software (interfaces and data structures) are analogous to membranes and sensory mechanisms in organisms.
+</p>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgbcbf3c2">
+<h2 id="orgbcbf3c2">Monoliths</h2>
+<aside class="notes">
+<p>
+Monoliths are like a single organism and the 'bounded context' are the organs (packages or namespaces). Organs can share
+nutrients, communication mechanisms (ganglia, neurotransmitters).
+</p>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf93634e">
+<h2 id="orgf93634e">Services</h2>
+<aside class="notes">
+<p>
+Services are individual organisms the boundaries of which are the 'bounded context'. Each service is separate. They
+evolve at their own rates. They may be affected by the same stimuli but they don't share internal structures.
+</p>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org9b82140">
+<h2 id="org9b82140">Microservices</h2>
+<aside class="notes">
+<p>
+ Microservices are like a <a href="https://en.wikipedia.org/wiki/Siphonophorae">Siphonophorae</a>, like a <a href="https://en.wikipedia.org/wiki/Portuguese_man_o%27_war">Portuguese man o' war</a>.
+A bounded context is a colonial organism made up of small organisms that cooperate to get a task done. There are different types of organism with specialised functions
+zooids or polyps
+</p>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc350ff4">
+<h2 id="orgc350ff4">Problems</h2>
+<p>
+Negative Environmental Factors -&gt; Design Faults
+</p>
+
+
+<aside class="notes">
+<p>
+Poor architecture in:
+</p>
+<ul>
+<li>Monoliths - cancer(uncontrolled growth), disease (breakdown of shared classes, namespaces, etc).</li>
+<li>Services - environmental changes - polution, poisonous environmental factors, extremes of heat and cold. Each individual service is subject to disease, cancer, etc.</li>
+<li>Microservices - less impacted by disease, cancer as they're smaller/simpler organisms less to go wrong. Environmental changes in the colony effect the whole colony. We can lose an individual in the organism type in the colony and continue.</li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf959b00">
+<h2 id="orgf959b00">Individual Organisms mechanisms</h2>
+<ul>
+<li>So if each organism is a monolith, a service or a microservice that operates within the bounds of it's ecosystem.</li>
+<li>How do they sense and communicate with the ecosystem or other 'organisms'?</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgad6a41c">
+<h2 id="orgad6a41c">Monolithic Communication</h2>
+<aside class="notes">
+<ul>
+<li>Limited communication within the ecosystem. Tend to communicate with users (who are also part of the ecosystem) and maybe one or two other monolithic organisms (like a large database
+encompassing everything in it's schema that various monoliths require).</li>
+<li>Has macro sensory features - message passing (sync and async)</li>
+<li>Synchronous messaging - HTTP
+<ul>
+<li>Sync messaging sound waves to ear - sound waves from mouth/throat.</li>
+<li>Light travels from organism to sensor. Light from pigmentation changes or movement travel back (pigmentation changes in Cuttlefish are thought to have a communication function, Chameleons
+colour change on changes in their mood.</li>
+
+</ul></li>
+<li>Asynchronous messaging - broker based messaging systems (MQ, ActiveMQ, AMQP - Advanced Message Queuing Protocol)
+<ul>
+<li>Chemical communication
+<ul>
+<li>Leaving scent markers (mammals - marking territory, scent trails)</li>
+<li>Leaving chemical trails in insects -chemo-receptors more like taste than smell (ants leaving chemical trails to food).
+<ul>
+<li>Learned behaviour,</li>
+<li>master teaches student.</li>
+<li>Ants returning with less or no food - trails not followed as much and they become stale.</li>
+<li>Size of food droplets in experiment altered percentage of time laying a scent trail. Larger droplets- longer time dragging abdominal tip when droplet size lower than the ant's crop capacity.</li>
+<li>Drinking time didn't seem to effect the amount of scent trail laid</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul></li>
+<li>Communication is at a large coarse level with only one or two other types of organism.</li>
+<li>Monoliths as single individuals can get overwhelmed with data and they can scale by developing more sensory surface area and larger more complex internal 'organs' to process this.</li>
+<li>Adding more individuals means they can handle more load but each organism is complex.</li>
+<li>Relatively long life times - each new generation of a monolith averages a longer time as often changing a response to a stimuli means changing multiple organs or even worse the actual
+structures within the organism that are formed by a number of organs cooperating in a system (e.g. nervous system)</li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org658ab90">
+<h2 id="org658ab90">Service Communication</h2>
+<aside class="notes">
+<ul>
+<li>Communication with more organisms to provide the overall result.</li>
+<li>Communication mechanisms are the same but more communication goes on in the overall ecosystem.</li>
+<li>Each service 'organism' is simpler than a monolith and more specialised closer to the 'systems' in a complex 'monolithic' organism (i.e respiratory system, circularly system, nervous system).</li>
+<li>Lifespans of these more specialised organisms are slightly shorter. Less complex collections of classes (cells), packages (organs) and fewer (maybe only one or two) internal systems.</li>
+<li>E.g. Ravens are seen to guide wolves to their prey (Ravens scavenge on left overs)</li>
+<li>Badgers and Coyotes - eat burrowing rodents. Coyotes can't get to the rodents deep in burrows easily but hunting with Badger, Badger digs out rodent and if it tries to escape out of other exit
+Coyotes chase it down. Coyotes leavings from kills that ran ate by Badger, Badgers leavings from ones caught by burrowing feed Coyotes?</li>
+
+</ul>
+
+</aside>
+<div class="slide-footer">@agile_geek</div>
 </section>
 </section>
 </div>
@@ -87,16 +456,14 @@ Reveal.initialize({
 controls: true,
 progress: true,
 history: false,
-center: true,
-slideNumber: 'c',
+center: false,
+slideNumber: false,
 rollingLinks: true,
 keyboard: true,
 overview: true,
 width: 1080,
 height: 768,
-margin: 0.10,
-minScale: 0.40,
-maxScale: 2.50,
+margin: 0.20,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
@@ -112,7 +479,8 @@ dependencies: [
  { src: 'file:///home/chris/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
  { src: 'file:///home/chris/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
  { src: 'file:///home/chris/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'file:///home/chris/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+ { src: 'file:///home/chris/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:///home/chris/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
 </script>
 </body>

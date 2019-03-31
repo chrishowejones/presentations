@@ -1,23 +1,21 @@
-#+OPTIONS: toc:nil num:nil timestamp:nil
+#+OPTIONS: toc:nil reveal_slide_number:nil timestamp:nil num:nil
 #+OPTIONS: reveal_width:1080
 #+OPTIONS: reveal_height:768
 #+TITLE:  Evolutionary Architecture: What can we learn from Nature?
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  4th April 2019
-#+REVEAL_SLIDE_NUMBER: false
-#+REVEAL_MARGIN: 0.1
-#+REVEAL_MIN_SCALE: 0.4
-#+REVEAL_MAX_SCALE: 2.5
-#+OPTIONS: reveal_center:t
-#+OPTIONS: reveal_rolling_links:t reveal_overview:t
+#+REVEAL_MARGIN: 0.2
+#+OPTIONS: reveal_center:nil
+#+OPTIONS: reveal_rolling_links:t reveal_overview:t reveal_global_footer:t
 #+REVEAL_KEYBOARD:t
-#+REVEAL_THEME: league
+#+REVEAL_THEME: beige
 #+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
-#+REVEAL_CENTER: true
 #+REVEAL_ROOT: file:///home/chris/reveal.js
-#+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_PLUGINS: (highlight markdown notes zoom)
+#+REVEAL_SLIDE_FOOTER: @agile_geek
+#+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
 #+MACRO: color @@html:<font color="$1">$2</font>@@
 * Who am I?
 
@@ -27,13 +25,21 @@
 
   Github:    =http://github.com/chrishowejones=
 
-  [[./DevCycleWhiteLogo.png]]
-* {{{color(red,Change is a constant)}}}
+  [[./DevCycle_Logo4.png]]
+* {{{color(black,Change is a constant)}}}
 :PROPERTIES:
 :reveal_background: ./change.jpg
+:reveal_background_size: 1080px
 :END:
 
 #+BEGIN_NOTES
+     + Been programming for over 40 years, professionally for over 30.
+     + I've been designing software systems for over 25 years
+     + Started in monolithic homogeneous environment - mainframes
+     + Automating basic processes in a large government org that changed rules every couple of years with change of the minister but within parameters mainly controlled by the speed with which the org could respond.
+     + Environment was constrained and could only change at a fairly slow rate
+     + In the 90's/00's software centred companies competed with new features as their selling point so speed of change became a competitive advantage.
+     + Now we work in markets driven by customers that interact directly rather than indirectly.
      + Companies are built up around providing services that don't exist before the company introduces it.
        * Facebook (although arguably MySpace was also in that field)
      + Companies that are build a business model around a uniqueness - Google
@@ -58,22 +64,46 @@
          - 2014 - Slack was announced.
 #+END_NOTES
 
-* Engineering Analogies
-:PROPERTIES:
-:reveal_background: ./tynebridge-antarctic.png
-:END:
+* {{{color(black,Engineering Analogies)}}}
+# :PROPERTIES:
+# :reveal_background: ./tynebridge-antarctic.png
+# :reveal_background_size: 1080px
+# :END:
+
+[[./tynebridge-antarctic.png]]
 
 #+BEGIN_NOTES
  - Seeking different analogies - engineering is not a great one are there other perspectives?
      + Civil Engineering - Building the Tyne Bridge. No one widens the Tyne by 300 miles and relocates it to the South Pole mid project.
      + Engineering in Aerospace - flying a plane or guiding a spacecraft is defined by simple Newtonian physics. Lots of variables but simple equations.
      + What about biology?
-
 #+END_NOTES
 
 * Mapping Software to Biology
+# :PROPERTIES:
+# :reveal_background: ./BITR-1.png
+# :reveal_background_size: 1000px
+# :END:
 
-Cell -> Classes/Functions
+[[./BITR-1.png]]
+
+#+BEGIN_NOTES
+   - How would software design map to biological systems?
+   - How do classes/functions map to cells?
+   - Message passing like neurochemical transmission
+     + different types:
+       * neurotransmitters - message calling between methods/functions?
+       * blood - async message based systems, stream processing
+       * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
+#+END_NOTES
+
+* Mapping Software to Biology
+# :PROPERTIES:
+# :reveal_background: ./BITR-2.png
+# :reveal_background_size: 1080px
+# :END:
+
+[[./BITR-2.png]]
 
 #+BEGIN_NOTES
    - How would software design map to biological systems?
@@ -86,7 +116,25 @@ Cell -> Classes/Functions
 #+END_NOTES
 
 * Messages
+# :PROPERTIES:
+# :reveal_background: ./BITR-3.png
+# :reveal_background_size: 1080px
+# :END:
+[[./BITR-3.png]]
 
+#+BEGIN_NOTES
+   - Message passing like neurochemical transmission
+     + different types:
+       * neurotransmitters - message calling between methods/functions?
+       * blood - async message based systems, stream processing
+       * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
+#+END_NOTES
+* Messages
+# :PROPERTIES:
+# :reveal_background: ./BITR-4.png
+# :reveal_background_size: 1080px
+# :END:
+[[./BITR-4.png]]
 
 #+BEGIN_NOTES
    - Message passing like neurochemical transmission
@@ -96,10 +144,23 @@ Cell -> Classes/Functions
        * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
 #+END_NOTES
 
-* Software Environments -> Ecosystems
+
+* S/w Environments -> Ecosystems
+
+[[./BITR-5.png]]
 
 #+BEGIN_NOTES
-   - Ecosystem is the runtime environment in the analogy
+   - Ecosystem in nature
+   - At various levels
+   - Complex system subject to changes in temp, moisture, destructive forces.
+#+END_NOTES
+
+* S/w Environments -> Ecosystems
+
+[[./BITR-6.png]]
+
+#+BEGIN_NOTES
+   - Ecosystem at various levels
      + One of the issues is what state is the Ecosystem in?
      + This is not obvious, how do we measure or detect what the Ecosystem is doing as a whole while it's active?
      + How are parts of the ecosystem reacting in coordination to others?
@@ -110,35 +171,249 @@ Cell -> Classes/Functions
 
 * DDD Bounded Contexts
 
-#+BEGIN_NOTES
-  Are DDD bounded contexts the equivalent of separate organisms? They evolve at there own rates. They may be affected by the same stimuli but they don't share internal structures.
-  Abstractions within software (interfaces and data structures) are analogous to membranes and sensory mechanisms in organisms.
+[[./BITR-7.png]]
 
+#+BEGIN_NOTES
+  - Are DDD bounded contexts the equivalent of separate organisms?
+  - They evolve at there own rates. They may be affected by the same stimuli but they don't share internal structures.
+  - Abstractions within software (interfaces and data structures) are analogous to membranes and sensory mechanisms in organisms.
 #+END_NOTES
 
 * Monoliths
 
-
+[[./human_body_image_with_organs.png]]
 
 #+BEGIN_NOTES
-     Monoliths are like a single organism and the 'bounded context' are the organs (packages or namespaces). Organs can share nutrients, communication mechanisms (ganglia, neurotransmitters).
-     If we analogise big ball of mud to uncontrolled growth this becomes cancer that spreads thru the organs (packages in contexts).
+Monoliths are like a single organism and the 'bounded context' are the organs (packages or namespaces). Organs can share
+nutrients, communication mechanisms (ganglia, neurotransmitters).
+#+END_NOTES
+
+* Monoliths
+
+[[./BITR-8.png]]
+
+#+BEGIN_NOTES
+ Packages or namespaces are bounded context equivalent to organs
+ Comms via in process calls
 #+END_NOTES
 
 * Services
 
+
+[[./BITR-9.png]]
+
 #+BEGIN_NOTES
-     Services are individual organisms the boundaries of which are the
-     'bounded context'. Each service is separate. They evolve at their
-     own rates. They may be affected by the same stimuli but they
-     don't share internal structures.
+Services are individual organisms the boundaries of which are the 'bounded context'. Each service is separate. They
+evolve at their own rates. They may be affected by the same stimuli but they don't share internal structures.
 #+END_NOTES
 
-* Nicoservices
+* Microservices
+
+[[./BITR-10.png]]
 
 #+BEGIN_NOTES
  Microservices are like a [[https://en.wikipedia.org/wiki/Siphonophorae][Siphonophorae]], like a [[https://en.wikipedia.org/wiki/Portuguese_man_o%2527_war][Portuguese man o' war]].
- A bounded context is a colonial organism made up of small organisms
- that cooperate to get a task done. There are different types of
- organism with specialised functions zooids or polyps
+A bounded context is a colonial organism made up of small organisms that cooperate to get a task done. There are different types of organism with specialised functions
+zooids or polyps
+#+END_NOTES
+
+* Problems
+
+  Negative Environmental Factors -> Design Faults
+
+* Problems
+
+[[./BITR-13.png]]
+
+#+BEGIN_NOTES
+     Poor architecture in:
+       - Monoliths - cancer(uncontrolled growth), disease (breakdown of shared classes, namespaces, etc).
+       - Services - environmental changes - polution, poisonous environmental factors, extremes of heat and cold. Each individual service is subject to disease, cancer, etc.
+       - Microservices - less impacted by disease, cancer as they're smaller/simpler organisms less to go wrong. Environmental changes in the colony effect the whole colony. We can lose an individual in the organism type in the colony and continue.
+#+END_NOTES
+
+* Problems
+
+[[./BITR-14.png]]
+
+#+BEGIN_NOTES
+     Poor architecture in:
+       - Monoliths - cancer(uncontrolled growth), disease (breakdown of shared classes, namespaces, etc).
+       - Services - environmental changes - polution, poisonous environmental factors, extremes of heat and cold. Each individual service is subject to disease, cancer, etc.
+       - Microservices - less impacted by disease, cancer as they're smaller/simpler organisms less to go wrong. Environmental changes in the colony effect the whole colony. We can lose an individual in the organism type in the colony and continue.
+#+END_NOTES
+
+* Individual Organisms mechanisms
+
+  - So if each organism is a monolith, a service or a microservice that operates within the bounds of it's ecosystem.
+  - How do they sense and communicate with the ecosystem or other 'organisms'?
+
+* Monolithic Communication
+
+[[./BITR-11.png]]
+
+#+BEGIN_NOTES
+     - Limited communication within the ecosystem. Tend to communicate with users (who are also part of the ecosystem) and maybe one or two other monolithic organisms (like a large database
+       encompassing everything in it's schema that various monoliths require).
+     - Has macro sensory features - message passing (sync and async)
+     - Synchronous messaging - HTTP
+       + Sync messaging sound waves to ear - sound waves from mouth/throat.
+       + Light travels from organism to sensor. Light from pigmentation changes or movement travel back (pigmentation changes in Cuttlefish are thought to have a communication function, Chameleons
+         colour change on changes in their mood.
+#+END_NOTES
+
+* Monolithic Communication
+
+[[./BITR-12.png]]
+
+#+BEGIN_NOTES
+     - Limited communication within the ecosystem. Tend to communicate with users (who are also part of the ecosystem) and maybe one or two other monolithic organisms (like a large database
+       encompassing everything in it's schema that various monoliths require).
+     - Has macro sensory features - message passing (sync and async)
+     - Synchronous messaging - HTTP
+       + Sync messaging sound waves to ear - sound waves from mouth/throat.
+       + Light travels from organism to sensor. Light from pigmentation changes or movement travel back (pigmentation changes in Cuttlefish are thought to have a communication function, Chameleons
+         colour change on changes in their mood.
+     - Asynchronous messaging - broker based messaging systems (MQ, ActiveMQ, AMQP - Advanced Message Queuing Protocol)
+       + Chemical communication
+         * Leaving scent markers (mammals - marking territory, scent trails)
+         * Leaving chemical trails in insects -chemo-receptors more like taste than smell (ants leaving chemical trails to food).
+           - Learned behaviour,
+           - master teaches student.
+           - Ants returning with less or no food - trails not followed as much and they become stale.
+           - Size of food droplets in experiment altered percentage of time laying a scent trail. Larger droplets- longer time dragging abdominal tip when droplet size lower than the ant's crop capacity.
+           - Drinking time didn't seem to effect the amount of scent trail laid
+     - Communication is at a large coarse level with only one or two other types of organism.
+     - Monoliths as single individuals can get overwhelmed with data and they can scale by developing more sensory surface area and larger more complex internal 'organs' to process this.
+     - Adding more individuals means they can handle more load but each organism is complex.
+     - Relatively long life times - each new generation of a monolith averages a longer time as often changing a response to a stimuli means changing multiple organs or even worse the actual
+       structures within the organism that are formed by a number of organs cooperating in a system (e.g. nervous system)
+#+END_NOTES
+
+* Service Communication
+
+[[./BITR-9.png]]
+
+#+BEGIN_NOTES
+     - Communication with more organisms to provide the overall result.
+     - Communication mechanisms are the same but more communication goes on in the overall ecosystem.
+     - Each service 'organism' is simpler than a monolith and more specialised closer to the 'systems' in a complex 'monolithic' organism (i.e respiratory system, circularly system, nervous system).
+     - Lifespans of these more specialised organisms are slightly shorter. Less complex collections of classes (cells), packages (organs) and fewer (maybe only one or two) internal systems.
+     - E.g. Ravens are seen to guide wolves to their prey (Ravens scavenge on left overs)
+     - Badgers and Coyotes - eat burrowing rodents. Coyotes can't get to the rodents deep in burrows easily but hunting with Badger, Badger digs out rodent and if it tries to escape out of other exit
+       Coyotes chase it down. Coyotes leavings from kills that ran ate by Badger, Badgers leavings from ones caught by
+       burrowing feed Coyotes?
+
+#+END_NOTES
+
+* Microservices
+
+#+BEGIN_NOTES
+     - Even more communication across even smaller more specialised organisms.
+     - Lifespans can be very short.
+     - Can quickly develop different polyps with a different specialisation.
+     - Communication patterns and cooperation can be quite complex across the different organisms. Communication is not as well regulated as between organs in the body of a larger monolithic
+       organism. Environment stimuli and factors can greatly affect communication and coordination between the different organisms in the colony.
+     - Ants - soldier, worker, queen
+#+END_NOTES
+
+* -ve feedback mechanisms
+
+#+BEGIN_NOTES
+    - Damp down the effect of a stimulus
+
+    - Homeostatic control (negative feedback)
+      1. Stimulus– produces a change to a variable (the factor being regulated).
+      2. Receptor– detects the change. The receptor monitors the environment and responds to change (stimuli).
+      3. Input– information travels along the (afferent) pathway to the control center. The control center determines the appropriate response and course of action.
+      4. Output– information sent from the control center travels down the (efferent) pathway to the effector.
+      5. Response– a response from the effector balances out the original stimulus to maintain homeostasis.
+
+    - Temperature regulation in primates
+      1. Sensors detect rise in temperature.
+      2. Nerve pathways send messages to the control centres in the brain (hypothalamus)
+      3. Hypothalamus sends signals to sweat glands to produce sweat.
+      4. Skin cools
+#+END_NOTES
+
+* -ve feedback mechanisms
+
+#+BEGIN_NOTES
+      Circuit Breaker on a client.
+      1. Clients send requests to many requests for a service to handle.
+      2. Service starts to reject requests.
+      3. Client implements a circuit breaker to back off until service recovers or another service is spun up to take on requests.
+#+END_NOTES
+
+* +ve feedback mechanisms
+
+
+
+#+BEGIN_NOTES
+      A positive feedback loop comes into play during childbirth.
+      1. Once a vessel is damaged,
+      2. platelets start to cling to the injured site and release chemicals
+      3. that attract more  platelets.
+
+      The platelets continue to pile up and release chemicals until a clot is formed.
+#+END_NOTES
+
+* +ve feedback mechanisms
+
+
+
+#+BEGIN_NOTES
+      Positive feedback in software is driven by external agencies such as customer demand, management demand, changes in organisational focus.
+
+      Studies have show that too much positive feedback promoting large changes in a single generation (version) of software systems tends to have a destabilising effect if there is not a commensurate
+      negative feedback loop to dampen the effect. This can be seen in the 8 Laws of Software Evolution[fn:1] documented by M.M.Lehman.
+
+      Positive feedback loops in software development (evolution) are the introduction of new features, new capabilities, changes in business model resulting in massive changes in structure and
+      capabilities of not just the software design itself but in the structure of the team and the processes adopted by the team in software development (evolution).
+
+      This is not always negative - positive feedback introducing changes in development process or materials can provide balanced growth if the changes introduced have inherent constraints that
+      provide a negative feedback loop or dampening effect to appropriate characteristics of the system design or the development process.
+
+      As an example, introducing a new programming language that has features that encourage constraints such as immutable data and pure functions can reduce the complexity of concurrent processing
+      and simplify the developers mental model to not have to consider how state changes over time or race conditions etc. except at the edges of the system/component/service where state changes are
+      pushed i.e. HTTP request/response, I/O to file systems or databases.
+
+      Another example of positive feedback in the form of a change to the development process that intentionally introduces a constraint to guide development might be the introduction of WIP limits on
+      a Kanban board. WIP limits ensure the development team are only working at the capacity they can sustain. They reduce the amount of waste in the process in the form of work at rest (waiting to
+      be started). They also highlight when the team has too much work concurrently to manage. WIP limits also make it easier to tune cycle time (time between the work starting and delivery/) and lead
+      time (time between a feature/story/requirement being raised and delivered).
+#+END_NOTES
+
+* Ecosystems
+
+  - Different levels of Ecosystem
+
+* Micro-ecosystem
+
+
+
+#+BEGIN_NOTES
+      In biology an example of a microecosystem might be a pond which has a limited amount of variation. It's temperature differences are buffered. Water levels can raise or fall but are usually in
+      predictable bounds.
+#+END_NOTES
+
+* Micro-ecosystem
+
+
+
+#+BEGIN_NOTES
+      1. Software executables
+      2. OS
+      3. Runtime environments
+      4. Monitoring and logging.
+      5. etc.
+#+END_NOTES
+
+
+* Habitat or Biotope
+
+
+#+BEGIN_NOTES
+      In biology an example of a habitat might be the garden the pond is in. It has a limited number of species of flora
+      and fauna. Predictable amounts of rainfall, temperature, shade etc.
 #+END_NOTES
