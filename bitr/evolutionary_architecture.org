@@ -366,7 +366,7 @@ zooids or polyps
       Positive feedback in software is driven by external agencies such as customer demand, management demand, changes in organisational focus.
 
       Studies have show that too much positive feedback promoting large changes in a single generation (version) of software systems tends to have a destabilising effect if there is not a commensurate
-      negative feedback loop to dampen the effect. This can be seen in the 8 Laws of Software Evolution[fn:1] documented by M.M.Lehman.
+      negative feedback loop to dampen the effect. This can be seen in the 8 Laws of Software Evolution documented by M.M.Lehman.
 
       Positive feedback loops in software development (evolution) are the introduction of new features, new capabilities, changes in business model resulting in massive changes in structure and
       capabilities of not just the software design itself but in the structure of the team and the processes adopted by the team in software development (evolution).
@@ -417,3 +417,232 @@ zooids or polyps
       In biology an example of a habitat might be the garden the pond is in. It has a limited number of species of flora
       and fauna. Predictable amounts of rainfall, temperature, shade etc.
 #+END_NOTES
+
+* Habitat or Biotope
+
+
+#+BEGIN_NOTES
+      1. Development processes
+      2. Development team interactions
+      3. Software languages
+      4. Software tools
+#+END_NOTES
+
+* Biome
+
+#+BEGIN_NOTES
+      In biology an example of a Biome would be Tropical Rainforest, Tundra, Hot Desert, etc.
+#+END_NOTES
+
+
+* Biome
+#+BEGIN_NOTES
+      1. Department or organisation.
+      2. Customer base
+      3. Target market
+      4. Competitors in the same market
+#+END_NOTES
+
+* Biosphere
+
+#+BEGIN_NOTES
+   In biology a biosphere is planetary scale e.g. Earth.
+#+END_NOTES
+
+* Biosphere
+
+#+BEGIN_NOTES
+   1. All markets
+   2. All potential customers
+   3. All competitors
+#+END_NOTES
+
+* Evolutionary Mechanism
+
+  - Adaption
+  - Acclimatisation
+  - Other mechanisms
+
+#+BEGIN_NOTES
+Adaption
+   - Mechanisms that involve large changes to respond to environment pressures in the ecosystem. For example, a large and permanent temperature change, the introduction on competitive species.
+   - Adaption involves changes in the phenotype, therefore involving a new generation (version) of the 'species'. For
+     example, adult stature or eye colour.
+Acclimatisation
+   - Mechanisms that involve typically smaller variations in phenotypically plastic characteristics. For example,
+     adjustments in heart rate, skin colour and attention span.
+Other mechanisms
+   - there are mechanisms in Epigenetics where external or environmental factors result in a heritable phenotype change
+     or phenotypically plastic changes. For example, stress factors in the environment may trigger a gene to activate or
+     inhibit the expression of a gene without actually changing the nucleotide sequence.
+#+END_NOTES
+
+* Changes in Biome
+
+#+BEGIN_NOTES
+Biological responses
+
+  - Most organisms can't respond to major changes in their Biome by acclimatisation as the small variations possible
+    are usually changes that are only capable of responding to the smaller variations that are confined to the local
+    ecosystem of the habitat or biotope.
+
+  - Gradual or smaller changes to the biome can be responded to by adaption that happen in one or two generations
+    through epigenetic mechanisms such as phenotype plasticity. These might be something like a dormant gene being
+    activated by external factors. Morphological plasticity can be seen in pond snails that develop spiny shells in the
+    presence of predators.
+
+  - Larger changes in the biome require more major genetic changes in the DNA and occur through a number of mechanisms,
+    the best understood of which is gene mutation but recent research suggests other mechanisms such as stress hormones
+    altering RNA transcription and the adoption of phenotypically plastic traits.
+#+END_NOTES
+
+* Changes in Biome
+
+#+BEGIN_NOTES
+Software response
+
+  - The possible response mechanisms in software are controlled by the development team and associated stakeholders. The
+    team can adopt techniques that provided a 'guided' evolutionary mechanisms.
+
+  - Smaller changes can be made in days in one generation (version) either by tweaking parameterised features or making
+    small code changes to the internal mechanisms in a service or application. Generally speaking making these changes
+    quickly is much easier if the software component is smaller.
+
+  - Larger changes to response take more major changes internally but also tend to change the interfaces of the software
+    component. I.e. the interface for clients or the persistent data used is changed. These changes tend to alter
+    factors that a coupled to other software components or to external customers/systems.
+
+  -  What is frequently overlooked is that often this kind of change has an impact on the more complex microecosystem.
+    As an example, making a change to add something to an API changes the responsibilities of the software component
+    involved in a way that may mean that the component is now taking on responsibilities that it didn't have before.
+    This can result in other software components at a later time connecting to the first to use this new responsibility.
+    This kind of network effect increase the amount of communication and coordination required and hence may increase
+    cross network traffic and result in hot-spots in the architecture.
+#+END_NOTES
+
+
+* Feedback loops
+:PROPERTIES:
+:reveal_background: ./bio ecosystem feedback2.png
+:reveal_background_size: 540px
+:END:
+
+
+* Feedback loops
+
+
+#+BEGIN_NOTES
+Feedback loops in Code
+
+    - In general mechanisms to respond to stimuli that are built into 'code' or even 'configuration' tend to be negative
+      feedback loops that respond to a an external stimuli by damping down or stabilising the software system.
+
+    - Good examples of this would be circuit breakers, bulkhead patterns or rate limiting.
+
+Feedback loops in Development team and process
+
+    - The development team and the processes and tools that they use are a mix of negative feedback loops and positive
+      feedback loops. Generally speaking, these changes are adopted to facilitate faster changes in certain directions.
+      However, conversely, often the approaches and tools are successful in this because they have constraints (or
+      negative feedback) that provides guide rails that push development towards the desired characteristics.
+
+    - As examples:
+      1. adopting Kanban properly can greatly increase the speed of response to changes in the habitat but Kanban as a
+         process has at it's heart strong constraints on the amount of work in progress at any point in time.
+      2. adopting a functional programming language with immutable data structures can reduce the effort involved in
+         developing software that has concurrent processes.
+      3. adopting a microservices architecture that constrains the responsibility of a service to just one small part of
+         a domain can result in the ability to respond faster to changes as a microservice can be changed in hours or
+         replaced in days or a week.
+#+END_NOTES
+
+* Guided Evolution
+
+  Development Team are the primary evolutionary mechanism
+
+#+BEGIN_NOTES
+     In order to guide software evolutionary processes the team needs to understand the ecosystem they are designing for. Traditionally, this has been an exercise in gathering and fixing
+     requirements/features/stories but this is often flawed as to accurately determine what the Biotope is using static analysis based on peoples interpretation is inherently unconsciously biased.
+
+     In order to determine what the ecosystem is we need to 'sense' the environment we are in.
+#+END_NOTES
+
+* Sensing micro-ecosystem
+:PROPERTIES:
+:reveal_background: ./software_ecosystem_feedback2.png
+:reveal_background_size: 540px
+:END:
+
+#+BEGIN_NOTES
+  - Traditional monitoring of running software. Memory, CPU, etc.
+  - Monitoring and alerting on network effects like request rates, average/std deviation of request latency, etc.
+#+END_NOTES
+
+* Sensing the Habitat/Biome
+:PROPERTIES:
+:reveal_background: ./software_ecosystem_feedback2.png
+:reveal_background_size: 540px
+:END:
+
+#+BEGIN_NOTES
+  - Dwell time on a site
+  - Conversion rates
+  - Sales rates
+  - Return rates
+  - Usage rates of features
+  - Customer location
+  - Customer segmentation
+  - A/B testing
+  - Scientist type code experiments. Code that performs old and new way, compares results and reports differences while taking the old result as response.
+#+END_NOTES
+
+* Sensing the Biome
+:PROPERTIES:
+:reveal_background: ./software_ecosystem_feedback2.png
+:reveal_background_size: 540px
+:END:
+
+#+BEGIN_NOTES
+  - Surveying current customers and wider customer base
+  - Market research
+  - Industry research
+  - Exploratory features or new apps targeting other markets
+  - P & L
+  - Board level decisions
+#+END_NOTES
+* Sensing the Biosphere
+:PROPERTIES:
+:reveal_background: ./software_ecosystem_feedback2.png
+:reveal_background_size: 540px
+:END:
+
+
+#+BEGIN_NOTES
+  - Major organisational events (mergers, buyouts, bankruptcy proceedings)
+#+END_NOTES
+
+* Feedback from sensors tune evolution
+
+#+BEGIN_NOTES
+  - Feedback from these sensors are used to tune the evolutionary processes at the appropriate level.
+  - You can move to respond to changes in a wider ecosystem by changing the processes and the sensors to guide evolution to respond to the large change over generations of the software design.
+  - Conversely, detecting changes in a sensors output over time in a narrower ecosystem can suggest that a large change is occurring in a wider ecosystem.
+#+END_NOTES
+
+
+* Factors that influence software evolution
+
+  - Not designing a sensor/response feedback mechanism
+  - Bad development practices making response to change harder or impossible
+    * Poor code hygene
+  - Constraints on the ecosystems that inhibit the ability to sense or respond to change.
+    * Typically, edicts to follow a directive/std with no understanding or explanation of the reasoning behind this.
+  - Over population effects poisoning the ecosystem.
+
+* Conclusion
+
+  - Identify the factors that matter and pick metrics that measure them
+  - Design your feedback loops (sensor/receptors) and effectors
+  - Identify beneficial constraints vs detrimental constraints
+     - (e.g. service boundaries or immutable data vs inability to change biotope due to policy/stds)
+  - People (the team) are your mechanism for evolution - they need to know what constraints are imposed and why and the directions of freedom as well as the results of sensory input.
