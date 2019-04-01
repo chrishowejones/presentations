@@ -660,3 +660,33 @@ Feedback loops in Development team and process
     - Ensure Ecosystems are self contained
     - Constrain & understand changes from upper ecosystem.
   - People (the team) are your mechanism for evolution - they need to know what constraints are imposed and why and the directions of freedom as well as the results of sensory input.
+
+* Citations
+
+  - [[https://royalsocietypublishing.org/doi/full/10.1098/rstb.2011.0177][Positive feedback and alternative stable states in inbreeding, cooperation, sex roles and other evolutionary
+    processes]] - Jussi Lehtonen  and Hanna Kokko
+  - [[https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0061251][Epigenetic Feedback Regulation Accelerates Adaptation and Evolution]] - Chikara Furusawa, Kunihiko Kaneko
+  - [[https://ieeexplore.ieee.org/document/7283911][A feedback model of evolutionary adaptation]] - Daniele Casagrande, Wiesław Krajewski, Umberto Viaro
+  - [[http://www.cleveralgorithms.com/nature-inspired/evolution/differential_evolution.html][Differential Evolution - Clever Algorithms: Nature-Inspired Programming Recipes]] - Jason Brownlee PhD
+  - [[https://theecologist.org/2018/dec/03/nature-change][On the nature of change]] - Brendan Montague
+#+REVEAL: split
+  - [[https://theconversation.com/listening-to-nature-how-sound-can-help-us-understand-environmental-change-105794][Listening to nature: How sound can help us understand environmental change]] - Garth Paine
+  - [[https://sciencing.com/can-affected-change-ph-levels-6165622.html][How can a Biological System be affected by a change in pH levels]] - JacobS
+  - [[https://www.sciencedirect.com/science/article/pii/S2452310017301889][Fold-change detection in biological systems]] - MiriAdler, UriAlon
+  - [[https://www.pnas.org/content/pnas/100/24/14086.full.pdf][On the relation between fluctuation & response in biological systems]] - Katsuhiko Sato, Yoichiro Ito, Tetsuya Yomo, and Kunihiko Kaneko
+  - [[http://www.tiem.utk.edu/~gross/bioed/webmodules/DNAknot.html][DNA and Knot Theory]] - M. Beals, L. Gross, S. Harrell
+#+REVEAL: split
+  - [[https://mentalfloss.com/article/64300/6-animals-are-rapidly-evolving][6 Animals that are Rapidly Evolving]] - Jessica Hullinger
+  - [[https://prezi.com/fv1g-2amf7qo/5-examples-of-how-organisms-respond-to-stimuli/][5 Examples of How Organisms respond to Stimuli]] - Austin Brashear Brashear
+  - [[https://www.ncbi.nlm.nih.gov/books/NBK22568/][Cells can respond to changes in their environment]] - Berg JM, Tymoczko JL, Stryer L
+  - [[https://poweronpoweroff.com/blogs/longform/a-guide-to-neurotransmitter-balance][A Guide to Neurotransmitter Balance]] - https://poweronpoweroff.com
+  - [[http://www.differencebetween.net/science/nature/difference-between-adaptation-and-acclimation/][Difference between Adaptation and Acclimation]] - maureen. DifferenceBetween.net. March 15, 2011
+#+REVEAL: split
+  - [[http://bio1520.biology.gatech.edu/chemical-and-electrical-signals/sensory-systems-i/][Animal Sensory Systems]] - Shana Kerr. November 13, 2016
+  - [[https://byrslf.co/microservices-biology-and-evolution-17961800d009][Microservices, biology and evolution]] - Sajid Kalla. medium.com
+  - [[http://www.nhm.ac.uk/our-science/our-work/origins-evolution-and-futures/role-of-behaviour-in-evolution.html][The role of behaviour in evolution]] - Prof Adrian Lister, Prof Ian Barnes. Natural History Museum London
+  - [[https://pdfs.semanticscholar.org/8fe7/c0ebf7594e33583fca95253708d47fb5879d.pdf][How do ants assess food volume?]] - Anne-Catherine Mailleux, Jean-Louis Deneubourg & Claire Detrain
+  - [[http://labs.cs.upt.ro/labs/acs/html/resources/Lehman-2.pdf][Laws of Software Evolution Revisited]] - M.M.Lehman
+#+REVEAL: split
+  - [[https://www.amazon.co.uk/Building-Evolutionary-Architectures-Neal-Ford/dp/1491986360][Building Evolutionary Architectures]] - Neal Ford, Rebecca Parsons & Patrick Kua
+  - [[https://www.amazon.co.uk/s?k=domain+driven+design+distilled&adgrpid=52964848477&hvadid=259117680362&hvdev=c&hvlocphy=1007202&hvnetw=g&hvpos=1t1&hvqmt=e&hvrand=14293522900371221380&hvtargid=kwd-299155368206&tag=googhydr-21&ref=pd_sl_54dewvma61_e][Domain Driven Design Distilled]]  - Vaughn Vernon
