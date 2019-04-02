@@ -23,7 +23,7 @@
 
   Twitter:   =@agile_geek=
 
-  Github:    =http://github.com/chrishowejones=
+  Github:    =https://github.com/chrishowejones=
 
   [[./DevCycle_Logo4.png]]
 * {{{color(black,Change is a constant)}}}
@@ -90,11 +90,7 @@
 #+BEGIN_NOTES
    - How would software design map to biological systems?
    - How do classes/functions map to cells?
-   - Message passing like neurochemical transmission
-     + different types:
-       * neurotransmitters - message calling between methods/functions?
-       * blood - async message based systems, stream processing
-       * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
+   - Cells are self contained - but communication or cooperate to provide higher functions
 #+END_NOTES
 
 * Mapping Software to Biology
@@ -106,11 +102,9 @@
 [[./BITR-2.png]]
 
 #+BEGIN_NOTES
-   - How would software design map to biological systems?
-   - How do classes/functions map to cells?
    - Message passing like neurochemical transmission
      + different types:
-       * neurotransmitters - message calling between methods/functions?
+       * neurotransmitters - message calling between methods/functions? (chemical synapse - such as gultamate)
        * blood - async message based systems, stream processing
        * nerve endings/hormones - endpoints recieving stimuli in the form of 'data' from the outside world.
 #+END_NOTES
@@ -184,7 +178,7 @@
 [[./human_body_image_with_organs.png]]
 
 #+BEGIN_NOTES
-Monoliths are like a single organism and the 'bounded context' are the organs (packages or namespaces). Organs can share
+Monoliths are like a single organism and the 'bounded context' are the organs . Organs can share
 nutrients, communication mechanisms (ganglia, neurotransmitters).
 #+END_NOTES
 
@@ -214,7 +208,7 @@ evolve at their own rates. They may be affected by the same stimuli but they don
 #+BEGIN_NOTES
  Microservices are like a [[https://en.wikipedia.org/wiki/Siphonophorae][Siphonophorae]], like a [[https://en.wikipedia.org/wiki/Portuguese_man_o%2527_war][Portuguese man o' war]].
 A bounded context is a colonial organism made up of small organisms that cooperate to get a task done. There are different types of organism with specialised functions
-zooids or polyps
+zooids or polyps - dactylozooid (defense), gonozooid (reproduction), and gastrozooid (feeding)
 #+END_NOTES
 
 * Problems
@@ -228,6 +222,7 @@ zooids or polyps
 #+BEGIN_NOTES
      Poor architecture in:
        - Monoliths - cancer(uncontrolled growth), disease (breakdown of shared classes, namespaces, etc).
+       - Stress factors in cells (hormones) cause DNA knots that interfere with RNA transcription.
 #+END_NOTES
 
 * Problems
@@ -245,69 +240,69 @@ zooids or polyps
   - So if each organism is a monolith, a service or a microservice that operates within the bounds of it's ecosystem.
   - How do they sense and communicate with the ecosystem or other 'organisms'?
 
-* Monolithic Communication
+# * Monolithic Communication
 
-[[./BITR-11.png]]
+# [[./BITR-11.png]]
 
-#+BEGIN_NOTES
-     - Limited communication within the ecosystem. Tend to communicate with users (who are also part of the ecosystem) and maybe one or two other monolithic organisms (like a large database
-       encompassing everything in it's schema that various monoliths require).
-     - Has macro sensory features - message passing (sync and async)
-     - Synchronous messaging - HTTP
-       + Sync messaging sound waves to ear - sound waves from mouth/throat.
-       + Light travels from organism to sensor. Light from pigmentation changes or movement travel back (pigmentation changes in Cuttlefish are thought to have a communication function, Chameleons
-         colour change on changes in their mood.
-#+END_NOTES
+# #+BEGIN_NOTES
+#      - Limited communication within the ecosystem. Tend to communicate with users (who are also part of the ecosystem) and maybe one or two other monolithic organisms (like a large database
+#        encompassing everything in it's schema that various monoliths require).
+#      - Has macro sensory features - message passing (sync and async)
+#      - Synchronous messaging - HTTP
+#        + Sync messaging sound waves to ear - sound waves from mouth/throat.
+#        + Light travels from organism to sensor. Light from pigmentation changes or movement travel back (pigmentation changes in Cuttlefish are thought to have a communication function, Chameleons
+#          colour change on changes in their mood.
+# #+END_NOTES
 
-* Monolithic Communication
+# * Monolithic Communication
 
-[[./BITR-12.png]]
+# [[./BITR-12.png]]
 
-#+BEGIN_NOTES
-     - Asynchronous messaging - broker based messaging systems (MQ, ActiveMQ, AMQP - Advanced Message Queuing Protocol)
-       + Chemical communication
-         * Leaving scent markers (mammals - marking territory, scent trails)
-         * Leaving chemical trails in insects -chemo-receptors more like taste than smell (ants leaving chemical trails to food).
-           - Learned behaviour,
-           - master teaches student.
-           - Ants returning with less or no food - trails not followed as much and they become stale.
-           - Size of food droplets in experiment altered percentage of time laying a scent trail. Larger droplets- longer time dragging abdominal tip when droplet size lower than the ant's crop capacity.
-           - Drinking time didn't seem to effect the amount of scent trail laid
-     - Communication is at a large coarse level with only one or two other types of organism.
-     - Monoliths as single individuals can get overwhelmed with data and they can scale by developing more sensory surface area and larger more complex internal 'organs' to process this.
-     - Adding more individuals means they can handle more load but each organism is complex.
-     - Relatively long life times - each new generation of a monolith averages a longer time as often changing a response to a stimuli means changing multiple organs or even worse the actual
-       structures within the organism that are formed by a number of organs cooperating in a system (e.g. nervous system)
-#+END_NOTES
+# #+BEGIN_NOTES
+#      - Asynchronous messaging - broker based messaging systems (MQ, ActiveMQ, AMQP - Advanced Message Queuing Protocol)
+#        + Chemical communication
+#          * Leaving scent markers (mammals - marking territory, scent trails)
+#          * Leaving chemical trails in insects -chemo-receptors more like taste than smell (ants leaving chemical trails to food).
+#            - Learned behaviour,
+#            - master teaches student.
+#            - Ants returning with less or no food - trails not followed as much and they become stale.
+#            - Size of food droplets in experiment altered percentage of time laying a scent trail. Larger droplets- longer time dragging abdominal tip when droplet size lower than the ant's crop capacity.
+#            - Drinking time didn't seem to effect the amount of scent trail laid
+#      - Communication is at a large coarse level with only one or two other types of organism.
+#      - Monoliths as single individuals can get overwhelmed with data and they can scale by developing more sensory surface area and larger more complex internal 'organs' to process this.
+#      - Adding more individuals means they can handle more load but each organism is complex.
+#      - Relatively long life times - each new generation of a monolith averages a longer time as often changing a response to a stimuli means changing multiple organs or even worse the actual
+#        structures within the organism that are formed by a number of organs cooperating in a system (e.g. nervous system)
+# #+END_NOTES
 
-* Service Communication
+# * Service Communication
 
-[[./BITR-9.png]]
+# [[./BITR-9.png]]
 
-#+BEGIN_NOTES
-     - Communication with more organisms to provide the overall result.
-     - Communication mechanisms are the same but more communication goes on in the overall ecosystem.
-     - Each service 'organism' is simpler than a monolith and more specialised closer to the 'systems' in a complex 'monolithic' organism (i.e respiratory system, circularly system, nervous system).
-     - Lifespans of these more specialised organisms are slightly shorter. Less complex collections of classes (cells), packages (organs) and fewer (maybe only one or two) internal systems.
-     - E.g. Ravens are seen to guide wolves to their prey (Ravens scavenge on left overs)
-     - Badgers and Coyotes - eat burrowing rodents. Coyotes can't get to the rodents deep in burrows easily but hunting with Badger, Badger digs out rodent and if it tries to escape out of other exit
-       Coyotes chase it down. Coyotes leavings from kills that ran ate by Badger, Badgers leavings from ones caught by
-       burrowing feed Coyotes?
+# #+BEGIN_NOTES
+#      - Communication with more organisms to provide the overall result.
+#      - Communication mechanisms are the same but more communication goes on in the overall ecosystem.
+#      - Each service 'organism' is simpler than a monolith and more specialised closer to the 'systems' in a complex 'monolithic' organism (i.e respiratory system, circularly system, nervous system).
+#      - Lifespans of these more specialised organisms are slightly shorter. Less complex collections of classes (cells), packages (organs) and fewer (maybe only one or two) internal systems.
+#      - E.g. Ravens are seen to guide wolves to their prey (Ravens scavenge on left overs)
+#      - Badgers and Coyotes - eat burrowing rodents. Coyotes can't get to the rodents deep in burrows easily but hunting with Badger, Badger digs out rodent and if it tries to escape out of other exit
+#        Coyotes chase it down. Coyotes leavings from kills that ran ate by Badger, Badgers leavings from ones caught by
+#        burrowing feed Coyotes?
 
-#+END_NOTES
+# #+END_NOTES
 
-* Microservices
+# * Microservices
 
-[[./BITR-15.png]]
+# [[./BITR-15.png]]
 
-#+BEGIN_NOTES
-     - Even more communication across even smaller more specialised organisms.
-     - Lifespans can be very short.
-     - Can quickly develop different polyps with a different specialisation.
-     - Communication patterns and cooperation can be quite complex across the different organisms. Communication is not as well regulated as between organs in the body of a larger monolithic
-       organism. Environment stimuli and factors can greatly affect communication and coordination between the different organisms in the colony.
-     - Ants - soldier, worker, queen
-#+END_NOTES
+# #+BEGIN_NOTES
+#      - Even more communication across even smaller more specialised organisms.
+#      - Lifespans can be very short.
+#      - Can quickly develop different polyps with a different specialisation.
+#      - Communication patterns and cooperation can be quite complex across the different organisms. Communication is not as well regulated as between organs in the body of a larger monolithic
+#        organism. Environment stimuli and factors can greatly affect communication and coordination between the different organisms in the colony.
+#      - Ants - soldier, worker, queen
+# #+END_NOTES
 
 * -ve feedback mechanisms
 
@@ -346,7 +341,7 @@ zooids or polyps
 [[./BITR-18.png]]
 
 #+BEGIN_NOTES
-      A positive feedback loop comes into play during childbirth.
+      A positive feedback loop comes into play during blood clotting.
       1. Once a vessel is damaged,
       2. platelets start to cling to the injured site and release chemicals
       3. that attract more  platelets.
@@ -483,7 +478,7 @@ Other mechanisms
      inhibit the expression of a gene without actually changing the nucleotide sequence.
 #+END_NOTES
 
-* Changes in Biome/Biotpoe
+* Changes in Biome/Biotope
 
 [[./BITR-27.png]]
 
