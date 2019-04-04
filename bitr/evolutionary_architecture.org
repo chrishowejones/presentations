@@ -531,6 +531,15 @@ Software response
 :reveal_background_size: 540px
 :END:
 
+#+BEGIN_NOTES
+Feedback loops in Biology
+- Smaller variations - behavioural changes, physiological changes,
+  phenotypically plastic traits
+- Genetic mutation, cooperative strategies.
+- Different species move into ecosystem, most drastically extinction.
+
+#+END_NOTES
+
 
 * Feedback loops
 
