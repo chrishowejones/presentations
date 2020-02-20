@@ -2,10 +2,9 @@
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  26th March 2020
-#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'cube'
 #+REVEAL_THEME: solarized
-#+REVEAL_TRANS: concave
-#+REVEAL_HLEVEL: 2
+#+REVEAL_HLEVEL: 1
 #+REVEAL_ROOT: file:///home/chris/reveal.js-3.8.0
 #+REVEAL_PLUGINS: (highlight markdown notes zoom)
 #+REVEAL_SLIDE_FOOTER: @agile_geek
@@ -51,26 +50,28 @@
 * Key characteristics of evolution
 
   Adaption
-#+ATTR_REVEAL: :frag (roll-in)
-    - New generations.
-    - Feedback.
-    - Room to fail (adaptations that don't survive).
 
-* Key characteristics of evolution
+** Adaption
+ #+ATTR_REVEAL: :frag (roll-in)
+     - New generations.
+     - Feedback.
+     - Room to fail (adaptations that don't survive).
 
-#+ATTR_REVEAL: :frag (roll-in)
-  - Short cycles between generations.
-  - Ability to fallback to earlier successful generations.
-  - Generations can fail
-  - Reactive to ecosystem
-  - Impact on ecosystem
+** Adaption
 
-#+BEGIN_NOTES
-  - Impact on ecosystem
-  - Species have an impact on their ecosystem
-    - Uncontrolled populations
-    - Introduction of disruptive (alien) species
-#+END_NOTES
+ #+ATTR_REVEAL: :frag (roll-in)
+   - Short cycles between generations.
+   - Ability to fallback to earlier successful generations.
+   - Generations can fail
+   - Reactive to ecosystem
+   - Impact on ecosystem
+
+ #+BEGIN_NOTES
+   - Impact on ecosystem
+   - Species have an impact on their ecosystem
+     - Uncontrolled populations
+     - Introduction of disruptive (alien) species
+ #+END_NOTES
 
 * Translated to Software
 
@@ -93,13 +94,13 @@
     - Biosphere - All markets, all customers, all potential
       competitors
 
-* Feedback loops
-  Feedback on different timescales
-#+ATTR_REVEAL: :frag (roll-in)
-    - Micro-ecosystem - nanoseconds/milliseconds/seconds
-    - Biotope - hourly/daily/weekly
-    - Biome - weekly/monthly
-    - Biosphere - quarterly/biannual/annual
+** Feedback loops
+   Feedback on different timescales
+ #+ATTR_REVEAL: :frag (roll-in)
+     - Micro-ecosystem - nanoseconds/milliseconds/seconds
+     - Biotope - hourly/daily/weekly
+     - Biome - weekly/monthly
+     - Biosphere - quarterly/biannual/annual
 
 * Separate Deployment from Release
 
@@ -127,86 +128,95 @@
     - FP vs OOP
     - BDD/TDD
 
-* Materials Matter
+** Materials Matter
 
-The building materials we use in software really matters
-#+ATTR_REVEAL: :frag (roll-in)
-    + Language
-    + structural typing,
-    + weak typing/strong typing
-    + Type inference,
-    + FP,
-    + REPL or other feedback,
-    + Immutability
-    + Libraries and Frameworks - leaves and branches
+ The building materials we use in software really matters
+ #+ATTR_REVEAL: :frag (roll-in)
+     + Language
+     + structural typing,
+     + weak typing/strong typing
+     + Type inference,
+     + FP,
+     + REPL or other feedback,
+     + Immutability
+     + Libraries and Frameworks - leaves and branches
 
-* Materials Matter
+** Materials Matter
 
-#+ATTR_REVEAL: :frag (roll-in)
-    + Tooling - supporting fast feedback
-      + CI
-      + CD
-      + Editors - refactoring, linting.
-    + Team structure
-      + Smaller - multi discipline,
-      + DevOps
-    + Org structure
-      + Software Development is core not a support function
-      + Product/Platform thinking
-      + Systems thinking
+ #+ATTR_REVEAL: :frag (roll-in)
+     + Tooling - supporting fast feedback
+       + CI
+       + CD
+       + Editors - refactoring, linting.
+     + Team structure
+       + Smaller - multi discipline,
+       + DevOps
+     + Org structure
+       + Software Development is core not a support function
+       + Product/Platform thinking
+       + Systems thinking
 
-* Materials Matter
+** Materials Matter
 
-#+ATTR_REVEAL: :frag (roll-in)
-  Because the constraints they introduce direct behaviour
+ #+ATTR_REVEAL: :frag (roll-in)
+   Because the constraints they introduce direct behaviour
 
-* Feedback in Micro-Ecosystem
+* Feedback
 
-#+ATTR_REVEAL: :frag (roll-in)
-  - Automated developer level tests
-  - Design feedback: TDD, BDD
-  - REPL based development
-  - Code reviews (PR’s etc.)
-  - Architectural diagrams/documents - ADR’s etc.
+  Data (Hypothesis) Driven Development
 
-* Feedback in Biotope
+** Feedback in Micro-Ecosystem
 
-#+ATTR_REVEAL: :frag (roll-in)
-  - Workflow visualisations e.g. Kanban and Scrum boards
-  - Cycle/Lead times
-  - Stand ups
-  - Show and Tell
-  - Retrospectives
-  - Pastoral care: Career progression
+ #+ATTR_REVEAL: :frag (roll-in)
+   - Automated developer level tests
+   - Design feedback: TDD, BDD
+   - REPL based development
+   - Code reviews (PR’s etc.)
+   - Architectural diagrams/documents - ADR’s etc.
 
-* Feedback in Biotope
+** Feedback in Biotope
 
-  Product/service level metrics e.g.
-#+ATTR_REVEAL: :frag (roll-in)
-    - dwell time,
-    - conversion rate,
-    - bounce rate,
-    - mean time to fail,
-    - mean time between failure,
-    - mean time to repair,
-    - mean time to defect
+ #+ATTR_REVEAL: :frag (roll-in)
+   - Workflow visualisations e.g. Kanban and Scrum boards
+   - Cycle/Lead times
+   - Stand ups
+   - Show and Tell
+   - Retrospectives
+   - Pastoral care: Career progression
 
-* Feedback in Biome
+** Feedback in Biotope
 
-  - Rolled up workflow visualisations
-  - Rolled up cycle/lead times
-  - Rolled up retrospectives/standups
-  - Metrics at dept/org level
-    - Customer retention
-    - Average
+   Product/service level metrics e.g.
+ #+ATTR_REVEAL: :frag (roll-in)
+     - unique visitors
+     - dwell time,
+     - conversion rate,
+     - average order value,
+     - bounce rate,
+     - mean time to fail,
+     - mean time between failure,
+     - mean time to repair,
+     - mean time to defect
 
-* Feedback in Biosphere
+** Feedback in Biome
 
-#+ATTR_REVEAL: :frag (roll-in)
-  - Market surveys
-  - Consumer surveys
-  - Competition analysis
-  - P & L
+ #+ATTR_REVEAL: :frag (roll-in)
+   - Rolled up workflow visualisations
+   - Rolled up cycle/lead times
+   - Rolled up retrospectives/standups
+   - Metrics at dept/org level
+     - Customer retention
+     - Net Promoter Scores
+     - Churn Rate
+   - Customer satisfaction surveys
+
+** Feedback in Biosphere
+
+ #+ATTR_REVEAL: :frag (roll-in)
+   - Market surveys
+   - Consumer surveys
+   - Competition analysis
+   - P & L
 
 * TL;DR
 
