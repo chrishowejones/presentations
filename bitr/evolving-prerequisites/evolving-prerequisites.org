@@ -1,0 +1,242 @@
+#+TITLE:  Prerequisites for Evolutionary Architecture
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  26th March 2020
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false
+#+REVEAL_THEME: solarized
+#+REVEAL_TRANS: concave
+#+REVEAL_HLEVEL: 2
+#+REVEAL_ROOT: file:///home/chris/reveal.js-3.8.0
+#+REVEAL_PLUGINS: (highlight markdown notes zoom)
+#+REVEAL_SLIDE_FOOTER: @agile_geek
+#+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+#+OPTIONS: toc:nil, timestamp:nil, num:nil
+
+* Who am I?
+
+  Name:      =Chris Howe-Jones= *[Technical Navigator]*
+
+  Twitter:   =@agile_geek=
+
+  Github:    =https://github.com/chrishowejones=
+
+  Website:   =https://www.devcycle.co.uk=
+
+#+REVEAL_HTML: <style>.reveal section img { background:none; border:none; box-shadow:none; }</style>
+#+attr_html: :width 250px
+[[./New DevCycle Logo Transparent.png]]
+
+* Why evolutionary architecture?
+
+  The only constant is change!
+
+* Why evolve?
+
+[TODO] Word cloud to demonstrate why change is most important
+
+#+BEGIN_NOTES
+  - Change is the overriding system quality in architecture.
+    - Performance? We can change to optimise when need is proven.
+    - Security? We can change to optimise when need is proven.
+    - Governance? We can change to optimise when need is proven. Altho
+      to some extent designing for change uses the tools of
+      governance, as we will see later.
+    - .... We can change to optimise when need is proven
+  -
+  - To support change we need to defer decisions to the last practical moment and we need to react quickly
+  - Architecture is a social skill as much as a technical one. It’s about communication of a vision across a development team or teams
+#+END_NOTES
+
+* Key characteristics of evolution
+
+  Adaption
+#+ATTR_REVEAL: :frag (roll-in)
+    - New generations.
+    - Feedback.
+    - Room to fail (adaptations that don't survive).
+
+* Key characteristics of evolution
+
+#+ATTR_REVEAL: :frag (roll-in)
+  - Short cycles between generations.
+  - Ability to fallback to earlier successful generations.
+  - Generations can fail
+  - Reactive to ecosystem
+  - Impact on ecosystem
+
+#+BEGIN_NOTES
+  - Impact on ecosystem
+  - Species have an impact on their ecosystem
+    - Uncontrolled populations
+    - Introduction of disruptive (alien) species
+#+END_NOTES
+
+* Translated to Software
+
+#+ATTR_REVEAL: :frag (roll-in)
+  - Separate deployment from release.
+  - Fast feedback
+    - In development
+    - In production
+  - Appropriate feedback
+    - Metrics for architecturally important aspects
+  - Responsive culture
+
+* Feedback loops
+
+  Feedback in different ecosystem
+#+ATTR_REVEAL: :frag (roll-in)
+    - Micro-ecosystem - runtime environment
+    - Biotope - team, dev processes, s/w languages, tools
+    - Biome - org structure, customer base, target market, competitors
+    - Biosphere - All markets, all customers, all potential
+      competitors
+
+* Feedback loops
+  Feedback on different timescales
+#+ATTR_REVEAL: :frag (roll-in)
+    - Micro-ecosystem - nanoseconds/milliseconds/seconds
+    - Biotope - hourly/daily/weekly
+    - Biome - weekly/monthly
+    - Biosphere - quarterly/biannual/annual
+
+* Separate Deployment from Release
+
+#+ATTR_REVEAL: :frag (roll-in)
+  - Automated testing
+  - Continuous Integration
+  - Continuous Deployment
+  - Automated alerting
+  - Automated monitoring
+  - Blue-Green/Dark/Canary deployments
+  - A/B testing
+  - Branch by abstraction
+  - Feature Toggles
+
+* Pick your constraints
+
+  Constraints direct behaviour
+  E.g.
+#+ATTR_REVEAL: :frag (roll-in)
+    - Inverse Conways Law
+    - Project vs Product/Platform
+    - Domain Driven Development
+    - WIP limits (Kanban)
+    - Immutability
+    - FP vs OOP
+    - BDD/TDD
+
+* Materials Matter
+
+The building materials we use in software really matters
+#+ATTR_REVEAL: :frag (roll-in)
+    + Language
+    + structural typing,
+    + weak typing/strong typing
+    + Type inference,
+    + FP,
+    + REPL or other feedback,
+    + Immutability
+    + Libraries and Frameworks - leaves and branches
+
+* Materials Matter
+
+#+ATTR_REVEAL: :frag (roll-in)
+    + Tooling - supporting fast feedback
+      + CI
+      + CD
+      + Editors - refactoring, linting.
+    + Team structure
+      + Smaller - multi discipline,
+      + DevOps
+    + Org structure
+      + Software Development is core not a support function
+      + Product/Platform thinking
+      + Systems thinking
+
+* Materials Matter
+
+#+ATTR_REVEAL: :frag (roll-in)
+  Because the constraints they introduce direct behaviour
+
+* Feedback in Micro-Ecosystem
+
+#+ATTR_REVEAL: :frag (roll-in)
+  - Automated developer level tests
+  - Design feedback: TDD, BDD
+  - REPL based development
+  - Code reviews (PR’s etc.)
+  - Architectural diagrams/documents - ADR’s etc.
+
+* Feedback in Biotope
+
+#+ATTR_REVEAL: :frag (roll-in)
+  - Workflow visualisations e.g. Kanban and Scrum boards
+  - Cycle/Lead times
+  - Stand ups
+  - Show and Tell
+  - Retrospectives
+  - Pastoral care: Career progression
+
+* Feedback in Biotope
+
+  Product/service level metrics e.g.
+#+ATTR_REVEAL: :frag (roll-in)
+    - dwell time,
+    - conversion rate,
+    - bounce rate,
+    - mean time to fail,
+    - mean time between failure,
+    - mean time to repair,
+    - mean time to defect
+
+* Feedback in Biome
+
+  - Rolled up workflow visualisations
+  - Rolled up cycle/lead times
+  - Rolled up retrospectives/standups
+  - Metrics at dept/org level
+    - Customer retention
+    - Average
+
+* Feedback in Biosphere
+
+#+ATTR_REVEAL: :frag (roll-in)
+  - Market surveys
+  - Consumer surveys
+  - Competition analysis
+  - P & L
+
+* TL;DR
+
+  Separate Release from Deployment
+#+ATTR_REVEAL: :frag (roll-in)
+  - Feature toggling
+  - DDD - contexts, aggregates
+  - Branch by abstractions
+  - CI
+  - CD
+  - Immutable servers
+
+* TL;DR
+
+  Feedback
+#+ATTR_REVEAL: :frag (roll-in)
+  - Automated testing
+  - CI
+  - CD
+  - Automated Observability (alerting, logging, monitoring, etc)
+  - Metrics at all levels
+  - Visualisation of workflows
+  - Retrospectives
+
+* TL;DR
+
+  Culture
+#+ATTR_REVEAL: :frag (roll-in)
+  - Pick you constraints (Materials matter)
+  - Small for as long as possible
+  - Defer design decisions
+  - Simplify (not same as easy!)
+  - Architecture is a social & group process

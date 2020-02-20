@@ -1,22 +1,19 @@
-#+OPTIONS: toc:nil reveal_slide_number:nil timestamp:nil num:nil
-#+OPTIONS: reveal_width:1080
-#+OPTIONS: reveal_height:768
 #+TITLE:  Evolutionary Architecture: What can we learn from Nature?
-#+AUTHOR: Chris Howe-Jones
+T#+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  4th April 2019
-#+REVEAL_MARGIN: 0.2
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false
 #+OPTIONS: reveal_center:nil
 #+OPTIONS: reveal_rolling_links:t reveal_overview:t reveal_global_footer:t
-#+REVEAL_KEYBOARD:t
-#+REVEAL_THEME: beige
+#+REVEAL_THEME: simple
 #+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
-#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_ROOT: file:///home/chris/reveal.js-3.8.0
 #+REVEAL_PLUGINS: (highlight markdown notes zoom)
 #+REVEAL_SLIDE_FOOTER: @agile_geek
 #+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
 #+MACRO: color @@html:<font color="$1">$2</font>@@
+#+OPTIONS: toc:nil, timestamp:nil, num:nil
 * Who am I?
 
   Name:      =Chris Howe-Jones= *[Technical Navigator]*
@@ -411,8 +408,7 @@ zooids or polyps - dactylozooid (defense), gonozooid (reproduction), and gastroz
 #+END_NOTES
 
 * Habitat or Biotope
-
-[[./BITR-22.png]]
+[[./BITR-22.png]]n
 
 #+BEGIN_NOTES
       1. Development processes

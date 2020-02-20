@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Prerequisites for Evolutionary Architecture</title>
+<meta name="author" content="(Chris Howe-Jones)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/chris/reveal.js-3.8.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js-3.8.0/css/theme/solarized.css" id="theme"/>
+
+<link rel="stylesheet" href="./custom-stylesheet.css"/>
+<link rel="stylesheet" href="file:///home/chris/reveal.js-3.8.0/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/chris/reveal.js-3.8.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Prerequisites for Evolutionary Architecture</h1><h2 class="author">Chris Howe-Jones</h2><h2 class="date">26th March 2020</h2>
+</section>
+
+<section>
+<section id="slide-orgcbb7927">
+<h2 id="orgcbb7927">Who am I?</h2>
+<p>
+Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
+</p>
+
+<p>
+Twitter:   <code>@agile_geek</code>
+</p>
+
+<p>
+Github:    <code>https://github.com/chrishowejones</code>
+</p>
+
+<p>
+Website:   <code>https://www.devcycle.co.uk</code>
+</p>
+
+<style>.reveal section img { background:none; border:none; box-shadow:none; }</style>
+
+<div class="figure">
+<p><img src="./New DevCycle Logo Transparent.png" alt="New DevCycle Logo Transparent.png" width="250px" />
+</p>
+</div>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgad04da3">
+<h2 id="orgad04da3">Why evolutionary architecture?</h2>
+<p>
+The only constant is change!
+</p>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orga73c934">
+<h2 id="orga73c934">Why evolve?</h2>
+<p>
+[TODO] Word cloud to demonstrate why change is most important
+</p>
+
+<aside class="notes">
+<ul>
+<li>Change is the overriding system quality in architecture.
+<ul>
+<li>Performance? We can change to optimise when need is proven.</li>
+<li>Security? We can change to optimise when need is proven.</li>
+<li>Governance? We can change to optimise when need is proven. Altho
+to some extent designing for change uses the tools of
+governance, as we will see later.</li>
+<li>&#x2026;. We can change to optimise when need is proven</li>
+
+</ul></li>
+<li></li>
+
+<li>To support change we need to defer decisions to the last practical moment and we need to react quickly</li>
+<li>Architecture is a social skill as much as a technical one. It’s about communication of a vision across a development team or teams</li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd6be940">
+<h2 id="orgd6be940">Key characteristics of evolution</h2>
+<p>
+Adaption
+</p>
+<ul>
+<li class="fragment roll-in">New generations.</li>
+<li class="fragment roll-in">Feedback.</li>
+<li class="fragment roll-in">Room to fail (adaptations that don't survive).</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd014715">
+<h2 id="orgd014715">Key characteristics of evolution</h2>
+<ul>
+<li class="fragment roll-in">Short cycles between generations.</li>
+<li class="fragment roll-in">Ability to fallback to earlier successful generations.</li>
+<li class="fragment roll-in">Generations can fail</li>
+<li class="fragment roll-in">Reactive to ecosystem</li>
+<li class="fragment roll-in">Impact on ecosystem</li>
+
+</ul>
+
+<aside class="notes">
+<ul>
+<li>Impact on ecosystem</li>
+<li>Species have an impact on their ecosystem
+<ul>
+<li>Uncontrolled populations</li>
+<li>Introduction of disruptive (alien) species</li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org5f02358">
+<h2 id="org5f02358">Translated to Software</h2>
+<ul>
+<li class="fragment roll-in">Separate deployment from release.</li>
+<li class="fragment roll-in">Fast feedback
+<ul>
+<li>In development</li>
+<li>In production</li>
+
+</ul></li>
+<li class="fragment roll-in">Appropriate feedback
+<ul>
+<li>Metrics for architecturally important aspects</li>
+
+</ul></li>
+<li class="fragment roll-in">Responsive culture</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org0a79821">
+<h2 id="org0a79821">Feedback loops</h2>
+<p>
+Feedback in different ecosystem
+</p>
+<ul>
+<li class="fragment roll-in">Micro-ecosystem - runtime environment</li>
+<li class="fragment roll-in">Biotope - team, dev processes, s/w languages, tools</li>
+<li class="fragment roll-in">Biome - org structure, customer base, target market, competitors</li>
+<li class="fragment roll-in">Biosphere - All markets, all customers, all potential
+competitors</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orge1f8ecf">
+<h2 id="orge1f8ecf">Feedback loops</h2>
+<p>
+Feedback on different timescales
+</p>
+<ul>
+<li class="fragment roll-in">Micro-ecosystem - nanoseconds/milliseconds/seconds</li>
+<li class="fragment roll-in">Biotope - hourly/daily/weekly</li>
+<li class="fragment roll-in">Biome - weekly/monthly</li>
+<li class="fragment roll-in">Biosphere - quarterly/biannual/annual</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orga665bd5">
+<h2 id="orga665bd5">Separate Deployment from Release</h2>
+<ul>
+<li class="fragment roll-in">Automated testing</li>
+<li class="fragment roll-in">Continuous Integration</li>
+<li class="fragment roll-in">Continuous Deployment</li>
+<li class="fragment roll-in">Automated alerting</li>
+<li class="fragment roll-in">Automated monitoring</li>
+<li class="fragment roll-in">Blue-Green/Dark/Canary deployments</li>
+<li class="fragment roll-in">A/B testing</li>
+<li class="fragment roll-in">Branch by abstraction</li>
+<li class="fragment roll-in">Feature Toggles</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgde49de1">
+<h2 id="orgde49de1">Pick your constraints</h2>
+<p>
+Constraints direct behaviour
+E.g.
+</p>
+<ul>
+<li class="fragment roll-in">Inverse Conways Law</li>
+<li class="fragment roll-in">Project vs Product/Platform</li>
+<li class="fragment roll-in">Domain Driven Development</li>
+<li class="fragment roll-in">WIP limits (Kanban)</li>
+<li class="fragment roll-in">Immutability</li>
+<li class="fragment roll-in">FP vs OOP</li>
+<li class="fragment roll-in">BDD/TDD</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org95ce455">
+<h2 id="org95ce455">Materials Matter</h2>
+<p>
+The building materials we use in software really matters
+</p>
+<ul>
+<li class="fragment roll-in">Language</li>
+<li class="fragment roll-in">structural typing,</li>
+<li class="fragment roll-in">weak typing/strong typing</li>
+<li class="fragment roll-in">Type inference,</li>
+<li class="fragment roll-in">FP,</li>
+<li class="fragment roll-in">REPL or other feedback,</li>
+<li class="fragment roll-in">Immutability</li>
+<li class="fragment roll-in">Libraries and Frameworks - leaves and branches</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org614db6e">
+<h2 id="org614db6e">Materials Matter</h2>
+<ul>
+<li class="fragment roll-in">Tooling - supporting fast feedback
+<ul>
+<li>CI</li>
+<li>CD</li>
+<li>Editors - refactoring, linting.</li>
+
+</ul></li>
+<li class="fragment roll-in">Team structure
+<ul>
+<li>Smaller - multi discipline,</li>
+<li>DevOps</li>
+
+</ul></li>
+<li class="fragment roll-in">Org structure
+<ul>
+<li>Software Development is core not a support function</li>
+<li>Product/Platform thinking</li>
+<li>Systems thinking</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org2ec6d7d">
+<h2 id="org2ec6d7d">Materials Matter</h2>
+<p class="fragment (roll-in)">
+Because the constraints they introduce direct behaviour
+</p>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org520f65e">
+<h2 id="org520f65e">Feedback in Micro-Ecosystem</h2>
+<ul>
+<li class="fragment roll-in">Automated developer level tests</li>
+<li class="fragment roll-in">Design feedback: TDD, BDD</li>
+<li class="fragment roll-in">REPL based development</li>
+<li class="fragment roll-in">Code reviews (PR’s etc.)</li>
+<li class="fragment roll-in">Architectural diagrams/documents - ADR’s etc.</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orge9f1323">
+<h2 id="orge9f1323">Feedback in Biotope</h2>
+<ul>
+<li class="fragment roll-in">Workflow visualisations e.g. Kanban and Scrum boards</li>
+<li class="fragment roll-in">Cycle/Lead times</li>
+<li class="fragment roll-in">Stand ups</li>
+<li class="fragment roll-in">Show and Tell</li>
+<li class="fragment roll-in">Retrospectives</li>
+<li class="fragment roll-in">Pastoral care: Career progression</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgfa681b1">
+<h2 id="orgfa681b1">Feedback in Biotope</h2>
+<p>
+Product/service level metrics e.g.
+</p>
+<ul>
+<li class="fragment roll-in">dwell time,</li>
+<li class="fragment roll-in">conversion rate,</li>
+<li class="fragment roll-in">bounce rate,</li>
+<li class="fragment roll-in">mean time to fail,</li>
+<li class="fragment roll-in">mean time between failure,</li>
+<li class="fragment roll-in">mean time to repair,</li>
+<li class="fragment roll-in">mean time to defect</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd324117">
+<h2 id="orgd324117">Feedback in Biome</h2>
+<ul>
+<li>Rolled up workflow visualisations</li>
+<li>Rolled up cycle/lead times</li>
+<li>Rolled up retrospectives/standups</li>
+<li>Metrics at dept/org level
+<ul>
+<li>Customer retention</li>
+<li>Average</li>
+
+</ul></li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgfc125c8">
+<h2 id="orgfc125c8">Feedback in Biosphere</h2>
+<ul>
+<li class="fragment roll-in">Market surveys</li>
+<li class="fragment roll-in">Consumer surveys</li>
+<li class="fragment roll-in">Competition analysis</li>
+<li class="fragment roll-in">P &amp; L</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org59b9582">
+<h2 id="org59b9582">TL;DR</h2>
+<p>
+Separate Release from Deployment
+</p>
+<ul>
+<li class="fragment roll-in">Feature toggling</li>
+<li class="fragment roll-in">DDD - contexts, aggregates</li>
+<li class="fragment roll-in">Branch by abstractions</li>
+<li class="fragment roll-in">CI</li>
+<li class="fragment roll-in">CD</li>
+<li class="fragment roll-in">Immutable servers</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org6c9a7fd">
+<h2 id="org6c9a7fd">TL;DR</h2>
+<p>
+Feedback
+</p>
+<ul>
+<li class="fragment roll-in">Automated testing</li>
+<li class="fragment roll-in">CI</li>
+<li class="fragment roll-in">CD</li>
+<li class="fragment roll-in">Automated Observability (alerting, logging, monitoring, etc)</li>
+<li class="fragment roll-in">Metrics at all levels</li>
+<li class="fragment roll-in">Visualisation of workflows</li>
+<li class="fragment roll-in">Retrospectives</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org25a8429">
+<h2 id="org25a8429">TL;DR</h2>
+<p>
+Culture
+</p>
+<ul>
+<li class="fragment roll-in">Pick you constraints (Materials matter)</li>
+<li class="fragment roll-in">Small for as long as possible</li>
+<li class="fragment roll-in">Defer design decisions</li>
+<li class="fragment roll-in">Simplify (not same as easy!)</li>
+<li class="fragment roll-in">Architecture is a social &amp; group process</li>
+
+</ul>
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/chris/reveal.js-3.8.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false,
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/chris/reveal.js-3.8.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///home/chris/reveal.js-3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js-3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/chris/reveal.js-3.8.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:///home/chris/reveal.js-3.8.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
