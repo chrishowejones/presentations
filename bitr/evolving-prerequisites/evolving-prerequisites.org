@@ -31,33 +31,51 @@
   The only constant is change!
 
 * Why evolve?
-
-[TODO] Word cloud to demonstrate why change is most important
+:PROPERTIES:
+:reveal_background: ./changeability.png
+:reveal_background_size: 500px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
 #+BEGIN_NOTES
   - Change is the overriding system quality in architecture.
+  - If only because our understanding of the problem we are solving
+    evolves over time and the solution we implement changes the
+    problem space.
     - Performance? We can change to optimise when need is proven.
     - Security? We can change to optimise when need is proven.
     - Governance? We can change to optimise when need is proven. Altho
       to some extent designing for change uses the tools of
       governance, as we will see later.
     - .... We can change to optimise when need is proven
-  -
   - To support change we need to defer decisions to the last practical moment and we need to react quickly
   - Architecture is a social skill as much as a technical one. It’s about communication of a vision across a development team or teams
 #+END_NOTES
 
 * Key characteristics of evolution
+:PROPERTIES:
+:reveal_background: ./adaptation.jpg
+:reveal_background_size: 690px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
-  Adaption
+  Adaptation
 
-** Adaption
+#+BEGIN_NOTES
+Adaptation of subsequent generations to their environment.
+In the case of man and some other animals (mainly mammals) we also
+have to consider Modification of Environment.
+#+END_NOTES
+
+** Adaptation
  #+ATTR_REVEAL: :frag (roll-in)
      - New generations.
      - Feedback.
      - Room to fail (adaptations that don't survive).
 
-** Adaption
+** Adaptation
 
  #+ATTR_REVEAL: :frag (roll-in)
    - Short cycles between generations.
