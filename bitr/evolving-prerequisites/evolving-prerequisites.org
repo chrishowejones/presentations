@@ -2,7 +2,7 @@
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  26th March 2020
-#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'cube'
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
 #+REVEAL_THEME: solarized
 #+REVEAL_HLEVEL: 1
 #+REVEAL_ROOT: file:///home/chris/reveal.js-3.8.0
@@ -66,12 +66,12 @@
    - Reactive to ecosystem
    - Impact on ecosystem
 
- #+BEGIN_NOTES
+#+BEGIN_NOTES
    - Impact on ecosystem
    - Species have an impact on their ecosystem
      - Uncontrolled populations
      - Introduction of disruptive (alien) species
- #+END_NOTES
+#+END_NOTES
 
 * Translated to Software
 
@@ -84,123 +84,201 @@
     - Metrics for architecturally important aspects
   - Responsive culture
 
-* Feedback loops
-
-  Feedback in different ecosystem
-#+ATTR_REVEAL: :frag (roll-in)
-    - Micro-ecosystem - runtime environment
-    - Biotope - team, dev processes, s/w languages, tools
-    - Biome - org structure, customer base, target market, competitors
-    - Biosphere - All markets, all customers, all potential
-      competitors
-
-** Feedback loops
-   Feedback on different timescales
- #+ATTR_REVEAL: :frag (roll-in)
-     - Micro-ecosystem - nanoseconds/milliseconds/seconds
-     - Biotope - hourly/daily/weekly
-     - Biome - weekly/monthly
-     - Biosphere - quarterly/biannual/annual
-
-* Separate Deployment from Release
-
-#+ATTR_REVEAL: :frag (roll-in)
-  - Automated testing
-  - Continuous Integration
-  - Continuous Deployment
-  - Automated alerting
-  - Automated monitoring
-  - Blue-Green/Dark/Canary deployments
-  - A/B testing
-  - Branch by abstraction
-  - Feature Toggles
-
 * Pick your constraints
+:PROPERTIES:
+:reveal_background: ./constraints.gif
+:reveal_background_size: 680px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
+#+BEGIN_NOTES
   Constraints direct behaviour
   E.g.
-#+ATTR_REVEAL: :frag (roll-in)
     - Inverse Conways Law
-    - Project vs Product/Platform
     - Domain Driven Development
     - WIP limits (Kanban)
     - Immutability
     - FP vs OOP
     - BDD/TDD
+#+END_NOTES
 
 ** Materials Matter
+:PROPERTIES:
+:reveal_background: ./languages.gif
+:reveal_background_size: 680px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
+#+BEGIN_NOTES
  The building materials we use in software really matters
- #+ATTR_REVEAL: :frag (roll-in)
      + Language
-     + structural typing,
+     + favour structural typing over nominal typing,
      + weak typing/strong typing
      + Type inference,
      + FP,
      + REPL or other feedback,
      + Immutability
      + Libraries and Frameworks - leaves and branches
+     + API accretion (not versioning)
+
+3 variables in JS have more potential states than all the atoms in the
+planet earth!
+Issue with a lot of implementations of v. strong nominal typing is that it assumes you definitively know a
+judgement e.g. canonical verification of a type and when these
+verifications are equal.
+However, the business world is more shaded
+than that in most cases for the larger concepts.
+
+#+END_NOTES
 
 ** Materials Matter
+:PROPERTIES:
+:reveal_background: ./cd.gif
+:reveal_background_size: 400px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
- #+ATTR_REVEAL: :frag (roll-in)
-     + Tooling - supporting fast feedback
-       + CI
-       + CD
-       + Editors - refactoring, linting.
+#+BEGIN_NOTES
+    + Tooling - supporting fast feedback
+      + CI
+      + CD
+      + Editors - refactoring, linting.
+      + Dark deployments
+      + Canary Deployments
+      + Blue/green deployments
+      + Automated testing
+      + Alerting/Monitoring
+      + Balance testing vs alerting/monitoring
+#+END_NOTES
+
+** Materials Matter
+:PROPERTIES:
+:reveal_background: ./smallteam.gif
+:reveal_background_size: 540px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
+
+#+BEGIN_NOTES
      + Team structure
        + Smaller - multi discipline,
        + DevOps
+#+END_NOTES
+
+
+** Materials Matter
+:PROPERTIES:
+:reveal_background: ./tech_debt.jpg
+:reveal_background_size: 680px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
+
+#+BEGIN_NOTES
      + Org structure
        + Software Development is core not a support function
        + Product/Platform thinking
        + Systems thinking
+#+END_NOTES
 
 ** Materials Matter
 
  #+ATTR_REVEAL: :frag (roll-in)
    Because the constraints they introduce direct behaviour
 
+* Separate Release From Deployment
+:PROPERTIES:
+:reveal_background: ./feature-toggle.jpeg
+:reveal_background_size: 680px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
+
+#+BEGIN_NOTES
+  - DDD - contexts, aggregates
+  - Feature toggling
+  - Branch by abstractions
+  - CI/CD
+  - Immutable servers
+#+END_NOTES
+
 * Feedback
 
   Data (Hypothesis) Driven Development
 
-** Feedback in Micro-Ecosystem
+** Feedback between Ecosystems
+:PROPERTIES:
+:reveal_background: ./ecosystems_feedback.png
+:reveal_background_size: 640px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
- #+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_NOTES
++ Each smaller ecosystem is effected by the larger outer ecosystem and
+  each smaller ecosystem causes impact on the larger ecosystem.
++ Feedback timescales differ:
+     - Micro-ecosystem - nanoseconds/milliseconds/seconds
+     - Biotope - hourly/daily/weekly
+     - Biome - weekly/monthly
+     - Biosphere - quarterly/biannual/annual
+#+END_NOTES
+
+** Feedback in Micro-Ecosystem
+:PROPERTIES:
+:reveal_background: ./microecosystems.png
+:reveal_background_size: 640px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
+
+ #+BEGIN_NOTES
    - Automated developer level tests
    - Design feedback: TDD, BDD
    - REPL based development
    - Code reviews (PR’s etc.)
    - Architectural diagrams/documents - ADR’s etc.
+#+END_NOTES
 
 ** Feedback in Biotope
+:PROPERTIES:
+:reveal_background: ./biotope.png
+:reveal_background_size: 640px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
- #+ATTR_REVEAL: :frag (roll-in)
+ #+BEGIN_NOTES
    - Workflow visualisations e.g. Kanban and Scrum boards
    - Cycle/Lead times
    - Stand ups
    - Show and Tell
    - Retrospectives
    - Pastoral care: Career progression
-
-** Feedback in Biotope
-
-   Product/service level metrics e.g.
- #+ATTR_REVEAL: :frag (roll-in)
-     - unique visitors
-     - dwell time,
-     - conversion rate,
-     - average order value,
-     - bounce rate,
-     - mean time to fail,
-     - mean time between failure,
-     - mean time to repair,
-     - mean time to defect
+ Product/service level metrics e.g.
+   - unique visitors
+   - dwell time,
+   - conversion rate,
+   - average order value,
+   - bounce rate,
+   - mean time to fail,
+   - mean time between failure,
+   - mean time to repair,
+   - mean time to defect
+#+END_NOTES
 
 ** Feedback in Biome
+:PROPERTIES:
+:reveal_background: ./biome.png
+:reveal_background_size: 640px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
- #+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_NOTES
    - Rolled up workflow visualisations
    - Rolled up cycle/lead times
    - Rolled up retrospectives/standups
@@ -209,14 +287,23 @@
      - Net Promoter Scores
      - Churn Rate
    - Customer satisfaction surveys
+#+END_NOTES
 
 ** Feedback in Biosphere
+:PROPERTIES:
+:reveal_background: ./biosphere.png
+:reveal_background_size: 640px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
 
- #+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_NOTES
    - Market surveys
    - Consumer surveys
    - Competition analysis
    - P & L
+#+END_NOTES
+
 
 * TL;DR
 

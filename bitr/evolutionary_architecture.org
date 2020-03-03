@@ -1,5 +1,5 @@
 #+TITLE:  Evolutionary Architecture: What can we learn from Nature?
-T#+AUTHOR: Chris Howe-Jones
+#+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  4th April 2019
 #+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false
