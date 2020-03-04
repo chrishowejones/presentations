@@ -69,18 +69,19 @@ In the case of man and some other animals (mainly mammals) we also
 have to consider Modification of Environment.
 #+END_NOTES
 
-** Adaptation
+** Mechanisms of Adaptation
  #+ATTR_REVEAL: :frag (roll-in)
      - New generations.
      - Feedback.
      - Room to fail (adaptations that don't survive).
 
-** Adaptation
+** Mechanisms of Adaptation
+
+** TODO
 
  #+ATTR_REVEAL: :frag (roll-in)
    - Short cycles between generations.
    - Ability to fallback to earlier successful generations.
-   - Generations can fail
    - Reactive to ecosystem
    - Impact on ecosystem
 
@@ -111,6 +112,11 @@ have to consider Modification of Environment.
 :END:
 
 #+BEGIN_NOTES
+  In the past our industry has tried to constrain change.
+  Denying that change occurs and that we are instigators of change is
+  just burying our heads in the sand.
+  Constraints are important to embracing change but you need the right constraints.
+
   Constraints direct behaviour
   E.g.
     - Inverse Conways Law
@@ -160,7 +166,7 @@ than that in most cases for the larger concepts.
 :END:
 
 #+BEGIN_NOTES
-    + Tooling - supporting fast feedback
+    + Tooling - supporting fast feedback & separation of deployment/release
       + CI
       + CD
       + Editors - refactoring, linting.
@@ -216,7 +222,8 @@ than that in most cases for the larger concepts.
 :END:
 
 #+BEGIN_NOTES
-  - DDD - contexts, aggregates
+  - DDD - contexts, aggregates [Discovery]
+  - Event storming [Discovery]
   - Feature toggling
   - Branch by abstractions
   - CI/CD
@@ -327,12 +334,14 @@ than that in most cases for the larger concepts.
 
   Separate Release from Deployment
 #+ATTR_REVEAL: :frag (roll-in)
-  - Feature toggling
-  - DDD - contexts, aggregates
-  - Branch by abstractions
-  - CI
-  - CD
-  - Immutable servers
+  - DDD - contexts, aggregates [Discovery]
+  - Event storming [Discovery]
+  - Feature toggling [Implementation]
+  - Branch by abstraction [Implementation]
+  - CI [Implementation]
+  - CD [Implementation]
+  - Immutable servers [Implementation]
+  - Dark/Canary/Blue-Green deployments [Implementation]
 
 * TL;DR
 
@@ -350,8 +359,9 @@ than that in most cases for the larger concepts.
 
   Culture
 #+ATTR_REVEAL: :frag (roll-in)
-  - Pick you constraints (Materials matter)
-  - Small for as long as possible
+  - Pick your constraints (Materials matter)
+  - Stay small for as long as possible
+  - Recognise that software is core to most orgs
   - Defer design decisions
   - Simplify (not same as easy!)
   - Architecture is a social & group process
