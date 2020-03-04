@@ -77,8 +77,6 @@ have to consider Modification of Environment.
 
 ** Mechanisms of Adaptation
 
-** TODO
-
  #+ATTR_REVEAL: :frag (roll-in)
    - Short cycles between generations.
    - Ability to fallback to earlier successful generations.
@@ -228,6 +226,7 @@ than that in most cases for the larger concepts.
   - Branch by abstractions
   - CI/CD
   - Immutable servers
+  - Schema on Read DB's
 #+END_NOTES
 
 * Feedback
@@ -342,6 +341,7 @@ than that in most cases for the larger concepts.
   - CD [Implementation]
   - Immutable servers [Implementation]
   - Dark/Canary/Blue-Green deployments [Implementation]
+  - Schema on Read DB's [Implementation]
 
 * TL;DR
 
