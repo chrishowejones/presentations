@@ -136,8 +136,10 @@ have to consider Modification of Environment.
 #+BEGIN_NOTES
  The building materials we use in software really matters
      + Language
-     + favour structural typing over nominal typing,
+     + favour structural typing over nominal typing (parsing over
+       validation or more accurately, parsing BEFORE validation)
      + weak typing/strong typing
+     + Avoid strong class based typing
      + Type inference,
      + FP,
      + REPL or other feedback,
