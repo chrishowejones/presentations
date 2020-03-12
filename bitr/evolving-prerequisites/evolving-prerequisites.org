@@ -30,6 +30,24 @@
 
   The only constant is change!
 
+#+ATTR_REVEAL: :frag (roll-in)
+What is change?
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+     "the process of replacing something with something new or different; a thing that is used to replace something"
+#+END_QUOTE
+#+ATTR_REVEAL: :frag (roll-in)
+What is evolution?
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+     "the gradual development of something."
+#+END_QUOTE
+
+#+BEGIN_NOTES
+Because all followers of Rich Hickey have to have some Etymology in
+their slides.
+#+END_NOTES
+
 * Why evolve?
 :PROPERTIES:
 :reveal_background: ./changeability.png
