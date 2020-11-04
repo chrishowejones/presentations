@@ -1,7 +1,7 @@
 #+TITLE:  Prerequisites for Evolutionary Architecture
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
-#+DATE:  26th March 2020
+#+DATE:  12th November 2020
 #+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
 #+REVEAL_THEME: solarized
 #+REVEAL_HLEVEL: 1
@@ -91,7 +91,7 @@ have to consider Modification of Environment.
  #+ATTR_REVEAL: :frag (roll-in)
      - New generations.
      - Feedback.
-     - Room to fail (adaptations that don't survive).
+     - Room to fail (adaptations that do not survive).
 
 ** Mechanisms of Adaptation
 
@@ -154,8 +154,8 @@ have to consider Modification of Environment.
 #+BEGIN_NOTES
  The building materials we use in software really matters
      + Language
-     + favour structural typing over nominal typing (parsing over
-       validation or more accurately, parsing BEFORE validation)
+     + favour structural typing over nominal typing - parsing over
+       validation or more accurately, parsing BEFORE validation
      + weak typing/strong typing
      + Avoid strong class based typing
      + Type inference,
@@ -246,7 +246,7 @@ than that in most cases for the larger concepts.
   - Branch by abstractions
   - CI/CD
   - Immutable servers
-  - Schema on Read DB's
+  - Schema on Read DBs
 #+END_NOTES
 
 * Feedback
@@ -361,7 +361,7 @@ than that in most cases for the larger concepts.
   - CD [Implementation]
   - Immutable servers [Implementation]
   - Dark/Canary/Blue-Green deployments [Implementation]
-  - Schema on Read DB's [Implementation]
+  - Schema on Read DBs [Implementation]
 
 * TL;DR
 
