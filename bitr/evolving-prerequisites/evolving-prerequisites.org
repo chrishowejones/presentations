@@ -26,6 +26,24 @@
 #+attr_html: :width 250px
 [[./New DevCycle Logo Transparent.png]]
 
+#+BEGIN_NOTES
+Welcome to what is becoming a series of talks on Evolutionary
+Architecture.
+Altho called Prerequisites for Evolutionary Architecture not all of
+these techniques are necessary but if you have not thought about any of them then
+having an architecture that can react to change will be much harder.
+
+I'm Chris H-J. I'm the founder and CTO of DevCycle a s/w consultancy
+providing services from an interim CTO to provide tech
+leadership thru a transition while recruiting a perm CTO, Software
+Architecture and Development, specialising in FP and Data Engineering.
+I'm co-founder of this conf and I'd like to thank all of the sponsors,
+our great speaker lineup, Beacon House the event organisers,
+especially Cat and Sophie for their hard work.
+And last but not least, my co-founder Fiona Hobbs for her tireless
+work in making a conversation we had almost 6 years ago reality.
+#+END_NOTES
+
 * Why evolutionary architecture?
 
   The only constant is change!
