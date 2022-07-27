@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Software Architecture</title>
+<meta name="author" content="Chris Howe-Jones"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js/dist/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="./custom-stylesheet.css"/>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/lib/css/zenburn.css"/></head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Software Architecture</h1><p class="subtitle"></p>
+<h2 class="author">Chris Howe-Jones</h2><h2 class="date">1st August 2022</h2>
+</section>
+
+<section>
+<section id="slide-org9656039">
+<h2 id="org9656039">Who am I?</h2>
+<p>
+Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
+</p>
+
+<p>
+Twitter:   <code>@agile_geek</code>
+</p>
+
+<p>
+Github:    <code>https://github.com/chrishowejones</code>
+</p>
+
+<p>
+Website:   <code>https://www.devcycle.co.uk</code>
+</p>
+
+<style>.reveal section img { background:none; border:none; box-shadow:none; }</style>
+
+<div id="orgd0aa344" class="figure">
+<p><img src="./New DevCycle Logo Transparent.png" alt="New DevCycle Logo Transparent.png" width="250px" />
+</p>
+</div>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org0f29379">
+<h2 id="org0f29379">What is Software Architecture?</h2>
+<blockquote >
+<p>
+"Software architecture refers to the fundamental structures of a software system and the discipline of creating such structures and systems."
+<a href="https://en.wikipedia.org/wiki/Software_architecture">https://en.wikipedia.org/wiki/Software_architecture</a>
+</p>
+</blockquote>
+
+
+<blockquote >
+<p>
+"Software architecture is, simply, the organization of a system."
+<a href="http://www.castsoftware.com">http://www.castsoftware.com</a>
+</p>
+</blockquote>
+
+<blockquote >
+<p>
+"Software architecture exposes the structure of a system while
+hiding the implementation details."
+<a href="https://www.synopsys.com/">https://www.synopsys.com/</a>
+</p>
+</blockquote>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgecda9f5">
+<h2 id="orgecda9f5">What is Architecture?</h2>
+<p>
+What does a dictionary say? [Merriam-Webster]
+</p>
+
+<blockquote  class="fragment (roll-in)">
+<p>
+"the art or science of building - specifically: the art or practice of designing and building structures and
+especially habitable ones."
+</p>
+</blockquote>
+
+<blockquote  class="fragment (roll-in)">
+<p>
+"a unifying or coherent form or structure"
+</p>
+</blockquote>
+
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org270f1f5">
+<h2 id="org270f1f5">What is Software Architecture?</h2>
+<p>
+According to Ralph Johnson - Design Patterns: Elements of Reusable Object-Oriented Software
+</p>
+
+<blockquote  class="fragment (roll-in)">
+<p>
+"the shared understanding that the expert developers have of the system design."
+</p>
+</blockquote>
+
+<blockquote  class="fragment (roll-in)">
+<p>
+"the decisions you wish you could get right early in a project."
+</p>
+</blockquote>
+
+<blockquote  class="fragment (roll-in)">
+<p>
+"Architecture is about the important stuff. Whatever that is."
+</p>
+</blockquote>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-org7b4f830">
+<h2 id="org7b4f830">What is Software Architecture?</h2>
+<p class="fragment (roll-in)">
+It's the stuff that's hard to change over time.
+</p>
+
+<p class="fragment (roll-in)">
+It has to be 'habitable' by developers over time. <b><i>We have to live
+with the decisions.</i></b>
+</p>
+
+<p class="fragment (roll-in)">
+We should consider the ecology of software architecture.
+</p>
+<ul>
+<li class="fragment roll-in">What is the runtime environment? [micro-ecosystem]</li>
+<li class="fragment roll-in">What is the development time environment? [Biotope/Habitat]</li>
+<li class="fragment roll-in">What is the product/platform environment? [Biome]</li>
+<li class="fragment roll-in">What is the organisation/market environment? [Biosphere]</li>
+
+</ul>
+
+<p class="fragment (roll-in)">
+We should think about how we get feedback and learn lessons at all
+those levels.
+</p>
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+</div>
+</div>
+<script src="/home/chris/reveal.js/dist/reveal.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/notes/notes.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/zoom/zoom.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight, RevealMarkdown, RevealNotes, RevealZoom],
+margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
+});
+
+</script>
+</body>
+</html>

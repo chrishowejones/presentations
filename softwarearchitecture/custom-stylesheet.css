@@ -1,0 +1,8 @@
+div.slide-footer
+{
+ position: fixed;
+ top: -50px;
+ right: -50px;
+ width: 50px;
+ color: cyan;
+ }

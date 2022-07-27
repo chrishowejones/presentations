@@ -1,0 +1,102 @@
+#+TITLE:  Software Architecture
+#+AUTHOR: Chris Howe-Jones
+#+EMAIL: @agile_geek
+#+DATE:  1st August 2022
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
+#+REVEAL_THEME: league
+#+REVEAL_HLEVEL: 1
+#+REVEAL_PLUGINS: (highlight markdown notes zoom)
+#+REVEAL_SLIDE_FOOTER: @agile_geek
+#+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+#+OPTIONS: toc:nil, timestamp:nil, num:nil
+
+* Who am I?
+
+  Name:      =Chris Howe-Jones= *[Technical Navigator]*
+
+  Twitter:   =@agile_geek=
+
+  Github:    =https://github.com/chrishowejones=
+
+  Website:   =https://www.devcycle.co.uk=
+
+#+REVEAL_HTML: <style>.reveal section img { background:none; border:none; box-shadow:none; }</style>
+#+attr_html: :width 250px
+[[./New DevCycle Logo Transparent.png]]
+
+* What is Software Architecture?
+
+#+BEGIN_QUOTE
+     "Software architecture refers to the fundamental structures of a software system and the discipline of creating such structures and systems."
+     https://en.wikipedia.org/wiki/Software_architecture
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+     "Software architecture is, simply, the organization of a system."
+     http://www.castsoftware.com
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+     "Software architecture exposes the structure of a system while
+     hiding the implementation details."
+     https://www.synopsys.com/
+#+END_QUOTE
+
+* What is Architecture?
+
+What does a dictionary say? [Merriam-Webster]
+
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+   "the art or science of building - specifically: the art or practice of designing and building structures and
+   especially habitable ones."
+#+END_QUOTE
+
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+   "a unifying or coherent form or structure"
+#+END_QUOTE
+
+
+* What is Software Architecture?
+
+According to Ralph Johnson - Design Patterns: Elements of Reusable Object-Oriented Software
+
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+     "the shared understanding that the expert developers have of the system design."
+#+END_QUOTE
+
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+     "the decisions you wish you could get right early in a project."
+#+END_QUOTE
+
+#+ATTR_REVEAL: :frag (roll-in)
+#+BEGIN_QUOTE
+     "Architecture is about the important stuff. Whatever that is."
+#+END_QUOTE
+
+* What is Software Architecture?
+
+#+ATTR_REVEAL: :frag (roll-in)
+It's the stuff that's hard to change over time.
+
+#+ATTR_REVEAL: :frag (roll-in)
+It has to be 'habitable' by developers over time. */We have to live
+with the decisions./*
+
+#+ATTR_REVEAL: :frag (roll-in)
+We should consider the ecology of software and it's
+evolution over time.
+#+ATTR_REVEAL: :frag (roll-in)
+   - What is the runtime environment? [micro-ecosystem]
+   - What is the development time environment? [Biotope/Habitat]
+   - What is the product/platform environment? [Biome]
+   - What is the organisation/market environment? [Biosphere]
+
+#+ATTR_REVEAL: :frag (roll-in)
+We should think about how we get feedback and learn lessons at all
+those levels.
