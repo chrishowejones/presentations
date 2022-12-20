@@ -14,7 +14,18 @@
 <link rel="stylesheet" href="file:///home/chris/reveal.js/dist/theme/league.css" id="theme"/>
 
 <link rel="stylesheet" href="./custom-stylesheet.css"/>
-<link rel="stylesheet" href="file:///home/chris/reveal.js/lib/css/zenburn.css"/></head>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/chris/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
 <body>
 <div class="reveal">
 <div class="slides">
@@ -23,8 +34,8 @@
 </section>
 
 <section>
-<section id="slide-org9656039">
-<h2 id="org9656039">Who am I?</h2>
+<section id="slide-orga86395e">
+<h2 id="orga86395e">Who am I?</h2>
 <p>
 Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
 </p>
@@ -43,7 +54,7 @@ Website:   <code>https://www.devcycle.co.uk</code>
 
 <style>.reveal section img { background:none; border:none; box-shadow:none; }</style>
 
-<div id="orgd0aa344" class="figure">
+<div id="org0d70eed" class="figure">
 <p><img src="./New DevCycle Logo Transparent.png" alt="New DevCycle Logo Transparent.png" width="250px" />
 </p>
 </div>
@@ -52,8 +63,8 @@ Website:   <code>https://www.devcycle.co.uk</code>
 </section>
 </section>
 <section>
-<section id="slide-org0f29379">
-<h2 id="org0f29379">What is Software Architecture?</h2>
+<section id="slide-orge1a9a93">
+<h2 id="orge1a9a93">What is Software Architecture?</h2>
 <blockquote >
 <p>
 "Software architecture refers to the fundamental structures of a software system and the discipline of creating such structures and systems."
@@ -76,13 +87,12 @@ hiding the implementation details."
 <a href="https://www.synopsys.com/">https://www.synopsys.com/</a>
 </p>
 </blockquote>
-
 <div class="slide-footer">@agile_geek</div>
 </section>
 </section>
 <section>
-<section id="slide-orgecda9f5">
-<h2 id="orgecda9f5">What is Architecture?</h2>
+<section id="slide-org867633f">
+<h2 id="org867633f">What is Architecture?</h2>
 <p>
 What does a dictionary say? [Merriam-Webster]
 </p>
@@ -105,8 +115,8 @@ especially habitable ones."
 </section>
 </section>
 <section>
-<section id="slide-org270f1f5">
-<h2 id="org270f1f5">What is Software Architecture?</h2>
+<section id="slide-orgd3f5c43">
+<h2 id="orgd3f5c43">What is Software Architecture?</h2>
 <p>
 According to Ralph Johnson - Design Patterns: Elements of Reusable Object-Oriented Software
 </p>
@@ -133,8 +143,8 @@ According to Ralph Johnson - Design Patterns: Elements of Reusable Object-Orient
 </section>
 </section>
 <section>
-<section id="slide-org7b4f830">
-<h2 id="org7b4f830">What is Software Architecture?</h2>
+<section id="slide-org75fe276">
+<h2 id="org75fe276">What is Software Architecture?</h2>
 <p class="fragment (roll-in)">
 It's the stuff that's hard to change over time.
 </p>
@@ -145,7 +155,8 @@ with the decisions.</i></b>
 </p>
 
 <p class="fragment (roll-in)">
-We should consider the ecology of software architecture.
+We should consider the ecology of software and its
+evolution over time.
 </p>
 <ul>
 <li class="fragment roll-in">What is the runtime environment? [micro-ecosystem]</li>
@@ -159,6 +170,61 @@ We should consider the ecology of software architecture.
 We should think about how we get feedback and learn lessons at all
 those levels.
 </p>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc56929a">
+<h2 id="orgc56929a">Styles/Patterns of Software Architecture</h2>
+<ul>
+<li>Multitier architecture</li>
+<li>Model–view–controller</li>
+<li>Domain-driven design</li>
+<li>Blackboard pattern</li>
+<li>Sensor–controller–actuator</li>
+<li>Presentation–abstraction–control</li>
+<li>Component-based</li>
+<li>Monolithic application</li>
+<li>Layered</li>
+<li>Pipes and filters</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgb2c4bec">
+<h2 id="orgb2c4bec">Styles/Patterns of Software Architecture</h2>
+<ul>
+<li>Database-centric</li>
+<li>Rule-based</li>
+<li>Event-driven aka implicit invocation</li>
+<li>Publish-subscribe</li>
+<li>Asynchronous messaging</li>
+<li>Microkernel</li>
+<li>Reflection</li>
+<li>Client-server (multitier architecture exhibits this style)</li>
+
+</ul>
+
+<div class="slide-footer">@agile_geek</div>
+</section>
+</section>
+<section>
+<section id="slide-orgcbe6ed4">
+<h2 id="orgcbe6ed4">Styles/Patterns of Software Architecture</h2>
+<ul>
+<li>Shared nothing architecture</li>
+<li>Space-based architecture</li>
+<li>Object request broker</li>
+<li>Peer-to-peer</li>
+<li>Representational state transfer (REST)</li>
+<li>Service-oriented</li>
+<li>Cloud computing patterns</li>
+
+</ul>
 <div class="slide-footer">@agile_geek</div>
 </section>
 </section>
@@ -176,7 +242,7 @@ those levels.
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
 plugins: [RevealHighlight, RevealMarkdown, RevealNotes, RevealZoom],
-margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
+margin:0.2, keyboard:true, width:1280, height:780, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
 });
 
 </script>

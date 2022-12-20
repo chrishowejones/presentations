@@ -2,7 +2,7 @@
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  1st August 2022
-#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1280, height:780, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
 #+REVEAL_THEME: league
 #+REVEAL_HLEVEL: 1
 #+REVEAL_PLUGINS: (highlight markdown notes zoom)
@@ -43,7 +43,6 @@
      hiding the implementation details."
      https://www.synopsys.com/
 #+END_QUOTE
-
 * What is Architecture?
 
 What does a dictionary say? [Merriam-Webster]
@@ -89,7 +88,7 @@ It has to be 'habitable' by developers over time. */We have to live
 with the decisions./*
 
 #+ATTR_REVEAL: :frag (roll-in)
-We should consider the ecology of software and it's
+We should consider the ecology of software and its
 evolution over time.
 #+ATTR_REVEAL: :frag (roll-in)
    - What is the runtime environment? [micro-ecosystem]
@@ -100,3 +99,37 @@ evolution over time.
 #+ATTR_REVEAL: :frag (roll-in)
 We should think about how we get feedback and learn lessons at all
 those levels.
+
+* Styles/Patterns of Software Architecture
+
+  - Multitier architecture
+  - Model–view–controller
+  - Domain-driven design
+  - Blackboard pattern
+  - Sensor–controller–actuator
+  - Presentation–abstraction–control
+  - Component-based
+  - Monolithic application
+  - Layered
+  - Pipes and filters
+
+* Styles/Patterns of Software Architecture
+
+  - Database-centric
+  - Rule-based
+  - Event-driven aka implicit invocation
+  - Publish-subscribe
+  - Asynchronous messaging
+  - Microkernel
+  - Reflection
+  - Client-server (multitier architecture exhibits this style)
+
+* Styles/Patterns of Software Architecture
+
+  - Shared nothing architecture
+  - Space-based architecture
+  - Object request broker
+  - Peer-to-peer
+  - Representational state transfer (REST)
+  - Service-oriented
+  - Cloud computing patterns
