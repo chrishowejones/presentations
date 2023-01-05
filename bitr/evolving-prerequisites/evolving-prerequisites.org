@@ -5,7 +5,7 @@
 #+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
 #+REVEAL_THEME: solarized
 #+REVEAL_HLEVEL: 1
-#+REVEAL_ROOT: file:///home/chris/reveal.js-3.8.0
+#+REVEAL_ROOT: file:///home/chris/reveal.js
 #+REVEAL_PLUGINS: (highlight markdown notes zoom)
 #+REVEAL_SLIDE_FOOTER: @agile_geek
 #+REVEAL_EXTRA_CSS: ./custom-stylesheet.css

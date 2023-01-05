@@ -9,12 +9,23 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="file:///home/chris/reveal.js-3.8.0/dist/reveal.css"/>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="file:///home/chris/reveal.js-3.8.0/dist/theme/solarized.css" id="theme"/>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/dist/theme/solarized.css" id="theme"/>
 
 <link rel="stylesheet" href="./custom-stylesheet.css"/>
-<link rel="stylesheet" href="file:///home/chris/reveal.js-3.8.0/lib/css/zenburn.css"/></head>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/plugin/highlight/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/chris/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
 <body>
 <div class="reveal">
 <div class="slides">
@@ -23,8 +34,8 @@
 </section>
 
 <section>
-<section id="slide-orgf6b75ea">
-<h2 id="orgf6b75ea">Who am I?</h2>
+<section id="slide-org4ee07ca">
+<h2 id="org4ee07ca">Who am I?</h2>
 <p>
 Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
 </p>
@@ -43,7 +54,7 @@ Website:   <code>https://www.devcycle.co.uk</code>
 
 <style>.reveal section img { background:none; border:none; box-shadow:none; }</style>
 
-<div id="org353dbea" class="figure">
+<div id="org4f50b26" class="figure">
 <p><img src="./New DevCycle Logo Transparent.png" alt="New DevCycle Logo Transparent.png" width="250px" />
 </p>
 </div>
@@ -75,8 +86,8 @@ work in making a conversation we had almost 6 years ago reality.
 </section>
 </section>
 <section>
-<section id="slide-orgab2cc34">
-<h2 id="orgab2cc34">Why evolutionary architecture?</h2>
+<section id="slide-orgac05ab5">
+<h2 id="orgac05ab5">Why evolutionary architecture?</h2>
 <p>
 The only constant is change!
 </p>
@@ -110,8 +121,8 @@ their slides.
 </section>
 </section>
 <section>
-<section id="slide-org6d21c3c" data-background="./changeability.png" data-background-size="500px" data-background-transition="slide" data-background-opacity="1.0">
-<h2 id="org6d21c3c">Why evolve?</h2>
+<section id="slide-orgf980b8e" data-background="./changeability.png" data-background-size="500px" data-background-transition="slide" data-background-opacity="1.0">
+<h2 id="orgf980b8e">Why evolve?</h2>
 <aside class="notes">
 <ul>
 <li>Change is the overriding system quality in architecture.</li>
@@ -138,8 +149,8 @@ governance, as we will see later.</li>
 </section>
 </section>
 <section>
-<section id="slide-org961d7cc" data-background="./adaptation.jpg" data-background-size="690px" data-background-transition="slide" data-background-opacity="1.0">
-<h2 id="org961d7cc">Key characteristics of evolution</h2>
+<section id="slide-org5416f32" data-background="./adaptation.jpg" data-background-size="690px" data-background-transition="slide" data-background-opacity="1.0">
+<h2 id="org5416f32">Key characteristics of evolution</h2>
 <p>
 Adaptation
 </p>
@@ -155,8 +166,8 @@ have to consider Modification of Environment.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-orgd9198ed">
-<h3 id="orgd9198ed">Mechanisms of Adaptation</h3>
+<section id="slide-orgc8dca53">
+<h3 id="orgc8dca53">Mechanisms of Adaptation</h3>
 <ul>
 <li class="fragment roll-in">New generations.</li>
 <li class="fragment roll-in">Feedback.</li>
@@ -166,8 +177,8 @@ have to consider Modification of Environment.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-orgbeb3b8c">
-<h3 id="orgbeb3b8c">Mechanisms of Adaptation</h3>
+<section id="slide-orgad3193b">
+<h3 id="orgad3193b">Mechanisms of Adaptation</h3>
 <ul>
 <li class="fragment roll-in">Short cycles between generations.</li>
 <li class="fragment roll-in">Ability to fallback to earlier successful generations.</li>
@@ -194,8 +205,8 @@ have to consider Modification of Environment.
 </section>
 </section>
 <section>
-<section id="slide-orgedc8e54">
-<h2 id="orgedc8e54">Translated to Software</h2>
+<section id="slide-org584ae87">
+<h2 id="org584ae87">Translated to Software</h2>
 <ul>
 <li class="fragment roll-in">Separate deployment from release.</li>
 <li class="fragment roll-in">Fast feedback
@@ -217,8 +228,8 @@ have to consider Modification of Environment.
 </section>
 </section>
 <section>
-<section id="slide-org5f772d5" data-background="./constraints.gif" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
-<h2 id="org5f772d5">Pick your constraints</h2>
+<section id="slide-orge6e5cbb" data-background="./constraints.gif" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
+<h2 id="orge6e5cbb">Pick your constraints</h2>
 <aside class="notes">
 <p>
 In the past our industry has tried to constrain change.
@@ -245,8 +256,8 @@ E.g.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-orgaf99dc1" data-background="./languages.gif" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="orgaf99dc1">Materials Matter</h3>
+<section id="slide-orgd531a84" data-background="./languages.gif" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="orgd531a84">Materials Matter</h3>
 <aside class="notes">
 <p>
 The building materials we use in software really matters
@@ -280,8 +291,8 @@ than that in most cases for the larger concepts.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org5b836a4" data-background="./cd.gif" data-background-size="400px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="org5b836a4">Materials Matter</h3>
+<section id="slide-org83b8852" data-background="./cd.gif" data-background-size="400px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="org83b8852">Materials Matter</h3>
 <aside class="notes">
 <ul>
 <li>Tooling - supporting fast feedback &amp; separation of deployment/release
@@ -304,8 +315,8 @@ than that in most cases for the larger concepts.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org2c11cb6" data-background="./smallteam.gif" data-background-size="540px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="org2c11cb6">Materials Matter</h3>
+<section id="slide-org658ac31" data-background="./smallteam.gif" data-background-size="540px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="org658ac31">Materials Matter</h3>
 <aside class="notes">
 <ul>
 <li>Team structure
@@ -322,8 +333,8 @@ than that in most cases for the larger concepts.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org0da50fa" data-background="./tech_debt.jpg" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="org0da50fa">Materials Matter</h3>
+<section id="slide-org97c0457" data-background="./tech_debt.jpg" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="org97c0457">Materials Matter</h3>
 <aside class="notes">
 <ul>
 <li>Org structure
@@ -340,8 +351,8 @@ than that in most cases for the larger concepts.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org21e67ec">
-<h3 id="org21e67ec">Materials Matter</h3>
+<section id="slide-orge63508b">
+<h3 id="orge63508b">Materials Matter</h3>
 <p class="fragment (roll-in)">
 Because the constraints they introduce direct behaviour
 </p>
@@ -350,8 +361,8 @@ Because the constraints they introduce direct behaviour
 </section>
 </section>
 <section>
-<section id="slide-org74072a7" data-background="./feature-toggle.jpeg" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
-<h2 id="org74072a7">Separate Release From Deployment</h2>
+<section id="slide-org283368c" data-background="./feature-toggle.jpeg" data-background-size="680px" data-background-transition="slide" data-background-opacity="1.0">
+<h2 id="org283368c">Separate Release From Deployment</h2>
 <aside class="notes">
 <ul>
 <li>DDD - contexts, aggregates [Discovery]</li>
@@ -370,16 +381,16 @@ Because the constraints they introduce direct behaviour
 </section>
 </section>
 <section>
-<section id="slide-org28c4109">
-<h2 id="org28c4109">Feedback</h2>
+<section id="slide-org1ebb346">
+<h2 id="org1ebb346">Feedback</h2>
 <p>
 Data (Hypothesis) Driven Development
 </p>
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-orgab22af2" data-background="./ecosystems_feedback.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="orgab22af2">Feedback between Ecosystems</h3>
+<section id="slide-orgab5ed54" data-background="./ecosystems_feedback.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="orgab5ed54">Feedback between Ecosystems</h3>
 <aside class="notes">
 <ul>
 <li>Each smaller ecosystem is effected by the larger outer ecosystem and
@@ -399,8 +410,8 @@ each smaller ecosystem causes impact on the larger ecosystem.</li>
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org66e94dd" data-background="./microecosystems.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="org66e94dd">Feedback in Micro-Ecosystem</h3>
+<section id="slide-org5d64b0d" data-background="./microecosystems.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="org5d64b0d">Feedback in Micro-Ecosystem</h3>
 <aside class="notes">
 <ul>
 <li>Automated developer level tests</li>
@@ -415,8 +426,8 @@ each smaller ecosystem causes impact on the larger ecosystem.</li>
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org85154f3" data-background="./biotope.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="org85154f3">Feedback in Biotope</h3>
+<section id="slide-org616141d" data-background="./biotope.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="org616141d">Feedback in Biotope</h3>
 <aside class="notes">
 <ul>
 <li>Workflow visualisations e.g. Kanban and Scrum boards</li>
@@ -447,8 +458,8 @@ Product/service level metrics e.g.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org7231d7b" data-background="./biome.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="org7231d7b">Feedback in Biome</h3>
+<section id="slide-org2fbb971" data-background="./biome.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="org2fbb971">Feedback in Biome</h3>
 <aside class="notes">
 <ul>
 <li>Rolled up workflow visualisations</li>
@@ -469,8 +480,8 @@ Product/service level metrics e.g.
 
 <div class="slide-footer">@agile_geek</div>
 </section>
-<section id="slide-org2c9bed1" data-background="./biosphere.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
-<h3 id="org2c9bed1">Feedback in Biosphere</h3>
+<section id="slide-org86ea037" data-background="./biosphere.png" data-background-size="640px" data-background-transition="slide" data-background-opacity="1.0">
+<h3 id="org86ea037">Feedback in Biosphere</h3>
 <aside class="notes">
 <ul>
 <li>Market surveys</li>
@@ -487,8 +498,8 @@ Product/service level metrics e.g.
 </section>
 </section>
 <section>
-<section id="slide-org1c3c1cc">
-<h2 id="org1c3c1cc">TL;DR</h2>
+<section id="slide-org1f32338">
+<h2 id="org1f32338">TL;DR</h2>
 <p>
 Separate Release from Deployment
 </p>
@@ -509,8 +520,8 @@ Separate Release from Deployment
 </section>
 </section>
 <section>
-<section id="slide-org66fd679">
-<h2 id="org66fd679">TL;DR</h2>
+<section id="slide-orgcc06c0c">
+<h2 id="orgcc06c0c">TL;DR</h2>
 <p>
 Feedback
 </p>
@@ -529,8 +540,8 @@ Feedback
 </section>
 </section>
 <section>
-<section id="slide-org6507faf">
-<h2 id="org6507faf">TL;DR</h2>
+<section id="slide-org6177b9c">
+<h2 id="org6177b9c">TL;DR</h2>
 <p>
 Culture
 </p>
@@ -548,11 +559,11 @@ Culture
 </section>
 </div>
 </div>
-<script src="/home/chris/reveal.js-3.8.0/dist/reveal.js"></script>
-<script src="file:///home/chris/reveal.js-3.8.0/plugin/highlight/highlight.js"></script>
-<script src="file:///home/chris/reveal.js-3.8.0/plugin/markdown/markdown.js"></script>
-<script src="file:///home/chris/reveal.js-3.8.0/plugin/notes/notes.js"></script>
-<script src="file:///home/chris/reveal.js-3.8.0/plugin/zoom/zoom.js"></script>
+<script src="/home/chris/reveal.js/dist/reveal.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/notes/notes.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/zoom/zoom.js"></script>
 
 
 <script>
