@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Team Topologies Overview</title>
+<meta name="author" content="Chris Howe-Jones"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/chris/reveal.js/dist/theme/solarized.css" id="theme"/>
+
+<link rel="stylesheet" href="./custom-stylesheet.css"/>
+<link rel="stylesheet" href="file:///home/chris/reveal.js/plugin/highlight/zenburn.css"/></head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Team Topologies Overview</h1><p class="subtitle"></p>
+<h2 class="author">Chris Howe-Jones</h2><h2 class="date">10th January 2023</h2>
+</section>
+<section>
+<section id="slide-orga805faf">
+<h2 id="orga805faf">Team Topologies</h2>
+<p>
+Based on a book, <a href="https://teamtopologies.com/book">Team Topologies</a> authored by Matthew Skelton &amp; Manuel Pais. References a number of real world case
+studies and is heavily informed by 'Reverse Conways Law'.
+</p>
+
+<p>
+Team topologies are mainly designed for flow of change.
+</p>
+
+<p>
+Discusses four team type and three interaction modes.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd319f5a" data-background="./team-types.png" data-background-size="500px" data-background-transition="slide" data-background-opacity="1.0">
+<h2 id="orgd319f5a">Team Type</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-org03d7385">
+<h2 id="org03d7385">Stream-aligned teams</h2>
+
+<div id="org5aae05a" class="figure">
+<p><img src="./stream-aligned-team.png" alt="stream-aligned-team.png" />
+</p>
+</div>
+
+<ul>
+<li>assigned to a single, valuable stream of work</li>
+<li>e.g. product, service, user journey, user persona</li>
+<li><b>empowered</b> to deliver customer value as quickly, safely &amp; independantly as possible</li>
+
+</ul>
+
+</section>
+<section id="slide-orgccac7f0">
+<h3 id="orgccac7f0">Key characteristics of stream-aligned teams</h3>
+<ul>
+<li>Multi-disciplinary</li>
+<li>Not aligned to a single project</li>
+<li>Work flows to them from multiple sources</li>
+
+</ul>
+
+</section>
+<section id="slide-orgf470bdf">
+<h3 id="orgf470bdf">Capabilities of stream-aligned teams</h3>
+<p>
+Typical capabilities may include:
+</p>
+
+<ul>
+<li>Application security</li>
+<li>Commercial and Operational visibility analysis</li>
+<li>Design and architecture</li>
+<li>Development and coding (full stack)</li>
+<li>Infrastructure and operability</li>
+<li>Metrics and monitoring</li>
+<li>Product management and ownership</li>
+<li>Testing and QA</li>
+<li>UX</li>
+<li>Data Science and data engineering</li>
+
+</ul>
+
+
+</section>
+<section id="slide-orgec7eaaf">
+<h3 id="orgec7eaaf">Expected behaviours</h3>
+<ul>
+<li>steady flow of feature delivery</li>
+<li>course corrects based on feedback from latest changes</li>
+<li>experimental approach to product evolution, learn and adapt</li>
+<li>minimal (ideally zero) hand-off of work to other teams</li>
+<li>evaluated on sustainable flow of change it produces</li>
+<li>has time and space to address code quality changes (pays down tech debt)</li>
+<li>proactively collaborates with supporting topology teams (complicated subsystem, enabling and platform)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org42e269f">
+<h2 id="org42e269f">Complicated-subsystem teams</h2>
+
+<div id="org3169ab1" class="figure">
+<p><img src="./complicated-subsystem-team.png" alt="complicated-subsystem-team.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org98ae97d">
+<h3 id="org98ae97d">Responsibilities of complicated-subsystem teams</h3>
+<p>
+Responsible for building and maintaining a part of the system that depends on specialist knowledge.
+</p>
+
+<ul>
+<li>attempts to reduce the cognitive load of stream-aligned teams working on systems that include/use the complicated subsystem</li>
+<li>examples of complicated subsystems; video processing codec, a mathematical model, a face-recognition engine etc</li>
+
+</ul>
+
+<p>
+The decision about whether a complicated subsystem team is required is dependant on an assessment of the teams
+cognitive load not simply that it is a shared component. I.e. the complicated subsystem has to require specialist
+knowledge.
+</p>
+
+</section>
+<section id="slide-org9ae2c11">
+<h3 id="org9ae2c11">Capabilities of Complicated subsystem teams</h3>
+<p>
+Typical capabilities may include:
+</p>
+
+<ul>
+<li>mindful of current stage of development of the subsystem and acts accordingly: high level of collaboration with
+stream-aligned team(s) during exploration/early development, focus on subsystem interfaces and feature evolution in
+later stages.</li>
+<li>delivery speed and quality of subsystem should be higher than if it was embedded in a stream-aligned team</li>
+<li>prioritizes and delivers upcoming work respecting and aligning to the needs of the stream-aligned team(s) that use
+the subsystem</li>
+<li>includes all the specialist knowledge required but follows software engineering best practices like any other team</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org429b87b">
+<h2 id="org429b87b">Interaction modes</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="/home/chris/reveal.js/dist/reveal.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/notes/notes.js"></script>
+<script src="file:///home/chris/reveal.js/plugin/zoom/zoom.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight, RevealMarkdown, RevealNotes, RevealZoom],
+margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
+});
+
+</script>
+</body>
+</html>

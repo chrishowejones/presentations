@@ -1,0 +1,96 @@
+#+TITLE:  Team Topologies Overview
+#+AUTHOR: Chris Howe-Jones
+#+DATE:   10th January 2023
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
+#+REVEAL_THEME: solarized
+#+REVEAL_HLEVEL: 1
+#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_PLUGINS: (highlight markdown notes zoom)
+#+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+#+OPTIONS: toc:nil, timestamp:nil, num:nil
+* Team Topologies
+
+  Based on a book, [[https://teamtopologies.com/book][Team Topologies]] authored by Matthew Skelton & Manuel Pais. References a number of real world case
+  studies and is heavily informed by 'Reverse Conways Law'.
+
+  Team topologies are mainly designed for flow of change.
+
+  Discusses four team type and three interaction modes.
+
+* Team Type
+:PROPERTIES:
+:reveal_background: ./team-types.png
+:reveal_background_size: 500px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
+
+* Stream-aligned teams
+
+  [[./stream-aligned-team.png]]
+
+  + assigned to a single, valuable stream of work
+  + e.g. product, service, user journey, user persona
+  + *empowered* to deliver customer value as quickly, safely & independantly as possible
+
+** Key characteristics of stream-aligned teams
+
+   - Multi-disciplinary
+   - Not aligned to a single project
+   - Work flows to them from multiple sources
+
+** Capabilities of stream-aligned teams
+
+   Typical capabilities may include:
+
+   - Application security
+   - Commercial and Operational visibility analysis
+   - Design and architecture
+   - Development and coding (full stack)
+   - Infrastructure and operability
+   - Metrics and monitoring
+   - Product management and ownership
+   - Testing and QA
+   - UX
+   - Data Science and data engineering
+
+
+** Expected behaviours
+
+   + steady flow of feature delivery
+   + course corrects based on feedback from latest changes
+   + experimental approach to product evolution, learn and adapt
+   + minimal (ideally zero) hand-off of work to other teams
+   + evaluated on sustainable flow of change it produces
+   + has time and space to address code quality changes (pays down tech debt)
+   + proactively collaborates with supporting topology teams (complicated subsystem, enabling and platform)
+
+* Complicated-subsystem teams
+
+  [[./complicated-subsystem-team.png]]
+
+** Responsibilities of complicated-subsystem teams
+
+     Responsible for building and maintaining a part of the system that depends on specialist knowledge.
+
+   + attempts to reduce the cognitive load of stream-aligned teams working on systems that include/use the complicated subsystem
+   + examples of complicated subsystems; video processing codec, a mathematical model, a face-recognition engine etc
+
+   The decision about whether a complicated subsystem team is required is dependant on an assessment of the teams
+   cognitive load not simply that it is a shared component. I.e. the complicated subsystem has to require specialist
+   knowledge.
+
+** Capabilities of Complicated subsystem teams
+
+   Typical capabilities may include:
+
+   - mindful of current stage of development of the subsystem and acts accordingly: high level of collaboration with
+     stream-aligned team(s) during exploration/early development, focus on subsystem interfaces and feature evolution in
+     later stages.
+   - delivery speed and quality of subsystem should be higher than if it was embedded in a stream-aligned team
+   - prioritizes and delivers upcoming work respecting and aligning to the needs of the stream-aligned team(s) that use
+     the subsystem
+   - includes all the specialist knowledge required but follows software engineering best practices like any other team
+
+* Interaction modes
