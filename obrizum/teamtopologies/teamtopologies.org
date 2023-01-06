@@ -1,14 +1,15 @@
 #+TITLE:  Team Topologies Overview
 #+AUTHOR: Chris Howe-Jones
 #+DATE:   10th January 2023
-#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave',menu:{themes: true,themesPath: 'file:///home/chris/reveal.js/dist/theme/'}
 #+REVEAL_THEME: sky
 #+REVEAL_HLEVEL: 1
 #+REVEAL_ROOT: file:///home/chris/reveal.js
-#+REVEAL_PLUGINS: (highlight markdown notes zoom)
+#+REVEAL_PLUGINS: (highlight markdown notes zoom RevealMenu)
 #+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
 #+MACRO: color @@html:<font color="$1">$2</font>@@
 #+OPTIONS: toc:nil, timestamp:nil, num:nil
+
 * Team Topologies
 
   Based on a book, [[https://teamtopologies.com/book][Team Topologies]] authored by Matthew Skelton & Manuel Pais. References a number of real world case
