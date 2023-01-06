@@ -2,7 +2,7 @@
 #+AUTHOR: Chris Howe-Jones
 #+DATE:   10th January 2023
 #+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
-#+REVEAL_THEME: solarized
+#+REVEAL_THEME: sky
 #+REVEAL_HLEVEL: 1
 #+REVEAL_ROOT: file:///home/chris/reveal.js
 #+REVEAL_PLUGINS: (highlight markdown notes zoom)
@@ -15,6 +15,8 @@
   studies and is heavily informed by 'Reverse Conways Law'.
 
   Team topologies are mainly designed for flow of change.
+
+  Focuses on a team first approach primarily aiming at reducing team cognitive load.
 
   Discusses four team type and three interaction modes.
 
@@ -77,13 +79,13 @@
    + attempts to reduce the cognitive load of stream-aligned teams working on systems that include/use the complicated subsystem
    + examples of complicated subsystems; video processing codec, a mathematical model, a face-recognition engine etc
 
+** When to use complicated-subsystem teams
+
    The decision about whether a complicated subsystem team is required is dependant on an assessment of the teams
    cognitive load not simply that it is a shared component. I.e. the complicated subsystem has to require specialist
    knowledge.
 
-** Capabilities of Complicated subsystem teams
-
-   Typical capabilities may include:
+** Expected behaviours
 
    - mindful of current stage of development of the subsystem and acts accordingly: high level of collaboration with
      stream-aligned team(s) during exploration/early development, focus on subsystem interfaces and feature evolution in
@@ -93,4 +95,170 @@
      the subsystem
    - includes all the specialist knowledge required but follows software engineering best practices like any other team
 
+* Enabling teams
+
+  [[./enabling-team.png]]
+
+** Responsibilities of enabling teams
+
+     Responsible for researching, learning and introducing new practices, techniques, tooling, etc.
+
+     Composed of specialists in a given technical (or product) domain and they help stream-aligned teams to take on new
+     capabilities.
+
+     Strong collaborative nature; they strive to understand the problems and shortcomings of stream-aligned teams in
+     order to provide effective guidance. Sometimes referred to as "Technical Consulting Teams".
+
+** Expected behaviours
+
+   - proactively understand needs of stream-aligned teams with regular checkpoints and agreeing when more collaboration required
+   - keep abreast of new approaches, tooling and practices in their area of expertise
+   - messenger of good news and bad news
+   - may occasionally act as a proxy for external (or internal) services where stream-aligned team struggles to use them directly
+
+** Expected behaviours
+
+   - promotes learning inside enabling team and across stream-aligned teams
+   - tend to work with a stream-aligned team for short-periods of time to increase capabilities before moving on to
+     another team
+   - sometimes morph into platform or complicated-subsystem teams or dissolve naturally once their purpose achieved.
+
+* Platform teams
+
+  [[./platform-team.png]]
+
+** Responsibilities of platform teams
+
+     Enable stream-aligned teams to deliver work with substantial autonomy.
+
+     Provides internal services to reduce cognitive load required from stream-aligned teams.
+
+     Provide a small number of high quality services usually using an X-as-a-service interaction mode and defining a
+     team API.
+
+** Expected behaviours
+
+   - collaboration with stream-aligned teams to understand needs
+   - fast prototyping and involve stream-aligned team members for fast feedback
+   - strong focus on usability and reliability for their services (treating the platform as a product)
+   - lead by example by using the services they provide internally, partnering with stream-aligned teams and enabling
+     teams & consuming lower-level platforms as required
+   - evolves along an adoption curve to introduce new services gradually
+
 * Interaction modes
+:PROPERTIES:
+:reveal_background: ./interaction-modes.png
+:reveal_background_size: 400px
+:reveal_background_opacity: 1.0
+:reveal_background_trans: slide
+:END:
+
+* Interaction modes
+
+  - Interaction modes describe how teams interact with each other.
+  - a specific team may use multiple interaction modes at the same time as they interact with different teams
+  - over time as teams evolve interaction modes between them may change
+
+* Collaboration mode
+#+BEGIN_QUOTE
+    "High Interaction and Mutual Respect"
+#+END_QUOTE
+
+  Working closely together with another team.
+
+** Advantages
+
+   - good for rapid discovery
+   - during early phases of new systems development
+   - facilitates new insights
+   - fewer hand-offs
+
+** Disadvantages
+
+   - Wide, shared responsibility for each team
+   - More detail/context needed between teams
+   - Possible reduced output during collaboration
+
+** Constraint
+
+   A team should use collaboration mode, with at most, one other team at a time.
+
+** Typical uses
+
+   - stream-aligned teams working with complicated-subsystem teams,
+   - stream-aligned teams working with platform teams
+   - complicated-subsystem teams working with platform teams
+
+* X-as-a-Service Mode
+
+#+BEGIN_QUOTE
+    "Emphasise the User Experience"
+#+END_QUOTE
+
+Suited to situations where there is a need for one or more teams to use a code library, component. API or platform
+  that "just works".
+  In this model, teams can rely on certain aspects of their technology landscape being provided as a service by other teams.
+
+** Advantages
+
+   - Clarity of ownership with clear responsibility boundaries
+   - Reduced detail/context needed between teams, so cognitive load is limited
+
+** Disadvantages
+
+   - Slower innovation of the boundary or API
+   - Danger of reduced flow if the boundary or API is not effective
+
+** Constraint
+
+   A team should expect to use X-as-a-Service interaction with many other teams simultaneously, whether consuming or
+   providing a service.
+
+** Typical Uses
+
+   - stream-aligned teams and complicated-subsystem teams consuming Platform-as-a-Service from a platform team
+   - stream-aligned teams and complicated-subsystem teams consuming a component or library as a service from a
+     complicated-subsystem team
+
+* Facilitating Mode
+#+BEGIN_QUOTE
+    "Help and Be Helped"
+#+END_QUOTE
+
+  Suited to situations where one or more teams would benefit from the active help of another team facilitating (or
+  coaching) some aspect of their work.
+
+  This is the main operating mode of an enabling team as the remit of facilitating mode is to:
+   - enable other teams to be more effective,
+   - learn more quickly
+   - understand a technology better
+   - discover/remove common problems
+
+** Advantages
+
+   - Unblocking of steam-aligned teams to increase flow
+   - Detection of gaps and misaligned capabilities or features in components and platforms
+
+** Disadvantages
+
+   - Requires experienced staff to not work on "building" or "running" things
+   - The interaction may be unfamiliar opr strange to one or both teams involved in facilitation
+
+** Constraint
+
+   A team should expect to use the facilitating interaction mode with a small number of other teams simultaneously,
+   whether consuming or providing facilitation.
+
+** Typical Uses
+
+   - an enabling team helping a stream-aligned, complicated-subsystem or platform team
+   - a stream-aligned, complicated-subsystem, or platform team helping a stream-aligned team
+
+* Choosing Suitable Team Interaction Modes
+
+  | Team Type             | Collaboration | X-as-a-Service | Facilitating |
+  |-----------------------+---------------+----------------+--------------|
+  | Stream-aligned        | Typical       | Typical        | Occasional   |
+  | Enabling              | Occasional    |                | Typical      |
+  | Complicated-subsystem | Occasional    | Typical        |              |
+  | Platform              | Occasional    | Typical        |              |
