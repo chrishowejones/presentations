@@ -1,23 +1,16 @@
 #+OPTIONS: toc:nil num:nil timestamp:nil
-#+OPTIONS: reveal_width:1080
-#+OPTIONS: reveal_height:768
 #+TITLE: Consumer Driven-Contracts with GraphQL
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  1st May 2018
 #+REVEAL_SLIDE_NUMBER: false
-#+REVEAL_MARGIN: 0.1
-#+REVEAL_MIN_SCALE: 0.4
-#+REVEAL_MAX_SCALE: 2.5
-#+OPTIONS: reveal_center:t
-#+OPTIONS: reveal_rolling_links:t reveal_overview:t
 #+REVEAL_KEYBOARD:t
 #+REVEAL_THEME: league
-#+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
 #+REVEAL_CENTER: true
-#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_ROOT: ./../reveal.js-3.8.0
 #+REVEAL_PLUGINS: (highlight markdown notes)
+#+REVEAL_INIT_OPTIONS: width:1080, height:950, controlsLayout: 'edges'
 * Consumer Driven-Contracts with Graphql
 
 * Who am I?
@@ -37,12 +30,12 @@
 
 * Consumer Contract?
 
-  Each client has it's own requirements
+  Each client has its own requirements
     + Want the fields they want
     + Want to change the state they need to change
     + Want to change requirements independently
 
-* What's wrong with REST?
+* Whats wrong with REST?
 
   How to get different data?
     + Fields listed in GET query string?
@@ -51,12 +44,12 @@
 
   The answer is different resources
 
-* What's wrong with REST?
+* Whats wrong with REST?
 
-  If I want data from different resources or a graph of 'objects' I
+  If I want data from different resources or a graph of objects
   need multiple calls.
 
-* Postel's Law
+* Postels Law
 
   /"Be conservative in what you do, be liberal in what you accept from
   others."/
@@ -76,12 +69,12 @@
 * How does graphql help?
 
   - Self describing (schema).
-  - Queries to fetch only what's required.
+  - Queries to fetch only whats required.
   - Can fetch object graph in one call.
   - Can have more than one query per call.
-  - 'Mutate' only what's required.
+  - Mutate only whats required.
 
-* What's it look like?
+* Whats it look like?
 
   DEMO CAKE!
 
