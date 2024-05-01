@@ -4,11 +4,11 @@
 #+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave',menu:{themes: true,themesPath: 'file:///home/chris/reveal.js/dist/theme/'}
 #+REVEAL_THEME: sky
 #+REVEAL_HLEVEL: 1
-#+REVEAL_ROOT: file:///home/chris/reveal.js
-#+REVEAL_PLUGINS: (highlight markdown notes zoom RevealMenu)
-#+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
+#+REVEAL_ROOT:  ../../reveal.js-4.6.0
+#+REVEAL_PLUGINS: (highlight markdown notes zoom)
 #+MACRO: color @@html:<font color="$1">$2</font>@@
-#+OPTIONS: toc:nil, timestamp:nil, num:nil
+#+OPTIONS: toc:nil timestamp:nil num:nil
+#+OPTIONS:':t
 
 * Team Topologies
 
@@ -24,7 +24,7 @@
 * Team Type
 :PROPERTIES:
 :reveal_background: ./team-types.png
-:reveal_background_size: 500px
+:reveal_background_size: 30%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -149,7 +149,7 @@
 * Interaction modes
 :PROPERTIES:
 :reveal_background: ./interaction-modes.png
-:reveal_background_size: 400px
+:reveal_background_size: 20%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -243,7 +243,7 @@ Suited to situations where there is a need for one or more teams to use a code l
 ** Disadvantages
 
    - Requires experienced staff to not work on "building" or "running" things
-   - The interaction may be unfamiliar opr strange to one or both teams involved in facilitation
+   - The interaction may be unfamiliar or strange to one or both teams involved in facilitation
 
 ** Constraint
 
