@@ -1,19 +1,18 @@
+#+OPTIONS: toc:nil num:nil timestamp:nil
 #+TITLE:  Evolutionary Architecture: What can we learn from Nature?
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
 #+DATE:  4th April 2019
-#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false
-#+OPTIONS: reveal_center:nil
-#+OPTIONS: reveal_rolling_links:t reveal_overview:t reveal_global_footer:t
+#+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, controlsLayout: 'edges'
+#+OPTIONS:  reveal_global_footer:t
 #+REVEAL_THEME: simple
-#+REVEAL_TRANS: concave
 #+REVEAL_HLEVEL: 2
-#+REVEAL_ROOT: file:///home/chris/reveal.js-3.8.0
+#+REVEAL_ROOT: ../reveal.js-4.6.0
 #+REVEAL_PLUGINS: (highlight markdown notes zoom)
 #+REVEAL_SLIDE_FOOTER: @agile_geek
 #+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
 #+MACRO: color @@html:<font color="$1">$2</font>@@
-#+OPTIONS: toc:nil, timestamp:nil, num:nil
+#+OPTIONS: ':t
 * Who am I?
 
   Name:      =Chris Howe-Jones= *[Technical Navigator]*
@@ -580,7 +579,7 @@ Feedback loops in Development team and process
 * Sensing micro-ecosystem
 :PROPERTIES:
 :reveal_background: ./software_ecosystem_feedback2.png
-:reveal_background_size: 540px
+:reveal_background_size: 920px
 :END:
 
 #+BEGIN_NOTES
@@ -591,7 +590,7 @@ Feedback loops in Development team and process
 * Sensing the Habitat/Biotope
 :PROPERTIES:
 :reveal_background: ./software_ecosystem_feedback2.png
-:reveal_background_size: 540px
+:reveal_background_size: 920px
 :END:
 
 #+BEGIN_NOTES
@@ -609,7 +608,7 @@ Feedback loops in Development team and process
 * Sensing the Biome
 :PROPERTIES:
 :reveal_background: ./software_ecosystem_feedback2.png
-:reveal_background_size: 540px
+:reveal_background_size: 920px
 :END:
 
 #+BEGIN_NOTES
@@ -623,7 +622,7 @@ Feedback loops in Development team and process
 * Sensing the Biosphere
 :PROPERTIES:
 :reveal_background: ./software_ecosystem_feedback2.png
-:reveal_background_size: 540px
+:reveal_background_size: 920px
 :END:
 
 

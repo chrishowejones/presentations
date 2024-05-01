@@ -8,9 +8,10 @@
 #+REVEAL_THEME: league
 #+REVEAL_HLEVEL: 2
 #+REVEAL_CENTER: true
-#+REVEAL_ROOT: ./../reveal.js-3.8.0
+#+REVEAL_ROOT: ../reveal.js-4.6.0
 #+REVEAL_PLUGINS: (highlight markdown notes)
 #+REVEAL_INIT_OPTIONS: width:1080, height:950, controlsLayout: 'edges'
+#+OPTIONS: ':t
 * Consumer Driven-Contracts with Graphql
 
 * Who am I?
@@ -35,7 +36,7 @@
     + Want to change the state they need to change
     + Want to change requirements independently
 
-* Whats wrong with REST?
+* What's wrong with REST?
 
   How to get different data?
     + Fields listed in GET query string?
@@ -44,12 +45,12 @@
 
   The answer is different resources
 
-* Whats wrong with REST?
+* What's wrong with REST?
 
   If I want data from different resources or a graph of objects
   need multiple calls.
 
-* Postels Law
+* Postel's Law
 
   /"Be conservative in what you do, be liberal in what you accept from
   others."/
@@ -69,12 +70,12 @@
 * How does graphql help?
 
   - Self describing (schema).
-  - Queries to fetch only whats required.
+  - Queries to fetch only what's required.
   - Can fetch object graph in one call.
   - Can have more than one query per call.
-  - Mutate only whats required.
+  - 'Mutate' only what's required.
 
-* Whats it look like?
+* What's it look like?
 
   DEMO CAKE!
 

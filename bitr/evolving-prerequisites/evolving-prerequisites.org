@@ -1,3 +1,4 @@
+#+OPTIONS: toc:nil timestamp:nil num:nil
 #+TITLE:  Prerequisites for Evolutionary Architecture
 #+AUTHOR: Chris Howe-Jones
 #+EMAIL: @agile_geek
@@ -5,12 +6,12 @@
 #+REVEAL_INIT_OPTIONS: margin:0.2, keyboard:true, width:1080, height:760, slideNumber:false, center:false, reveal_rolling_links:false, reveal_overview:false, reveal_global_footer:false, progress:false, transition: 'concave'
 #+REVEAL_THEME: solarized
 #+REVEAL_HLEVEL: 1
-#+REVEAL_ROOT: file:///home/chris/reveal.js
+#+REVEAL_ROOT:  ../../reveal.js-4.6.0
 #+REVEAL_PLUGINS: (highlight markdown notes zoom)
 #+REVEAL_SLIDE_FOOTER: @agile_geek
 #+REVEAL_EXTRA_CSS: ./custom-stylesheet.css
 #+MACRO: color @@html:<font color="$1">$2</font>@@
-#+OPTIONS: toc:nil, timestamp:nil, num:nil
+#+OPTIONS: ':t
 
 * Who am I?
 
@@ -69,7 +70,7 @@ their slides.
 * Why evolve?
 :PROPERTIES:
 :reveal_background: ./changeability.png
-:reveal_background_size: 500px
+:reveal_background_size: 25%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -92,7 +93,7 @@ their slides.
 * Key characteristics of evolution
 :PROPERTIES:
 :reveal_background: ./adaptation.jpg
-:reveal_background_size: 690px
+:reveal_background_size: 50%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -140,7 +141,7 @@ have to consider Modification of Environment.
 * Pick your constraints
 :PROPERTIES:
 :reveal_background: ./constraints.gif
-:reveal_background_size: 680px
+:reveal_background_size: 50%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -164,7 +165,7 @@ have to consider Modification of Environment.
 ** Materials Matter
 :PROPERTIES:
 :reveal_background: ./languages.gif
-:reveal_background_size: 680px
+:reveal_background_size: 40%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -196,7 +197,7 @@ than that in most cases for the larger concepts.
 ** Materials Matter
 :PROPERTIES:
 :reveal_background: ./cd.gif
-:reveal_background_size: 400px
+:reveal_background_size: 30%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -217,7 +218,7 @@ than that in most cases for the larger concepts.
 ** Materials Matter
 :PROPERTIES:
 :reveal_background: ./smallteam.gif
-:reveal_background_size: 540px
+:reveal_background_size: 40%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -232,7 +233,7 @@ than that in most cases for the larger concepts.
 ** Materials Matter
 :PROPERTIES:
 :reveal_background: ./tech_debt.jpg
-:reveal_background_size: 680px
+:reveal_background_size: 40%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -252,7 +253,7 @@ than that in most cases for the larger concepts.
 * Separate Release From Deployment
 :PROPERTIES:
 :reveal_background: ./feature-toggle.jpeg
-:reveal_background_size: 680px
+:reveal_background_size: 30%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:
@@ -274,7 +275,7 @@ than that in most cases for the larger concepts.
 ** Feedback between Ecosystems
 :PROPERTIES:
 :reveal_background: ./ecosystems_feedback.png
-:reveal_background_size: 640px
+:reveal_background_size: 40%
 :reveal_background_opacity: 1.0
 :reveal_background_trans: slide
 :END:

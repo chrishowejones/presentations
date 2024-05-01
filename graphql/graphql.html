@@ -9,22 +9,11 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="./../reveal.js-3.8.0/css/reveal.css"/>
+<link rel="stylesheet" href="../reveal.js-4.6.0/dist/reveal.css"/>
 
-<link rel="stylesheet" href="./../reveal.js-3.8.0/css/theme/league.css" id="theme"/>
+<link rel="stylesheet" href="../reveal.js-4.6.0/dist/theme/league.css" id="theme"/>
 
-<link rel="stylesheet" href="./../reveal.js-3.8.0/plugin/highlight/zenburn.css"/>
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = './../reveal.js-3.8.0/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-</script>
-</head>
+<link rel="stylesheet" href="../reveal.js-4.6.0/plugin/highlight/zenburn.css"/></head>
 <body>
 <div class="reveal">
 <div class="slides">
@@ -32,14 +21,14 @@
 <h2 class="author">Chris Howe-Jones</h2><h2 class="date">1st May 2018</h2>
 </section>
 <section>
-<section id="slide-org62b038b">
-<h2 id="org62b038b">Consumer Driven-Contracts with Graphql</h2>
+<section id="slide-orgc6c20b6">
+<h2 id="orgc6c20b6">Consumer Driven-Contracts with Graphql</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-orgc02e959">
-<h2 id="orgc02e959">Who am I?</h2>
+<section id="slide-org384c191">
+<h2 id="org384c191">Who am I?</h2>
 <p>
 Name:      <code>Chris Howe-Jones</code> <b>[Technical Navigator]</b>
 </p>
@@ -68,8 +57,8 @@ Speaker:   <code>FP North East, Agile North East, London Clojurians,
 </section>
 </section>
 <section>
-<section id="slide-org7136761">
-<h2 id="org7136761">Consumer Contract?</h2>
+<section id="slide-org74611e0">
+<h2 id="org74611e0">Consumer Contract?</h2>
 <p>
 Each client has its own requirements
 </p>
@@ -83,8 +72,8 @@ Each client has its own requirements
 </section>
 </section>
 <section>
-<section id="slide-org67e1ba4">
-<h2 id="org67e1ba4">Whats wrong with REST?</h2>
+<section id="slide-org2ebd4c6">
+<h2 id="org2ebd4c6">What&rsquo;s wrong with REST?</h2>
 <p>
 How to get different data?
 </p>
@@ -102,8 +91,8 @@ The answer is different resources
 </section>
 </section>
 <section>
-<section id="slide-org90f1af9">
-<h2 id="org90f1af9">Whats wrong with REST?</h2>
+<section id="slide-org26cd525">
+<h2 id="org26cd525">What&rsquo;s wrong with REST?</h2>
 <p>
 If I want data from different resources or a graph of objects
 need multiple calls.
@@ -112,18 +101,18 @@ need multiple calls.
 </section>
 </section>
 <section>
-<section id="slide-org7c8038c">
-<h2 id="org7c8038c">Postels Law</h2>
+<section id="slide-org7a1ceae">
+<h2 id="org7a1ceae">Postel&rsquo;s Law</h2>
 <p>
-<i>"Be conservative in what you do, be liberal in what you accept from
-others."</i>
+<i>&ldquo;Be conservative in what you do, be liberal in what you accept from
+others.&rdquo;</i>
 </p>
 
 </section>
 </section>
 <section>
-<section id="slide-org0928707">
-<h2 id="org0928707">Tolerant Reader</h2>
+<section id="slide-org45ffcd8">
+<h2 id="org45ffcd8">Tolerant Reader</h2>
 <p>
 Pattern to tolerate provider changing contract.
 </p>
@@ -137,8 +126,8 @@ Pattern to tolerate provider changing contract.
 </section>
 </section>
 <section>
-<section id="slide-org0fd59a3">
-<h2 id="org0fd59a3">Issues with parsers?</h2>
+<section id="slide-org537adb9">
+<h2 id="org537adb9">Issues with parsers?</h2>
 <p>
 Often parsers in statically typed OOP languages assume rigid
 compliance to schema regardless of consumers needs.
@@ -147,28 +136,28 @@ compliance to schema regardless of consumers needs.
 </section>
 </section>
 <section>
-<section id="slide-org4028b24">
-<h2 id="org4028b24">How does graphql help?</h2>
+<section id="slide-org88c5992">
+<h2 id="org88c5992">How does graphql help?</h2>
 <ul>
 <li>Self describing (schema).</li>
-<li>Queries to fetch only whats required.</li>
+<li>Queries to fetch only what&rsquo;s required.</li>
 <li>Can fetch object graph in one call.</li>
 <li>Can have more than one query per call.</li>
-<li>Mutate only whats required.</li>
+<li>&rsquo;Mutate&rsquo; only what&rsquo;s required.</li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org758e022">
-<h2 id="org758e022">Whats it look like?</h2>
+<section id="slide-orgcdd67c6">
+<h2 id="orgcdd67c6">What&rsquo;s it look like?</h2>
 <p>
 DEMO CAKE!
 </p>
 
 
-<div id="orgbad613c" class="figure">
+<div id="org4a47a22" class="figure">
 <p><img src="./demo-cake.jpg" alt="demo-cake.jpg" />
 </p>
 </div>
@@ -176,21 +165,18 @@ DEMO CAKE!
 </section>
 </div>
 </div>
-<script src="./../reveal.js-3.8.0/js/reveal.js"></script>
+<script src="../reveal.js-4.6.0/dist/reveal.js"></script>
+<script src="../reveal.js-4.6.0/plugin/highlight/highlight.js"></script>
+<script src="../reveal.js-4.6.0/plugin/markdown/markdown.js"></script>
+<script src="../reveal.js-4.6.0/plugin/notes/notes.js"></script>
+
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-width:1080, height:950, controlsLayout: 'edges',
-
-// Optional libraries used to extend on reveal.js
-dependencies: [
- { src: './../reveal.js-3.8.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
- { src: './../reveal.js-3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './../reveal.js-3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './../reveal.js-3.8.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
-
+plugins: [RevealHighlight, RevealMarkdown, RevealNotes],
+width:1080, height:950, controlsLayout: 'edges'
 });
 
 </script>
